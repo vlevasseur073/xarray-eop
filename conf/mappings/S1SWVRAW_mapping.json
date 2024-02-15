@@ -1,0 +1,4223 @@
+{
+    "recognition": {
+        "filename_pattern": "S1[A-D]_WV_RAW__0S.*SAFE|S1SWVRAW.*",
+        "product_type": "S1SWVRAW",
+        "version": "TODO"
+    },
+    "data_mapping": [
+        {
+            "short_name": "packet_sequence_count_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(18,32,14)",
+            "target_path": "/conditions/hh/packet_sequence_count_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet sequence count for hh",
+                    "short_name": "packet_sequence_count_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_data_length_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(32,48,16)",
+            "target_path": "/conditions/hh/packet_data_length_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet data length for hh",
+                    "short_name": "packet_data_length_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_sequence_count_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(18,32,14)",
+            "target_path": "/conditions/hv/packet_sequence_count_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet sequence count for hv",
+                    "short_name": "packet_sequence_count_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_data_length_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(32,48,16)",
+            "target_path": "/conditions/hv/packet_data_length_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet data length for hv",
+                    "short_name": "packet_data_length_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_sequence_count_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(18,32,14)",
+            "target_path": "/conditions/vv/packet_sequence_count_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet sequence count for vv",
+                    "short_name": "packet_sequence_count_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_data_length_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(32,48,16)",
+            "target_path": "/conditions/vv/packet_data_length_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet data length for vv",
+                    "short_name": "packet_data_length_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_sequence_count_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(18,32,14)",
+            "target_path": "/conditions/vh/packet_sequence_count_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet sequence count for vh",
+                    "short_name": "packet_sequence_count_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_data_length_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(32,48,16)",
+            "target_path": "/conditions/vh/packet_data_length_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet data length for vh",
+                    "short_name": "packet_data_length_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "coarse_time_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(48,80,32)",
+            "target_path": "/coordinates/coarse_time_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "coarse time for hh",
+                    "short_name": "coarse_time_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "fine_time_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(80,96,16)",
+            "target_path": "/coordinates/fine_time_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "fine time for hh",
+                    "short_name": "fine_time_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "fine_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "coarse_time_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(48,80,32)",
+            "target_path": "/coordinates/coarse_time_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "coarse time for hv",
+                    "short_name": "coarse_time_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "fine_time_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(80,96,16)",
+            "target_path": "/coordinates/fine_time_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "fine time for hv",
+                    "short_name": "fine_time_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "fine_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "coarse_time_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(48,80,32)",
+            "target_path": "/coordinates/coarse_time_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "coarse time for vv",
+                    "short_name": "coarse_time_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "fine_time_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(80,96,16)",
+            "target_path": "/coordinates/fine_time_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "fine time for vv",
+                    "short_name": "fine_time_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "fine_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "coarse_time_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(48,80,32)",
+            "target_path": "/coordinates/coarse_time_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "coarse time for vh",
+                    "short_name": "coarse_time_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "fine_time_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(80,96,16)",
+            "target_path": "/coordinates/fine_time_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "fine time for vh",
+                    "short_name": "fine_time_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "fine_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_index_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(208,216,8)",
+            "target_path": "/coordinates/dataword_index_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word index for hh",
+                    "short_name": "dataword_index_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_index_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(208,216,8)",
+            "target_path": "/coordinates/dataword_index_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word index for hv",
+                    "short_name": "dataword_index_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_index_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(208,216,8)",
+            "target_path": "/coordinates/dataword_index_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word index for vv",
+                    "short_name": "dataword_index_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_index_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(208,216,8)",
+            "target_path": "/coordinates/dataword_index_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word index for vh",
+                    "short_name": "dataword_index_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(216,232,16)",
+            "target_path": "/coordinates/dataword_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word for hh",
+                    "short_name": "dataword_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(216,232,16)",
+            "target_path": "/coordinates/dataword_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word for hv",
+                    "short_name": "dataword_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(216,232,16)",
+            "target_path": "/coordinates/dataword_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word for vv",
+                    "short_name": "dataword_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "dataword_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(216,232,16)",
+            "target_path": "/coordinates/dataword_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "data word for vh",
+                    "short_name": "dataword_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "space_packet_count_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(232,264,32)",
+            "target_path": "/conditions/hh/space_packet_count_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "source packet count for hh",
+                    "short_name": "space_packet_count_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "space_packet_count_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(232,264,32)",
+            "target_path": "/conditions/hv/space_packet_count_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "source packet count for hv",
+                    "short_name": "space_packet_count_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "space_packet_count_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(232,264,32)",
+            "target_path": "/conditions/vv/space_packet_count_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "source packet count for vv",
+                    "short_name": "space_packet_count_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "space_packet_count_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(232,264,32)",
+            "target_path": "/conditions/vh/space_packet_count_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "source packet count for vh",
+                    "short_name": "space_packet_count_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_count_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(264,296,32)",
+            "target_path": "/conditions/hh/pri_count_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval count for hh",
+                    "short_name": "pri_count_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_count_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(264,296,32)",
+            "target_path": "/conditions/hv/pri_count_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval count for hv",
+                    "short_name": "pri_count_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_count_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(264,296,32)",
+            "target_path": "/conditions/vv/pri_count_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval count for vv",
+                    "short_name": "pri_count_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_count_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(264,296,32)",
+            "target_path": "/conditions/vh/pri_count_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval count for vh",
+                    "short_name": "pri_count_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "error_flag_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(296,297,1)",
+            "target_path": "/quality/error_flag_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "parity error flag (0: nominal condition; 1: packet should be discarded)",
+                    "short_name": "error_flag_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "error_flag_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(296,297,1)",
+            "target_path": "/quality/error_flag_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "parity error flag (0: nominal condition; 1: packet should be discarded)",
+                    "short_name": "error_flag_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "error_flag_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(296,297,1)",
+            "target_path": "/quality/error_flag_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "parity error flag (0: nominal condition; 1: packet should be discarded)",
+                    "short_name": "error_flag_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "error_flag_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(296,297,1)",
+            "target_path": "/quality/error_flag_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "parity error flag (0: nominal condition; 1: packet should be discarded)",
+                    "short_name": "error_flag_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_mode_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(299,304,5)",
+            "target_path": "/conditions/hh/baq_mode",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization mode",
+                    "short_name": "baq_mode_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_length_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(304,312,8)",
+            "target_path": "/conditions/hh/baq_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization length",
+                    "short_name": "baq_length_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_mode_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(299,304,5)",
+            "target_path": "/conditions/hv/baq_mode",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization mode",
+                    "short_name": "baq_mode_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_length_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(304,312,8)",
+            "target_path": "/conditions/hv/baq_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization length",
+                    "short_name": "baq_length_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_mode_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(299,304,5)",
+            "target_path": "/conditions/vv/baq_mode",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization mode",
+                    "short_name": "baq_mode_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_length_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(304,312,8)",
+            "target_path": "/conditions/vv/baq_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization length",
+                    "short_name": "baq_length_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_mode_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(299,304,5)",
+            "target_path": "/conditions/vh/baq_mode",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization mode",
+                    "short_name": "baq_mode_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "baq_length_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(304,312,8)",
+            "target_path": "/conditions/vh/baq_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "block adaptive quantization length",
+                    "short_name": "baq_length_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "range_decimation_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(320,328,8)",
+            "target_path": "/conditions/hh/range_decimation",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "range decimation for hh",
+                    "short_name": "range_decimation_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "range_decimation_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(320,328,8)",
+            "target_path": "/conditions/hv/range_decimation",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "range decimation for hv",
+                    "short_name": "range_decimation_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "range_decimation_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(320,328,8)",
+            "target_path": "/conditions/vv/range_decimation",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "range decimation for vv",
+                    "short_name": "range_decimation_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "range_decimation_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(320,328,8)",
+            "target_path": "/conditions/vh/range_decimation",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "range decimation for vh",
+                    "short_name": "range_decimation_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "rx_gain_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(328,336,8)",
+            "target_path": "/conditions/hh/rx_gain",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "receive gain",
+                    "short_name": "rx_gain_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "rx_gain_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(328,336,8)",
+            "target_path": "/conditions/hv/rx_gain",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "receive gain",
+                    "short_name": "rx_gain_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "rx_gain_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(328,336,8)",
+            "target_path": "/conditions/vv/rx_gain",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "receive gain",
+                    "short_name": "rx_gain_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "rx_gain_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(328,336,8)",
+            "target_path": "/conditions/vh/rx_gain",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "receive gain",
+                    "short_name": "rx_gain_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_ramp_rate_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(336,352,16)",
+            "target_path": "/conditions/hh/tx_ramp_rate",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit ramp rate",
+                    "short_name": "tx_ramp_rate_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_ramp_rate_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(336,352,16)",
+            "target_path": "/conditions/hv/tx_ramp_rate",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit ramp rate",
+                    "short_name": "tx_ramp_rate_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_ramp_rate_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(336,352,16)",
+            "target_path": "/conditions/vv/tx_ramp_rate",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit ramp rate",
+                    "short_name": "tx_ramp_rate_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_ramp_rate_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(336,352,16)",
+            "target_path": "/conditions/vh/tx_ramp_rate",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit ramp rate",
+                    "short_name": "tx_ramp_rate_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_start_freq_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(352,368,16)",
+            "target_path": "/conditions/hh/tx_pulse_start_freq",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse start frequency",
+                    "short_name": "tx_pulse_start_freq_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_start_freq_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(352,368,16)",
+            "target_path": "/conditions/hv/tx_pulse_start_freq",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse start frequency",
+                    "short_name": "tx_pulse_start_freq_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_start_freq_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(352,368,16)",
+            "target_path": "/conditions/vv/tx_pulse_start_freq",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse start frequency",
+                    "short_name": "tx_pulse_start_freq_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_start_freq_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(352,368,16)",
+            "target_path": "/conditions/vh/tx_pulse_start_freq",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse start frequency",
+                    "short_name": "tx_pulse_start_freq_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_length_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(368,392,24)",
+            "target_path": "/conditions/hh/tx_pulse_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse length",
+                    "short_name": "tx_pulse_length_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_length_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(368,392,24)",
+            "target_path": "/conditions/hv/tx_pulse_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse length",
+                    "short_name": "tx_pulse_length_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_length_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(368,392,24)",
+            "target_path": "/conditions/vv/tx_pulse_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse length",
+                    "short_name": "tx_pulse_length_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "tx_pulse_length_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(368,392,24)",
+            "target_path": "/conditions/vh/tx_pulse_length",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "transmit pulse length",
+                    "short_name": "tx_pulse_length_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "rank_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(395,400,5)",
+            "target_path": "/conditions/hh/rank",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "rank for hh",
+                    "short_name": "rank_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "rank_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(395,400,5)",
+            "target_path": "/conditions/hv/rank",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "rank for hv",
+                    "short_name": "rank_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "rank_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(395,400,5)",
+            "target_path": "/conditions/vv/rank",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "rank for vv",
+                    "short_name": "rank_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "rank_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(395,400,5)",
+            "target_path": "/conditions/vh/rank",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "rank for vh",
+                    "short_name": "rank_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(400,424,24)",
+            "target_path": "/conditions/hh/pri",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval",
+                    "short_name": "pri_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(400,424,24)",
+            "target_path": "/conditions/hv/pri",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval",
+                    "short_name": "pri_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(400,424,24)",
+            "target_path": "/conditions/vv/pri",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval",
+                    "short_name": "pri_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "pri_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(400,424,24)",
+            "target_path": "/conditions/vh/pri",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "pulse repetition interval",
+                    "short_name": "pri_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "swst_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(424,448,24)",
+            "target_path": "/conditions/hh/swst",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window start time",
+                    "short_name": "swst_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "swst_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(424,448,24)",
+            "target_path": "/conditions/hv/swst",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window start time",
+                    "short_name": "swst_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "swst_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(424,448,24)",
+            "target_path": "/conditions/vv/swst",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window start time",
+                    "short_name": "swst_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "swst_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(424,448,24)",
+            "target_path": "/conditions/vh/swst",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window start time",
+                    "short_name": "swst_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "swl_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(448,472,24)",
+            "target_path": "/conditions/hh/swl",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window length",
+                    "short_name": "swl_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "swl_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(448,472,24)",
+            "target_path": "/conditions/hv/swl",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window length",
+                    "short_name": "swl_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "swl_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(448,472,24)",
+            "target_path": "/conditions/vv/swl",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window length",
+                    "short_name": "swl_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "swl_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(448,472,24)",
+            "target_path": "/conditions/vh/swl",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sampling window length",
+                    "short_name": "swl_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "ssb_message_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(472,520,48)",
+            "target_path": "/conditions/hh/ssb_message",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "setting selector bus message",
+                    "short_name": "ssb_message_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh",
+                    "ssb_msg_num"
+                ]
+            }
+        },
+        {
+            "short_name": "ssb_message_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(472,520,48)",
+            "target_path": "/conditions/hv/ssb_message",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "setting selector bus message",
+                    "short_name": "ssb_message_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv",
+                    "ssb_msg_num"
+                ]
+            }
+        },
+        {
+            "short_name": "ssb_message_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(472,520,48)",
+            "target_path": "/conditions/vv/ssb_message",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "setting selector bus message",
+                    "short_name": "ssb_message_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv",
+                    "ssb_msg_num"
+                ]
+            }
+        },
+        {
+            "short_name": "ssb_message_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(472,520,48)",
+            "target_path": "/conditions/vh/ssb_message",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "setting selector bus message",
+                    "short_name": "ssb_message_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh",
+                    "ssb_msg_num"
+                ]
+            }
+        },
+        {
+            "short_name": "number_of_quads_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(520,536,16)",
+            "target_path": "/conditions/hh/number_of_quads",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of quads for hh",
+                    "short_name": "number_of_quads_hh",
+                    "dimensions": "packet_total_number_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "number_of_quads_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(520,536,16)",
+            "target_path": "/conditions/hv/number_of_quads",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of quads for hv",
+                    "short_name": "number_of_quads_hv",
+                    "dimensions": "packet_total_number_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "number_of_quads_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(520,536,16)",
+            "target_path": "/conditions/vv/number_of_quads",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of quads for vv",
+                    "short_name": "number_of_quads_vv",
+                    "dimensions": "packet_total_number_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "number_of_quads_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(520,536,16)",
+            "target_path": "/conditions/vh/number_of_quads",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of quads for vh",
+                    "short_name": "number_of_quads_vh",
+                    "dimensions": "packet_total_number_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "user_data_hh",
+            "source_path": "s1.*-hh-.*(?<!annot)(?<!index).dat:(544,None,-1)",
+            "target_path": "/measurements/user_data_hh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet",
+                    "short_name": "user_data_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh",
+                    "max_data_length_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "user_data_hv",
+            "source_path": "s1.*-hv-.*(?<!annot)(?<!index).dat:(544,None,-1)",
+            "target_path": "/measurements/user_data_hv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet",
+                    "short_name": "user_data_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv",
+                    "max_data_length_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "user_data_vv",
+            "source_path": "s1.*-vv-.*(?<!annot)(?<!index).dat:(544,None,-1)",
+            "target_path": "/measurements/user_data_vv",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet",
+                    "short_name": "user_data_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv",
+                    "max_data_length_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "user_data_vh",
+            "source_path": "s1.*-vh-.*(?<!annot)(?<!index).dat:(544,None,-1)",
+            "target_path": "/measurements/user_data_vh",
+            "is_optional": true,
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet",
+                    "short_name": "user_data_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh",
+                    "max_data_length_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_days_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(0,16)",
+            "target_path": "/coordinates/sensing_time_days_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time days elapsed since 01-01-2000",
+                    "short_name": "sensing_time_days_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_days_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(0,16)",
+            "target_path": "/coordinates/sensing_time_days_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time days elapsed since 01-01-2000",
+                    "short_name": "sensing_time_days_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_days_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(0,16)",
+            "target_path": "/coordinates/sensing_time_days_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time days elapsed since 01-01-2000",
+                    "short_name": "sensing_time_days_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_days_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(0,16)",
+            "target_path": "/coordinates/sensing_time_days_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time days elapsed since 01-01-2000",
+                    "short_name": "sensing_time_days_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_millisec_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(16,48)",
+            "target_path": "/coordinates/sensing_time_millisec_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time milliseconds elapsed since the beginning of day",
+                    "short_name": "sensing_time_millisec_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_millisec_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(16,48)",
+            "target_path": "/coordinates/sensing_time_millisec_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time milliseconds elapsed since the beginning of day",
+                    "short_name": "sensing_time_millisec_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_millisec_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(16,48)",
+            "target_path": "/coordinates/sensing_time_millisec_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time milliseconds elapsed since the beginning of day",
+                    "short_name": "sensing_time_millisec_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_millisec_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(16,48)",
+            "target_path": "/coordinates/sensing_time_millisec_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time milliseconds elapsed since the beginning of day",
+                    "short_name": "sensing_time_millisec_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_microsec_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(48,64)",
+            "target_path": "/coordinates/sensing_time_microsec_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time microseconds",
+                    "short_name": "sensing_time_microsec_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_microsec_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(48,64)",
+            "target_path": "/coordinates/sensing_time_microsec_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time microseconds",
+                    "short_name": "sensing_time_microsec_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_microsec_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(48,64)",
+            "target_path": "/coordinates/sensing_time_microsec_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time microseconds",
+                    "short_name": "sensing_time_microsec_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "sensing_time_microsec_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(48,64)",
+            "target_path": "/coordinates/sensing_time_microsec_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time microseconds",
+                    "short_name": "sensing_time_microsec_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_days_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(64,80)",
+            "target_path": "/coordinates/downlink_time_days_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time days elapsed since 20000101",
+                    "short_name": "downlink_time_days_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_days_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(64,80)",
+            "target_path": "/coordinates/downlink_time_days_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time days elapsed since 20000101",
+                    "short_name": "downlink_time_days_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_days_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(64,80)",
+            "target_path": "/coordinates/downlink_time_days_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time days elapsed since 20000101",
+                    "short_name": "downlink_time_days_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_days_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(64,80)",
+            "target_path": "/coordinates/downlink_time_days_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time days elapsed since 20000101",
+                    "short_name": "downlink_time_days_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_millisec_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(80,112)",
+            "target_path": "/coordinates/downlink_time_millisec_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time milliseconds elapsed since the beginning of day",
+                    "short_name": "downlink_time_millisec_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_millisec_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(80,112)",
+            "target_path": "/coordinates/downlink_time_millisec_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time milliseconds elapsed since the beginning of day",
+                    "short_name": "downlink_time_millisec_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_millisec_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(80,112)",
+            "target_path": "/coordinates/downlink_time_millisec_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time milliseconds elapsed since the beginning of day",
+                    "short_name": "downlink_time_millisec_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_millisec_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(80,112)",
+            "target_path": "/coordinates/downlink_time_millisec_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time milliseconds elapsed since the beginning of day",
+                    "short_name": "downlink_time_millisec_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_microsec_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(112,128)",
+            "target_path": "/coordinates/downlink_time_microsec_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sensing time microseconds",
+                    "short_name": "downlink_time_microsec_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_microsec_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(112,128)",
+            "target_path": "/coordinates/downlink_time_microsec_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time microseconds",
+                    "short_name": "downlink_time_microsec_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_microsec_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(112,128)",
+            "target_path": "/coordinates/downlink_time_microsec_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time microseconds",
+                    "short_name": "downlink_time_microsec_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "downlink_time_microsec_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(112,128)",
+            "target_path": "/coordinates/downlink_time_microsec_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "downlink time microseconds",
+                    "short_name": "downlink_time_microsec_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "frames_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(144,160)",
+            "target_path": "/conditions/hh/frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of transfer frames containing the current packet hh",
+                    "short_name": "frames_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "frames_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(144,160)",
+            "target_path": "/conditions/hv/frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of transfer frames containing the current packet hv",
+                    "short_name": "frames_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "frames_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(144,160)",
+            "target_path": "/conditions/vv/frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of transfer frames containing the current packet vv",
+                    "short_name": "frames_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "frames_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(144,160)",
+            "target_path": "/conditions/vh/frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of transfer frames containing the current packet vh",
+                    "short_name": "frames_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "missing_frames_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(160,176)",
+            "target_path": "/conditions/hh/missing_frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of missing transfer frames for the current packet hh",
+                    "short_name": "missing_frames_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "missing_frames_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(160,176)",
+            "target_path": "/conditions/hv/missing_frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of missing transfer frames for the current packet hv",
+                    "short_name": "missing_frames_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "missing_frames_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(160,176)",
+            "target_path": "/conditions/vv/missing_frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of missing transfer frames for the current packet vv",
+                    "short_name": "missing_frames_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "missing_frames_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(160,176)",
+            "target_path": "/conditions/vh/missing_frames",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/uint16",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "number of missing transfer frames for the current packet vh",
+                    "short_name": "missing_frames_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "crc_flag_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(176,184)",
+            "target_path": "/quality/crc_flag_hh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "crc error flag indicating detection of crc error in packet hh",
+                    "short_name": "crc_flag_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "crc_flag_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(176,184)",
+            "target_path": "/quality/crc_flag_hv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "crc error flag indicating detection of crc error in packet hv",
+                    "short_name": "crc_flag_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "crc_flag_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(176,184)",
+            "target_path": "/quality/crc_flag_vv",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "crc error flag indicating detection of crc error in packet vv",
+                    "short_name": "crc_flag_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "crc_flag_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(176,184)",
+            "target_path": "/quality/crc_flag_vh",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "crc error flag indicating detection of crc error in packet vh",
+                    "short_name": "crc_flag_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_flag_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(184,185)",
+            "target_path": "/conditions/hh/vcid_present_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if vcid field contains vcid, 0 otherwise (hh)",
+                    "short_name": "vcid_flag_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_flag_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(184,185)",
+            "target_path": "/conditions/hv/vcid_present_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if vcid field contains vcid, 0 otherwise (hv)",
+                    "short_name": "vcid_flag_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_flag_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(184,185)",
+            "target_path": "/conditions/vv/vcid_present_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if vcid field contains vcid, 0 otherwise (vv)",
+                    "short_name": "vcid_flag_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_flag_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(184,185)",
+            "target_path": "/conditions/vh/vcid_present_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if vcid field contains vcid, 0 otherwise (vh)",
+                    "short_name": "vcid_flag_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(186,192)",
+            "target_path": "/conditions/hh/vcid",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "virtual channel identifier for which the hh packet was multiplexed onto",
+                    "short_name": "vcid_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(186,192)",
+            "target_path": "/conditions/hv/vcid",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "virtual channel identifier for which the hv packet was multiplexed onto",
+                    "short_name": "vcid_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(186,192)",
+            "target_path": "/conditions/vv/vcid",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "virtual channel identifier for which the vv packet was multiplexed onto",
+                    "short_name": "vcid_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "vcid_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(186,192)",
+            "target_path": "/conditions/vh/vcid",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "virtual channel identifier for which the vh packet was multiplexed onto",
+                    "short_name": "vcid_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "channel_hh",
+            "source_path": "s1.*-hh-.*-annot.dat:(192,194)",
+            "target_path": "/conditions/hh/channel",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/scalar_uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "hh channel information: 01 (binary) = C1, 10 (binary) = C2",
+                    "short_name": "channel_hh",
+                    "coordinates": "coarse_time_hh"
+                },
+                "dimensions": [
+                    "packet_total_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "channel_hv",
+            "source_path": "s1.*-hv-.*-annot.dat:(192,194)",
+            "target_path": "/conditions/hv/channel",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/scalar_uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "hv channel information: 01 (binary) = C1, 10 (binary) = C2",
+                    "short_name": "channel_hv",
+                    "coordinates": "coarse_time_hv"
+                },
+                "dimensions": [
+                    "packet_total_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "channel_vv",
+            "source_path": "s1.*-vv-.*-annot.dat:(192,194)",
+            "target_path": "/conditions/vv/channel",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/scalar_uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "vv channel information: 01 (binary) = C1, 10 (binary) = C2",
+                    "short_name": "channel_vv",
+                    "coordinates": "coarse_time_vv"
+                },
+                "dimensions": [
+                    "packet_total_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "channel_vh",
+            "source_path": "s1.*-vh-.*-annot.dat:(192,194)",
+            "target_path": "/conditions/vh/channel",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/scalar_uint8",
+                "packet_length_bytes": 26
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "vh channel information: 01 (binary) = C1, 10 (binary) = C2",
+                    "short_name": "channel_vh",
+                    "coordinates": "coarse_time_vh"
+                },
+                "dimensions": [
+                    "packet_total_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_date_time_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(0,64)",
+            "target_path": "/conditions/index/hh/date_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "acquisition time of the first hh packet of the block (UTC, expressed as MJD 1950)",
+                    "short_name": "index_date_time_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_time_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(64,128)",
+            "target_path": "/conditions/index/hh/delta_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "delta time between hh packets (applicable within current block but variable among blocks) expressed in milliseconds and fractions",
+                    "short_name": "index_delta_time_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_size_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(128,160)",
+            "target_path": "/conditions/index/hh/delta_size",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "size in bytes of the hh packet pointed by the current index (valid for all the packets in the block if var_size_flag = 0, valid only for the first packet if var_size_flag = 1 and its value is > 0)",
+                    "short_name": "index_delta_size_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_data_offset_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(160,192)",
+            "target_path": "/conditions/index/hh/data_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of packets) of the first hh packet of the block from the start of data object",
+                    "short_name": "index_data_offset_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_byte_offset_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(192,256)",
+            "target_path": "/conditions/index/hh/byte_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of bytes) of the first hh packet of the block from the start of data object",
+                    "short_name": "index_byte_offset_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_var_size_flag_hh",
+            "source_path": "s1.*-hh-.*-index.dat:(256,264)",
+            "target_path": "/conditions/index/hh/var_size_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if the hh packet size is variable",
+                    "short_name": "index_var_size_flag_hh"
+                },
+                "dimensions": [
+                    "index_number_hh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_date_time_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(0,64)",
+            "target_path": "/conditions/index/vh/date_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "acquisition time of the first vh packet of the block (UTC, expressed as MJD 1950))",
+                    "short_name": "index_date_time_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_time_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(64,128)",
+            "target_path": "/conditions/index/vh/delta_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "delta time between vh packets (applicable within current block but variable among blocks) expressed in milliseconds and fractions",
+                    "short_name": "index_delta_time_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_size_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(128,160)",
+            "target_path": "/conditions/index/vh/delta_size",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "size in bytes of the vh packet pointed by the current index (valid for all the packets in the block if var_size_flag = 0, valid only for the first packet if var_size_flag = 1 and its value is > 0)",
+                    "short_name": "index_delta_size_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_data_offset_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(160,192)",
+            "target_path": "/conditions/index/vh/data_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of packets) of the first vh packet of the block from the start of data object",
+                    "short_name": "index_data_offset_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_byte_offset_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(192,256)",
+            "target_path": "/conditions/index/vh/byte_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of bytes) of the first vh packet of the block from the start of data object",
+                    "short_name": "index_byte_offset_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_var_size_flag_vh",
+            "source_path": "s1.*-vh-.*-index.dat:(256,264)",
+            "target_path": "/conditions/index/vh/var_size_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if the vh packet size is variable",
+                    "short_name": "index_var_size_flag_vh"
+                },
+                "dimensions": [
+                    "index_number_vh"
+                ]
+            }
+        },
+        {
+            "short_name": "index_date_time_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(0,64)",
+            "target_path": "/conditions/index/vv/date_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "acquisition time of the first vv packet of the block (UTC, expressed as MJD 1950)",
+                    "short_name": "index_date_time_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_time_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(64,128)",
+            "target_path": "/conditions/index/vv/delta_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "delta time between vv packets (applicable within current block but variable among blocks) expressed in milliseconds and fractions",
+                    "short_name": "index_delta_time_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_size_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(128,160)",
+            "target_path": "/conditions/index/vv/delta_size",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "size in bytes of the vv packet pointed by the current index (valid for all the packets in the block if var_size_flag = 0, valid only for the first packet if var_size_flag = 1 and its value is > 0)",
+                    "short_name": "index_delta_size_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_data_offset_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(160,192)",
+            "target_path": "/conditions/index/vv/data_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of packets) of the first vv packet of the block from the start of data object",
+                    "short_name": "index_data_offset_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_byte_offset_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(192,256)",
+            "target_path": "/conditions/index/vv/byte_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of bytes) of the first vv packet of the block from the start of data object",
+                    "short_name": "index_byte_offset_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_var_size_flag_vv",
+            "source_path": "s1.*-vv-.*-index.dat:(256,264)",
+            "target_path": "/conditions/index/vv/var_size_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if the vv packet size is variable",
+                    "short_name": "index_var_size_flag_vv"
+                },
+                "dimensions": [
+                    "index_number_vv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_date_time_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(0,64)",
+            "target_path": "/conditions/index/hv/date_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "acquisition time of the first hv packet of the block (UTC, expressed as MJD 1950)",
+                    "short_name": "index_date_time_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_time_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(64,128)",
+            "target_path": "/conditions/index/hv/delta_time",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "delta time between hv packets (applicable within current block but variable among blocks) expressed in milliseconds and fractions",
+                    "short_name": "index_delta_time_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_delta_size_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(128,160)",
+            "target_path": "/conditions/index/hv/delta_size",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "size in bytes of the hv packet pointed by the current index (valid for all the packets in the block if var_size_flag = 0, valid only for the first packet if var_size_flag = 1 and its value is > 0)",
+                    "short_name": "index_delta_size_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_data_offset_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(160,192)",
+            "target_path": "/conditions/index/hv/data_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of packets) of the first hv packet of the block from the start of data object",
+                    "short_name": "index_data_offset_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_byte_offset_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(192,256)",
+            "target_path": "/conditions/index/hv/byte_offset",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/uint64",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "offset (expressed as number of bytes) of the first hv packet of the block from the start of data object",
+                    "short_name": "index_byte_offset_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "index_var_size_flag_hv",
+            "source_path": "s1.*-hv-.*-index.dat:(256,264)",
+            "target_path": "/conditions/index/hv/var_size_flag",
+            "is_optional": true,
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "annotation_mapping/types/bool",
+                "packet_length_bytes": 36
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "flag set to 1 if the hv packet size is variable",
+                    "short_name": "index_var_size_flag_hv"
+                },
+                "dimensions": [
+                    "index_number_hv"
+                ]
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "",
+            "item_format": "MemMapToAttrAccessor",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "mapping": "stac_discovery",
+                "types_mapping": "annotation_mapping/types"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "",
+            "item_format": "MemMapToAttrAccessor",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "mapping": "other_metadata",
+                "types_mapping": "l0_mapping/types"
+            }
+        }
+    ],
+    "l0_mapping": {
+        "types": {
+            "bool": "bool",
+            "scalar_bool": "s_bool",
+            "uint8": "uint8",
+            "scalar_uint8": "s_uint8",
+            "uint16": "uint16",
+            "scalar_uint16": "s_uint16",
+            "uint32": "uint32",
+            "scalar_uint32": "s_uint32",
+            "var_bytearray": "var_bytearray",
+            "bytearray": "bytearray"
+        }
+    },
+    "annotation_mapping": {
+        "types": {
+            "bool": "bool",
+            "scalar_bool": "s_bool",
+            "uint8": "uint8",
+            "scalar_uint8": "s_uint8",
+            "uint16": "uint16",
+            "scalar_uint16": "s_uint16",
+            "uint32": "uint32",
+            "scalar_uint32": "s_uint32",
+            "uint64": "uint64",
+            "scalar_uint64": "s_uint64",
+            "double": "double",
+            "var_bytearray": "var_bytearray",
+            "bytearray": "bytearray"
+        }
+    },
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+            "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:productClassDescription",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/s1-level0:frameSet/s1-level0:frame/s1-level0:footPrint/gml:coordinates)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/s1-level0:frameSet/s1-level0:frame/s1-level0:footPrint/gml:coordinates)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/s1-level0:acquisitionPeriod/s1-level0:startTime",
+            "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/s1-level0:acquisitionPeriod/s1-level0:stopTime",
+            "created": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing/@stop",
+            "sat:platform_international_designator": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/s1-level0:platform/s1-level0:nssdcIdentifier",
+            "sat:anx_datetime": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:extension/s1:orbitProperties/s1:ascendingNodeTime",
+            "sat:relative_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:relativeOrbitNumber[@type='start'])",
+            "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:orbitNumber[@type='start'])",
+            "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:extension/s1:orbitProperties/s1:pass",
+            "processing:level": "Text(L0)",
+            "processing:facility": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing/s1-level0:facility/@name",
+            "processing:software": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing/s1-level0:resource[2]/@name",
+            "platform": "concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/s1-level0:platform/s1-level0:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/s1-level0:platform/s1-level0:number)",
+            "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/s1-level0:platform/s1-level0:instrument/s1-level0:familyName",
+            "mission": "Text(Sentinel-1)",
+            "eopf:timeline": "Text(NRT)",
+            "eopf:instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/s1-level0:platform/s1-level0:instrument/s1-level0:extension/s1sar:instrumentMode/s1sar:mode",
+            "eopf:type": "Text(S1SWVRAW)",
+            "eopf:data_take_id": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(128,160):scalar_uint32",
+            "providers": [
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing/s1-level0:facility/@site",
+                    "roles": [
+                        "Text(processor)"
+                    ]
+                },
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing/s1-level0:facility/@organisation",
+                    "roles": [
+                        "Text(producer)"
+                    ]
+                }
+            ]
+        },
+        "links": [
+            {
+                "rel": "Text(self)",
+                "href": "Text(./.zattrs.json)",
+                "type": "Text(application/json)"
+            }
+        ],
+        "assets": []
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "consolidation": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:productConsolidation",
+            "cal_isp_present": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:calISPPresent",
+            "noise_isp_present": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:noiseISPPresent",
+            "circulation_flag": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:circulationFlag)",
+            "slice_product_flag": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:sliceProductFlag",
+            "slice_number": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:sliceNumber)",
+            "total_number_of_slices": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:totalNumberOfSlices)",
+            "theoretical_length_of_slice_in_seconds": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:theoreticalSliceLength)",
+            "slice_overlap_in_seconds": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:sliceOverlap)",
+            "data_take_start_time": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:dataTakeStartTimei)",
+            "echo_compression_type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:echoCompressionType",
+            "noise_compression_type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:noiseCompressionType",
+            "cal_compression_type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sar:standAloneProductInformation/s1sar:calCompressionType",
+            "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/s1-level0:processing)",
+            "packet_version": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(0,3):scalar_uint8",
+            "packet_type": "to_bool(s1.*-??-.*(?<!annot)(?<!index)\\.dat:(3,4):scalar_bool)",
+            "header_flag": "to_bool(s1.*-??-.*(?<!annot)(?<!index)\\.dat:(4,5):scalar_bool)",
+            "application_process_identifer": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(5,12):scalar_uint8",
+            "packet_category": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(12,16):scalar_uint8",
+            "sequence_flag": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(16,18):scalar_uint8",
+            "synchronisation_marker": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(96,128):scalar_uint32",
+            "event_control_code": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(160,168):scalar_uint8",
+            "test_mode": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(169,172):scalar_uint8",
+            "hh_receive_channel_id": "is_optional(s1.*-hh-.*(?<!annot)(?<!index)\\.dat:(172,176):scalar_uint8)",
+            "hv_receive_channel_id": "is_optional(s1.*-hv-.*(?<!annot)(?<!index)\\.dat:(172,176):scalar_uint8)",
+            "vv_receive_channel_id": "is_optional(s1.*-vv-.*(?<!annot)(?<!index)\\.dat:(172,176):scalar_uint8)",
+            "vh_receive_channel_id": "is_optional(s1.*-vh-.*(?<!annot)(?<!index)\\.dat:(172,176):scalar_uint8)",
+            "instrument_configuration_id": "s1.*-??-.*(?<!annot)(?<!index)\\.dat:(176,208):scalar_uint32",
+            "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:cycleNumber)",
+            "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/s1-level0:orbitReference/s1-level0:phaseIdentifier)",
+            "start_datetime_anx": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/s1-level0:acquisitionPeriod/s1-level0:extension/s1:timeANX/s1:startTimeANX",
+            "stop_datetime_anx": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/s1-level0:acquisitionPeriod/s1-level0:extension/s1:timeANX/s1:stopTimeANX"
+        }
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/product/store/templates",
+        "template_name": "S1_L0_manifest.xml"
+    },
+    "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel1": "http://www.esa.int/safe/sentinel/sentinel-1/1.0",
+        "s1-level0": "http://www.esa.int/safe/sentinel-1.0",
+        "s1": "http://www.esa.int/safe/sentinel-1.0/sentinel-1",
+        "s1sar": "http://www.esa.int/safe/sentinel-1.0/sentinel-1/sar",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    }
+}

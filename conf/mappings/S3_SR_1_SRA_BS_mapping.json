@@ -1,0 +1,1332 @@
+{
+    "recognition": {
+        "filename_pattern": "S3._SR_1_SRA_BS.*SEN3|S3AHRL1B.*",
+        "product_type": "S3AHRL1B",
+        "version": "0.0.0"
+    },
+    "data_mapping": [
+        {
+            "short_name": "echo_sample_ind",
+            "target_path": "/conditions/instrument/echo_sample_ind",
+            "source_path": "measurement_l1bs.nc:echo_sample_ind",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "number of samples in I2+Q2, I and Q echoes",
+                "units": "count",
+                "comment": "set to be compliant with the CF-1.6 convention"
+            }
+        },
+        {
+            "short_name": "alt_plrm",
+            "target_path": "/conditions/geometry/plrm/alt",
+            "source_path": "measurement_l1bs.nc:alt_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "altitude of satellite for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 700000.0,
+                "units": "m",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "orb_alt_rate_plrm",
+            "target_path": "/conditions/geometry/plrm/orb_alt_rate",
+            "source_path": "measurement_l1bs.nc:orb_alt_rate_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "orbital altitude rate for PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "m/s",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "pitch_sat_pointing_plrm",
+            "target_path": "/conditions/geometry/plrm/pitch_sat_pointing",
+            "source_path": "measurement_l1bs.nc:pitch_sat_pointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing pitch angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "pitch_sral_mispointing_plrm",
+            "target_path": "/conditions/geometry/plrm/pitch_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:pitch_sral_mispointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing pitch angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "roll_sat_pointing_plrm",
+            "target_path": "/conditions/geometry/plrm/roll_sat_pointing",
+            "source_path": "measurement_l1bs.nc:roll_sat_pointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing roll angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "roll_sral_mispointing_plrm",
+            "target_path": "/conditions/geometry/plrm/roll_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:roll_sral_mispointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing roll angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "yaw_sat_pointing_plrm",
+            "target_path": "/conditions/geometry/plrm/yaw_sat_pointing",
+            "source_path": "measurement_l1bs.nc:yaw_sat_pointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing yaw angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "yaw_sral_mispointing_plrm",
+            "target_path": "/conditions/geometry/plrm/yaw_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:yaw_sral_mispointing_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing yaw angle for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "alt_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/alt",
+            "source_path": "measurement_l1bs.nc:alt_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "altitude of satellite for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 700000.0,
+                "units": "m",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "x_pos_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/x_pos",
+            "source_path": "measurement_l1bs.nc:x_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite position x component for Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "y_pos_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/y_pos",
+            "source_path": "measurement_l1bs.nc:y_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite position y component for Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "z_pos_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/z_pos",
+            "source_path": "measurement_l1bs.nc:z_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite position z component for Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "orb_alt_rate_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/orb_alt_rate",
+            "source_path": "measurement_l1bs.nc:orb_alt_rate_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "orbital altitude rate for SAR Ku mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "m/s",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "pitch_sat_pointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/pitch_sat_pointing",
+            "source_path": "measurement_l1bs.nc:pitch_sat_pointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing pitch angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "pitch_sral_mispointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/pitch_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:pitch_sral_mispointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing pitch angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "roll_sat_pointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/roll_sat_pointing",
+            "source_path": "measurement_l1bs.nc:roll_sat_pointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing rol angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "roll_sral_mispointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/roll_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:roll_sral_mispointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing roll angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "x_vel_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/x_vel",
+            "source_path": "measurement_l1bs.nc:x_vel_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite velocity x component for Ku SAR mode",
+                "units": "m/s",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "y_vel_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/y_vel",
+            "source_path": "measurement_l1bs.nc:y_vel_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite velocity y component for Ku SAR mode",
+                "units": "m/s",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "yaw_sat_pointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/yaw_sat_pointing",
+            "source_path": "measurement_l1bs.nc:yaw_sat_pointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite pointing yaw angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "yaw_sral_mispointing_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/yaw_sral_mispointing",
+            "source_path": "measurement_l1bs.nc:yaw_sral_mispointing_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SRAL mispointing yaw angle for Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "degrees",
+                "_FillValue": 2147483647,
+                "comment": "value for the closest in time burst time tag, given in the nadir pointing reference frame",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "z_vel_sar_ku",
+            "target_path": "/conditions/geometry/sar_ku/z_vel",
+            "source_path": "measurement_l1bs.nc:z_vel_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "satellite velocity z component for Ku SAR mode",
+                "units": "m/s",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "burst_start_ind_sar_ku",
+            "target_path": "/coordinates/burst_start_ind",
+            "source_path": "measurement_l1bs.nc:burst_start_ind_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "burst start index for stack building in Ku SAR mode",
+                "units": "count",
+                "_FillValue": 2147483647
+            }
+        },
+        {
+            "short_name": "burst_stop_ind_sar_ku",
+            "target_path": "/coordinates/burst_stop_ind",
+            "source_path": "measurement_l1bs.nc:burst_stop_ind_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "burst stop index for stack building in Ku SAR mode",
+                "units": "count",
+                "_FillValue": 2147483647
+            }
+        },
+        {
+            "short_name": "lat_plrm",
+            "target_path": "/coordinates/location/plrm/lat",
+            "source_path": "measurement_l1bs.nc:lat_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "latitude for PLRM",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "degrees_north ",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "lon_plrm",
+            "target_path": "/coordinates/location/plrm/lon",
+            "source_path": "measurement_l1bs.nc:lon_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "longitude for PLRM",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "degrees_east ",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "lat_sar_ku",
+            "target_path": "/coordinates/location/sar_ku/lat",
+            "source_path": "measurement_l1bs.nc:lat_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "latitude for Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "degrees_north ",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "lon_sar_ku",
+            "target_path": "/coordinates/location/sar_ku/lon",
+            "source_path": "measurement_l1bs.nc:lon_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "longitude for Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "degrees_east ",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "meas_x_pos_sar_ku",
+            "target_path": "/coordinates/location/sar_ku/meas_x_pos",
+            "source_path": "measurement_l1bs.nc:meas_x_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "measurement location x component in Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "meas_y_pos_sar_ku",
+            "target_path": "/coordinates/location/sar_ku/meas_y_pos",
+            "source_path": "measurement_l1bs.nc:meas_y_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "measurement location y component in Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "meas_z_pos_sar_ku",
+            "target_path": "/coordinates/location/sar_ku/meas_z_pos",
+            "source_path": "measurement_l1bs.nc:meas_z_pos_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "measurement location z component in Ku SAR mode",
+                "units": "m",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "time_plrm",
+            "target_path": "/coordinates/time/plrm/time",
+            "source_path": "measurement_l1bs.nc:time_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "UTC for PLRM",
+                "units": "seconds since 2000-01-01 00:00:00.0 "
+            }
+        },
+        {
+            "short_name": "utc_day_plrm",
+            "target_path": "/coordinates/time/plrm/utc_day",
+            "source_path": "measurement_l1bs.nc:UTC_day_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "day UTC for PLRM",
+                "units": "days since 2000-01-01 00:00:00.0 ",
+                "_FillValue": 32767
+            }
+        },
+        {
+            "short_name": "utc_sec_plrm",
+            "target_path": "/coordinates/time/plrm/utc_sec",
+            "source_path": "measurement_l1bs.nc:UTC_sec_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "seconds in the day UTC for PLRM",
+                "units": "s",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "time_sar_ku",
+            "target_path": "/coordinates/time/sar_ku/time",
+            "source_path": "measurement_l1bs.nc:time_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "UTC for Ku SAR mode",
+                "units": "seconds since 2000-01-01 00:00:00.0 "
+            }
+        },
+        {
+            "short_name": "utc_day_sar_ku",
+            "target_path": "/coordinates/time/sar_ku/utc_day",
+            "source_path": "measurement_l1bs.nc:UTC_day_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "day UTC for Ku SAR mode",
+                "units": "days since 2000-01-01 00:00:00.0 ",
+                "_FillValue": 32767
+            }
+        },
+        {
+            "short_name": "utc_sec_sar_ku",
+            "target_path": "/coordinates/time/sar_ku/utc_sec",
+            "source_path": "measurement_l1bs.nc:UTC_sec_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "seconds in the day UTC for Ku SAR mode",
+                "units": "s",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "agc_c_plrm",
+            "target_path": "/measurements/plmr/agc_c",
+            "source_path": "measurement_l1bs.nc:agc_c_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "corrected AGC for C band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB ",
+                "comment": "AGC corrected for instrumental errors",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "cog_cor_plrm",
+            "target_path": "/conditions/instrument/plmr/cog_cor",
+            "source_path": "measurement_l1bs.nc:cog_cor_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "distance antenna-CoG correction for PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "comment": "distance in the z-component between the centre of mass of the satellite and the altimeter antenna reference point",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "i2q2_meas_c_plrm",
+            "target_path": "/measurements/plmr/i2q2_meas_c",
+            "source_path": "measurement_l1bs.nc:i2q2_meas_c_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "I2+Q2 measurement for C band in PLRM",
+                "comment": "the echo is the so-called c-band averaged echo, corrected for the GPRW effect",
+                "scale_factor": 0.001,
+                "add_offset": 0.0,
+                "units": "count",
+                "_FillValue": 4294967295,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "i2q2_meas_ku_plrm",
+            "target_path": "/measurements/plmr/i2q2_meas_ku",
+            "source_path": "measurement_l1bs.nc:i2q2_meas_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "I2+Q2 measurement for Ku band in PLRM",
+                "comment": "the echo is the so-called ku-band averaged echo, corrected for the GPRW effect",
+                "scale_factor": 0.001,
+                "add_offset": 0.0,
+                "units": "count",
+                "_FillValue": 4294967295,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "int_path_cor_ku_plrm",
+            "target_path": "/measurements/plmr/int_path_cor",
+            "source_path": "measurement_l1bs.nc:int_path_cor_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "internal path correction for Ku band in PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "comment": "value the closest in time from the burst time tag",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "range_ku_plrm",
+            "target_path": "/measurements/plmr/range_ku",
+            "source_path": "measurement_l1bs.nc:range_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "corrected range for Ku band in PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 700000.0,
+                "units": "m",
+                "comment": "distance between the altimeter reference point and the surface height associated to a range gate used as reference inside the tracking window (reference tracking point), corrected for USO frequency drift and internal path correction",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "scale_factor_c_plrm",
+            "target_path": "/measurements/plmr/scale_factor_c",
+            "source_path": "measurement_l1bs.nc:scale_factor_c_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "scaling factor for sigma0 evaluation for C band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "comment": "scaling factor corrected for AGC instrumental errors and internal calibration",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "scale_factor_ku_plrm",
+            "target_path": "/measurements/plmr/scale_factor_ku",
+            "source_path": "measurement_l1bs.nc:scale_factor_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "scaling factor for sigma0 evaluation for Ku band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "comment": "scaling factor corrected for AGC instrumental errors and internal calibration",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "sig0_cal_c_plrm",
+            "target_path": "/measurements/plmr/sig0_cal_c",
+            "source_path": "measurement_l1bs.nc:sig0_cal_c_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "internal calibration correction on Sigma0 for C band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "sig0_cal_ku_plrm",
+            "target_path": "/measurements/plmr/sig0_cal_ku",
+            "source_path": "measurement_l1bs.nc:sig0_cal_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "internal calibration correction on Sigma0 for Ku band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "snr_c_plrm",
+            "target_path": "/measurements/plmr/snr_c",
+            "source_path": "measurement_l1bs.nc:snr_c_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SNR estimation for C band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "snr_ku_plrm",
+            "target_path": "/measurements/plmr/snr_ku",
+            "source_path": "measurement_l1bs.nc:snr_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SNR estimation for Ku band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "uso_cor_plrm",
+            "target_path": "/measurements/plmr/uso_cor",
+            "source_path": "measurement_l1bs.nc:uso_cor_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "USO frequency drift correction in PLRM",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "_FillValue": 2147483647,
+                "comment": "value the closest in time from the burst time tag",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "agc_ku_plrm",
+            "target_path": "/measurements/plmr/agc_ku",
+            "source_path": "measurement_l1bs.nc:agc_ku_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "corrected AGC for Ku band in PLRM",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB ",
+                "comment": "AGC corrected for instrumental errors",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "agc_ku_sar_ku",
+            "target_path": "/measurements/sar_ku/agc",
+            "source_path": "measurement_l1bs.nc:agc_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "corrected AGC for Ku band in SAR mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB ",
+                "comment": "AGC corrected for instrumental errors",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "agccode_ku_sar_ku",
+            "target_path": "/measurements/sar_ku/agc_code",
+            "source_path": "measurement_l1bs.nc:agccode_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "AGC code for Ku band in SAR mode",
+                "units": "dB ",
+                "_FillValue": 127
+            }
+        },
+        {
+            "short_name": "cog_cor_sar_ku",
+            "target_path": "/conditions/instrument/sar_ku/cog_cor",
+            "source_path": "measurement_l1bs.nc:cog_cor_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "distance antenna-CoG correction in Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "comment": "distance in the z-component between the centre of mass of the satellite and the altimeter antenna reference point",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "i2q2_meas_sar_ku",
+            "target_path": "/measurements/sar_ku/i2q2_meas",
+            "source_path": "measurement_l1bs.nc:i2q2_meas_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "I2+Q2 measurement for Ku band in SAR mode",
+                "comment": "the echo is the so-called Ku-band averaged echo, corrected for the GPRW effect",
+                "scale_factor": 0.001,
+                "add_offset": 0.0,
+                "units": "count",
+                "_FillValue": 4294967295,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "i_echoes_sar_ku",
+            "target_path": "/measurements/sar_ku/i_echoes",
+            "source_path": "measurement_l1bs.nc:i_echoes_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "fully calibrated Ku-band echoes, i measurements aligned within the stack in Ku SAR mode",
+                "units": "count",
+                "_FillValue": -128,
+                "comment": "i values (256*128 samples) in the frequency domain, aligned within the stack, the useful echoes of the table are the first nb_stack_l1bs_echo_sar_ku echoes. The echoes must be scaled with iq_scale_factor_l1bs_echo_sar_ku. The echoes are not scaled using the corrected AGC."
+            }
+        },
+        {
+            "short_name": "int_path_cor_sar_ku",
+            "target_path": "/measurements/sar_ku/int_path_cor",
+            "source_path": "measurement_l1bs.nc:int_path_cor_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "internal path correction for Ku band in SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "comment": "value the closest in time from the burst time tag",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "nb_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/nb_stack",
+            "source_path": "measurement_l1bs.nc:nb_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "number of waveforms summed in stack for Ku SAR mode",
+                "units": "count",
+                "_FillValue": 65535
+            }
+        },
+        {
+            "short_name": "q_echoes_sar_ku",
+            "target_path": "/measurements/sar_ku/q_echoes",
+            "source_path": "measurement_l1bs.nc:q_echoes_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "fully calibrated Ku-band echoes, q measurements aligned within the stack in Ku SAR mode",
+                "units": "count",
+                "_FillValue": -128,
+                "comment": "q values (256*128 samples) in the frequency domain, aligned within the stack, the useful echoes of the table are the first nb_stack_l1bs_echo_sar_ku echoes. The echoes must be scaled with iq_scale_factor_l1bs_echo_sar_ku. The echoes are not scaled using the corrected AGC."
+            }
+        },
+        {
+            "short_name": "range_sar_ku",
+            "target_path": "/measurements/sar_ku/range",
+            "source_path": "measurement_l1bs.nc:range_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "corrected range for Ku band in SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 700000.0,
+                "units": "m",
+                "comment": "distance between the altimeter reference point and the surface height associated to a range gate used as reference inside the tracking window (reference tracking point), corrected for USO frequency drift and internal path correction",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "scale_factor_sar_ku",
+            "target_path": "/measurements/sar_ku/scale_factor",
+            "source_path": "measurement_l1bs.nc:scale_factor_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "scaling factor for sigma0 evaluation for Ku band in SAR mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "comment": "scaling factor corrected for AGC instrumental errors and internal calibration",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "sig0_cal_sar_ku",
+            "target_path": "/measurements/sar_ku/sig0_cal",
+            "source_path": "measurement_l1bs.nc:sig0_cal_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "internal calibration correction on Sigma0 for Ku band in SAR mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "snr_sar_ku",
+            "target_path": "/measurements/sar_ku/snr",
+            "source_path": "measurement_l1bs.nc:snr_ku_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "SNR estimation for Ku band in SAR mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "dB",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "uso_cor_sar_ku",
+            "target_path": "/measurements/sar_ku/uso_cor",
+            "source_path": "measurement_l1bs.nc:uso_cor_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "USO frequency drift correction in Ku SAR mode",
+                "scale_factor": 0.0001,
+                "add_offset": 0.0,
+                "units": "m",
+                "_FillValue": 2147483647,
+                "comment": "value the closest in time from the burst time tag",
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "beam_ang_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/beam_ang_stack",
+            "source_path": "measurement_l1bs.nc:beam_ang_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "look angles in stack for Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "iq_scale_factor_sar_ku",
+            "target_path": "/measurements/sar_ku/iq_scale_factor",
+            "source_path": "measurement_l1bs.nc:iq_scale_factor_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "dynamic scale factor for I&Q waveforms i_echoes and q_echoes in Ku SAR mode",
+                "_FillValue": 1.8446744073709552e+19
+            }
+        },
+        {
+            "short_name": "kurt_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/kurt_stack",
+            "source_path": "measurement_l1bs.nc:kurt_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "kurtosis of stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "count",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "max_loc_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/max_loc_stack",
+            "source_path": "measurement_l1bs.nc:max_loc_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "location of the maximum power of stack in Ku SAR mode",
+                "comment": "doppler beam angle corresponding to the maximum power in the stack",
+                "scale_factor": 1e-06,
+                "add_offset": 1.57,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "max_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/max_stack",
+            "source_path": "measurement_l1bs.nc:max_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "maximum power of stack in Ku SAR mode",
+                "units": "FFT power unit",
+                "_FillValue": 4294967295
+            }
+        },
+        {
+            "short_name": "power_var_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/power_var_stack",
+            "source_path": "measurement_l1bs.nc:power_var_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "power variations within the stack in Ku SAR mode",
+                "comment": "the useful values of the table are the first nb_stack_l1bs_echo_sar_ku values, one value of power for each individual echoe",
+                "units": "FFT power unit",
+                "_FillValue": 4294967295
+            }
+        },
+        {
+            "short_name": "skew_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/skew_stack",
+            "source_path": "measurement_l1bs.nc:skew_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "skewness of stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "count",
+                "_FillValue": 2147483647,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "start_beam_ang_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/start_beam_ang_stack",
+            "source_path": "measurement_l1bs.nc:start_beam_ang_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "start doppler beam angle in stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "start_look_angle_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/start_look_angle_stack",
+            "source_path": "measurement_l1bs.nc:start_look_angle_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "start look angle in stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "stdev_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/stdev_stack",
+            "source_path": "measurement_l1bs.nc:stdev_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "standard deviation of stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 4294967295,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "stop_beam_ang_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/stop_beam_ang_stack",
+            "source_path": "measurement_l1bs.nc:stop_beam_ang_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "stop doppler beam angle in stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "stop_look_angle_stack_sar_ku",
+            "target_path": "/measurements/sar_ku/stop_look_angle_stack",
+            "source_path": "measurement_l1bs.nc:stop_look_angle_stack_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "stop look angle in stack in Ku SAR mode",
+                "scale_factor": 1e-06,
+                "add_offset": 0.0,
+                "units": "rad",
+                "_FillValue": 32767,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "beam_form_sar_ku",
+            "target_path": "/quality/beam_form_sar_ku",
+            "source_path": "measurement_l1bs.nc:beam_form_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "flag on beam formation quality in stack in Ku SAR mode",
+                "scale_factor": 0.01,
+                "add_offset": 0.0,
+                "units": "percent",
+                "_FillValue": 65535,
+                "dtype": "<f8"
+            },
+            "parameters": {}
+        },
+        {
+            "short_name": "records_count_plrm",
+            "target_path": "/coordinates/time/plrm/records_count",
+            "source_path": "measurement_l1bs.nc:records_count_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "L1b record counter within the product in PLRM",
+                "units": "count ",
+                "comment": "from 1 to number of L1b records",
+                "_FillValue": 2147483647
+            }
+        },
+        {
+            "short_name": "records_count_sar_ku",
+            "target_path": "/coordinates/time/sar_ku/records_count",
+            "source_path": "measurement_l1bs.nc:records_count_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "L1b record counter within the product in Ku SAR mode",
+                "units": "count ",
+                "comment": "from 1 to number of L1b records",
+                "_FillValue": 2147483647
+            }
+        },
+        {
+            "short_name": "max_multi_stack_ind",
+            "target_path": "/conditions/instrument/sar_ku/max_multi_stack_ind",
+            "source_path": "measurement_l1bs.nc:max_multi_stack_ind",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "maximum number of multilook beams per stack",
+                "units": "count",
+                "comment": "set to be compliant with the CF-1.6 convention"
+            }
+        },
+        {
+            "short_name": "surf_type_plrm",
+            "target_path": "/conditions/surface/plrm/surf_type",
+            "source_path": "measurement_l1bs.nc:surf_type_l1bs_echo_plrm",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "altimeter surface type for PLRM",
+                "flag_values": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "comment": "value the closest in time to the reference measurement ",
+                "flag_meanings": "open_ocean_or_semi-enclosed_seas enclosed_seas_or_lakes continental_ice land",
+                "_FillValue": 127
+            }
+        },
+        {
+            "short_name": "surf_type_sar_ku",
+            "target_path": "/conditions/surface/sar_ku/surf_type",
+            "source_path": "measurement_l1bs.nc:surf_type_l1bs_echo_sar_ku",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "altimeter surface type for Ku SAR mode ",
+                "flag_values": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "comment": "value the closest in time to the reference measurement ",
+                "flag_meanings": "open_ocean_or_semi-enclosed_seas enclosed_seas_or_lakes continental_ice land",
+                "_FillValue": 127
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "xfdumanifest.xml",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "conditions_metadata",
+            "target_path": "conditions",
+            "source_path": "xfdumanifest.xml:conditions",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "processing_history",
+            "target_path": "conditions",
+            "source_path": "xfdumanifest.xml:conditions",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "processing_history",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        }
+    ],
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:startTime",
+            "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:stopTime",
+            "created": "to_ISO8601(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:creationTime)",
+            "platform": "concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:number)",
+            "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:familyName/@abbreviation",
+            "eopf:product": {
+                "name": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+                "type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productType",
+                "timeliness": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:timeliness",
+                "collection": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:baselineCollection",
+                "processing_baseline": "is_optional(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:processingBaseline)",
+                "instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:mode",
+                "absolute_orbit_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber)",
+                "relative_orbit_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativeOrbitNumber)",
+                "ground_track_direction": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber[@type='start']/@groundTrackDirection"
+            }
+        },
+        "links": [
+            {
+                "rel": "Text(self)",
+                "href": "Text(./.zattrs.json)",
+                "type": "Text(application/json)"
+            }
+        ],
+        "assets": []
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "data_information": {
+                "ellipsoid_semi_major_axis": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:ellipsoidSemiMajorAxis",
+                "ellipsoid_flattening_coef": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:ellipsoidFlattening",
+                "lrm_mode_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:lrmModePercentage",
+                "sar_mode_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:sarModePercentage",
+                "land_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:landPercentage",
+                "closed_sea_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:closedSeaPercentage",
+                "continental_ice_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:continentalIcePercentage",
+                "open_ocean_percentage": "metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:openOceanPercentage",
+                "land_water_mask_flag": "is_optional(metadataSection/metadataObject[@ID='sralProductInformation']/metadataWrap/xmlData/sralProductInformation/sral:landWaterMaskFlag)"
+            },
+            "orbit_reference": {
+                "absolute_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:passNumber)",
+                "relative_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativePassNumber)",
+                "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:cycleNumber)",
+                "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:phaseIdentifier)",
+                "type": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber/@type",
+                "ephemeris": {
+                    "start": {
+                        "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='TAI']",
+                        "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UTC']",
+                        "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UT1']",
+                        "position": {
+                            "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:x)",
+                            "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:y)",
+                            "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:z)"
+                        },
+                        "velocity": {
+                            "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:x)",
+                            "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:y)",
+                            "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:z)"
+                        }
+                    },
+                    "stop": {
+                        "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='TAI']",
+                        "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UTC']",
+                        "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UT1']",
+                        "position": {
+                            "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:x)",
+                            "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:y)",
+                            "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:z)"
+                        },
+                        "velocity": {
+                            "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:x)",
+                            "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:y)",
+                            "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:z)"
+                        }
+                    }
+                }
+            },
+            "product_unit": {
+                "type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:type",
+                "duration": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:duration)"
+            },
+            "meteo": {
+                "source": "Text(ECMWF)"
+            },
+            "platform": {
+                "nssdc_identifier": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:nssdcIdentifier"
+            }
+        }
+    },
+    "processing_history": {
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+        "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing)"
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S3_SR_1_SRA_BS_manifest.xml"
+    },
+    "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel3": "http://www.esa.int/safe/sentinel/sentinel-3/1.0",
+        "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/User_Product_Level-1C.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "sral": "http://www.esa.int/safe/sentinel/sentinel-3/sral/1.0"
+    }
+}

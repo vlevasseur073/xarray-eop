@@ -1,0 +1,529 @@
+{
+    "recognition": {
+        "filename_pattern": "S3._OL_0_.*SEN3|S3OLCL0_.*",
+        "product_type": "S3OLCL0_",
+        "version": "TODO"
+    },
+    "data_mapping": [
+        {
+            "short_name": "pid",
+            "source_path": "ISPData.dat:(5,12,7)",
+            "target_path": "/conditions/pid",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "application process identification",
+                    "short_name": "pid",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "pcat",
+            "source_path": "ISPData.dat:(12,16,4)",
+            "target_path": "/conditions/pcat",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet category",
+                    "short_name": "pcat",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_sequence_count",
+            "source_path": "ISPData.dat:(18,32,14)",
+            "target_path": "/conditions/packet_sequence_count",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet sequence count",
+                    "short_name": "packet_sequence_count",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "packet_data_length",
+            "source_path": "ISPData.dat:(32,48,16)",
+            "target_path": "/conditions/packet_data_length",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packet data length",
+                    "short_name": "packet_data_length",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "service_packet_type",
+            "source_path": "ISPData.dat:(56,64,8)",
+            "target_path": "/conditions/service_packet_type",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "service packet type",
+                    "short_name": "service_packet_type",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "service_packet_subtype",
+            "source_path": "ISPData.dat:(64,72,8)",
+            "target_path": "/conditions/service_packet_subtype",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "service packet subtype",
+                    "short_name": "service_packet_subtype",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "destination_id",
+            "source_path": "ISPData.dat:(72,80,8)",
+            "target_path": "/conditions/destination_id",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint8"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "destination identification",
+                    "short_name": "destination_id",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "coarse_time",
+            "source_path": "ISPData.dat:(80,112,32)",
+            "target_path": "/coordinates/coarse_time",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "coarse time",
+                    "short_name": "coarse_time",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "fine_time",
+            "source_path": "ISPData.dat:(112,136,24)",
+            "target_path": "/coordinates/fine_time",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/uint32"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "fine time",
+                    "short_name": "fine_time",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "time_status",
+            "source_path": "ISPData.dat:(136,144,1)",
+            "target_path": "/conditions/time_status",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "time status",
+                    "short_name": "time_status",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "user_data",
+            "source_path": "ISPData.dat:(144,None,-1)",
+            "target_path": "/measurements/user_data",
+            "item_format": "MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet",
+                    "short_name": "user_data",
+                    "dimensions": "packet_number max_data_length"
+                }
+            },
+            "dimensions": [
+                "packet_number",
+                "max_data_length"
+            ]
+        },
+        {
+            "short_name": "fep",
+            "source_path": "ISPAnnotation.dat:(0,144)",
+            "target_path": "/conditions/fep",
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/bytearray",
+                "packet_length_bytes": 30
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "front end processor annotation data",
+                    "short_name": "fep",
+                    "dimensions": "packet_number fep_dim"
+                },
+                "dimensions": [
+                    "packet_number",
+                    "fep_dem"
+                ]
+            }
+        },
+        {
+            "short_name": "gps_time_days",
+            "source_path": "ISPAnnotation.dat:(144,176)",
+            "target_path": "/coordinates/gps_time_days",
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 30
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "gps time days",
+                    "short_name": "gps_time_days",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "gps_time_seconds",
+            "source_path": "ISPAnnotation.dat:(176,208)",
+            "target_path": "/coordinates/gps_time_seconds",
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 30
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "gps time seconds",
+                    "short_name": "gps_time_seconds",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "gps_time_microseconds",
+            "source_path": "ISPAnnotation.dat:(208,240)",
+            "target_path": "/coordinates/gps_time_microseconds",
+            "item_format": "FixedMemMap",
+            "accessor_config": {
+                "target_type": "annotation_mapping/types/uint32",
+                "packet_length_bytes": 30
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "gps time microseconds",
+                    "short_name": "gps_time_microseconds",
+                    "dimensions": "packet_number"
+                },
+                "dimensions": [
+                    "packet_number"
+                ]
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "xfdumanifest.xml",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "",
+            "item_format": "MemMapToAttrAccessor",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 0,
+                "packet_length_start_position_bytes": 4,
+                "packet_length_stop_position_bytes": 6,
+                "mapping": "other_metadata",
+                "types_mapping": "annotation_mapping/types"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "xfdumanifest.xml",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        }
+    ],
+    "l0_mapping": {
+        "types": {
+            "bool": "bool",
+            "scalar_bool": "s_bool",
+            "uint8": "uint8",
+            "scalar_uint8": "s_uint8",
+            "uint16": "uint16",
+            "uint32": "uint32",
+            "var_bytearray": "var_bytearray",
+            "bytearray": "bytearray"
+        }
+    },
+    "annotation_mapping": {
+        "types": {
+            "bool": "bool",
+            "scalar_bool": "s_bool",
+            "uint8": "uint8",
+            "scalar_uint8": "s_uint8",
+            "uint16": "uint16",
+            "uint32": "uint32",
+            "var_bytearray": "var_bytearray",
+            "bytearray": "bytearray"
+        }
+    },
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+            "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+        "collection": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:baselineCollection",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:startTime",
+            "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:stopTime",
+            "created": "to_ISO8601(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:creationTime)",
+            "mission": "Text(Sentinel-3)",
+            "platform": "concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:number)",
+            "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:familyName/@abbreviation",
+            "providers": [
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L0 Product']/sentinel-safe:processing/sentinel-safe:facility/@name",
+                    "roles": [
+                        "Text(processor)"
+                    ]
+                },
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L0 Product']/sentinel-safe:processing/sentinel-safe:facility/@organisation",
+                    "roles": [
+                        "Text(producer)"
+                    ]
+                }
+            ],
+            "eopf:type": "Text(S3OLCL0_)",
+            "eopf:timeline": "Text(NRT)",
+            "eopf:instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:mode",
+            "processing:software": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:facility/sentinel-safe:software/@name",
+            "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber)",
+            "sat:relative_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativeOrbitNumber)",
+            "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber[@type='start']/@groundTrackDirection",
+            "sat:platform_international_designator": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:nssdcIdentifier"
+        },
+        "links": [
+            {
+                "rel": "Text(self)",
+                "href": "Text(./.zattrs.json)",
+                "type": "Text(application/json)"
+            }
+        ],
+        "assets": []
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing)",
+            "packet_count": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/s3-level0:packetCount",
+            "dump_granule_number": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:granuleNumber)",
+            "dump_granule_position": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:granulePosition",
+            "dump_start": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:dumpStart",
+            "receiving_ground_station": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:receivingGroundStation",
+            "receiving_start_time": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:receivingStartTime",
+            "receiving_stop_time": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:dumpInformation/sentinel3:receivingStopTime",
+            "absolute_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:passNumber)",
+            "relative_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativePassNumber)",
+            "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:cycleNumber)",
+            "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:phaseIdentifier)",
+            "ephemeris": {
+                "start": {
+                    "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='TAI']",
+                    "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UTC']",
+                    "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UT1']",
+                    "position": {
+                        "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:x)",
+                        "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:y)",
+                        "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:z)"
+                    },
+                    "velocity": {
+                        "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:x)",
+                        "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:y)",
+                        "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:z)"
+                    }
+                },
+                "stop": {
+                    "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='TAI']",
+                    "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UTC']",
+                    "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UT1']",
+                    "position": {
+                        "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:x)",
+                        "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:y)",
+                        "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:z)"
+                    },
+                    "velocity": {
+                        "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:x)",
+                        "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:y)",
+                        "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:z)"
+                    }
+                }
+            },
+            "product_unit": {
+                "type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:type",
+                "duration": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:duration)"
+            },
+            "packet_version": "ISPData.dat:(0,3):scalar_uint8",
+            "packet_type": "ISPData.dat:(3,4):scalar_uint8",
+            "header_flag": "to_bool(ISPData.dat:(4,5):scalar_bool)",
+            "sequence_flag": "ISPData.dat:(16,18):scalar_uint8",
+            "packet_category": "ISPData.dat:(49,56):scalar_uint8"
+        }
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S3_L0_manifest.xml"
+    },
+    "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel3": "http://www.esa.int/safe/sentinel/sentinel-3/1.0",
+        "s3-level0": "http://www.esa.int/safe/sentinel/sentinel-3/level-0/1.0",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    }
+}

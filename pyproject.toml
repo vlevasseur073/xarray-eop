@@ -1,0 +1,14 @@
+[project]
+name = "xarray-safe"
+authors = [{"name" = "Vincent Levasseur"}]
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "json",
+    "xarray >= 2023.10.1",
+]
+license = {file = "LICENSE"}
+
+[project.entry-points."xarray.backends"]
+sentinel-3 = "xarray_safe.xarray_backends:Sentinel3Backend"

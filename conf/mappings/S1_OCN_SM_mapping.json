@@ -1,0 +1,1557 @@
+{
+    "recognition": {
+        "filename_pattern": "S1._S[123456]_OCN__2S.*SAFE",
+        "product_type": "S1SSMOCN",
+        "version": "003.40"
+    },
+    "data_mapping": [
+        {
+            "short_name": "osw_auxiliary_wind_direction",
+            "target_path": "/conditions/osw/auxiliary_wind_direction",
+            "source_path": "measurement/.*nc:oswEcmwfWindDirection",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "ECMWF wind direction (meteorological convention = clockwise direction from where the wind comes respect to north)",
+                "short_name": "osw_auxiliary_wind_direction",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_auxiliary_wind_speed",
+            "target_path": "/conditions/osw/auxiliary_wind_speed",
+            "source_path": "measurement/.*nc:oswEcmwfWindSpeed",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m/s",
+                "long_name": "ECMWF wind speed",
+                "short_name": "osw_auxiliary_wind_speed",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_azimuth_size",
+            "target_path": "/conditions/osw/azimuth_size",
+            "source_path": "measurement/.*nc:oswAziSize",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "azimuth size of the estimation area",
+                "short_name": "osw_azimuth_size",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_depth",
+            "target_path": "/conditions/osw/depth",
+            "source_path": "measurement/.*nc:oswDepth",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "water depth from auxiliary data set",
+                "short_name": "osw_depth",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_ground_range_size",
+            "target_path": "/conditions/osw/ground_range_size",
+            "source_path": "measurement/.*nc:oswGroundRngSize",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "ground range size of the estimation area",
+                "short_name": "osw_ground_range_size",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_heading",
+            "target_path": "/conditions/osw/heading",
+            "source_path": "measurement/.*nc:oswHeading",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "local northing angle (azimuth from north)",
+                "short_name": "osw_heading",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_incidence_angle",
+            "target_path": "/conditions/osw/incidence_angle",
+            "source_path": "measurement/.*nc:oswIncidenceAngle",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "radar incidence angle to the center of the wave cell",
+                "short_name": "osw_incidence_angle",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_land_coverage",
+            "target_path": "/conditions/osw/land_coverage",
+            "source_path": "measurement/.*nc:oswLandCoverage",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "%",
+                "long_name": "percentage of land coverage within the cell",
+                "valid_min": 0.0,
+                "valid_max": 100.0,
+                "short_name": "osw_land_coverage",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "osw_land_flag",
+            "target_path": "/conditions/osw/land_flag",
+            "source_path": "measurement/.*nc:oswLandFlag",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "land flag : true if presence of more than 10% of land coverage, false otherwise",
+                "flag_values": "[false true]",
+                "flag_meanings": "no_land land",
+                "short_name": "osw_land_flag",
+                "dtype": "<b1",
+                "dimensions": "osw_az_dim osw_ra_dim",
+                "coordinates": "osw_latitude osw_longitude"
+            }
+        },
+        {
+            "short_name": "owi_auxiliary_wind_direction",
+            "target_path": "/conditions/owi/auxiliary_wind_direction",
+            "source_path": "measurement/.*nc:owiEcmwfWindDirection",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "ECMWF wind direction (meteorological convention = clockwise direction from where the wind comes respect to north)",
+                "standard_name": "wind_direction",
+                "short_name": "owi_auxiliary_wind_direction",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim",
+                "coordinates": "owi_latitude owi_longitude"
+            }
+        },
+        {
+            "short_name": "owi_auxiliary_wind_speed",
+            "target_path": "/conditions/owi/auxiliary_wind_speed",
+            "source_path": "measurement/.*nc:owiEcmwfWindSpeed",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m/s",
+                "long_name": "ECMWF wind speed",
+                "standard_name": "wind_speed",
+                "short_name": "owi_auxiliary_wind_speed",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim",
+                "coordinates": "owi_latitude owi_longitude"
+            }
+        },
+        {
+            "short_name": "owi_elevation_angle",
+            "target_path": "/conditions/owi/elevation_angle",
+            "source_path": "measurement/.*nc:owiElevationAngle",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "radar elevation angle at wind cell center, this parameter is provided at each azimuth line in the wind cell grid",
+                "short_name": "owi_elevation_angle",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim",
+                "coordinates": "owi_latitude owi_longitude"
+            }
+        },
+        {
+            "short_name": "owi_heading",
+            "target_path": "/conditions/owi/heading",
+            "source_path": "measurement/.*nc:owiHeading",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "local northing angle (azimuth from north)",
+                "short_name": "owi_heading",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim",
+                "coordinates": "owi_latitude owi_longitude"
+            }
+        },
+        {
+            "short_name": "owi_mask",
+            "target_path": "/conditions/owi/mask",
+            "source_path": "measurement/.*nc:owiMask",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "mask of classification: set to 1 if land coverage > 10%, set to 2 if inside 10km-dilated ice edge area",
+                "valid_min": 0,
+                "valid_max": 8,
+                "flag_values": "[0, 1, 2, 4]",
+                "flag_meanings": "valid_data land ice no_data",
+                "short_name": "owi_mask",
+                "dtype": "<u1",
+                "dimensions": "owi_az_dim owi_ra_dim",
+                "coordinates": "owi_latitude owi_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_azimuth_size",
+            "target_path": "/conditions/rvl/azimuth_size",
+            "source_path": "measurement/.*nc:rvlAziSize",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "azimuth resolution, the pixel size is half this value",
+                "short_name": "rvl_azimuth_size",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_dc_geo",
+            "target_path": "/conditions/rvl/dc_geo",
+            "source_path": "measurement/.*nc:rvlDcGeo",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "Hz",
+                "long_name": "doppler centroid frequency from geometry, this parameter is interpolated from the L1 data",
+                "short_name": "rvl_dc_geo",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_dc_miss",
+            "target_path": "/conditions/rvl/dc_miss",
+            "source_path": "measurement/.*nc:rvlDcMiss",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "Hz",
+                "long_name": "doppler centroid frequency from antenna mispointing at cell centre",
+                "short_name": "rvl_dc_miss",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_ground_range_size",
+            "target_path": "/conditions/rvl/ground_range_size",
+            "source_path": "measurement/.*nc:rvlGroundRngSize",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "ground range resolution, the pixel size is half this value",
+                "short_name": "rvl_ground_range_size",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_heading",
+            "target_path": "/conditions/rvl/heading",
+            "source_path": "measurement/.*nc:rvlHeading",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "local northing angle (azimuth from north)",
+                "short_name": "rvl_heading",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_land_coverage",
+            "target_path": "/conditions/rvl/land_coverage",
+            "source_path": "measurement/.*nc:rvlLandCoverage",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "long_name": "percentage of land coverage within the cell",
+                "valid_min": 0.0,
+                "valid_max": 100.0,
+                "short_name": "rvl_land_coverage",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_land_flag",
+            "target_path": "/conditions/rvl/land_flag",
+            "source_path": "measurement/.*nc:rvlLandFlag",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "land flag : true if presence of more than 10% of land coverage, false otherwise",
+                "flag_values": "[false true]",
+                "flag_meanings": "no_land land",
+                "short_name": "rvl_azimuth_size",
+                "dtype": "<b1",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_pitch",
+            "target_path": "/conditions/rvl/pitch",
+            "source_path": "measurement/.*nc:rvlPitch",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "platform pitch angle at zero doppler time",
+                "short_name": "rvl_pitch",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_incidence_angle",
+            "target_path": "/conditions/rvl/incidence_angle",
+            "source_path": "measurement/.*nc:rvlIncidenceAngle",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "radar incidence angle at cell center, this parameter is provided at each azimuth line in the radial velocity cell grid",
+                "short_name": "rvl_incidence_angle",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_roll",
+            "target_path": "/conditions/rvl/roll",
+            "source_path": "measurement/.*nc:rvlRoll",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "platform roll angle at zero doppler time",
+                "short_name": "rvl_roll",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_slant_range_time",
+            "target_path": "/conditions/rvl/slant_range_time",
+            "source_path": "measurement/.*nc:rvlSlantRangeTime",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "s",
+                "long_name": "two-way slant range time to cell center",
+                "short_name": "rvl_slant_range_time",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_stokes_drift_x",
+            "target_path": "/conditions/rvl/stokes_drift_x",
+            "source_path": "measurement/.*nc:rvlUssX",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/s",
+                "long_name": "easterly component of surface stokes drift from wavewatchIII model",
+                "short_name": "rvl_stokes_drift_x",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_stokes_drift_y",
+            "target_path": "/conditions/rvl/stokes_drift_y",
+            "source_path": "measurement/.*nc:rvlUssY",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/s",
+                "long_name": "northerly component of surface stokes drift from wavewatchIII model",
+                "short_name": "rvl_stokes_drift_y",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_sweep_angle",
+            "target_path": "/conditions/rvl/sweep_angle",
+            "source_path": "measurement/.*nc:rvlSweepAngle",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "sweep angle of the TOPS mode",
+                "short_name": "rvl_sweep_angle",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_yaw",
+            "target_path": "/conditions/rvl/yaw",
+            "source_path": "measurement/.*nc:rvlYaw",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "platform yaw angle at zero doppler time",
+                "short_name": "rvl_yaw",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "rvl_zerodoppler_time",
+            "target_path": "/conditions/rvl/zerodoppler_time",
+            "source_path": "measurement/.*nc:rvlZeroDopplerTime",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": "-1",
+                "long_name": "zero doppler time at cell center",
+                "short_name": "rvl_zerodoppler_time",
+                "dtype": "<M8[us]",
+                "dimensions": "rvl_az_dim rvl_ra_dim",
+                "coordinates": "rvl_latitude rvl_longitude"
+            }
+        },
+        {
+            "short_name": "osw_jx",
+            "target_path": "/coordinates/osw_jx",
+            "source_path": "measurement/.*nc:oswJx",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/m",
+                "long_name": "normalised jacobian array in range direction describing the non-linear resampling transformation for the cartesian cross-spectra, half the array is provided corresponding to positive frequencies, it is normalized by osw_ground_range_size and has to be divided by this later in order to get the actual jacobian vector for the given imagette",
+                "short_name": "osw_jx",
+                "dtype": "<f4",
+                "dimensions": "osw_kx_bins"
+            }
+        },
+        {
+            "short_name": "osw_jy",
+            "target_path": "/coordinates/osw_jy",
+            "source_path": "measurement/.*nc:oswJy",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/m",
+                "long_name": "normalised jacobian array in azimuth direction describing the non-linear resampling transformation for the cartesian cross-spectra, half the array is provided corresponding to positive frequencies, it is normalized by osw_azimuth_size and has to be divided by this later in order to get the actual jacobian vector for the given imagette",
+                "short_name": "osw_jy",
+                "dtype": "<f4",
+                "dimensions": "osw_ky_bins"
+            }
+        },
+        {
+            "short_name": "osw_k",
+            "target_path": "/coordinates/osw_k",
+            "source_path": "measurement/.*nc:oswK",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "rad/m",
+                "long_name": "array of logarithmically spaced wavenumbers for the ocean swell wave spectra",
+                "short_name": "osw_k",
+                "dtype": "<f4",
+                "dimensions": "osw_wavenumber_bins"
+            }
+        },
+        {
+            "short_name": "osw_kx",
+            "target_path": "/coordinates/osw_kx",
+            "source_path": "measurement/.*nc:oswKx",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/m",
+                "long_name": "normalised positive frequencies array of the cartesian cross-spectra in range direction, it is normalized by osw_ground_range_size and has to be divided by this later in order to get the actual spatial frequency vector for the given imagette",
+                "short_name": "osw_kx",
+                "dtype": "<f4",
+                "dimensions": "osw_kx_bins"
+            }
+        },
+        {
+            "short_name": "osw_ky",
+            "target_path": "/coordinates/osw_ky",
+            "source_path": "measurement/.*nc:oswKy",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/m",
+                "long_name": "normalised positive frequencies array of the cartesian cross-spectra in azimuth direction, it is normalized by osw_azimuth_size and has to be divided by this later in order to get the actual spatial frequency vector for the given imagette",
+                "short_name": "osw_ky",
+                "dtype": "<f4",
+                "dimensions": "osw_ky_bins"
+            }
+        },
+        {
+            "short_name": "osw_phi",
+            "target_path": "/coordinates/osw_phi",
+            "source_path": "measurement/.*nc:oswPhi",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "array of equidistantly spaced directional angles for the ocean swell wave spectra",
+                "short_name": "osw_phi",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins"
+            }
+        },
+        {
+            "short_name": "osw_latitude",
+            "target_path": "/coordinates/osw_latitude",
+            "source_path": "measurement/.*nc:oswLat",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees_north",
+                "long_name": "geodetic latitude at wave cell center",
+                "standard_name": "latitude",
+                "short_name": "osw_latitude",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_longitude",
+            "target_path": "/coordinates/osw_longitude",
+            "source_path": "measurement/.*nc:oswLon",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees_east",
+                "long_name": "geodetic longitude at wave cell center",
+                "standard_name": "longitude",
+                "short_name": "osw_longitude",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_incidence_angle",
+            "target_path": "/coordinates/owi_incidence_angle",
+            "source_path": "measurement/.*nc:owiIncidenceAngle",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "radar incidence angle at wind cell center, this parameter is provided at each azimuth line in the wind cell grid",
+                "short_name": "owi_incidence_angle",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_latitude",
+            "target_path": "/coordinates/owi_latitude",
+            "source_path": "measurement/.*nc:owiLat",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees_north",
+                "long_name": "geodetic latitude at wind cell center",
+                "standard_name": "latitude",
+                "short_name": "owi_latitude",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_longitude",
+            "target_path": "/coordinates/owi_longitude",
+            "source_path": "measurement/.*nc:owiLon",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees_east",
+                "long_name": "geodetic longitude at wind cell center",
+                "standard_name": "longitude",
+                "short_name": "owi_longitude",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_polarisation_id",
+            "target_path": "/coordinates/owi_polarisation_id",
+            "source_path": "measurement/.*nc:owiPolarisationName",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "identifier of the receiving polarization in order to discriminate co and cross polarisations",
+                "flag_values": "[0 1 2 3 4 5]",
+                "flag_meanings": "VV VH HH HV DH DV",
+                "short_name": "owi_polarisation_id",
+                "dtype": "<u1",
+                "dimensions": "owi_polarisation_dim"
+            }
+        },
+        {
+            "short_name": "rvl_latitude",
+            "target_path": "/coordinates/rvl_latitude",
+            "source_path": "measurement/.*nc:rvlLat",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees_north",
+                "long_name": "geodetic latitude at cell center",
+                "standard_name": "latitude",
+                "short_name": "rvl_latitude",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_longitude",
+            "target_path": "/coordinates/rvl_longitude",
+            "source_path": "measurement/.*nc:rvlLon",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees_east",
+                "long_name": "geodetic longitude at cell center",
+                "standard_name": "longitude",
+                "short_name": "rvl_longitude",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_ambiguity_factor",
+            "target_path": "/measurements/osw/ambiguity_factor",
+            "source_path": "measurement/.*nc:oswAmbiFac",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "1",
+                "long_name": "ambiguity factor measuring the ability to estimate wave propagation direction from the sign of the imaginary part of the cross spectra",
+                "short_name": "osw_ambiguity_factor",
+                "dtype": "<f4",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_azimuth_cutoff",
+            "target_path": "/measurements/osw/azimuth_cutoff",
+            "source_path": "measurement/.*nc:oswAzCutoff",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "azimuth cut-off wavelength, the shortest wavelength in the azimuth direction that is resolved in the swell wave spectra; the cut-off wavelength in the azimuth direction is computed from the imagette cross-spectra; the spectral resolution is derived from this parameter",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_azimuth_cutoff",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "cartesian_spectra_imaginary",
+            "target_path": "/measurements/osw/cartesian_spectra_imaginary",
+            "source_path": "measurement/.*nc:oswCartSpecIm",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": {
+                    "eopf": [
+                        "oswAzSize",
+                        "oswRaSize",
+                        "oswLag",
+                        "oswKyBinSize",
+                        "oswKxBinSize"
+                    ],
+                    "safe": [
+                        "oswAzSize",
+                        "oswRaSize",
+                        "oswKyBinSize",
+                        "oswKxBinSize",
+                        "oswLag"
+                    ]
+                },
+                "transpose": {
+                    "eopf": [
+                        0,
+                        1,
+                        4,
+                        2,
+                        3
+                    ],
+                    "safe": [
+                        0,
+                        1,
+                        3,
+                        4,
+                        2
+                    ]
+                }
+            },
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^4",
+                "long_name": "imaginary part of half cartesian cross-spectra between the different sub-views: zero time lag; 1rst time lag; 2nd time lag",
+                "short_name": "cartesian_spectra_imaginary",
+                "dtype": "<f4",
+                "dimensions": "osw_lag osw_ky_bins osw_kx_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "cartesian_spectra_real",
+            "target_path": "/measurements/osw/cartesian_spectra_real",
+            "source_path": "measurement/.*nc:oswCartSpecRe",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": {
+                    "eopf": [
+                        "oswAzSize",
+                        "oswRaSize",
+                        "oswLag",
+                        "oswKyBinSize",
+                        "oswKxBinSize"
+                    ],
+                    "safe": [
+                        "oswAzSize",
+                        "oswRaSize",
+                        "oswKyBinSize",
+                        "oswKxBinSize",
+                        "oswLag"
+                    ]
+                },
+                "transpose": {
+                    "eopf": [
+                        0,
+                        1,
+                        4,
+                        2,
+                        3
+                    ],
+                    "safe": [
+                        0,
+                        1,
+                        3,
+                        4,
+                        2
+                    ]
+                }
+            },
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^4",
+                "long_name": "real part of half cartesian cross-spectra between the different sub-views: zero time lag; 1rst time lag; 2nd time lag",
+                "short_name": "cartesian_spectra_real",
+                "dtype": "<f4",
+                "dimensions": "osw_lag osw_ky_bins osw_kx_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_hs",
+            "target_path": "/measurements/osw/hs",
+            "source_path": "measurement/.*nc:oswHs",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "significant wave height computed from the most energetic wave partitions of the swell wave spectra",
+                "short_name": "osw_hs",
+                "dtype": "<f4",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_hs_nv",
+            "target_path": "/measurements/osw/hs_normalised_variance",
+            "source_path": "measurement/.*nc:oswHsNV",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "1",
+                "long_name": "value of the ocean swell spectrum normalized variance computed for the most energetic wave partitions of the swell wave spectra, weighted by the spectral energy",
+                "short_name": "osw_hs_nv",
+                "dtype": "<f4",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_intensity",
+            "target_path": "/measurements/osw/intensity",
+            "source_path": "measurement/.*nc:oswInten",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "input SLC image intensity estimated within each wave cell",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_intensity",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_kurtosis",
+            "target_path": "/measurements/osw/kurtosis",
+            "source_path": "measurement/.*nc:oswKurt",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "kurtosis of the input SLC image estimated within each wave cell",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_kurtosis",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_look_separation_time",
+            "target_path": "/measurements/osw/look_separation_time",
+            "source_path": "measurement/.*nc:oswLookSeparationTime",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "s",
+                "long_name": "separation time between inner and outer looks",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_look_separation_time",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_non_linear_width",
+            "target_path": "/measurements/osw/non_linear_width",
+            "source_path": "measurement/.*nc:oswNlWidth",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "non-linear inverse spectral width describing non-linear spectral cut-off computed from the cross-spectra",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_non_linear_width",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_slc_nv",
+            "target_path": "/measurements/osw/slc_normalised_variance",
+            "source_path": "measurement/.*nc:oswNv",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "variance of the input SLC image normalized by the square of the mean intensity estimated within each wave cell.",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_slc_nv",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_nrcs",
+            "target_path": "/measurements/osw/nrcs",
+            "source_path": "measurement/.*nc:oswNrcs",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "dB",
+                "long_name": "normalized radar cross section of the imagette, normalized to the area on ground",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_nrcs",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_noise_corrected_nrcs",
+            "target_path": "/measurements/osw/noise_corrected_nrcs",
+            "source_path": "measurement/.*nc:oswNrcsNeszCorr",
+            "is_optional": true,
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "dB",
+                "long_name": "denoised normalized radar cross section",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_noise_corrected_nrcs",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_polar_spectrum",
+            "target_path": "/measurements/osw/polar_spectrum",
+            "source_path": "measurement/.*nc:oswPolSpec",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m^4",
+                "long_name": "two-dimensional representation of the ocean swell waveheight spectrum given on a log-polar grid of wavenumber [rad/m] and angle [degrees]",
+                "short_name": "osw_polar_spectrum",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins osw_wavenumber_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_polar_spectrum_nv",
+            "target_path": "/measurements/osw/polar_spectrum_normalised_variance",
+            "source_path": "measurement/.*nc:oswPolSpecNV",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "two-dimensional representation of the normalized variance of the ocean swell waveheight spectrum given on a log-polar grid of wavenumber [rad/m] and angle [degrees], it is estimated as the wave spectra variance among the periodograms within the overall image and normalized by the mean wave spectrum",
+                "short_name": "osw_polar_spectrum_nv",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins osw_wavenumber_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_range_cutoff",
+            "target_path": "/measurements/osw/range_cutoff",
+            "source_path": "measurement/.*nc:oswRaCutoff",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "range cut-off wavelength, the shortest wavelength in range direction that can be resolved in the swell wave spectra; it is computed from the slant range resolution (or range bandwidth) and the local incidence angle",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_range_cutoff",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_skewness",
+            "target_path": "/measurements/osw/skewness",
+            "source_path": "measurement/.*nc:oswSkew",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "skewness of the input SLC image estimated within each wave cell",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_skewness",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_spec_res",
+            "target_path": "/measurements/osw/spectrum_resolution",
+            "source_path": "measurement/.*nc:oswSpecRes",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "azimuth cut-off wavelength as function of wave direction; the spectral resolution gives the shortest ocean wavelength that can be detected; this depends on the sea state and the wave direction relative to azimuth; the vector length is equal to the number of directional bins; in range, the theoretical limit is given by the range bandwidth, and does not depend on the sea state",
+                "short_name": "osw_spec_res",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_total_hs",
+            "target_path": "/measurements/osw/total_hs",
+            "source_path": "measurement/.*nc:oswTotalHs",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "total significant wave height",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_total_hs",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wave_age",
+            "target_path": "/measurements/osw/wave_age",
+            "source_path": "measurement/.*nc:oswWaveAge",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "1",
+                "long_name": "parameter that describes the state of development of the wind sea component of the wave spectra",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_wave_age",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wave_direction",
+            "target_path": "/measurements/osw/wave_direction",
+            "source_path": "measurement/.*nc:oswDirmet",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "dominant wave direction of the swell wave spectrum for each wave partition (with respect to North)",
+                "short_name": "osw_wave_direction",
+                "dtype": "<f4",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wave_length",
+            "target_path": "/measurements/osw/wave_length",
+            "source_path": "measurement/.*nc:oswWl",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "dominant wave length of the swell wave spectrum for each wave partition",
+                "short_name": "osw_wave_length",
+                "dtype": "<f4",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wind_direction",
+            "target_path": "/measurements/osw/wind_direction",
+            "source_path": "measurement/.*nc:oswWindDirection",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "degrees",
+                "long_name": "wind direction (meteorological convention = clockwise direction from where the wind comes respect to North)",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_wind_direction",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wind_sea_hs",
+            "target_path": "/measurements/osw/wind_sea_hs",
+            "source_path": "measurement/.*nc:oswWindSeaHs",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m",
+                "long_name": "significant wave height for the wind sea part of the total wave height spectrum, computed from the wind speed and the inverse wave age",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_wind_sea_hs",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_wind_speed",
+            "target_path": "/measurements/osw/wind_speed",
+            "source_path": "measurement/.*nc:oswWindSpeed",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "m/s",
+                "long_name": "wind speed used for wave spectral retrieval (this value is derived from the NRCS)",
+                "coordinates": "osw_latitude osw_longitude",
+                "short_name": "osw_wind_sea_hs",
+                "dtype": "<f4",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_nesz",
+            "target_path": "/measurements/owi/nesz",
+            "source_path": "measurement/.*nc:owiNesz",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^2/m^2",
+                "long_name": "noise equivalent sigma-naught, equivalent to measured radar cross section normalized to the area on ground; this is a copy of the level-1 calibrated noise LUT interpolated on the wind cell grid",
+                "short_name": "owi_nesz",
+                "dtype": "<f4",
+                "dimensions": "owi_polarisation_dim owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_nrcs",
+            "target_path": "/measurements/owi/nrcs",
+            "source_path": "measurement/.*nc:owiNrcs",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^2/m^2",
+                "long_name": "normalized radar cross section of the imagette, measured radar cross section normalized to the area on ground",
+                "short_name": "owi_nrcs",
+                "dtype": "<f4",
+                "dimensions": "owi_polarisation_dim owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_noise_corrected_nrcs",
+            "target_path": "/measurements/owi/noise_corrected_nrcs",
+            "source_path": "measurement/.*nc:owiNrcsNeszCorr",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^2/m^2",
+                "long_name": "noise corrected NRCS averaged within and provided for each wind cell",
+                "short_name": "owi_noise_corrected_nrcs",
+                "dtype": "<f4",
+                "dimensions": "owi_polarisation_dim owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_gmf_wind_nrcs",
+            "target_path": "/measurements/owi/gmf_wind_nrcs",
+            "source_path": "measurement/.*nc:owiNrcsCmod",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^2/m^2",
+                "long_name": "predicted normalized radar cross section from CMOD and ECMWF 10m wind for each wind cell",
+                "coordinates": "owi_latitude owi_longitude",
+                "short_name": "owi_gmf_wind_nrcs",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_wind_direction",
+            "target_path": "/measurements/owi/wind_direction",
+            "source_path": "measurement/.*nc:owiWindDirection",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "SAR wind direction (meteorological convention = clockwise direction from where the wind comes respect to north)",
+                "standard_name": "wind_direction",
+                "coordinates": "owi_latitude owi_longitude",
+                "short_name": "owi_wind_direction",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_wind_speed",
+            "target_path": "/measurements/owi/wind_speed",
+            "source_path": "measurement/.*nc:owiWindSpeed",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/s",
+                "long_name": "SAR wind speed",
+                "standard_name": "wind_speed",
+                "coordinates": "owi_latitude owi_longitude",
+                "short_name": "owi_wind_speed",
+                "dtype": "<f4",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_dc_obs",
+            "target_path": "/measurements/rvl/dc_obs",
+            "source_path": "measurement/.*nc:rvlDcObs",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "Hz",
+                "long_name": "estimated doppler centroid frequency",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "short_name": "rvl_dc_obs",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_nrcs",
+            "target_path": "/measurements/rvl/nrcs",
+            "source_path": "measurement/.*nc:rvlNrcs",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m^2/m^2",
+                "long_name": "normalized radar cross section, side-band corrected signal intensity; the intensity is estimated within and provided for each radial velocity cell",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "short_name": "rvl_nrcs",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "radial_velocity",
+            "target_path": "/measurements/rvl/radial_velocity",
+            "source_path": "measurement/.*nc:rvlRadVel",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/s",
+                "long_name": "radial velocity",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "short_name": "radial_velocity",
+                "dtype": "<f4",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_dir_ambiguity",
+            "target_path": "/quality/osw/dir_ambiguity",
+            "source_path": "measurement/.*nc:oswIconf",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": false,
+                "long_name": "confidence flag for wave direction resolution, false if the wave direction is resolved and true if there is a 180-degree ambiguity in the wave direction",
+                "flag_values": "[false true]",
+                "flag_meanings": "resolved ambiguous",
+                "short_name": "osw_dir_ambiguity",
+                "dtype": "<b1",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_partition_quality_flag",
+            "target_path": "/quality/osw/partition_quality_flag",
+            "source_path": "measurement/.*nc:oswQualityFlagPartition",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "quality flag for the integral parameters of each partition",
+                "valid_min": 0,
+                "valid_max": 4,
+                "flag_values": "[0 1 2 3 4]",
+                "flag_meanings": "excellent good fair low bad",
+                "short_name": "osw_partition_quality_flag",
+                "dtype": "<u1",
+                "dimensions": "osw_partitions osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_quality_cross_spectra_imaginary",
+            "target_path": "/quality/osw/quality_cross_spectra_imaginary_part",
+            "source_path": "measurement/.*nc:oswQualityCrossSpectraIm",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "(m/rad)^2",
+                "long_name": "imaginary part of quality image cross spectra given on a log-polar grid of wavenumber [rad/m] and angle [degrees]",
+                "short_name": "osw_quality_cross_spectra_imaginary",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins osw_wavenumber_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_quality_cross_spectra_real",
+            "target_path": "/quality/osw/quality_cross_spectra_real_part",
+            "source_path": "measurement/.*nc:oswQualityCrossSpectraRe",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "(m/rad)^2",
+                "long_name": "real part of quality image cross spectra given on a log-polar grid of wavenumber [rad/m] and angle [degrees]",
+                "short_name": "osw_quality_cross_spectra_real",
+                "dtype": "<f4",
+                "dimensions": "osw_angular_bins osw_wavenumber_bins osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_quality_flag",
+            "target_path": "/quality/osw/quality_flag",
+            "source_path": "measurement/.*nc:oswQualityFlag",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "final quality flag of the directional swell spectrum",
+                "valid_min": 0,
+                "valid_max": 3,
+                "flag_values": "[0 1 2 3]",
+                "flag_meanings": "good fair low bad",
+                "short_name": "osw_quality_flag",
+                "dtype": "<u1",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_snr",
+            "target_path": "/quality/osw/snr",
+            "source_path": "measurement/.*nc:oswSnr",
+            "item_format": "netcdf",
+            "attributes": {
+                "units": "dB",
+                "long_name": "signal-to-noise ratio of cross spectra",
+                "short_name": "osw_snr",
+                "dtype": "<f4",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "osw_total_hs_std",
+            "target_path": "/quality/osw/total_hs_std",
+            "source_path": "measurement/.*nc:oswTotalHsStdev",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m",
+                "long_name": "standard deviation of total significant wave height",
+                "short_name": "osw_total_hs_std",
+                "dtype": "<f4",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "osw_az_dim osw_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_calibration_constant",
+            "target_path": "/quality/owi/calibration_constant",
+            "source_path": "measurement/.*nc:owiCalConstObsi",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "long_name": "geophysical calibration constant estimated from ECMWF and CMOD GMF",
+                "short_name": "owi_calibration_constant",
+                "dtype": "<f4",
+                "dimensions": "owi_incidences"
+            }
+        },
+        {
+            "short_name": "owi_calibration_incidence",
+            "target_path": "/quality/owi/calibration_incidence",
+            "source_path": "measurement/.*nc:owiCalConstInci",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "degrees",
+                "long_name": "incidence angle vector corresponding to the geophysical calibration constant vector",
+                "short_name": "owi_calibration_incidence",
+                "dtype": "<f4",
+                "dimensions": "owi_incidences"
+            }
+        },
+        {
+            "short_name": "owi_inversion_quality",
+            "target_path": "/quality/owi/inversion_quality",
+            "source_path": "measurement/.*nc:owiInversionQuality",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "inversion quality flag for each wind cell",
+                "valid_min": 0,
+                "valid_max": 2,
+                "flag_values": "[0 1 2]",
+                "flag_meanings": "good fair bad",
+                "short_name": "owi_inversion_quality",
+                "dtype": "<u1",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_bright_percentage",
+            "target_path": "/quality/owi/bright_percentage",
+            "source_path": "measurement/.*nc:owiPBright",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "%",
+                "long_name": "percentage of bright target pixels detected in each wind cell and removed for the computation of the mean NRCS",
+                "valid_min": 0.0,
+                "valid_max": 100.0,
+                "short_name": "owi_bright_percentage",
+                "dtype": "<f4",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "owi_wind_quality",
+            "target_path": "/quality/owi/wind_quality",
+            "source_path": "measurement/.*nc:owiWindQuality",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -128,
+                "long_name": "wind quality flag for each wind cell; this flag takes into account the consistency between wind invertion, NRCS and Doppler",
+                "valid_min": 0,
+                "valid_max": 3,
+                "flag_values": "[0 1 2 3]",
+                "flag_meanings": "good fair low bad",
+                "short_name": "owi_wind_quality",
+                "dtype": "<u1",
+                "coordinates": "osw_latitude osw_longitude",
+                "dimensions": "owi_az_dim owi_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_dc_obs_confidence",
+            "target_path": "/quality/rvl/dc_obs_confidence",
+            "source_path": "measurement/.*nc:rvlConfDcObs",
+            "item_format": "netcdf",
+            "attributes": {
+                "long_name": "confidence flag on estimated doppler centroid frequency; true is good confidence and false is bad confidence",
+                "flag_values": "[false true]",
+                "flag_meanings": "bad good",
+                "short_name": "rvl_dc_obs_confidence",
+                "dtype": "<b1",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_dc_obs_std",
+            "target_path": "/quality/rvl/dc_obs_std",
+            "source_path": "measurement/.*nc:rvlDcObsStd",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "Hz",
+                "long_name": "estimated doppler centroid frequency standard deviation",
+                "short_name": "rvl_dc_obs_std",
+                "dtype": "<f4",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "radial_velocity_std",
+            "target_path": "/quality/rvl/radial_velocity_std",
+            "source_path": "measurement/.*nc:rvlRadVelStd",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "m/s",
+                "long_name": "standard deviation of radial velocities",
+                "short_name": "radial_velocity_std",
+                "dtype": "<f4",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "rvl_snr",
+            "target_path": "/quality/rvl/snr",
+            "source_path": "measurement/.*nc:rvlSnr",
+            "item_format": "netcdf",
+            "attributes": {
+                "fill_value": -999.0,
+                "units": "1",
+                "long_name": "signal-to-noise ratio estimated from doppler spectra",
+                "short_name": "rvl_snr",
+                "dtype": "<f4",
+                "coordinates": "rvl_latitude rvl_longitude",
+                "dimensions": "rvl_az_dim rvl_ra_dim"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        }
+    ],
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+            "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:productClassDescription",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/safe:frameSet/safe:frame/safe:footPrint/gml:coordinates)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/safe:frameSet/safe:frame/safe:footPrint/gml:coordinates)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/safe:acquisitionPeriod/safe:startTime",
+            "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/safe:acquisitionPeriod/safe:stopTime",
+            "created": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing/@stop",
+            "platform": "to_str(concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:number))",
+            "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:instrument/safe:familyName/@abbreviation",
+            "mission": "Text(Sentinel-1)",
+            "sat:anx_datetime": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:extension/s1:orbitProperties/s1:ascendingNodeTime",
+            "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:orbitNumber[@type='start'])",
+            "sat:relative_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:relativeOrbitNumber[@type='start'])",
+            "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:extension/s1:orbitProperties/s1:pass",
+            "sat:platform_international_designator": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:nssdcIdentifier",
+            "eopf:instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:instrument/safe:extension/s1sarl2:instrumentMode/s1sarl2:mode",
+            "eopf:instrument_swath": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:instrument/safe:extension/s1sarl2:instrumentMode/s1sarl2:swath",
+            "eopf:data_take_id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:missionDataTakeID",
+            "eopf:type": "Text(S1SSMOCN)",
+            "eopf:timeline": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:productTimelinessCategory",
+            "processing:facility": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing/safe:facility",
+            "processing:sofware": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing/safe:facility/safe:software",
+            "processing:level": "Text(L2)",
+            "providers": [
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing/safe:facility/@name",
+                    "roles": [
+                        "Text(processor)"
+                    ]
+                },
+                {
+                    "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing/safe:facility/@organisation",
+                    "roles": [
+                        "Text(producer)"
+                    ]
+                }
+            ]
+        },
+        "links": [
+            {
+                "rel": "Text(self)",
+                "href": "Text(./.zattrs.json)",
+                "type": "Text(application/json)"
+            }
+        ],
+        "assets": []
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:cycleNumber)",
+            "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:phaseIdentifier)",
+            "start_datetime_anx": "to_float(metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/safe:acquisitionPeriod/safe:extension/s1:timeANX/s1:startTimeANX)",
+            "end_datetime_anx": "to_float(metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/safe:acquisitionPeriod/safe:extension/s1:timeANX/s1:stopTimeANX)",
+            "class": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:productClass",
+            "composition": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:productComposition",
+            "instrument_configuration_id": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:instrumentConfigurationID)",
+            "transmitter_polarisation": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:transmitterReceiverPolarisation[1]",
+            "receiver_polarisation": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:transmitterReceiverPolarisation[1]",
+            "leap_second_occurence": "is_optional(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:extension/s1:leapSecondInformation/s1:utcTimeOfOccurence)",
+            "leap_second_sign": "is_optional(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/safe:platform/safe:extension/s1:leapSecondInformation/s1:sign)",
+            "slice_product_flag": "to_bool_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:sliceProductFlag)",
+            "slice_number": "is_optional(to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:sliceNumber))",
+            "total_number_of_slices": "is_optional(to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/s1sarl2:standAloneProductInformation/s1sarl2:totalSlices))",
+            "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/safe:processing)"
+        }
+    },
+    "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel-1.0",
+        "s1": "http://www.esa.int/safe/sentinel-1.0/sentinel-1",
+        "s1sar": "http://www.esa.int/safe/sentinel-1.0/sentinel-1/sar",
+        "s1sarl1": "http://www.esa.int/safe/sentinel-1.0/sentinel-1/sar/level-1",
+        "s1sarl2": "http://www.esa.int/safe/sentinel-1.0/sentinel-1/sar/level-2",
+        "gx": "http://www.google.com/kml/ext/2.2",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S1_OCN_SM_manifest.safe"
+    }
+}
