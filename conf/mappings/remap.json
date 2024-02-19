@@ -1,4 +1,16 @@
 {
+    "S3_OL_1_mapping.json": {
+        "/coordinates/image_grid/latitude" : "/measurements/image/latitude",
+        "/coordinates/image_grid/longitude" : "/measurements/image/longitude",
+        "/conditions/geometry/altitude" : "/conditions/image_grid/altitude",
+        "/coordinates/orphans/orphan_latitude" : "/measurements/orphans/latitude",
+        "/coordinates/orphans/orphan_longitude" : "/measurements/orphans/longitude",
+        "/conditions/orphans/orphan_altitude" : "/conditions/orphans/altitude",
+        "/coordinates/image_grid/row_time" : "/measurements/image/row_time",
+        "/coordinates/tiepoint_subgrid/tp_latitude" : "/conditions/geometry/latitude",
+        "/coordinates/tiepoint_subgrid/tp_longitude" : "/conditions/geometry/longitude",
+        "/conditions/meteo/reference_pressure_level" : "/conditions/meteo/tie_pressure_levels"
+    },
     "S3_SL_1_RBT_mapping.json": {
         "/coordinates/x_an" : "/measurements/anadir/x",
         "/coordinates/x_bn" : "/measurements/bnadir/x",

@@ -58,6 +58,7 @@ def open_sentinel3_dataset(
         if f.name.startswith("xfdumanifest"):
             continue
         safe_ds[f.name]  = xr.open_dataset(f,chunks=map_safe["chunk_sizes"])
+        # print(safe_ds[f.name])
 
     for grp in data_map:
         if grp != ncfile_or_zarrgroup:
@@ -72,9 +73,11 @@ def open_sentinel3_dataset(
                     # Case where name of var is a dimension => automatically read as a coordinate
                     if array.name in array.dims:
                         continue
-                    elif var[1] in ds.dims:
+                    elif var[1] in ds.dims or var[1] in ds.coords.keys():
                         ds = ds.assign_coords({var[1]:array})
                         # print(f"{var[1]} is a coordinate")
+                    elif var[1] in ["latitude","longitude","time_stamp","x","y"]:
+                        ds = ds.assign_coords({var[1]:array})
                     else:
                         try:
                             ds=xr.merge([ds,array.rename(var[1])])
@@ -84,7 +87,10 @@ def open_sentinel3_dataset(
                             print(var[0],var[1])
                             raise(e)
                 else:
-                    ds = array.to_dataset(name=var[1])
+                    if var[1] in array.coords.keys():
+                        ds = array.coords.to_dataset()
+                    else:
+                        ds = array.to_dataset(name=var[1])
                     init=False
 
 

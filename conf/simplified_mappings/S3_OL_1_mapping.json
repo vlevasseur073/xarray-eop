@@ -4,112 +4,6 @@
         "columns": 1024
     },
     "data_mapping": {
-        "/conditions/image_grid": {
-            "geo_coordinates.nc": [
-                [
-                    "latitude",
-                    "latitude"
-                ],
-                [
-                    "longitude",
-                    "longitude"
-                ],
-                [
-                    "altitude",
-                    "altitude"
-                ]
-            ],
-            "instrument_data.nc": [
-                [
-                    "frame_offset",
-                    "frame_offset"
-                ],
-                [
-                    "detector_index",
-                    "detector_index"
-                ]
-            ],
-            "time_coordinates.nc": [
-                [
-                    "time_stamp",
-                    "row_time"
-                ]
-            ]
-        },
-        "/conditions/geometry": {
-            "tie_geo_coordinates.nc": [
-                [
-                    "latitude",
-                    "latitude"
-                ],
-                [
-                    "longitude",
-                    "longitude"
-                ]
-            ],
-            "tie_geometries.nc": [
-                [
-                    "OAA",
-                    "oaa"
-                ],
-                [
-                    "OZA",
-                    "oza"
-                ],
-                [
-                    "SAA",
-                    "saa"
-                ],
-                [
-                    "SZA",
-                    "sza"
-                ]
-            ]
-        },
-        "/conditions/tiepoint_subgrid": {
-            "tie_geo_coordinates.nc": [
-                [
-                    "latitude",
-                    "tp_latitude"
-                ],
-                [
-                    "longitude",
-                    "tp_longitude"
-                ]
-            ]
-        },
-        "/conditions/orphans": {
-            "removed_pixels.nc": [
-                [
-                    "latitude",
-                    "orphan_latitude"
-                ],
-                [
-                    "longitude",
-                    "orphan_longitude"
-                ],
-                [
-                    "altitude",
-                    "orphan_altitude"
-                ],
-                [
-                    "frame_offset",
-                    "orphan_frame_offset"
-                ],
-                [
-                    "detector_index",
-                    "orphan_detector_index"
-                ],
-                [
-                    "SZA",
-                    "orphan_sza"
-                ],
-                [
-                    "nb_removed_pixels",
-                    "nb_removed_pixels"
-                ]
-            ]
-        },
         "/measurements/image": {
             "geo_coordinates.nc": [
                 [
@@ -119,10 +13,6 @@
                 [
                     "longitude",
                     "longitude"
-                ],
-                [
-                    "altitude",
-                    "altitude"
                 ]
             ],
             "time_coordinates.nc": [
@@ -258,8 +148,72 @@
                 ]
             ]
         },
+        "/conditions/image_grid": {
+            "geo_coordinates.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "altitude",
+                    "altitude"
+                ]
+            ],
+            "instrument_data.nc": [
+                [
+                    "frame_offset",
+                    "frame_offset"
+                ],
+                [
+                    "detector_index",
+                    "detector_index"
+                ]
+            ]
+        },
+        "/conditions/geometry": {
+            "tie_geo_coordinates.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ]
+            ],
+            "tie_geometries.nc": [
+                [
+                    "OAA",
+                    "oaa"
+                ],
+                [
+                    "OZA",
+                    "oza"
+                ],
+                [
+                    "SAA",
+                    "saa"
+                ],
+                [
+                    "SZA",
+                    "sza"
+                ]
+            ]
+        },
         "/measurements/orphans": {
             "removed_pixels.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
                 [
                     "Oa01_radiance",
                     "orphan_01_radiance"
@@ -346,6 +300,30 @@
                 ]
             ]
         },
+        "/conditions/orphans": {
+            "removed_pixels.nc": [
+                [
+                    "altitude",
+                    "altitude"
+                ],
+                [
+                    "frame_offset",
+                    "orphan_frame_offset"
+                ],
+                [
+                    "detector_index",
+                    "orphan_detector_index"
+                ],
+                [
+                    "SZA",
+                    "orphan_sza"
+                ],
+                [
+                    "nb_removed_pixels",
+                    "nb_removed_pixels"
+                ]
+            ]
+        },
         "/quality/image": {
             "geo_coordinates.nc": [
                 [
@@ -355,16 +333,6 @@
                 [
                     "longitude",
                     "longitude"
-                ],
-                [
-                    "altitude",
-                    "altitude"
-                ]
-            ],
-            "time_coordinates.nc": [
-                [
-                    "time_stamp",
-                    "row_time"
                 ]
             ],
             "qualityFlags.nc": [
@@ -593,16 +561,6 @@
             ]
         },
         "/conditions/meteo": {
-            "tie_geo_coordinates.nc": [
-                [
-                    "latitude",
-                    "latitude"
-                ],
-                [
-                    "longitude",
-                    "longitude"
-                ]
-            ],
             "tie_meteo.nc": [
                 [
                     "atmospheric_temperature_profile",

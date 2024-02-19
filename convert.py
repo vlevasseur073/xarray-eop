@@ -80,12 +80,15 @@ if __name__ == "__main__":
         ]
     }
 
-    PRODUCTS_TO_PROCESSED = ["SL_1_RBT"]
-    for p in PRODUCTS_TO_PROCESSED: 
+    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","SL_1_RBT"]
+    for p in PRODUCTS_TO_PROCESSED:
+        use_custom_simpl_mapping = False
+        if p == "OL_1_EFR":
+            use_custom_simpl_mapping = True
+        print(f" ===== Convert {p} product, using custom simpl. mapping={use_custom_simpl_mapping}") 
         product_converter(
             SAMPLE_PATH / PRODUCTS[p][0],
             OUTPUT_PATH / PRODUCTS[p][1],
             product_type = p,
-            # simplified_mapping=True
-            simplified_mapping=False
+            simplified_mapping=use_custom_simpl_mapping
         )

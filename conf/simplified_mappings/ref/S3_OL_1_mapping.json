@@ -4,7 +4,7 @@
         "columns": 1024
     },
     "data_mapping": {
-        "/conditions/image_grid": {
+        "/measurements/image": {
             "geo_coordinates.nc": [
                 [
                     "latitude",
@@ -15,94 +15,12 @@
                     "longitude"
                 ]
             ],
-            "instrument_data.nc": [
-                [
-                    "frame_offset",
-                    "frame_offset"
-                ],
-                [
-                    "detector_index",
-                    "detector_index"
-                ]
-            ],
             "time_coordinates.nc": [
                 [
                     "time_stamp",
                     "row_time"
                 ]
-            ]
-        },
-        "/conditions/geometry": {
-            "geo_coordinates.nc": [
-                [
-                    "altitude",
-                    "altitude"
-                ]
             ],
-            "tie_geometries.nc": [
-                [
-                    "OAA",
-                    "oaa"
-                ],
-                [
-                    "OZA",
-                    "oza"
-                ],
-                [
-                    "SAA",
-                    "saa"
-                ],
-                [
-                    "SZA",
-                    "sza"
-                ]
-            ]
-        },
-        "/conditions/tiepoint_subgrid": {
-            "tie_geo_coordinates.nc": [
-                [
-                    "latitude",
-                    "tp_latitude"
-                ],
-                [
-                    "longitude",
-                    "tp_longitude"
-                ]
-            ]
-        },
-        "/conditions/orphans": {
-            "removed_pixels.nc": [
-                [
-                    "latitude",
-                    "orphan_latitude"
-                ],
-                [
-                    "longitude",
-                    "orphan_longitude"
-                ],
-                [
-                    "altitude",
-                    "orphan_altitude"
-                ],
-                [
-                    "frame_offset",
-                    "orphan_frame_offset"
-                ],
-                [
-                    "detector_index",
-                    "orphan_detector_index"
-                ],
-                [
-                    "SZA",
-                    "orphan_sza"
-                ],
-                [
-                    "nb_removed_pixels",
-                    "nb_removed_pixels"
-                ]
-            ]
-        },
-        "/measurements/image": {
             "Oa01_radiance.nc": [
                 [
                     "Oa01_radiance",
@@ -230,8 +148,64 @@
                 ]
             ]
         },
+        "/conditions/image_grid": {
+            "geo_coordinates.nc": [
+                [
+                    "altitude",
+                    "altitude"
+                ]
+            ],
+            "instrument_data.nc": [
+                [
+                    "frame_offset",
+                    "frame_offset"
+                ],
+                [
+                    "detector_index",
+                    "detector_index"
+                ]
+            ]
+        },
+        "/conditions/geometry": {
+            "tie_geo_coordinates.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ]
+            ],
+            "tie_geometries.nc": [
+                [
+                    "OAA",
+                    "oaa"
+                ],
+                [
+                    "OZA",
+                    "oza"
+                ],
+                [
+                    "SAA",
+                    "saa"
+                ],
+                [
+                    "SZA",
+                    "sza"
+                ]
+            ]
+        },
         "/measurements/orphans": {
             "removed_pixels.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
                 [
                     "Oa01_radiance",
                     "orphan_01_radiance"
@@ -315,6 +289,30 @@
                 [
                     "Oa21_radiance",
                     "orphan_21_radiance"
+                ]
+            ]
+        },
+        "/conditions/orphans": {
+            "removed_pixels.nc": [
+                [
+                    "altitude",
+                    "altitude"
+                ],
+                [
+                    "frame_offset",
+                    "orphan_frame_offset"
+                ],
+                [
+                    "detector_index",
+                    "orphan_detector_index"
+                ],
+                [
+                    "SZA",
+                    "orphan_sza"
+                ],
+                [
+                    "nb_removed_pixels",
+                    "nb_removed_pixels"
                 ]
             ]
         },
@@ -559,10 +557,6 @@
                     "humidity"
                 ],
                 [
-                    "reference_pressure_level",
-                    "reference_pressure_level"
-                ],
-                [
                     "sea_level_pressure",
                     "sea_level_pressure"
                 ],
@@ -573,6 +567,14 @@
                 [
                     "total_ozone",
                     "total_ozone"
+                ]
+            ]
+        },
+        "conditions/meteo": {
+            "tie_meteo.nc": [
+                [
+                    "reference_pressure_level",
+                    "tie_pressure_levels"
                 ]
             ]
         },
