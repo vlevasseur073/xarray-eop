@@ -1,15 +1,22 @@
 [project]
-name = "xarray-safe"
+name = "xarray-eop"
 authors = [{"name" = "Vincent Levasseur"}]
 dynamic = ["version"]
 readme = "README.md"
+description = "Xarray backends to read Sentinel products (SAFE and zarr formats)"
 requires-python = ">=3.11"
 dependencies = [
-    "json",
     "xarray >= 2023.10.1",
     "zarr",
 ]
 license = {file = "LICENSE"}
 
+[tool.flit.sdist]
+exclude = ["conf/"]
+
+[tool.setuptools.packages.find]
+exclude = ["conf/"]
+
 [project.entry-points."xarray.backends"]
-sentinel-3 = "xarray_safe.xarray_backends:Sentinel3Backend"
+sentinel-3 = "xarray_eop.xarray_backends:Sentinel3Backend"
+eop = "xarray_eop.xarray_backends:EOPBackend"

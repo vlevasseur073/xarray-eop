@@ -6,8 +6,8 @@ from numcodecs import Blosc
 from pathlib import Path
 from typing import Optional, Any
 
-from xarray_safe.utils import convert_mapping
-from xarray_safe.utils import MAPPINGS, SIMPL_MAPPING_PATH
+from xarray_eop.utils import convert_mapping
+from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
 
 default_alg = "zstd"
 default_comp = 3

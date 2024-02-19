@@ -5,8 +5,8 @@ import xarray as xr
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 
-from xarray_safe.utils import convert_mapping
-from xarray_safe.utils import MAPPINGS, SIMPL_MAPPING_PATH
+from xarray_eop.utils import convert_mapping
+from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
 
 def open_sentinel3_dataset(
     product_urlpath: Union[str,Path],
