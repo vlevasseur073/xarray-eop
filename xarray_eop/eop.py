@@ -1,3 +1,4 @@
+import datatree
 import json
 import warnings
 import xarray as xr
@@ -83,4 +84,12 @@ def create_dataset_from_zmetadata(
 
 
     return ds
+
+
+def open_eop_datatree(
+    product_urlpath: Union[str,Path],
+)->datatree.DataTree:
     
+    dt = datatree.open_datatree(product_urlpath,engine="zarr")
+
+    return dt

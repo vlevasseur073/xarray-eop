@@ -1,3 +1,4 @@
+import datatree
 import json
 import warnings
 import xarray as xr
@@ -157,3 +158,50 @@ def open_sentinel3_dataset(
         return safe_ds[(product_urlpath / ncfile_or_zarrgroup).name]
     else:
         return _merge_dataset(safe_ds,data_map,ncfile_or_zarrgroup)
+
+
+def open_safe_datatree(
+    name: str,
+    product_urlpath: Union[str,Path],
+    simplified_mapping: Optional[bool] = False
+)->datatree.DataTree:
+
+    if isinstance(product_urlpath,str):
+        url = Path(product_urlpath)
+    else:
+        url = product_urlpath
+    files = [f for f in url.iterdir() if f.is_file()]
+
+    product_type = url.name[4:12]
+    if simplified_mapping:
+        with open ( SIMPL_MAPPING_PATH / MAPPINGS[product_type]) as f:
+            map_safe = json.load(f)
+    else:
+        map_safe = convert_mapping(MAPPINGS[product_type])
+    data_map = map_safe["data_mapping"]
+    chunk_sizes = map_safe["chunk_sizes"]
+
+    # open dataset for each selecte files
+    safe_ds = _create_dataset_from_ncfiles(files,chunk_sizes)
+    
+    
+    # dt_struct = {n:datatree.DataTree(name=n) for n in EOP_TREE_STRUC}
+    # dt = datatree.DataTree(name=name,children=dt_struct)
+    # for grp,ds in safe_ds.items():
+    #     dt[grp] = ds
+    
+    eop_ds = {}
+    for grp_path in data_map:
+        eop_ds[grp_path] = _merge_dataset(safe_ds,data_map,grp_path)
+
+    dt = datatree.DataTree.from_dict(eop_ds)
+    
+    
+    # for grp_path,grp_files in data_map.items():
+    #     ds =  xr.open_dataset(chunks=map_safe["chunk_sizes"])
+    #     for files in grp_files:
+
+    return dt
+    # return safe_ds
+
+    

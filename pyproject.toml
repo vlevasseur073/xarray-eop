@@ -8,8 +8,10 @@ requires-python = ">=3.11"
 dependencies = [
     "dask",
     "fsspec",
+    "matplotlib",
     "netcdf4",
     "xarray >= 2023.10.1",
+    "xarray-datatree >= 0.0.14",
     "zarr",
 ]
 license = {file = "LICENSE"}
