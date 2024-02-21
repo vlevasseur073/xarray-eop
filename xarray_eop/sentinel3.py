@@ -2,11 +2,105 @@ import json
 import warnings
 import xarray as xr
 
+from collections import Counter
+from itertools import count
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Dict, Optional, Tuple, Union, List
 
 from xarray_eop.utils import convert_mapping
 from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
+
+EOP_TREE_STRUC=[
+    "measurements",
+    "conditions",
+    "quality",
+    ]
+
+
+from collections import Counter
+from itertools import count
+
+def _modify_duplicate_elements(input_list):
+    c = Counter(input_list)
+
+    iters = {k: count(1) for k, v in c.items() if v > 1}
+    output_list = [x+str(next(iters[x])) if x in iters else x for x in input_list]
+    return output_list
+
+def _create_dataset_from_ncfiles(
+    input_list: List[Path],
+    chunk_sizes: Dict[str,int]
+    ) -> dict[str,xr.Dataset]:
+
+    safe_ds = {}
+    for f in input_list:
+        if f.name.startswith("xfdumanifest"):
+            continue
+        # In xarray >2024, warning is added when opening a dataset in case of duplicate dimensions
+        # ValueError is raised when trying to chunk in such a case
+        try:
+            safe_ds[f.name]  = xr.open_dataset(f,chunks=chunk_sizes)
+        except ValueError as e:
+            safe_ds[f.name]  = xr.open_dataset(f)
+            fixed = False
+            for v in safe_ds[f.name]:
+                array = safe_ds[f.name][v]
+                if len(set(array.dims)) < len(array.dims):
+                    new_dims = _modify_duplicate_elements(array.dims)
+                    new_array = xr.DataArray(array.data,coords=array.coords,dims=new_dims)
+                    safe_ds[f.name][v] = new_array
+                    safe_ds[f.name] = safe_ds[f.name].chunk(chunk_sizes)
+                    fixed=True
+            if not fixed:
+                print(e)
+                raise ValueError
+
+    return safe_ds
+
+def _merge_dataset(
+        safe_ds:dict[str,xr.Dataset],
+        data_map:dict[str,Any],
+        group:str
+) -> xr.Dataset:
+    if group not in data_map:
+        print(f"{group} not found in data mapping")
+        raise KeyError
+
+    init=True
+    for file in data_map[group]:
+        for var in data_map[group][file]:
+            array = safe_ds[file][var[0]]
+            # print(array)
+            # print(array.name,array.dims)
+            if not init:
+                # Case where name of var is a dimension => automatically read as a coordinate
+                if array.name in array.dims:
+                    continue
+                elif var[1] in ds.dims or var[1] in ds.coords.keys():
+                    ds = ds.assign_coords({var[1]:array})
+                    # print(f"{var[1]} is a coordinate")
+                elif var[1] in ["latitude","longitude","time_stamp","x","y"]:
+                    ds = ds.assign_coords({var[1]:array})
+                else:
+                    try:
+                        ds=xr.merge([ds,array.rename(var[1])])
+                    except ValueError as e:
+                        print(e)
+                        print(f"{file}:{group}")# - {data_map[group][file]}")
+                        print(var[0],var[1])
+                        raise(e)
+            else:
+                if var[1] in array.coords.keys():
+                    ds = array.coords.to_dataset()
+                elif  var[1] in ["latitude","longitude","time_stamp","x","y"]:
+                    ds = xr.Dataset()
+                    ds = ds.assign_coords({var[1]:array})
+                else:
+                    ds = array.to_dataset(name=var[1])
+                init=False
+
+    return ds
+
 
 def open_sentinel3_dataset(
     product_urlpath: Union[str,Path],
@@ -35,6 +129,9 @@ def open_sentinel3_dataset(
     else:
         dataset = "zarr"
 
+    chunk_sizes = {}
+    data_map = {}
+    
     # Create the mapping to organise the new dataset
     if dataset == "zarr":
         product_type = url.name[4:12]
@@ -45,111 +142,18 @@ def open_sentinel3_dataset(
             map_safe = convert_mapping(MAPPINGS[product_type])
         data_map = map_safe["data_mapping"]
 
-    # if dataset=="netcdf" open dataset from nc file and return
+        chunk_sizes = map_safe["chunk_sizes"] 
+    
+        selected_files = [ f for f in files if f.name in data_map[ncfile_or_zarrgroup].keys()]
+    
+    else:
+        selected_files = [ product_urlpath / ncfile_or_zarrgroup ]
+
+    # open dataset for each selecte files
+    safe_ds = _create_dataset_from_ncfiles(selected_files,chunk_sizes)
+
+    # merge the different dataset into a single one
     if dataset == "netcdf":
-        return xr.open_dataset(product_urlpath / ncfile_or_zarrgroup)
-            
-    # else browse the selected nc files, open dataset and merge into a single one
-    safe_ds = {}
-    
-    selected_files = [ f for f in files if f.name in data_map[ncfile_or_zarrgroup].keys()]
-    
-    for f in selected_files:
-        if f.name.startswith("xfdumanifest"):
-            continue
-        safe_ds[f.name]  = xr.open_dataset(f,chunks=map_safe["chunk_sizes"])
-        # print(safe_ds[f.name])
-
-    for grp in data_map:
-        if grp != ncfile_or_zarrgroup:
-            continue
-        init=True
-        for file in data_map[grp]:
-            for var in data_map[grp][file]:
-                array = safe_ds[file][var[0]]
-                # print(array)
-                # print(array.name,array.dims)
-                if not init:
-                    # Case where name of var is a dimension => automatically read as a coordinate
-                    if array.name in array.dims:
-                        continue
-                    elif var[1] in ds.dims or var[1] in ds.coords.keys():
-                        ds = ds.assign_coords({var[1]:array})
-                        # print(f"{var[1]} is a coordinate")
-                    elif var[1] in ["latitude","longitude","time_stamp","x","y"]:
-                        ds = ds.assign_coords({var[1]:array})
-                    else:
-                        try:
-                            ds=xr.merge([ds,array.rename(var[1])])
-                        except ValueError as e:
-                            print(e)
-                            print(f"{file}:{grp}")# - {data_map[grp][file]}")
-                            print(var[0],var[1])
-                            raise(e)
-                else:
-                    if var[1] in array.coords.keys():
-                        ds = array.coords.to_dataset()
-                    elif  var[1] in ["latitude","longitude","time_stamp","x","y"]:
-                        ds = xr.Dataset()
-                        ds = ds.assign_coords({var[1]:array})
-                    else:
-                        ds = array.to_dataset(name=var[1])
-                    init=False
-
-
-    return ds
-
-
-def create_dataset_from_zmetadata(
-    zmetadata:Union[str,Path]
-)->dict[str,xr.Dataset]:
-
-    zfile = zmetadata
-    if isinstance(zmetadata,str):
-        zfile = Path(zmetadata)
-    if not zfile.is_file():
-        print("Metadata file does not exist: ",str(zmetadata))
-        raise(Exception)
-    
-    with open(zfile) as f:
-        zdict = json.load(f)
-    
-    
-    list_of_variables = []
-    list_of_groups = []
-    list_of_leaf_groups = set()
-    dataset_info = {}
-    for k in zdict["metadata"].keys():
-        parts = k.split("/")
-        if parts[-1] == ".zgroup":
-            list_of_groups.append("/".join(parts[:-1]))
-        if parts[-1] == ".zarray":
-            list_of_variables.append("/".join(parts[:-1]))
-            glob_var = "/".join(parts[:-1])
-            var = parts[-2]
-            grp = "/".join(parts[:-2])
-            if grp not in dataset_info.keys():
-                dataset_info[grp] = {var : zdict["metadata"]["/".join([glob_var,".zattrs"])]}
-            else:
-                dataset_info[grp][var] = zdict["metadata"]["/".join([glob_var,".zattrs"])]
-            list_of_leaf_groups.add("/".join(parts[:-2]))
-
-    # print(list_of_groups)
-    # print(list_of_leaf_groups)
-    # print(len(list_of_groups),len(list_of_leaf_groups))
-
-    # print(dataset_info)
-
-    ds = {}
-    for grp in list_of_leaf_groups:
-        # print("group: ",grp)
-        array = []#list[xr.DataArray]
-        for var,attrs in dataset_info[grp].items():
-            # print(var,attrs)
-            array.append(xr.DataArray(None,attrs=attrs,name=var))
-            # print(array)
-        ds[grp] = xr.merge(array)
-
-
-    return ds
-    
+        return safe_ds[(product_urlpath / ncfile_or_zarrgroup).name]
+    else:
+        return _merge_dataset(safe_ds,data_map,ncfile_or_zarrgroup)
