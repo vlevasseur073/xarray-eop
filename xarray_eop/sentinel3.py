@@ -89,6 +89,9 @@ def open_sentinel3_dataset(
                 else:
                     if var[1] in array.coords.keys():
                         ds = array.coords.to_dataset()
+                    elif  var[1] in ["latitude","longitude","time_stamp","x","y"]:
+                        ds = xr.Dataset()
+                        ds = ds.assign_coords({var[1]:array})
                     else:
                         ds = array.to_dataset(name=var[1])
                     init=False
