@@ -16,6 +16,10 @@ MAPPINGS = {
 }
 
 def get_simplified_mapping():
+    """Generates a simplified mapping from EOPF mapping
+    The resulting file is store under conf/simplified_mappings/ref
+    """
+    
     for _,mapping in MAPPINGS.items():
         print("Convert ", mapping)
         ds = convert_mapping(mapping)

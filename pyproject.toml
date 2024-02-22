@@ -1,3 +1,11 @@
+[build-system]
+requires = [
+    "setuptools>=64.0.0",
+    "wheel",
+    "setuptools_scm[toml]>=7.0",
+    "check-manifest"
+]
+
 [project]
 name = "xarray-eop"
 authors = [{"name" = "Vincent Levasseur"}]
@@ -17,12 +25,13 @@ dependencies = [
 ]
 license = {file = "LICENSE"}
 
-[build-system]
-requires = [
-    "setuptools>=61.0.0",
-    "wheel",
-    "setuptools_scm[toml]>=7.0",
-    "check-manifest"
+[project.optional-dependencies]
+notebook = [
+    "jupyter"
+]
+doc = [
+    "pickleshare",
+    "sphinx"
 ]
 
 [tool.setuptools_scm]
