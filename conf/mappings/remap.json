@@ -2,11 +2,24 @@
     "S3_OL_1_mapping.json": {
         "/coordinates/image_grid/latitude" : "/measurements/image/latitude",
         "/coordinates/image_grid/longitude" : "/measurements/image/longitude",
+        "/coordinates/image_grid/row_time" : "/measurements/image/row_time",
+        "/coordinates/image_grid/frame_offset" : "/conditions/image_grid/frame_offset",
+        "/coordinates/image_grid/detector_index" : "/conditions/image_grid/detector_index",
         "/conditions/geometry/altitude" : "/conditions/image_grid/altitude",
         "/coordinates/orphans/orphan_latitude" : "/measurements/orphans/latitude",
         "/coordinates/orphans/orphan_longitude" : "/measurements/orphans/longitude",
         "/conditions/orphans/orphan_altitude" : "/conditions/orphans/altitude",
+        "/coordinates/tiepoint_subgrid/tp_latitude" : "/conditions/geometry/latitude",
+        "/coordinates/tiepoint_subgrid/tp_longitude" : "/conditions/geometry/longitude",
+        "/conditions/meteo/reference_pressure_level" : "/conditions/meteo/tie_pressure_levels"
+    },
+    "S3OLCERR_mapping.json": {
+        "/coordinates/image_grid/latitude" : "/measurements/image/latitude",
+        "/coordinates/image_grid/longitude" : "/measurements/image/longitude",
         "/coordinates/image_grid/row_time" : "/measurements/image/row_time",
+        "/coordinates/image_grid/frame_offset" : "/conditions/image_grid/frame_offset",
+        "/coordinates/image_grid/detector_index" : "/conditions/image_grid/detector_index",
+        "/conditions/geometry/altitude" : "/conditions/image_grid/altitude",
         "/coordinates/tiepoint_subgrid/tp_latitude" : "/conditions/geometry/latitude",
         "/coordinates/tiepoint_subgrid/tp_longitude" : "/conditions/geometry/longitude",
         "/conditions/meteo/reference_pressure_level" : "/conditions/meteo/tie_pressure_levels"

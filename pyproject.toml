@@ -10,6 +10,7 @@ dependencies = [
     "fsspec",
     "matplotlib",
     "netcdf4",
+    "scipy",
     "xarray >= 2023.10.1",
     "xarray-datatree >= 0.0.14",
     "zarr",

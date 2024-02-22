@@ -11,6 +11,7 @@ REMAPPING_FILE = MAPPING_PATH / "remap.json"
 
 MAPPINGS = {
     "OL_1_EFR": "S3_OL_1_mapping.json",
+    "OL_1_ERR": "S3OLCERR_mapping.json",
     "SL_1_RBT": "S3_SL_1_RBT_mapping.json"
 }
 

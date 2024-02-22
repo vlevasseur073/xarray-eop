@@ -149,12 +149,6 @@
             ]
         },
         "/conditions/image_grid": {
-            "geo_coordinates.nc": [
-                [
-                    "altitude",
-                    "altitude"
-                ]
-            ],
             "instrument_data.nc": [
                 [
                     "frame_offset",
@@ -163,6 +157,20 @@
                 [
                     "detector_index",
                     "detector_index"
+                ]
+            ],
+            "geo_coordinates.nc": [
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "altitude",
+                    "altitude"
                 ]
             ]
         },
@@ -196,8 +204,8 @@
                 ]
             ]
         },
-        "/measurements/orphans": {
-            "removed_pixels.nc": [
+        "/quality/image": {
+            "geo_coordinates.nc": [
                 [
                     "latitude",
                     "latitude"
@@ -205,118 +213,8 @@
                 [
                     "longitude",
                     "longitude"
-                ],
-                [
-                    "Oa01_radiance",
-                    "orphan_01_radiance"
-                ],
-                [
-                    "Oa02_radiance",
-                    "orphan_02_radiance"
-                ],
-                [
-                    "Oa03_radiance",
-                    "orphan_03_radiance"
-                ],
-                [
-                    "Oa04_radiance",
-                    "orphan_04_radiance"
-                ],
-                [
-                    "Oa05_radiance",
-                    "orphan_05_radiance"
-                ],
-                [
-                    "Oa06_radiance",
-                    "orphan_06_radiance"
-                ],
-                [
-                    "Oa07_radiance",
-                    "orphan_07_radiance"
-                ],
-                [
-                    "Oa08_radiance",
-                    "orphan_08_radiance"
-                ],
-                [
-                    "Oa09_radiance",
-                    "orphan_09_radiance"
-                ],
-                [
-                    "Oa10_radiance",
-                    "orphan_10_radiance"
-                ],
-                [
-                    "Oa11_radiance",
-                    "orphan_11_radiance"
-                ],
-                [
-                    "Oa12_radiance",
-                    "orphan_12_radiance"
-                ],
-                [
-                    "Oa13_radiance",
-                    "orphan_13_radiance"
-                ],
-                [
-                    "Oa14_radiance",
-                    "orphan_14_radiance"
-                ],
-                [
-                    "Oa15_radiance",
-                    "orphan_15_radiance"
-                ],
-                [
-                    "Oa16_radiance",
-                    "orphan_16_radiance"
-                ],
-                [
-                    "Oa17_radiance",
-                    "orphan_17_radiance"
-                ],
-                [
-                    "Oa18_radiance",
-                    "orphan_18_radiance"
-                ],
-                [
-                    "Oa19_radiance",
-                    "orphan_19_radiance"
-                ],
-                [
-                    "Oa20_radiance",
-                    "orphan_20_radiance"
-                ],
-                [
-                    "Oa21_radiance",
-                    "orphan_21_radiance"
                 ]
-            ]
-        },
-        "/conditions/orphans": {
-            "removed_pixels.nc": [
-                [
-                    "altitude",
-                    "altitude"
-                ],
-                [
-                    "frame_offset",
-                    "orphan_frame_offset"
-                ],
-                [
-                    "detector_index",
-                    "orphan_detector_index"
-                ],
-                [
-                    "SZA",
-                    "orphan_sza"
-                ],
-                [
-                    "nb_removed_pixels",
-                    "nb_removed_pixels"
-                ]
-            ]
-        },
-        "/quality/image": {
+            ],
             "qualityFlags.nc": [
                 [
                     "quality_flags",
@@ -447,98 +345,6 @@
                 [
                     "Oa21_radiance_unc",
                     "oa21_radiance_unc"
-                ]
-            ]
-        },
-        "/quality/orphans": {
-            "removed_pixels.nc": [
-                [
-                    "quality_flags",
-                    "orphan_quality_flags"
-                ],
-                [
-                    "Oa01_radiance_unc",
-                    "orphan_01_radiance_unc"
-                ],
-                [
-                    "Oa02_radiance_unc",
-                    "orphan_02_radiance_unc"
-                ],
-                [
-                    "Oa03_radiance_unc",
-                    "orphan_03_radiance_unc"
-                ],
-                [
-                    "Oa04_radiance_unc",
-                    "orphan_04_radiance_unc"
-                ],
-                [
-                    "Oa05_radiance_unc",
-                    "orphan_05_radiance_unc"
-                ],
-                [
-                    "Oa06_radiance_unc",
-                    "orphan_06_radiance_unc"
-                ],
-                [
-                    "Oa07_radiance_unc",
-                    "orphan_07_radiance_unc"
-                ],
-                [
-                    "Oa08_radiance_unc",
-                    "orphan_08_radiance_unc"
-                ],
-                [
-                    "Oa09_radiance_unc",
-                    "orphan_09_radiance_unc"
-                ],
-                [
-                    "Oa10_radiance_unc",
-                    "orphan_10_radiance_unc"
-                ],
-                [
-                    "Oa11_radiance_unc",
-                    "orphan_11_radiance_unc"
-                ],
-                [
-                    "Oa12_radiance_unc",
-                    "orphan_12_radiance_unc"
-                ],
-                [
-                    "Oa13_radiance_unc",
-                    "orphan_13_radiance_unc"
-                ],
-                [
-                    "Oa14_radiance_unc",
-                    "orphan_14_radiance_unc"
-                ],
-                [
-                    "Oa15_radiance_unc",
-                    "orphan_15_radiance_unc"
-                ],
-                [
-                    "Oa16_radiance_unc",
-                    "orphan_16_radiance_unc"
-                ],
-                [
-                    "Oa17_radiance_unc",
-                    "orphan_17_radiance_unc"
-                ],
-                [
-                    "Oa18_radiance_unc",
-                    "orphan_18_radiance_unc"
-                ],
-                [
-                    "Oa19_radiance_unc",
-                    "orphan_19_radiance_unc"
-                ],
-                [
-                    "Oa20_radiance_unc",
-                    "orphan_20_radiance_unc"
-                ],
-                [
-                    "Oa21_radiance_unc",
-                    "orphan_21_radiance_unc"
                 ]
             ]
         },
