@@ -86,7 +86,7 @@ if __name__ == "__main__":
             "S3B_SL_1_RBT____20230315T095847_20230315T100147_20230316T030042_0179_077_150_4320_PS2_O_NT_004.SEN3",
             f"S3SLSRBT_20230315T095847_0179_B150_S{np.random.randint(0,999,1)[0]:03d}.zarr",
         ],
-        "SL_2LST": [
+        "SL_2_LST": [
             "S3A_SL_2_LST____20191227T124111_20191227T124411_20221209T133218_0179_053_109______PS1_D_NR_004.SEN3",
             f"S3SLSLST_20191227T124111_0179_A109_T{np.random.randint(0,999,1)[0]:03d}.zarr",
         ],
@@ -120,8 +120,8 @@ if __name__ == "__main__":
         ],
     }
 
-    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","SL_1_RBT"]
-    PRODUCTS_TO_PROCESSED = ["OL_1_ERR"]
+    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","OL_1_ERR","SL_1_RBT"]
+    PRODUCTS_TO_PROCESSED = ["SL_2_LST"]
     for p in PRODUCTS_TO_PROCESSED:
         use_custom_simpl_mapping = False
         # In the cases of OLCI L1, lat/lon are duplicated in the /conditions/image_grid and /quality/image groups

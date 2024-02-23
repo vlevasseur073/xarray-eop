@@ -1481,7 +1481,7 @@
         },
         {
             "short_name": "tcwv",
-            "target_path": "/conditions/ancillary/tcwv",
+            "target_path": "/conditions/auxiliary/tcwv",
             "source_path": "LST_ancillary_ds.nc:TCWV",
             "item_format": "netcdf",
             "parameters": {
@@ -1513,7 +1513,7 @@
         },
         {
             "short_name": "biome",
-            "target_path": "/conditions/ancillary/biome",
+            "target_path": "/conditions/auxiliary/biome",
             "source_path": "LST_ancillary_ds.nc:biome",
             "item_format": "netcdf",
             "parameters": {
@@ -1570,7 +1570,7 @@
         },
         {
             "short_name": "validation",
-            "target_path": "/conditions/ancillary/validation",
+            "target_path": "/conditions/auxiliary/validation",
             "source_path": "LST_ancillary_ds.nc:validation",
             "item_format": "netcdf",
             "parameters": {
@@ -1594,7 +1594,7 @@
         },
         {
             "short_name": "fraction",
-            "target_path": "/conditions/ancillary/fraction",
+            "target_path": "/conditions/auxiliary/fraction",
             "source_path": "LST_ancillary_ds.nc:fraction",
             "item_format": "netcdf",
             "parameters": {
