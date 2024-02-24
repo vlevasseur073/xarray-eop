@@ -315,6 +315,42 @@
         "/conditions/orphan/NDVI_orphan" : "/conditions/auxiliary/orphan/NDVI",
         "/conditions/orphan/TCWV_orphan" : "/conditions/auxiliary/orphan/TCWV",
         "/conditions/orphan/elevation_orphan_in" : "/conditions/auxiliary/orphan/elevation"
-
+        
+    },
+    "S3SLSFRP_mapping.json": {
+        "/coordinates/x_in" : "/measurements/inadir/x",
+        "/coordinates/y_in" : "/measurements/inadir/y",
+        "/coordinates/latitude_in" : "/measurements/inadir/latitude",
+        "/coordinates/longitude_in" : "/measurements/inadir/longitude",
+        "/coordinates/x_fn" : "/measurements/fnadir/x",
+        "/coordinates/y_fn" : "/measurements/fnadir/y",
+        "/coordinates/latitude_fn" : "/measurements/fnadir/latitude",
+        "/coordinates/longitude_fn" : "/measurements/fnadir/longitude",
+        "/coordinates/x_orphan_in" : "/measurements/inadir/orphan/x",
+        "/coordinates/y_orphan_in" : "/measurements/inadir/orphan/y",
+        "/coordinates/latitude_orphan_in" : "/measurements/inadir/orphan/latitude",
+        "/coordinates/longitude_orphan_in" : "/measurements/inadir/orphan/longitude",
+        "/coordinates/x_orphan_fn" : "/measurements/fnadir/orphan/x",
+        "/coordinates/y_orphan_fn" : "/measurements/fnadir/orphan/y",
+        "/coordinates/latitude_orphan_fn" : "/measurements/fnadir/orphan/latitude",
+        "/coordinates/longitude_orphan_fn" : "/measurements/fnadir/orphan/longitude",
+        "/coordinates/x_tp" : "/conditions/geometry/x",
+        "/coordinates/y_tp" : "/conditions/geometry/y",
+        "/coordinates/latitude_tp" : "/conditions/meteo/latitude",
+        "/coordinates/longitude_tp" : "/conditions/meteo/longitude",
+        "/conditions/processing/detector_fn" : "/conditions/processing/fnadir/detector",
+        "/conditions/processing/detector_in" : "/conditions/processing/inadir/detector",
+        "/conditions/processing/l0_scan_offset_fn" : "/conditions/processing/fnadir/l0_scan_offset",
+        "/conditions/processing/l0_scan_offset_in" : "/conditions/processing/inadir/l0_scan_offset",
+        "/conditions/processing/pixel_fn" : "/conditions/processing/fnadir/pixel",
+        "/conditions/processing/pixel_in" : "/conditions/processing/inadir/pixel",
+        "/conditions/processing/scan_fn" : "/conditions/processing/fnadir/scan",
+        "/conditions/processing/scan_in" : "/conditions/processing/inadir/scan",
+        "/conditions/processing/detector_orphan_fn" : "/conditions/processing/fnadir/orphan/detector",
+        "/conditions/processing/detector_orphan_in" : "/conditions/processing/inadir/orphan/detector",
+        "/conditions/processing/pixel_orphan_fn" : "/conditions/processing/fnadir/orphan/pixel",
+        "/conditions/processing/pixel_orphan_in" : "/conditions/processing/inadir/orphan/pixel",
+        "/conditions/processing/scan_orphan_fn" : "/conditions/processing/fnadir/orphan/scan",
+        "/conditions/processing/scan_orphan_in" : "/conditions/processing/inadir/orphan/scan"
     }
 }

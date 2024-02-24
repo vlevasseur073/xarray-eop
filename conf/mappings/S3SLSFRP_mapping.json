@@ -12,7 +12,8 @@
         "rows_in": 600,
         "columns_in": 750,
         "rows_fn": 600,
-        "columns_fn": 750
+        "columns_fn": 750,
+        "fires": 1000
     },
     "data_mapping": [
         {
@@ -467,7 +468,7 @@
         },
         {
             "short_name": "cloud_fn",
-            "target_path": "/quality/fn/cloud_fn",
+            "target_path": "/quality/fnadir/cloud_fn",
             "source_path": "flags_fn.nc:cloud_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -510,7 +511,7 @@
         },
         {
             "short_name": "bayes_fn",
-            "target_path": "/quality/fn/bayes_fn",
+            "target_path": "/quality/fnadir/bayes_fn",
             "source_path": "flags_fn.nc:bayes_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -545,7 +546,7 @@
         },
         {
             "short_name": "pointing_fn",
-            "target_path": "/quality/fn/pointing_fn",
+            "target_path": "/quality/fnadir/pointing_fn",
             "source_path": "flags_fn.nc:pointing_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -580,7 +581,7 @@
         },
         {
             "short_name": "confidence_fn",
-            "target_path": "/quality/fn/confidence_fn",
+            "target_path": "/quality/fnadir/confidence_fn",
             "source_path": "flags_fn.nc:confidence_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -623,7 +624,7 @@
         },
         {
             "short_name": "cloud_orphan_fn",
-            "target_path": "/quality/fn/cloud_orphan_fn",
+            "target_path": "/quality/fnadir/cloud_orphan_fn",
             "source_path": "flags_fn.nc:cloud_orphan_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -666,7 +667,7 @@
         },
         {
             "short_name": "bayes_orphan_fn",
-            "target_path": "/quality/fn/bayes_orphan_fn",
+            "target_path": "/quality/fnadir/bayes_orphan_fn",
             "source_path": "flags_fn.nc:bayes_orphan_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -701,7 +702,7 @@
         },
         {
             "short_name": "pointing_orphan_fn",
-            "target_path": "/quality/fn/pointing_orphan_fn",
+            "target_path": "/quality/fnadir/pointing_orphan_fn",
             "source_path": "flags_fn.nc:pointing_orphan_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -736,7 +737,7 @@
         },
         {
             "short_name": "confidence_orphan_fn",
-            "target_path": "/quality/fn/confidence_orphan_fn",
+            "target_path": "/quality/fnadir/confidence_orphan_fn",
             "source_path": "flags_fn.nc:confidence_orphan_fn",
             "item_format": "netcdf",
             "parameters": {
@@ -779,7 +780,7 @@
         },
         {
             "short_name": "probability_cloud_single_in",
-            "target_path": "/quality/in/probability_cloud_single_in",
+            "target_path": "/quality/inadir/probability_cloud_single_in",
             "source_path": "flags_in.nc:probability_cloud_single_in",
             "item_format": "netcdf",
             "parameters": {
@@ -808,7 +809,7 @@
         },
         {
             "short_name": "probability_cloud_dual_in",
-            "target_path": "/quality/in/probability_cloud_dual_in",
+            "target_path": "/quality/inadir/probability_cloud_dual_in",
             "source_path": "flags_in.nc:probability_cloud_dual_in",
             "item_format": "netcdf",
             "parameters": {
@@ -837,7 +838,7 @@
         },
         {
             "short_name": "cloud_in",
-            "target_path": "/quality/in/cloud_in",
+            "target_path": "/quality/inadir/cloud_in",
             "source_path": "flags_in.nc:cloud_in",
             "item_format": "netcdf",
             "parameters": {
@@ -880,7 +881,7 @@
         },
         {
             "short_name": "bayes_in",
-            "target_path": "/quality/in/bayes_in",
+            "target_path": "/quality/inadir/bayes_in",
             "source_path": "flags_in.nc:bayes_in",
             "item_format": "netcdf",
             "parameters": {
@@ -915,7 +916,7 @@
         },
         {
             "short_name": "pointing_in",
-            "target_path": "/quality/in/pointing_in",
+            "target_path": "/quality/inadir/pointing_in",
             "source_path": "flags_in.nc:pointing_in",
             "item_format": "netcdf",
             "parameters": {
@@ -950,7 +951,7 @@
         },
         {
             "short_name": "confidence_in",
-            "target_path": "/quality/in/confidence_in",
+            "target_path": "/quality/inadir/confidence_in",
             "source_path": "flags_in.nc:confidence_in",
             "item_format": "netcdf",
             "parameters": {
@@ -993,7 +994,7 @@
         },
         {
             "short_name": "cloud_orphan_in",
-            "target_path": "/quality/in/cloud_orphan_in",
+            "target_path": "/quality/inadir/cloud_orphan_in",
             "source_path": "flags_in.nc:cloud_orphan_in",
             "item_format": "netcdf",
             "parameters": {
@@ -1036,7 +1037,7 @@
         },
         {
             "short_name": "bayes_orphan_in",
-            "target_path": "/quality/in/bayes_orphan_in",
+            "target_path": "/quality/inadir/bayes_orphan_in",
             "source_path": "flags_in.nc:bayes_orphan_in",
             "item_format": "netcdf",
             "parameters": {
@@ -1071,7 +1072,7 @@
         },
         {
             "short_name": "pointing_orphan_in",
-            "target_path": "/quality/in/pointing_orphan_in",
+            "target_path": "/quality/inadir/pointing_orphan_in",
             "source_path": "flags_in.nc:pointing_orphan_in",
             "item_format": "netcdf",
             "parameters": {
@@ -1106,7 +1107,7 @@
         },
         {
             "short_name": "confidence_orphan_in",
-            "target_path": "/quality/in/confidence_orphan_in",
+            "target_path": "/quality/inadir/confidence_orphan_in",
             "source_path": "flags_in.nc:confidence_orphan_in",
             "item_format": "netcdf",
             "parameters": {
@@ -3433,7 +3434,7 @@
         },
         {
             "short_name": "i_an",
-            "target_path": "/measurements/an/i",
+            "target_path": "/measurements/anadir/i",
             "source_path": "FRP_an.nc:i",
             "item_format": "netcdf",
             "parameters": {
@@ -3455,7 +3456,7 @@
         },
         {
             "short_name": "j_an",
-            "target_path": "/measurements/an/j",
+            "target_path": "/measurements/anadir/j",
             "source_path": "FRP_an.nc:j",
             "item_format": "netcdf",
             "parameters": {
@@ -3477,7 +3478,7 @@
         },
         {
             "short_name": "time_an",
-            "target_path": "/measurements/an/time",
+            "target_path": "/measurements/anadir/time",
             "source_path": "FRP_an.nc:time",
             "item_format": "netcdf",
             "parameters": {
@@ -3501,7 +3502,7 @@
         },
         {
             "short_name": "latitude_an",
-            "target_path": "/measurements/an/latitude",
+            "target_path": "/measurements/anadir/latitude",
             "source_path": "FRP_an.nc:latitude",
             "item_format": "netcdf",
             "parameters": {
@@ -3527,7 +3528,7 @@
         },
         {
             "short_name": "longitude_an",
-            "target_path": "/measurements/an/longitude",
+            "target_path": "/measurements/anadir/longitude",
             "source_path": "FRP_an.nc:longitude",
             "item_format": "netcdf",
             "parameters": {
@@ -3553,7 +3554,7 @@
         },
         {
             "short_name": "frp_mwir_an",
-            "target_path": "/measurements/an/frp_mwir",
+            "target_path": "/measurements/anadir/frp_mwir",
             "source_path": "FRP_an.nc:FRP_MWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -3575,7 +3576,7 @@
         },
         {
             "short_name": "frp_swir_an",
-            "target_path": "/measurements/an/frp_swir",
+            "target_path": "/measurements/anadir/frp_swir",
             "source_path": "FRP_an.nc:FRP_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -3597,7 +3598,7 @@
         },
         {
             "short_name": "frp_uncertainty_swir_an",
-            "target_path": "/measurements/an/frp_uncertainty_swir",
+            "target_path": "/measurements/anadir/frp_uncertainty_swir",
             "source_path": "FRP_an.nc:FRP_uncertainty_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -3619,7 +3620,7 @@
         },
         {
             "short_name": "transmittance_swir_an",
-            "target_path": "/measurements/an/transmittance_swir",
+            "target_path": "/measurements/anadir/transmittance_swir",
             "source_path": "FRP_an.nc:transmittance_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -3640,7 +3641,7 @@
         },
         {
             "short_name": "ratio_s56_an",
-            "target_path": "/measurements/an/ratio_s56",
+            "target_path": "/measurements/anadir/ratio_s56",
             "source_path": "FRP_an.nc:Ratio_S56",
             "item_format": "netcdf",
             "parameters": {
@@ -3661,7 +3662,7 @@
         },
         {
             "short_name": "s5_confirm_an",
-            "target_path": "/measurements/an/s5_confirm",
+            "target_path": "/measurements/anadir/s5_confirm",
             "source_path": "FRP_an.nc:S5_confirm",
             "item_format": "netcdf",
             "parameters": {
@@ -3684,7 +3685,7 @@
         },
         {
             "short_name": "classification_an",
-            "target_path": "/measurements/an/classification",
+            "target_path": "/measurements/anadir/classification",
             "source_path": "FRP_an.nc:classification",
             "item_format": "netcdf",
             "parameters": {
@@ -3727,7 +3728,7 @@
         },
         {
             "short_name": "s6_fire_pixel_radiance_an",
-            "target_path": "/measurements/an/s6_fire_pixel_radiance",
+            "target_path": "/measurements/anadir/s6_fire_pixel_radiance",
             "source_path": "FRP_an.nc:S6_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -3750,7 +3751,7 @@
         },
         {
             "short_name": "s5_fire_pixel_radiance_an",
-            "target_path": "/measurements/an/s5_fire_pixel_radiance",
+            "target_path": "/measurements/anadir/s5_fire_pixel_radiance",
             "source_path": "FRP_an.nc:S5_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -3773,7 +3774,7 @@
         },
         {
             "short_name": "used_channel_an",
-            "target_path": "/measurements/an/used_channel",
+            "target_path": "/measurements/anadir/used_channel",
             "source_path": "FRP_an.nc:used_channel",
             "item_format": "netcdf",
             "parameters": {
@@ -3796,7 +3797,7 @@
         },
         {
             "short_name": "radiance_window_s6_an",
-            "target_path": "/measurements/an/radiance_window_s6",
+            "target_path": "/measurements/anadir/radiance_window_s6",
             "source_path": "FRP_an.nc:Radiance_window_S6",
             "item_format": "netcdf",
             "parameters": {
@@ -3819,7 +3820,7 @@
         },
         {
             "short_name": "ifov_area_an",
-            "target_path": "/measurements/an/ifov_area",
+            "target_path": "/measurements/anadir/ifov_area",
             "source_path": "FRP_an.nc:IFOV_area",
             "item_format": "netcdf",
             "parameters": {
@@ -3842,7 +3843,7 @@
         },
         {
             "short_name": "tcwv_an",
-            "target_path": "/measurements/an/tcwv",
+            "target_path": "/measurements/anadir/tcwv",
             "source_path": "FRP_an.nc:TCWV",
             "item_format": "netcdf",
             "parameters": {
@@ -3866,7 +3867,7 @@
         },
         {
             "short_name": "flags_an",
-            "target_path": "/measurements/an/flags",
+            "target_path": "/measurements/anadir/flags",
             "source_path": "FRP_an.nc:flags",
             "item_format": "netcdf",
             "parameters": {
@@ -3918,7 +3919,7 @@
         },
         {
             "short_name": "i_bn",
-            "target_path": "/measurements/bn/i",
+            "target_path": "/measurements/bnadir/i",
             "source_path": "FRP_bn.nc:i",
             "item_format": "netcdf",
             "parameters": {
@@ -3940,7 +3941,7 @@
         },
         {
             "short_name": "j_bn",
-            "target_path": "/measurements/bn/j",
+            "target_path": "/measurements/bnadir/j",
             "source_path": "FRP_bn.nc:j",
             "item_format": "netcdf",
             "parameters": {
@@ -3962,7 +3963,7 @@
         },
         {
             "short_name": "time_bn",
-            "target_path": "/measurements/bn/time",
+            "target_path": "/measurements/bnadir/time",
             "source_path": "FRP_bn.nc:time",
             "item_format": "netcdf",
             "parameters": {
@@ -3986,7 +3987,7 @@
         },
         {
             "short_name": "latitude_bn",
-            "target_path": "/measurements/bn/latitude",
+            "target_path": "/measurements/bnadir/latitude",
             "source_path": "FRP_bn.nc:latitude",
             "item_format": "netcdf",
             "parameters": {
@@ -4012,7 +4013,7 @@
         },
         {
             "short_name": "longitude_bn",
-            "target_path": "/measurements/bn/longitude",
+            "target_path": "/measurements/bnadir/longitude",
             "source_path": "FRP_bn.nc:longitude",
             "item_format": "netcdf",
             "parameters": {
@@ -4038,7 +4039,7 @@
         },
         {
             "short_name": "frp_mwir_bn",
-            "target_path": "/measurements/bn/frp_mwir",
+            "target_path": "/measurements/bnadir/frp_mwir",
             "source_path": "FRP_bn.nc:FRP_MWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4060,7 +4061,7 @@
         },
         {
             "short_name": "frp_swir_bn",
-            "target_path": "/measurements/bn/frp_swir",
+            "target_path": "/measurements/bnadir/frp_swir",
             "source_path": "FRP_bn.nc:FRP_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4082,7 +4083,7 @@
         },
         {
             "short_name": "frp_uncertainty_swir_bn",
-            "target_path": "/measurements/bn/frp_uncertainty_swir",
+            "target_path": "/measurements/bnadir/frp_uncertainty_swir",
             "source_path": "FRP_bn.nc:FRP_uncertainty_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4104,7 +4105,7 @@
         },
         {
             "short_name": "transmittance_swir_bn",
-            "target_path": "/measurements/bn/transmittance_swir",
+            "target_path": "/measurements/bnadir/transmittance_swir",
             "source_path": "FRP_bn.nc:transmittance_SWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4125,7 +4126,7 @@
         },
         {
             "short_name": "ratio_s56_bn",
-            "target_path": "/measurements/bn/ratio_s56",
+            "target_path": "/measurements/bnadir/ratio_s56",
             "source_path": "FRP_bn.nc:Ratio_S56",
             "item_format": "netcdf",
             "parameters": {
@@ -4146,7 +4147,7 @@
         },
         {
             "short_name": "s5_confirm_bn",
-            "target_path": "/measurements/bn/s5_confirm",
+            "target_path": "/measurements/bnadir/s5_confirm",
             "source_path": "FRP_bn.nc:S5_confirm",
             "item_format": "netcdf",
             "parameters": {
@@ -4169,7 +4170,7 @@
         },
         {
             "short_name": "classification_bn",
-            "target_path": "/measurements/bn/classification",
+            "target_path": "/measurements/bnadir/classification",
             "source_path": "FRP_bn.nc:classification",
             "item_format": "netcdf",
             "parameters": {
@@ -4211,7 +4212,7 @@
         },
         {
             "short_name": "s6_fire_pixel_radiance_bn",
-            "target_path": "/measurements/bn/s6_fire_pixel_radiance",
+            "target_path": "/measurements/bnadir/s6_fire_pixel_radiance",
             "source_path": "FRP_bn.nc:S6_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -4234,7 +4235,7 @@
         },
         {
             "short_name": "s5_fire_pixel_radiance_bn",
-            "target_path": "/measurements/bn/s5_fire_pixel_radiance",
+            "target_path": "/measurements/bnadir/s5_fire_pixel_radiance",
             "source_path": "FRP_bn.nc:S5_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -4257,7 +4258,7 @@
         },
         {
             "short_name": "used_channel_bn",
-            "target_path": "/measurements/bn/used_channel",
+            "target_path": "/measurements/bnadir/used_channel",
             "source_path": "FRP_bn.nc:used_channel",
             "item_format": "netcdf",
             "parameters": {
@@ -4280,7 +4281,7 @@
         },
         {
             "short_name": "radiance_window_s6_bn",
-            "target_path": "/measurements/bn/radiance_window_s6",
+            "target_path": "/measurements/bnadir/radiance_window_s6",
             "source_path": "FRP_bn.nc:Radiance_window_S6",
             "item_format": "netcdf",
             "parameters": {
@@ -4303,7 +4304,7 @@
         },
         {
             "short_name": "ifov_area_bn",
-            "target_path": "/measurements/bn/ifov_area",
+            "target_path": "/measurements/bnadir/ifov_area",
             "source_path": "FRP_bn.nc:IFOV_area",
             "item_format": "netcdf",
             "parameters": {
@@ -4325,7 +4326,7 @@
         },
         {
             "short_name": "tcwv_bn",
-            "target_path": "/measurements/bn/tcwv",
+            "target_path": "/measurements/bnadir/tcwv",
             "source_path": "FRP_bn.nc:TCWV",
             "item_format": "netcdf",
             "parameters": {
@@ -4349,7 +4350,7 @@
         },
         {
             "short_name": "flags_bn",
-            "target_path": "/measurements/bn/flags",
+            "target_path": "/measurements/bnadir/flags",
             "source_path": "FRP_bn.nc:flags",
             "item_format": "netcdf",
             "parameters": {
@@ -4401,7 +4402,7 @@
         },
         {
             "short_name": "i_in",
-            "target_path": "/measurements/in/i",
+            "target_path": "/measurements/inadir/i",
             "source_path": "FRP_in.nc:i",
             "item_format": "netcdf",
             "parameters": {
@@ -4423,7 +4424,7 @@
         },
         {
             "short_name": "j_in",
-            "target_path": "/measurements/in/j",
+            "target_path": "/measurements/inadir/j",
             "source_path": "FRP_in.nc:j",
             "item_format": "netcdf",
             "parameters": {
@@ -4445,7 +4446,7 @@
         },
         {
             "short_name": "time_in",
-            "target_path": "/measurements/in/time",
+            "target_path": "/measurements/inadir/time",
             "source_path": "FRP_in.nc:time",
             "item_format": "netcdf",
             "parameters": {
@@ -4469,7 +4470,7 @@
         },
         {
             "short_name": "latitude_in",
-            "target_path": "/measurements/in/latitude",
+            "target_path": "/measurements/inadir/latitude",
             "source_path": "FRP_in.nc:latitude",
             "item_format": "netcdf",
             "parameters": {
@@ -4494,7 +4495,7 @@
         },
         {
             "short_name": "longitude_in",
-            "target_path": "/measurements/in/longitude",
+            "target_path": "/measurements/inadir/longitude",
             "source_path": "FRP_in.nc:longitude",
             "item_format": "netcdf",
             "parameters": {
@@ -4519,7 +4520,7 @@
         },
         {
             "short_name": "frp_mwir_in",
-            "target_path": "/measurements/in/frp_mwir",
+            "target_path": "/measurements/inadir/frp_mwir",
             "source_path": "FRP_in.nc:FRP_MWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4541,7 +4542,7 @@
         },
         {
             "short_name": "frp_uncertainty_mwir_in",
-            "target_path": "/measurements/in/frp_uncertainty_mwir",
+            "target_path": "/measurements/inadir/frp_uncertainty_mwir",
             "source_path": "FRP_in.nc:FRP_uncertainty_MWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4563,7 +4564,7 @@
         },
         {
             "short_name": "transmittance_mwir_in",
-            "target_path": "/measurements/in/transmittance_mwir",
+            "target_path": "/measurements/inadir/transmittance_mwir",
             "source_path": "FRP_in.nc:transmittance_MWIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4584,7 +4585,7 @@
         },
         {
             "short_name": "classification_in",
-            "target_path": "/measurements/in/classification",
+            "target_path": "/measurements/inadir/classification",
             "source_path": "FRP_in.nc:classification",
             "item_format": "netcdf",
             "parameters": {
@@ -4626,7 +4627,7 @@
         },
         {
             "short_name": "s7_fire_pixel_radiance",
-            "target_path": "/measurements/in/s7_fire_pixel_radiance",
+            "target_path": "/measurements/inadir/s7_fire_pixel_radiance",
             "source_path": "FRP_in.nc:S7_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -4649,7 +4650,7 @@
         },
         {
             "short_name": "f1_fire_pixel_radiance",
-            "target_path": "/measurements/in/f1_fire_pixel_radiance",
+            "target_path": "/measurements/inadir/f1_fire_pixel_radiance",
             "source_path": "FRP_in.nc:F1_Fire_pixel_radiance",
             "item_format": "netcdf",
             "parameters": {
@@ -4672,7 +4673,7 @@
         },
         {
             "short_name": "used_channel_in",
-            "target_path": "/measurements/in/used_channel",
+            "target_path": "/measurements/inadir/used_channel",
             "source_path": "FRP_in.nc:used_channel",
             "item_format": "netcdf",
             "parameters": {
@@ -4695,7 +4696,7 @@
         },
         {
             "short_name": "radiance_window_in",
-            "target_path": "/measurements/in/radiance_window",
+            "target_path": "/measurements/inadir/radiance_window",
             "source_path": "FRP_in.nc:Radiance_window",
             "item_format": "netcdf",
             "parameters": {
@@ -4718,7 +4719,7 @@
         },
         {
             "short_name": "glint_angle",
-            "target_path": "/measurements/in/glint_angle",
+            "target_path": "/measurements/inadir/glint_angle",
             "source_path": "FRP_in.nc:Glint_angle",
             "item_format": "netcdf",
             "parameters": {
@@ -4740,7 +4741,7 @@
         },
         {
             "short_name": "bt_mir",
-            "target_path": "/measurements/in/bt_mir",
+            "target_path": "/measurements/inadir/bt_mir",
             "source_path": "FRP_in.nc:BT_MIR",
             "item_format": "netcdf",
             "parameters": {
@@ -4763,7 +4764,7 @@
         },
         {
             "short_name": "bt_window",
-            "target_path": "/measurements/in/bt_window",
+            "target_path": "/measurements/inadir/bt_window",
             "source_path": "FRP_in.nc:BT_window",
             "item_format": "netcdf",
             "parameters": {
@@ -4786,7 +4787,7 @@
         },
         {
             "short_name": "sun_zenith_angle",
-            "target_path": "/measurements/in/sun_zenith_angle",
+            "target_path": "/measurements/inadir/sun_zenith_angle",
             "source_path": "FRP_in.nc:Sun_zenith_angle",
             "item_format": "netcdf",
             "parameters": {
@@ -4808,7 +4809,7 @@
         },
         {
             "short_name": "satellite_zenith_angle",
-            "target_path": "/measurements/in/satellite_zenith_angle",
+            "target_path": "/measurements/inadir/satellite_zenith_angle",
             "source_path": "FRP_in.nc:Satellite_zenith_angle",
             "item_format": "netcdf",
             "parameters": {
@@ -4830,7 +4831,7 @@
         },
         {
             "short_name": "day_night",
-            "target_path": "/measurements/in/day_night",
+            "target_path": "/measurements/inadir/day_night",
             "source_path": "FRP_in.nc:Day_night",
             "item_format": "netcdf",
             "parameters": {
@@ -4853,7 +4854,7 @@
         },
         {
             "short_name": "ifov_area_in",
-            "target_path": "/measurements/in/ifov_area",
+            "target_path": "/measurements/inadir/ifov_area",
             "source_path": "FRP_in.nc:IFOV_area",
             "item_format": "netcdf",
             "parameters": {
@@ -4875,7 +4876,7 @@
         },
         {
             "short_name": "tcwv_in",
-            "target_path": "/measurements/in/tcwv",
+            "target_path": "/measurements/inadir/tcwv",
             "source_path": "FRP_in.nc:TCWV",
             "item_format": "netcdf",
             "parameters": {
@@ -4899,7 +4900,7 @@
         },
         {
             "short_name": "n_window",
-            "target_path": "/measurements/in/n_window",
+            "target_path": "/measurements/inadir/n_window",
             "source_path": "FRP_in.nc:n_window",
             "item_format": "netcdf",
             "parameters": {
@@ -4920,7 +4921,7 @@
         },
         {
             "short_name": "n_water",
-            "target_path": "/measurements/in/n_water",
+            "target_path": "/measurements/inadir/n_water",
             "source_path": "FRP_in.nc:n_water",
             "item_format": "netcdf",
             "parameters": {
@@ -4941,7 +4942,7 @@
         },
         {
             "short_name": "n_cloud",
-            "target_path": "/measurements/in/n_cloud",
+            "target_path": "/measurements/inadir/n_cloud",
             "source_path": "FRP_in.nc:n_cloud",
             "item_format": "netcdf",
             "parameters": {
@@ -4962,7 +4963,7 @@
         },
         {
             "short_name": "flags_in",
-            "target_path": "/measurements/in/flags",
+            "target_path": "/measurements/inadir/flags",
             "source_path": "FRP_in.nc:flags",
             "item_format": "netcdf",
             "parameters": {
