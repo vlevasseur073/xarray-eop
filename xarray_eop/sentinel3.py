@@ -38,6 +38,7 @@ def _create_dataset_from_ncfiles(
         if f.name.startswith("xfdumanifest"):
             continue
         # In xarray >2024, warning is added when opening a dataset in case of duplicate dimensions
+        # (for instance a correlation matrix)
         # ValueError is raised when trying to chunk in such a case
         try:
             safe_ds[f.name]  = xr.open_dataset(f,chunks=chunk_sizes)
@@ -69,8 +70,15 @@ def _merge_dataset(
 
     init=True
     for file in data_map[group]:
+        # rename coordinates in safe_ds[file] if needed
         for var in data_map[group][file]:
-            array = safe_ds[file][var[0]]
+            if var[0] in safe_ds[file].coords.keys() and var[1] != var[0]:
+                safe_ds[file] = safe_ds[file].rename({var[0]:var[1]})
+        for var in data_map[group][file]:
+            try:
+                array = safe_ds[file][var[0]]
+            except:
+                array = safe_ds[file][var[1]]
             # print(array)
             # print(array.name,array.dims)
             if not init:
