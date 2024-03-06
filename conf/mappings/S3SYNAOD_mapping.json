@@ -1,0 +1,1317 @@
+{
+    "recognition": {
+        "filename_pattern": "S3._SY_2_AOD.*SEN3|S3SYNAOD.*",
+        "product_type": "S3SYNAOD",
+        "version": "001"
+    },
+    "chunk_sizes": {
+        "rows": 1024,
+        "columns": 1024
+    },
+    "data_mapping": [
+        {
+            "short_name": "rows",
+            "target_path": "/coordinates/rows",
+            "source_path": "NTC_AOD.nc:rows",
+            "item_format": "netcdf-dimension",
+            "parameters": {
+                "dimensions": [
+                    "rows"
+                ]
+            },
+            "attributes": {
+                "long_name": ""
+            }
+        },
+        {
+            "short_name": "columns",
+            "target_path": "/coordinates/columns",
+            "source_path": "NTC_AOD.nc:columns",
+            "item_format": "netcdf-dimension",
+            "parameters": {
+                "dimensions": [
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": ""
+            }
+        },
+        {
+            "short_name": "aod_440",
+            "target_path": "/measurements/aod_440",
+            "source_path": "NTC_AOD.nc:AOD_440",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 440 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_440_uncertainty",
+            "target_path": "/quality/aod_440_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_440_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 440 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_550",
+            "target_path": "/measurements/aod_550",
+            "source_path": "NTC_AOD.nc:AOD_550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 550 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_550_uncertainty",
+            "target_path": "/quality/aod_550_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_550_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 550 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_670",
+            "target_path": "/measurements/aod_670",
+            "source_path": "NTC_AOD.nc:AOD_670",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 670 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_670_uncertainty",
+            "target_path": "/quality/aod_670_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_670_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 670 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_865",
+            "target_path": "/measurements/aod_865",
+            "source_path": "NTC_AOD.nc:AOD_865",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 865 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_865_uncertainty",
+            "target_path": "/quality/aod_865_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_865_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 865 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_1600",
+            "target_path": "/measurements/aod_1600",
+            "source_path": "NTC_AOD.nc:AOD_1600",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 1600 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_1600_uncertainty",
+            "target_path": "/quality/aod_1600_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_1600_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 1600 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_2250",
+            "target_path": "/measurements/aod_2250",
+            "source_path": "NTC_AOD.nc:AOD_2250",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol optical thickness at 2250 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_2250_uncertainty",
+            "target_path": "/quality/aod_2250_uncertainty",
+            "source_path": "NTC_AOD.nc:AOD_2250_uncertainty",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Uncertainty of aerosol optical thickness at 2250 nm",
+                "valid_min": 0.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "fm_aod550",
+            "target_path": "/measurements/fm_aod550",
+            "source_path": "NTC_AOD.nc:FM_AOD550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Fine-mode aerosol optical depth at 550 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ang550_865",
+            "target_path": "/measurements/ang550_865",
+            "source_path": "NTC_AOD.nc:ANG550_865",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol Angstrom exponent between 550 and 865 nm",
+                "standard_name": "angstrom_exponent_of_ambient_aerosol_in_air",
+                "valid_min": -6.0,
+                "valid_max": 6.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": -32768,
+                "scale_factor": 0.0002,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "d_aod550",
+            "target_path": "/measurements/d_aod550",
+            "source_path": "NTC_AOD.nc:D_AOD550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Dust aerosol optical thickness at 550 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aaod550",
+            "target_path": "/measurements/aaod550",
+            "source_path": "NTC_AOD.nc:AAOD550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol absorption optical thickness at 550 nm",
+                "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol",
+                "valid_min": 0.0,
+                "valid_max": 4.0001,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_440",
+            "target_path": "/measurements/ssa_440",
+            "source_path": "NTC_AOD.nc:SSA_440",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 440 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_440",
+            "target_path": "/measurements/surface_reflectance_440",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_440",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 440 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 440.0,
+                "bandwidth": 10.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_550",
+            "target_path": "/measurements/ssa_550",
+            "source_path": "NTC_AOD.nc:SSA_550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 550 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_550",
+            "target_path": "/measurements/surface_reflectance_550",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_550",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 550 nm ",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 550.0,
+                "bandwidth": 20.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_670",
+            "target_path": "/measurements/ssa_670",
+            "source_path": "NTC_AOD.nc:SSA_670",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 670 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_670",
+            "target_path": "/measurements/surface_reflectance_670",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_670",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 670 nm ",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 670.0,
+                "bandwidth": 20.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_865",
+            "target_path": "/measurements/ssa_865",
+            "source_path": "NTC_AOD.nc:SSA_865",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 865 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_865",
+            "target_path": "/measurements/surface_reflectance_865",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_865",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 865 nm ",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 865.0,
+                "bandwidth": 20.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_1600",
+            "target_path": "/measurements/ssa_1600",
+            "source_path": "NTC_AOD.nc:SSA_1600",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 1600 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_1600",
+            "target_path": "/measurements/surface_reflectance_1600",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_1600",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 1600 nm ",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 1600.0,
+                "bandwidth": 60.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "ssa_2250",
+            "target_path": "/measurements/ssa_2250",
+            "source_path": "NTC_AOD.nc:SSA_2250",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Aerosol single scattering albedo at 2250 nm",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "surface_reflectance_2250",
+            "target_path": "/measurements/surface_reflectance_2250",
+            "source_path": "NTC_AOD.nc:Surface_reflectance_2250",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Surface directional reflectance (BRF) at 2250 nm ",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "wavelength": 2250.0,
+                "bandwidth": 50.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "time_reference_a",
+            "target_path": "/coordinates/time_reference_a",
+            "source_path": "NTC_AOD.nc:time_reference_a",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows"
+                ]
+            },
+            "attributes": {
+                "long_name": "Acquisition time of the sub-satellite point included in each line",
+                "standard_name": "time_reference_a",
+                "units": "microseconds since 2000-01-01T00:00:00Z",
+                "_FillValue": -9223372036854775808
+            }
+        },
+        {
+            "short_name": "latitude",
+            "target_path": "/coordinates/latitude",
+            "source_path": "NTC_AOD.nc:latitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Latitude at pixel centre",
+                "standard_name": "latitude",
+                "units": "degrees_north",
+                "valid_min": -90.0,
+                "valid_max": 90.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "longitude",
+            "target_path": "/coordinates/longitude",
+            "source_path": "NTC_AOD.nc:longitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Longitude at pixel centre",
+                "standard_name": "longitude",
+                "units": "degrees_east",
+                "valid_min": -180.0,
+                "valid_max": 180.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_latitude_corner_1",
+            "target_path": "/coordinates/pixel_corner_latitude_corner_1",
+            "source_path": "NTC_AOD.nc:pixel_corner_latitude_Corner_1",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Latitude at pixel corner Corner_1",
+                "standard_name": "latitude",
+                "units": "degrees_north",
+                "valid_min": -90.0,
+                "valid_max": 90.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_longitude_corner_1",
+            "target_path": "/coordinates/pixel_corner_longitude_corner_1",
+            "source_path": "NTC_AOD.nc:pixel_corner_longitude_Corner_1",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Longitude at pixel corner Corner_1",
+                "standard_name": "longitude",
+                "units": "degrees_east",
+                "valid_min": -180.0,
+                "valid_max": 180.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_latitude_corner_2",
+            "target_path": "/coordinates/pixel_corner_latitude_corner_2",
+            "source_path": "NTC_AOD.nc:pixel_corner_latitude_Corner_2",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Latitude at pixel corner Corner_2",
+                "standard_name": "latitude",
+                "units": "degrees_north",
+                "valid_min": -90.0,
+                "valid_max": 90.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_longitude_corner_2",
+            "target_path": "/coordinates/pixel_corner_longitude_corner_2",
+            "source_path": "NTC_AOD.nc:pixel_corner_longitude_Corner_2",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Longitude at pixel corner Corner_2",
+                "standard_name": "longitude",
+                "units": "degrees_east",
+                "valid_min": -180.0,
+                "valid_max": 180.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_latitude_corner_3",
+            "target_path": "/coordinates/pixel_corner_latitude_corner_3",
+            "source_path": "NTC_AOD.nc:pixel_corner_latitude_Corner_3",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Latitude at pixel corner Corner_3",
+                "standard_name": "latitude",
+                "units": "degrees_north",
+                "valid_min": -90.0,
+                "valid_max": 90.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_longitude_corner_3",
+            "target_path": "/coordinates/pixel_corner_longitude_corner_3",
+            "source_path": "NTC_AOD.nc:pixel_corner_longitude_Corner_3",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Longitude at pixel corner Corner_3",
+                "standard_name": "longitude",
+                "units": "degrees_east",
+                "valid_min": -180.0,
+                "valid_max": 180.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_latitude_corner_4",
+            "target_path": "/coordinates/pixel_corner_latitude_corner_4",
+            "source_path": "NTC_AOD.nc:pixel_corner_latitude_Corner_4",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Latitude at pixel corner Corner_4",
+                "standard_name": "latitude",
+                "units": "degrees_north",
+                "valid_min": -90.0,
+                "valid_max": 90.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "pixel_corner_longitude_corner_4",
+            "target_path": "/coordinates/pixel_corner_longitude_corner_4",
+            "source_path": "NTC_AOD.nc:pixel_corner_longitude_Corner_4",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Longitude at pixel corner Corner_4",
+                "standard_name": "longitude",
+                "units": "degrees_east",
+                "valid_min": -180.0,
+                "valid_max": 180.0,
+                "_FillValue": -999.0
+            }
+        },
+        {
+            "short_name": "sun_zenith_nadir",
+            "target_path": "/conditions/geometry/sun_zenith_nadir",
+            "source_path": "NTC_AOD.nc:sun_zenith_nadir",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "nadir solar zenith angle at pixel center",
+                "standard_name": "solar_zenith_angle",
+                "units": "degrees",
+                "valid_min": 0.0,
+                "valid_max": 90.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.003,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "satellite_zenith_nadir",
+            "target_path": "/conditions/geometry/satellite_zenith_nadir",
+            "source_path": "NTC_AOD.nc:satellite_zenith_nadir",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "nadir satellite zenith angle at pixel center",
+                "standard_name": "zenith_angle",
+                "units": "degrees",
+                "valid_min": 0.0,
+                "valid_max": 90.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.003,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "relative_azimuth_nadir",
+            "target_path": "/conditions/geometry/relative_azimuth_nadir",
+            "source_path": "NTC_AOD.nc:relative_azimuth_nadir",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "nadir relative azimuth angle at pixel center",
+                "units": "degrees",
+                "valid_min": 0.0,
+                "valid_max": 180.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.003,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "cloud_fraction_nadir",
+            "target_path": "/quality/cloud_fraction_nadir",
+            "source_path": "NTC_AOD.nc:cloud_fraction_nadir",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "fraction of cloudy instrument nadir pixels in super-pixel",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "cloud_fraction_oblique",
+            "target_path": "/quality/cloud_fraction_oblique",
+            "source_path": "NTC_AOD.nc:cloud_fraction_oblique",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "fraction of cloudy instrument oblique pixels in super-pixel",
+                "valid_min": 0.0,
+                "valid_max": 1.0,
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535,
+                "scale_factor": 0.0001,
+                "add_offset": 0.0
+            }
+        },
+        {
+            "short_name": "aod_quality_flags",
+            "target_path": "/quality/aod_quality_flags",
+            "source_path": "NTC_AOD.nc:aod_quality_flags",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Global aerosol retrieval quality flags",
+                "flag_masks": [
+                    1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                    1024,
+                    2048,
+                    4096,
+                    8192,
+                    16384,
+                    32768
+                ],
+                "flag_meanings": "land oblq_missing cloudy_n cloudy_o dual_view glint_n glint_o sdr_neg aod_zero fm_clim unc_failed invalid outlier low_ndvi clean_air_est high_sza",
+                "coordinates": "latitude, longitude",
+                "_FillValue": 65535
+            }
+        },
+        {
+            "short_name": "ol_l1b_quality_flags",
+            "target_path": "/quality/ol_l1b_quality_flags",
+            "source_path": "NTC_AOD.nc:OL_L1b_quality_flags",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Original L1b quality flags associated with OLCI Instrument",
+                "flag_masks": [
+                    1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512
+                ],
+                "flag_meanings": "OLC_summary_saturated OLC_dubious OLC_sun_glint_risk OLC_cosmetic OLC_invalid OLC_bright OLC_tidal_region OLC_fresh_inland_water OLC_coastline OLC_land ",
+                "coordinates": "latitude, longitude"
+            }
+        },
+        {
+            "short_name": "sln_l1b_quality_flags",
+            "target_path": "/quality/sln_l1b_quality_flags",
+            "source_path": "NTC_AOD.nc:SLN_L1b_quality_flags",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Original L1b quality flags associated with SLSTR Nadir view",
+                "flag_masks": [
+                    1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                    1024,
+                    2048,
+                    4096,
+                    8192,
+                    16384,
+                    32768,
+                    65536,
+                    131072,
+                    262144,
+                    524288
+                ],
+                "flag_meanings": "SLN_summary_ISP_absent SLN_summary_pixel_absent SLN_summary_not_decompressed SLN_summary_no_signal SLN_summary_saturation SLN_summary_invalid_radiance SLN_summary_no_parameters SLN_summary_unfilled_pixel SLN_coastline SLN_ocean SLN_tidal SLN_land SLN_inland_water SLN_cosmetic SLN_day SLN_twilight SLN_sun_glint SLN_snow SLN_summary_cloud SLN_summary_pointing ",
+                "coordinates": "latitude, longitude"
+            }
+        },
+        {
+            "short_name": "slo_l1b_quality_flags",
+            "target_path": "/quality/slo_l1b_quality_flags",
+            "source_path": "NTC_AOD.nc:SLO_L1b_quality_flags",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "rows",
+                    "columns"
+                ]
+            },
+            "attributes": {
+                "long_name": "Original L1b quality flags associated with SLSTR Oblique view",
+                "flag_masks": [
+                    1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                    1024,
+                    2048,
+                    4096,
+                    8192,
+                    16384,
+                    32768,
+                    65536,
+                    131072,
+                    262144,
+                    524288
+                ],
+                "flag_meanings": "SLO_summary_ISP_absent SLO_summary_pixel_absent SLO_summary_not_decompressed SLO_summary_no_signal SLO_summary_saturation SLO_summary_invalid_radiance SLO_summary_no_parameters SLO_summary_unfilled_pixel SLO_coastline SLO_ocean SLO_tidal SLO_land SLO_inland_water SLO_cosmetic SLO_day SLO_twilight SLO_sun_glint SLO_snow SLO_summary_cloud SLO_summary_pointing ",
+                "coordinates": "latitude, longitude"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "source_path": "xfdumanifest.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+              "mapping": "stac_discovery",
+              "namespaces": "namespaces",
+              "path_template": "manifest_template_path"
+            }
+          },
+          {
+            "short_name": "other_metadata",
+            "source_path": "xfdumanifest.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+              "mapping": "other_metadata",
+              "namespaces": "namespaces",
+              "path_template": "manifest_template_path"
+            }
+          }
+    ],
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+          "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+          "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+          "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+          "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+          "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+          "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "collection": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:baselineCollection",
+        "properties": {
+          "datetime": "Text(null)",
+          "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:startTime",
+          "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:stopTime",
+          "created": "to_ISO8601(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:creationTime)",
+          "platform": "concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:number)",
+          "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:familyName/@abbreviation",
+          "mission": "Text(Sentinel-3)",
+          "gsd": "to_int(metadataSection/metadataObject[@ID='olciProductInformation']/metadataWrap/xmlData/olci:olciProductInformation/olci:samplingParameters/olci:acSpatialSampling)",
+          "providers": [
+            {
+              "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L1 Product']/sentinel-safe:processing/sentinel-safe:facility/@name",
+              "roles": [
+                "Text(processor)"
+              ]
+            },
+            {
+              "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L2 Product']/sentinel-safe:processing/sentinel-safe:facility/@organisation",
+              "roles": [
+                "Text(producer)"
+              ]
+            }
+          ],
+          "eopf:type":"Text(S3SYNAOD)",
+          "eopf:timeline": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:timeliness",
+          "eopf:processing_baseline": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:processingBaseline",
+          "eopf:instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:mode",
+          "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber)",
+          "sat:relative_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativeOrbitNumber)",
+          "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber/@groundTrackDirection",
+          "sat:platform_international_designator": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:nssdcIdentifier",
+          "processing:level": "Text(L2)",
+          "eopf:image_size": [
+            {
+              "name": "Text(FR)",
+              "rows": "to_int(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:imageSize/sentinel3:rows)",
+              "columns": "to_int(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:imageSize/sentinel3:columns)"
+            }
+          ],
+          "eopf:pixel_classification": [
+            {
+              "name": "Text(saline_water)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:salineWaterPixels/@percentage)"
+            },
+            {
+              "name": "Text(coastal)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:coastalPixels/@percentage)"
+            },
+            {
+              "name": "Text(fresh_water)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:freshInlandWaterPixels/@percentage)"
+            },
+            {
+              "name": "Text(tidal)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:tidalRegionPixels/@percentage)"
+            },
+            {
+              "name": "Text(land)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:landPixels/@percentage)"
+            },
+            {
+              "name": "Text(cloudy)",
+              "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:cloudyPixels/@percentage)"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "Text(syn440)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_440']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_440']/sentinel3:bandwidth)"
+            },
+            {
+              "name": "Text(syn550)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_550']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_550']/sentinel3:bandwidth)"
+            },
+            {
+              "name": "Text(syn670)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_670']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_670']/sentinel3:bandwidth)"
+            },
+            {
+              "name": "Text(syn865)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_865']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_865']/sentinel3:bandwidth)"
+            },
+            {
+              "name": "Text(syn1600)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_1600']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_1600']/sentinel3:bandwidth)"
+            },
+            {
+              "name": "Text(syn2250)",
+              "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_2250']/sentinel3:centralWavelength)",
+              "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='SYN_2250']/sentinel3:bandwidth)"
+            }
+          ]
+        }
+      },
+      "other_metadata": {
+        "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing)",
+        "orbit_reference": {
+          "absolute_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:passNumber)",
+          "relative_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativePassNumber)",
+          "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:cycleNumber)",
+          "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:phaseIdentifier)",
+          "type": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber/@type",
+          "ephemeris": {
+            "start": {
+              "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='TAI']",
+              "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UTC']",
+              "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UT1']",
+              "position": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:z)"
+              },
+              "velocity": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:z)"
+              }
+            },
+            "stop": {
+              "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='TAI']",
+              "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UTC']",
+              "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UT1']",
+              "position": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:z)"
+              },
+              "velocity": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:z)"
+              }
+            }
+          }
+        },
+        "product_unit": {
+          "type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:type",
+          "duration": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:duration)",
+          "alongtrack_coordinate": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:alongtrackCoordinate)"
+        }
+      },
+      "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S3_SY_2_SYN_manifest.xml"
+      },
+      "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel3": "http://www.esa.int/safe/sentinel/sentinel-3/1.0",
+        "olci": "http://www.esa.int/safe/sentinel/sentinel-3/olci/1.0",
+        "slstr": "http://www.esa.int/safe/sentinel/sentinel-3/slstr/1.0",
+        "syn": "http://www.esa.int/safe/sentinel/sentinel-3/synergy/1.0"
+      }
+}

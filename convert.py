@@ -50,6 +50,8 @@ def product_converter(
     open_groups( output_path, map_safe)
 
     for zarr_path in map_safe["data_mapping"].keys():
+        # if zarr_path != "/quality":
+        #     continue
         print("Creating ",zarr_path)
         ds = xr.open_dataset(
             sample_path,
@@ -68,6 +70,8 @@ def product_converter(
 if __name__ == "__main__":
     SAMPLE_PATH = Path("/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products/SAFE")
     OUTPUT_PATH = Path("/tmp")
+    SAMPLE_PATH = Path("./")
+    OUTPUT_PATH = Path("./")
 
     PRODUCTS ={
         "OL_1_EFR" : [
@@ -122,12 +126,12 @@ if __name__ == "__main__":
         ],
     }
 
-    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","OL_1_ERR","SL_1_RBT","SL_2_LST","SL_2_FRP"]
-    PRODUCTS_TO_PROCESSED = ["SY_2_SYN"]
+    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","OL_1_ERR","SL_1_RBT","SL_2_LST","SL_2_FRP","SY_2_SYN"]
+    PRODUCTS_TO_PROCESSED = ["SY_2_AOD"]
     for p in PRODUCTS_TO_PROCESSED:
         use_custom_simpl_mapping = False
         # In the cases of OLCI L1, lat/lon are duplicated in the /conditions/image_grid and /quality/image groups
-        if p == "OL_1_EFR" or p == "OL_1_ERR":
+        if p == "OL_1_EFR" or p == "OL_1_ERR" or p == "SY_2_AOD":
             use_custom_simpl_mapping = True
         print(f" ===== Convert {p} product, using custom simpl. mapping={use_custom_simpl_mapping}") 
         product_converter(

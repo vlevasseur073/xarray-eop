@@ -402,5 +402,9 @@
         "/coordinates/slstr_n_tp_grid/slstr_n_tp_longitude" : "/conditions/geometry/slstr_n/longitude",
         "/coordinates/slstr_o_tp_grid/slstr_o_tp_latitude" : "/conditions/geometry/slstr_o/latitude",
         "/coordinates/slstr_o_tp_grid/slstr_o_tp_longitude" : "/conditions/geometry/slstr_o/longitude"
-    } 
+    }, 
+    "S3SYNAOD_mapping.json":{
+        "/coordinates/latitude" : "/measurements/latitude",
+        "/coordinates/longitude": "/measurements/longitude"
+    }
 }

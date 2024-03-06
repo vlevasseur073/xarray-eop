@@ -16,6 +16,12 @@ MAPPINGS = {
     "SL_2_LST": "S3_SL_2_LST_mapping.json",
     "SL_2_FRP": "S3SLSFRP_mapping.json",
     "SY_2_SYN": "S3_SY_2_SYN_mapping.json",
+    "SY_2_AOD": "S3SYNAOD_mapping.json",
+    "SY_2_VGK": "S3SYNVGK_mapping.json",
+    "SY_2_VGP": "S3SYNVGP_mapping.json",
+    "SY_2_VG1": "S3SYNVG1_mapping.json",
+    "SY_2_V10": "S3SYNV10_mapping.json",
+
 }
 
 def get_simplified_mapping():
