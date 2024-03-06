@@ -126,12 +126,21 @@ if __name__ == "__main__":
         ],
     }
 
-    PRODUCTS_TO_PROCESSED = ["OL_1_EFR","OL_1_ERR","SL_1_RBT","SL_2_LST","SL_2_FRP","SY_2_SYN"]
-    PRODUCTS_TO_PROCESSED = ["SY_2_AOD"]
+    PRODUCTS_TO_PROCESSED = [
+        "OL_1_EFR",
+        "OL_1_ERR",
+        "SL_1_RBT",
+        "SL_2_LST",
+        "SL_2_FRP",
+        "SY_2_SYN",
+        "SY_2_AOD",
+        "SY_2_VGP",
+        "SY_2_VGK"]
+    PRODUCTS_TO_PROCESSED = ["SY_2_VGP","SY_2_VGK"]
     for p in PRODUCTS_TO_PROCESSED:
         use_custom_simpl_mapping = False
         # In the cases of OLCI L1, lat/lon are duplicated in the /conditions/image_grid and /quality/image groups
-        if p == "OL_1_EFR" or p == "OL_1_ERR" or p == "SY_2_AOD":
+        if p in ["OL_1_EFR","OL_1_ERR","SY_2_AOD","SY_2_VGP","SY_2_VGK"]:
             use_custom_simpl_mapping = True
         print(f" ===== Convert {p} product, using custom simpl. mapping={use_custom_simpl_mapping}") 
         product_converter(

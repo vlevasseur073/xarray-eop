@@ -34,16 +34,19 @@ def _create_dataset_from_ncfiles(
     ) -> dict[str,xr.Dataset]:
 
     safe_ds = {}
+    decode_times = True
     for f in input_list:
         if f.name.startswith("xfdumanifest"):
             continue
         # In xarray >2024, warning is added when opening a dataset in case of duplicate dimensions
         # (for instance a correlation matrix)
         # ValueError is raised when trying to chunk in such a case
+        if f.name == "tg.nc":
+            decode_times = False
         try:
-            safe_ds[f.name]  = xr.open_dataset(f,chunks=chunk_sizes)
+            safe_ds[f.name]  = xr.open_dataset(f,chunks=chunk_sizes,decode_times=decode_times)
         except ValueError as e:
-            safe_ds[f.name]  = xr.open_dataset(f)
+            safe_ds[f.name]  = xr.open_dataset(f,decode_times=decode_times)
             fixed = False
             for v in safe_ds[f.name]:
                 array = safe_ds[f.name][v]

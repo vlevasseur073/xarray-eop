@@ -88,8 +88,9 @@ def create_dataset_from_zmetadata(
 
 def open_eop_datatree(
     product_urlpath: Union[str,Path],
+    **kwargs,
 )->datatree.DataTree:
     
-    dt = datatree.open_datatree(product_urlpath,engine="zarr")
+    dt = datatree.open_datatree(product_urlpath,engine="zarr",**kwargs)
 
     return dt
