@@ -406,5 +406,9 @@
     "S3SYNAOD_mapping.json":{
         "/coordinates/latitude" : "/measurements/latitude",
         "/coordinates/longitude": "/measurements/longitude"
+    },
+    "S3_OL_2_mapping.json": {
+        "/coordinates/image_grid/latitude" : "/measurements/latitude",
+        "/coordinates/image_grid/longitude" : "/measurements/longitude",
     }
 }
