@@ -1,13 +1,16 @@
 import datatree
 import json
+import shutil
 import warnings
 import xarray as xr
+import zarr
 
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 
 from xarray_eop.utils import convert_mapping
 from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
+from xarray_eop.utils import open_zarr_groups_from_dict
 
 def open_eop_dataset(
     product_urlpath: Union[str,Path],
@@ -94,3 +97,40 @@ def open_eop_datatree(
     dt = datatree.open_datatree(product_urlpath,engine="zarr",**kwargs)
 
     return dt
+
+def create_datatree_from_zmetadata(
+    zmetadata:Union[str,Path]
+)->datatree.DataTree:
+    
+    ds = create_dataset_from_zmetadata(zmetadata)
+    return datatree.DataTree.from_dict(ds)
+
+def save_template_eop(
+    zmetadata:Union[str,Path],
+    product_urlpath:Path,
+    use_datatree:Optional[bool] = False,
+    consolidated:Optional[bool] = True
+):
+    if isinstance(product_urlpath,str):
+        url = Path(product_urlpath)
+    else:
+        url = product_urlpath
+    
+    
+    if use_datatree:
+        dt=create_datatree_from_zmetadata(zmetadata)
+        dt.to_zarr(url,consolidated=consolidated)
+    
+    else:
+        ds = create_dataset_from_zmetadata(zmetadata)
+
+        zarr.open(url,mode="w")
+        open_zarr_groups_from_dict( url, ds.keys())
+
+        for group in ds.keys():
+            ds[group].to_zarr(url / group,mode="w")
+
+        if consolidated:
+            zarr.consolidate_metadata(url)
+
+    

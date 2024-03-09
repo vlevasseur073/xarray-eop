@@ -2,6 +2,7 @@ import json
 import importlib.resources
 import re
 import xarray as xr
+import zarr
 from pathlib import Path
 from typing import Union
 
@@ -104,3 +105,16 @@ def convert_mapping(mapping_file:str)->dict[str,dict[str,tuple[str,str]]]:
         
 
     return new_mapping
+
+
+def open_zarr_groups_from_dict(
+        url: Path,
+        group_list: list[str]
+    ):
+    list_of_groups = []
+    for zarr_path in group_list:
+        p = Path(zarr_path)
+        for r in p.parents:
+            if r not in list_of_groups and str(r) != ".":
+                zarr.open_group(url,path=r)
+                list_of_groups.append(r)
