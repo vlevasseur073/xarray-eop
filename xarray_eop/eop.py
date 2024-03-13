@@ -101,7 +101,10 @@ def open_eop_datatree(
     **kwargs,
 )->datatree.DataTree:
     
-    dt = datatree.open_datatree(product_urlpath,engine="zarr",**kwargs)
+    chunks = kwargs.pop("chunks",None)
+    if chunks is None:
+        chunks={}
+    dt = datatree.open_datatree(product_urlpath,engine="zarr",chunks=chunks,**kwargs)
 
     return dt
 
