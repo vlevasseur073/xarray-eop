@@ -240,11 +240,11 @@
         "/conditions/instrument_fo/f1.+" : "/conditions/instrument/fnadir/f1/",
         "/conditions/instrument_io/f2.+" : "/conditions/instrument/inadir/f2/",
         "/conditions/processing_an/scan_an" : "/conditions/processing/anadir/scan",
-        "/conditions/processing_bn/scan_bn" : "/conditions/processing/banadir/scan",
+        "/conditions/processing_bn/scan_bn" : "/conditions/processing/bnadir/scan",
         "/conditions/processing_in/scan_in" : "/conditions/processing/inadir/scan",
         "/conditions/processing_fn/scan_fn" : "/conditions/processing/fnadir/scan",
         "/conditions/processing_an/detector_an" : "/conditions/processing/anadir/detector",
-        "/conditions/processing_bn/detector_bn" : "/conditions/processing/banadir/detector",
+        "/conditions/processing_bn/detector_bn" : "/conditions/processing/bnadir/detector",
         "/conditions/processing_in/detector_in" : "/conditions/processing/inadir/detector",
         "/conditions/processing_fn/detector_fn" : "/conditions/processing/fnadir/detector",
         "/conditions/processing_an/pixel_an" : "/conditions/processing/anadir/pixel",
@@ -252,7 +252,7 @@
         "/conditions/processing_in/pixel_in" : "/conditions/processing/inadir/pixel",
         "/conditions/processing_fn/pixel_fn" : "/conditions/processing/fnadir/pixel",
         "/conditions/processing_ao/scan_ao" : "/conditions/processing/aoblique/scan",
-        "/conditions/processing_bo/scan_bo" : "/conditions/processing/bobliquer/scan",
+        "/conditions/processing_bo/scan_bo" : "/conditions/processing/boblique/scan",
         "/conditions/processing_io/scan_io" : "/conditions/processing/ioblique/scan",
         "/conditions/processing_fo/scan_fo" : "/conditions/processing/foblique/scan",
         "/conditions/processing_ao/detector_ao" : "/conditions/processing/aoblique/detector",
@@ -409,6 +409,6 @@
     },
     "S3_OL_2_mapping.json": {
         "/coordinates/image_grid/latitude" : "/measurements/latitude",
-        "/coordinates/image_grid/longitude" : "/measurements/longitude",
+        "/coordinates/image_grid/longitude" : "/measurements/longitude"
     }
 }
