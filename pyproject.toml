@@ -19,7 +19,7 @@ dependencies = [
     "matplotlib",
     "netcdf4",
     "scipy",
-    "universal_path",
+    "universal_pathlib",
     "xarray >= 2023.10.1",
     "xarray-datatree >= 0.0.14",
     "zarr",
