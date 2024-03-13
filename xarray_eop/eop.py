@@ -6,6 +6,7 @@ import xarray as xr
 import zarr
 
 from pathlib import Path
+from upath import UPath
 from typing import Any, Dict, Optional, Tuple, Union
 
 from xarray_eop.utils import convert_mapping
@@ -26,11 +27,17 @@ def open_eop_dataset(
         warnings.warn("'drop_variables' is currently ignored")
     
     if isinstance(product_urlpath,str):
-        url = Path(product_urlpath)
+        url = UPath(product_urlpath)
     else:
         url = product_urlpath
 
-    ds = xr.open_dataset( url / group, engine="zarr",chunks={})
+    if group:
+        url = url / group
+
+    backend_kwargs={}
+    if storage_options:
+        backend_kwargs["storage_options"] = storage_options
+    ds = xr.open_dataset( url, engine="zarr",chunks={},backend_kwargs=backend_kwargs)
 
     return ds
 
