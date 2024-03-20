@@ -101,12 +101,33 @@ def open_eop_datatree(
     **kwargs,
 )->datatree.DataTree:
     
-    chunks = kwargs.pop("chunks",None)
-    if chunks is None:
-        chunks={}
-    dt = datatree.open_datatree(product_urlpath,engine="zarr",chunks=chunks,**kwargs)
+    if "chunks" not in kwargs:
+        kwargs["chunks"] = {}
 
-    return dt
+    if "backend_kwargs" in kwargs:
+        storage_options = kwargs["backend_kwargs"]
+        zds = zarr.open_group(product_urlpath, mode="r",**storage_options)
+    else:
+        zds = zarr.open_group(product_urlpath, mode="r")
+    ds = xr.open_dataset(product_urlpath, engine="zarr", **kwargs)
+    tree_root = datatree.DataTree.from_dict({"/": ds})
+    for path in datatree.io._iter_zarr_groups(zds):
+        try:
+            subgroup_ds = xr.open_dataset(product_urlpath, engine="zarr", group=path, **kwargs)
+        except zarr.errors.PathNotFoundError:
+            subgroup_ds = datatree.Dataset()
+
+        # TODO refactor to use __setitem__ once creation of new nodes by assigning Dataset works again
+        node_name = datatree.treenode.NodePath(path).name
+        new_node: datatree.DataTree = datatree.DataTree(name=node_name, data=subgroup_ds)
+        tree_root._set_item(
+            path,
+            new_node,
+            allow_overwrite=False,
+            new_nodes_along_path=True,
+        )
+    return tree_root
+
 
 def create_datatree_from_zmetadata(
     zmetadata:Union[str,Path]
