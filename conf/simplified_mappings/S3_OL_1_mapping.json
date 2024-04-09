@@ -308,15 +308,15 @@
                 ],
                 [
                     "frame_offset",
-                    "orphan_frame_offset"
+                    "frame_offset"
                 ],
                 [
                     "detector_index",
-                    "orphan_detector_index"
+                    "detector_index"
                 ],
                 [
                     "SZA",
-                    "orphan_sza"
+                    "sza"
                 ],
                 [
                     "nb_removed_pixels",
