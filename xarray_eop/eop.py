@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional, Tuple, Union
 from xarray_eop.utils import convert_mapping
 from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
 from xarray_eop.utils import open_zarr_groups_from_dict
+from xarray_eop.utils import convert_dict_to_plantuml
 
 def open_eop_dataset(
     product_urlpath: Union[str,Path],
@@ -164,4 +165,29 @@ def save_template_eop(
         if consolidated:
             zarr.consolidate_metadata(url)
 
-    
+def _add_path_to_tree(tree, path):
+    current = tree
+    for part in path.split("/")[1:]:
+        current = current.setdefault(part, {})
+    return tree
+
+def datatree_to_uml(
+        product:datatree.DataTree,
+        name:Optional[str] = None,
+        direction:Optional[int]=0)->str:
+    d={}
+    for group in product.groups:
+        if group=="/":
+            offset = 1
+            continue
+        _add_path_to_tree(d,group)
+
+    print(d)
+    if name is None:
+        n = product.name
+    else:
+        n = name
+    uml = convert_dict_to_plantuml(d,n,direction)
+
+    # print(uml)
+    return uml
