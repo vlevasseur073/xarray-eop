@@ -14,7 +14,7 @@ build-doc:
   before_script:
     - pip install .[doc]
   script:
-    - sphinx-build -b html docs/source public
+    - sphinx-build -b html docs/source test-docs
   artifacts:
     name: 'xarray-eop-docs'
     expose_as: 'Documentation'
@@ -62,8 +62,5 @@ deploy-doc:
 
     # Upload archive
     - 'curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request PUT --upload-file ${PACKAGE_FILENAME} "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${BRANCH_NAME}/${PACKAGE_FILENAME}"'
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_COMMIT_TAG
 
 
