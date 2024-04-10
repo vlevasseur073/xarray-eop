@@ -36,8 +36,10 @@ extensions = [
     # "matplotlib.sphinxext.only_directives",
     # "matplotlib.sphinxext.plot_directive",
     # "matplotlib.sphinxext.ipython_directive",
+    "myst_nb",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
+    "sphinx.ext.napoleon",
     "IPython.sphinxext.ipython_console_highlighting",
     "IPython.sphinxext.ipython_directive",
 ]

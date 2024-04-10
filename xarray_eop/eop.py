@@ -101,6 +101,22 @@ def open_eop_datatree(
     product_urlpath: Union[str,Path],
     **kwargs,
 )->datatree.DataTree:
+    """Open and decode a EOPF-like Zarr product
+
+    Parameters
+    ----------
+    product_urlpath: str, Path
+        Path to directory in file system or name of zip file. 
+        It supports passing URLs directly to fsspec and having it create the "mapping" instance automatically.
+        This means, that for all of the backend storage implementations supported by fsspec, you can skip importing and 
+        configuring the storage explicitly. 
+
+    kwargs: dict
+
+    Returns
+    -------
+        datatree.DataTree
+    """
     
     if "chunks" not in kwargs:
         kwargs["chunks"] = {}
@@ -133,6 +149,17 @@ def open_eop_datatree(
 def create_datatree_from_zmetadata(
     zmetadata:Union[str,Path]
 )->datatree.DataTree:
+    """Create a datatree from a template ``zmetadata`` structure
+
+    Parameters
+    ----------
+    zmetadata: str,Path
+        input ``zmetadata`` file
+
+    Returns
+    -------
+        datatree.DataTree
+    """
     
     ds = create_dataset_from_zmetadata(zmetadata)
     return datatree.DataTree.from_dict(ds)
@@ -175,6 +202,21 @@ def datatree_to_uml(
         product:datatree.DataTree,
         name:Optional[str] = None,
         direction:Optional[int]=0)->str:
+    """Generate a simplified UML diagram from a datatree
+
+    Parameters
+    ----------
+    product: datatree.DataTree
+        input DataTree structure
+    name, optional
+        Title given to the UML diagram. If not set, the product name will be used. Default None
+    direction, optional
+        top_to_bottom (0) or left_to_right (1), by default 0
+
+    Returns
+    -------
+        plantUML string
+    """
     d={}
     for group in product.groups:
         if group=="/":

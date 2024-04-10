@@ -176,7 +176,21 @@ def open_safe_datatree(
     product_urlpath: Union[str,Path],
     simplified_mapping: Optional[bool] = False
 )->datatree.DataTree:
+    """ Opens a Sentinel-3 SAFE product as a full datatree
 
+    Parameters
+    ----------
+    name: str
+        Name of the datatree product
+    product_urlpath: str, Path
+        Path in the filesystem to the product to be opened. 
+    simplified_mapping, optional
+        Use a custom simplified mapping, by default False
+
+    Returns
+    -------
+        datatree.DataTree
+    """
     if isinstance(product_urlpath,str):
         url = Path(product_urlpath)
     else:

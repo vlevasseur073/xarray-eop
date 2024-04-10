@@ -14,7 +14,7 @@ Install xarray-eop using pip:
 Open Sentinel-3 SAFE product
 ----------------------------
 
-The `sentinel3` backend mainly consists of organizing the structure following the new EOP zarr Product Structure specification.
+The `sentinel-3` backend mainly consists of organizing the structure following the new EOP zarr Product Structure specification.
 Simple datasets can be created from a specific netcdf file or a group corresponding to a valid EOP zarr path.
 The whole product can be represented by the experimental DataTree hierarchical structure.
 
@@ -30,7 +30,9 @@ The whole product can be represented by the experimental DataTree hierarchical s
 
 Open Sentinel zarr product
 --------------------------
- Opening gridded measurement data with xarray
+
+Open a partial dataset specifying a group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. currentmodule:: xarray_eop
 
@@ -41,7 +43,7 @@ Open Sentinel zarr product
     from pathlib import Path
 
     SAMPLE_PATH = Path("/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products/Zarr_Beta")
-    product = SAMPLE_PATH / "S3OLCEFR_20230506T015316_0180_B117_T931.zarr"
+    product = SAMPLE_PATH / "S03OLCEFR_20230506T015316_0180_B117_T931.zarr"
 
     %xmode minimal
 
@@ -65,10 +67,28 @@ Open Sentinel zarr product
     )
 
 
-Opening the whole product with datatree
+Open the whole product with datatree
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: xarray_eop.eop.open_eop_datatree
+    :noindex:
+
+With product stored in filesystem
 
 .. ipython:: python
 
-    import datatree
-    #datatree.open_datatree(product,engine="zarr")
-    print("toto")
+    from xarray_eop.eop import open_eop_datatree
+    dt = datatree.open_eop_datatree(product)
+
+
+
+With product stored in the cloud and zipped.
+
+.. note::
+    The product must be zipped without compression and without the root folder (the ``.zmetadata`` must be present
+    directly under the archive)
+
+.. ipython:: python
+
+    dt = open_eop_datatree(store,backend_kwargs={"storage_options": {"s3":secrets["s3input"]}})
+    dt

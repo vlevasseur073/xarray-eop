@@ -32,7 +32,8 @@ notebook = [
 ]
 doc = [
     "pickleshare",
-    "sphinx"
+    "sphinx",
+    "myst-nb"
 ]
 
 [tool.setuptools_scm]
