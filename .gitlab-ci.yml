@@ -2,13 +2,34 @@ default:
   image:
     python:3.11
 
+stages:
+  - doc
+
+variables:
+  BRANCH_NAME: $CI_COMMIT_REF_NAME
+  PACKAGE_NAME: xarray-eop-docs
+
 build-doc:
-  stage: deploy
+  stage: doc
   before_script:
     - pip install .[doc]
   script:
-  - pip install -U sphinx
-  - sphinx-build -b html docs/source public
+    - sphinx-build -b html docs/source public
+  artifacts:
+    name: 'xarray-eop-docs'
+    expose_as: 'Documentation'
+    paths:
+      # Allow consulting the generated documentation without
+      # overwriting the "official" documentation made available with
+      # GitLab Pages.
+      - test-docs/
+    expire_in: 1 week
   only:
   - branches
+
+deploy-doc:
+  stage: doc
+  needs:
+    - build-doc
+
 
