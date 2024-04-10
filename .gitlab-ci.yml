@@ -31,5 +31,41 @@ deploy-doc:
   stage: doc
   needs:
     - build-doc
+  script:
+    # List the existing packages to obtain the URL allowing to delete
+    # a package.
+    # The first time the pipeline is run, no documentation archive will be
+    # present in the project's package registry.
+    - 'curl --output packages.json --header "JOB-TOKEN: ${CI_JOB_TOKEN}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages?package_name=${PACKAGE_NAME}&order_by=version&sort=desc"'
+    - PACKAGE_VERSIONS=`jq --raw-output ".[].version" packages.json`
+
+    # Create archive with the current branch/tag's documentation.
+    # Other/previous versions are already stored in dedicated package versions.
+    - mkdir -p public
+    - mv test-docs public/${BRANCH_NAME}
+    - tar cfz ${PACKAGE_FILENAME} public/${BRANCH_NAME}
+
+    # GitLab allows storing multiple files under the same package/version.
+    # If the same archive file (same filename) is uploaded multiple times,
+    # GitLab will store multiple versions of the file.
+    # See https://docs.gitlab.com/ee/user/packages/generic_packages/index.html#publishing-a-package-with-the-same-name-or-version
+    # To not explode, the previous package is therefore removed before
+    # uploading the new documentation archive.
+    #
+    # Retrieve the delete link of the package for the current branch/tag
+    # The version will not exist the first time the documentation
+    # is built for a given branch/tag.
+    - DELETE_URL=`jq --raw-output ".[] | select(.version == \"${BRANCH_NAME}\") | ._links.delete_api_path" packages.json`
+    - |
+      if [[ "_${DELETE_URL}" != "_" ]]; then
+        echo "Deleting package: ${DELETE_URL}"
+        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request DELETE "${DELETE_URL}"
+      fi
+
+    # Upload archive
+    - 'curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request PUT --upload-file ${PACKAGE_FILENAME} "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${BRANCH_NAME}/${PACKAGE_FILENAME}"'
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
 
 
