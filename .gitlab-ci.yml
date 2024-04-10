@@ -29,8 +29,6 @@ build-doc:
 
 deploy-doc:
   stage: doc
-  needs:
-    - build-doc
   script:
     # List the existing packages to obtain the URL allowing to delete
     # a package.
