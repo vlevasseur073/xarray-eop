@@ -4,13 +4,14 @@ default:
 
 stages:
   - doc
+  - deploy
 
 variables:
   BRANCH_NAME: $CI_COMMIT_REF_NAME
   PACKAGE_NAME: xarray-eop-docs
   PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
 
-build-doc:
+build_doc:
   stage: doc
   before_script:
     - pip install .[doc]
@@ -28,8 +29,8 @@ build-doc:
   only:
   - branches
 
-deploy-doc:
-  stage: doc
+deploy_doc:
+  stage: deploy
   needs:
     - build-doc
   before_script:
