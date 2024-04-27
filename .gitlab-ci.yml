@@ -30,6 +30,8 @@ build-doc:
 
 deploy-doc:
   stage: doc
+  needs:
+    - build-doc
   before_script:
     - apt-get update && apt-get --yes install jq
   script:
