@@ -30,8 +30,7 @@ build-doc:
 deploy-doc:
   stage: doc
   before_script:
-    - apt-get update
-    - apt install jq
+    - apt-get update && apt-get --yes install jq
   script:
     # List the existing packages to obtain the URL allowing to delete
     # a package.
