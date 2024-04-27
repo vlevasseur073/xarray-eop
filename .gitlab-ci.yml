@@ -29,6 +29,8 @@ build-doc:
 
 deploy-doc:
   stage: doc
+  before_script:
+    - pip install jq
   script:
     # List the existing packages to obtain the URL allowing to delete
     # a package.
