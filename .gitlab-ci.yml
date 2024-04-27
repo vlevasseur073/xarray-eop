@@ -11,7 +11,7 @@ variables:
   PACKAGE_NAME: xarray-eop-docs
   PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
 
-build_doc:
+build-doc:
   stage: doc
   before_script:
     - pip install .[doc]
@@ -29,7 +29,7 @@ build_doc:
   only:
   - branches
 
-deploy_doc:
+deploy-doc:
   stage: deploy
   needs:
     - build-doc
