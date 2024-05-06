@@ -4,10 +4,12 @@ default:
 
 stages:
   - doc
+  - deploy
 
 variables:
   BRANCH_NAME: $CI_COMMIT_REF_NAME
   PACKAGE_NAME: xarray-eop-docs
+  PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
 
 build-doc:
   stage: doc
@@ -28,17 +30,18 @@ build-doc:
   - branches
 
 deploy-doc:
-  stage: doc
+  stage: deploy
+  needs:
+    - build-doc
   before_script:
-    - apt-get update
-    - apt install jq
+    - apt-get update && apt-get --yes install jq
   script:
     # List the existing packages to obtain the URL allowing to delete
     # a package.
     # The first time the pipeline is run, no documentation archive will be
     # present in the project's package registry.
-    - 'curl --output packages.json --header "JOB-TOKEN: ${CI_JOB_TOKEN}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages?package_name=${PACKAGE_NAME}&order_by=version&sort=desc"'
-    - PACKAGE_VERSIONS=`jq --raw-output ".[].version" packages.json`
+    # - 'curl --output packages.json --header "JOB-TOKEN: ${CI_JOB_TOKEN}" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages?package_name=${PACKAGE_NAME}&order_by=version&sort=desc"'
+    # - PACKAGE_VERSIONS=`jq --raw-output ".[].version" packages.json`
 
     # Create archive with the current branch/tag's documentation.
     # Other/previous versions are already stored in dedicated package versions.
@@ -56,12 +59,12 @@ deploy-doc:
     # Retrieve the delete link of the package for the current branch/tag
     # The version will not exist the first time the documentation
     # is built for a given branch/tag.
-    - DELETE_URL=`jq --raw-output ".[] | select(.version == \"${BRANCH_NAME}\") | ._links.delete_api_path" packages.json`
-    - |
-      if [[ "_${DELETE_URL}" != "_" ]]; then
-        echo "Deleting package: ${DELETE_URL}"
-        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request DELETE "${DELETE_URL}"
-      fi
+    #- DELETE_URL=`jq --raw-output ".[] | select(.version == \"${BRANCH_NAME}\") | ._links.delete_api_path" packages.json`
+    #- |
+    #  if [[ "_${DELETE_URL}" != "_" ]]; then
+    #    echo "Deleting package: ${DELETE_URL}"
+    #    curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request DELETE "${DELETE_URL}"
+    #  fi
 
     # Upload archive
     - 'curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --request PUT --upload-file ${PACKAGE_FILENAME} "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${BRANCH_NAME}/${PACKAGE_FILENAME}"'
