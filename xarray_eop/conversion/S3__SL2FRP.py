@@ -143,13 +143,13 @@ def generate(adf_type: str)->None:
                     "longitude":lon
                 },
             )
-            gas_flare.latitude.attrs["long_name"] = "Latitude",
-            gas_flare.latitude.attrs["units"] = "degrees_north",
-            gas_flare.latitude.attrs["valid_max"] = 90.0,
+            gas_flare.latitude.attrs["long_name"] = "Latitude"
+            gas_flare.latitude.attrs["units"] = "degrees_north"
+            gas_flare.latitude.attrs["valid_max"] = 90.0
             gas_flare.latitude.attrs["valid_min"] = -90.0
-            gas_flare.longitude.attrs["long_name"] = "Longitude",
-            gas_flare.longitude.attrs["units"] = "degrees_east", 
-            gas_flare.longitude.attrs["valid_max"] = 180.0,
+            gas_flare.longitude.attrs["long_name"] = "Longitude"
+            gas_flare.longitude.attrs["units"] = "degrees_east" 
+            gas_flare.longitude.attrs["valid_max"] = 180.0
             gas_flare.longitude.attrs["valid_min"] = -180.0
 
             nc_file = "Volcano_list.nc"
@@ -164,13 +164,13 @@ def generate(adf_type: str)->None:
                     "longitude":lon
                 }
             )
-            volcano.latitude.attrs["long_name"] = "Latitude",
-            volcano.latitude.attrs["units"] = "degrees_north",
-            volcano.latitude.attrs["valid_max"] = 90.0,
+            volcano.latitude.attrs["long_name"] = "Latitude"
+            volcano.latitude.attrs["units"] = "degrees_north"
+            volcano.latitude.attrs["valid_max"] = 90.0
             volcano.latitude.attrs["valid_min"] = -90.0
-            volcano.longitude.attrs["long_name"] = "Longitude",
-            volcano.longitude.attrs["units"] = "degrees_east", 
-            volcano.longitude.attrs["valid_max"] = 180.0,
+            volcano.longitude.attrs["long_name"] = "Longitude"
+            volcano.longitude.attrs["units"] = "degrees_east" 
+            volcano.longitude.attrs["valid_max"] = 180.0
             volcano.longitude.attrs["valid_min"] = -180.0
             
             for var in gas_flare.data_vars:

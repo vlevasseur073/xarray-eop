@@ -13,7 +13,7 @@ _LOG_GENERATING_ADF="*** Generating ADF "
 
 def generate(adf_type: str)->None:
     
-    if adf_type == "SLADF":
+    if adf_type == "SLANC":
         for legacy_adf in ["S3A_SL_1_ANC_AX","S3B_SL_1_ANC_AX"]:
             safe = extract_legacy(in_path,legacy_adf,tmp_path)
             out_file = gen_static_adf_name(legacy_adf[0:3],adf_type,format="zarr")
@@ -28,7 +28,7 @@ def generate(adf_type: str)->None:
                     title="ancillary data file",
                     ncgroup=group,
                     dt=dt)
-    
+            dt.attrs["title"] = "ancillary data file"
             dt.to_zarr(out_file)
             
 
@@ -270,6 +270,7 @@ def generate(adf_type: str)->None:
 if __name__ == "__main__":
     # generate('SL1PP') #json
     generate("SLADF")
+    generate("SLANC")
     generate("SLGEO")
     generate("SLGEC")
     generate("SLCLO")
