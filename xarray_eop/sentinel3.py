@@ -8,8 +8,8 @@ from itertools import count
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union, List
 
-from xarray_eop.utils import convert_mapping
-from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
+from xarray_eop.conversion.utils import convert_mapping
+from xarray_eop.conversion.utils import MAPPINGS, SIMPL_MAPPING_PATH
 
 EOP_TREE_STRUC=[
     "measurements",

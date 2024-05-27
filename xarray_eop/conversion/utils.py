@@ -1,17 +1,41 @@
 import dask.array as da
 import datatree
 from datetime import datetime
+import importlib.resources
+import json
 from numcodecs import Blosc
 import numpy as np
 from pathlib import Path
+import re
 import tarfile
 from typing import Optional, Union
 import xarray as xr
+import zarr
 
 default_alg = "zstd"
 default_comp = 3
 default_shuffle = Blosc.BITSHUFFLE
 DEFAULT_COMPRESSOR = Blosc(cname=default_alg, clevel=default_comp, shuffle=default_shuffle)
+
+MAPPING_PATH = importlib.resources.files("conf") / "mappings"
+SIMPL_MAPPING_PATH = importlib.resources.files("conf") / "simplified_mappings"
+REMAPPING_FILE = MAPPING_PATH / "remap.json"
+
+MAPPINGS = {
+    "OL_1_EFR": "S3_OL_1_mapping.json",
+    "OL_1_ERR": "S3OLCERR_mapping.json",
+    "OL_2_LFR": "S3_OL_2_mapping.json",
+    "SL_1_RBT": "S3_SL_1_RBT_mapping.json",
+    "SL_2_LST": "S3_SL_2_LST_mapping.json",
+    "SL_2_FRP": "S3SLSFRP_mapping.json",
+    "SY_2_SYN": "S3_SY_2_SYN_mapping.json",
+    "SY_2_AOD": "S3SYNAOD_mapping.json",
+    "SY_2_VGK": "S3SYNVGK_mapping.json",
+    "SY_2_VGP": "S3SYNVGP_mapping.json",
+    "SY_2_VG1": "S3SYNVG1_mapping.json",
+    "SY_2_V10": "S3SYNV10_mapping.json",
+
+}
 
 def lower(v:Union[str,float,int]):
     if isinstance(v,str):
@@ -259,3 +283,125 @@ def generate_datatree_from_legacy_adf(
 
 
     return dt
+
+
+def get_simplified_mapping():
+    """Generates a simplified mapping from EOPF mapping
+    The resulting file is store under conf/simplified_mappings/ref
+    """
+    
+    for _,mapping in MAPPINGS.items():
+        print("Convert ", mapping)
+        ds = convert_mapping(mapping)
+    
+        with open( SIMPL_MAPPING_PATH / "ref" / mapping, 'w', encoding='utf-8') as f:
+            json.dump(ds, f, indent=4)
+
+
+def convert_mapping(mapping_file:str)->dict[str,dict[str,tuple[str,str]]]:
+    with open( MAPPING_PATH / mapping_file ) as f:
+        eopf_mapping=json.load(f)
+    
+    
+    new_mapping={
+        "chunk_sizes": eopf_mapping["chunk_sizes"]
+    }
+    data_map = new_mapping["data_mapping"] = {}
+    for map in eopf_mapping["data_mapping"]:
+        if map["item_format"] == "netcdf-dimension":
+            continue
+        src:str = map["source_path"]
+        dest:str = map["target_path"]
+        
+        if not (src and dest):
+            continue
+        if src.startswith("xfdumanifest"):
+            continue
+        
+        # Check for any specific remapping
+        if REMAPPING_FILE.is_file():
+            with open(REMAPPING_FILE) as rf:
+                remap = json.load(rf)
+            if mapping_file in remap:
+                # if dest in remap[mapping_file]:
+                #     dest = remap[mapping_file][dest]
+                for d in remap[mapping_file]:
+                    r=re.search(d,dest)
+                    if r:
+                        if r.re.pattern==dest:
+                            dest = remap[mapping_file][dest]
+                        else:
+                            v=dest.split("/")[-1]
+                            dest = remap[mapping_file][d]
+                            l=dest.split("/")[:-1]
+                            l.append(v)
+                            dest="/".join(l)
+        if not dest:
+            continue
+
+        try:
+            file = src.split(":")[0]
+            var = src.split(":")[1]
+        except IndexError:
+            print(f"Error in src path: {src}")
+            print (map)
+            raise(IndexError)
+        
+        group = str(Path(dest).parents[0])
+        variable = str(Path(dest).name)
+
+        
+
+        if "coordinates" in group:# and variable not in ["latitude","longitude"]:
+            group = group.replace("coordinates","conditions")
+        
+        if group not in data_map:
+            data_map[group] = {}
+        
+        if file not in data_map[group]:
+            data_map[group][file] = []
+        data_map[group][file].append((var,variable))
+        
+
+    return new_mapping
+
+
+def open_zarr_groups_from_dict(
+        url: Path,
+        group_list: list[str]
+    ):
+    list_of_groups = []
+    for zarr_path in group_list:
+        p = Path(zarr_path)
+        for r in p.parents:
+            if r not in list_of_groups and str(r) != ".":
+                zarr.open_group(url,path=r)
+                list_of_groups.append(r)
+
+
+def convert_dict_to_plantuml(dictionary, name,direction=0):
+    plantuml_code = f"@startuml\n"
+    if direction == 0:
+        plantuml_code += "top to bottom direction\n"
+    else:
+        plantuml_code += "left to right direction\n"
+
+    plantuml_code += f"object {name}\n"
+    for key, value in dictionary.items():
+        plantuml_code += f"object {key}\n"
+        if isinstance(value, dict):
+            for sub_key in value:
+                plantuml_code += f"object \"{sub_key}\" as {key}_{sub_key}\n"
+                plantuml_code += f"{key} -- {key}_{sub_key}\n"
+                if isinstance(value[sub_key], dict):
+                    for sub_sub_key in value[sub_key]:
+                        plantuml_code += f"object \"{sub_sub_key}\" as {key}_{sub_key}_{sub_sub_key}\n"
+                        plantuml_code += f"{key}_{sub_key} -- {key}_{sub_key}_{sub_sub_key}\n"
+        plantuml_code += "\n"
+
+    for key in dictionary:
+        plantuml_code += f"{name} -- {key}\n"
+
+    plantuml_code += "@enduml\n"
+
+    return plantuml_code

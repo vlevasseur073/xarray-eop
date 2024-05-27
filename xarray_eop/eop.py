@@ -9,8 +9,6 @@ from pathlib import Path
 from upath import UPath
 from typing import Any, Dict, Optional, Tuple, Union
 
-from xarray_eop.utils import convert_mapping
-from xarray_eop.utils import MAPPINGS, SIMPL_MAPPING_PATH
 from xarray_eop.utils import open_zarr_groups_from_dict
 from xarray_eop.utils import convert_dict_to_plantuml
 
