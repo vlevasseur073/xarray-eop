@@ -4,7 +4,7 @@
         "columns": 1024
     },
     "data_mapping": {
-        "/measurements/image": {
+        "/measurements": {
             "geo_coordinates.nc": [
                 [
                     "latitude",
@@ -148,7 +148,7 @@
                 ]
             ]
         },
-        "/conditions/image_grid": {
+        "/conditions/image": {
             "geo_coordinates.nc": [
                 [
                     "latitude",
@@ -216,87 +216,87 @@
                 ],
                 [
                     "Oa01_radiance",
-                    "orphan_01_radiance"
+                    "oa01_radiance"
                 ],
                 [
                     "Oa02_radiance",
-                    "orphan_02_radiance"
+                    "oa02_radiance"
                 ],
                 [
                     "Oa03_radiance",
-                    "orphan_03_radiance"
+                    "oa03_radiance"
                 ],
                 [
                     "Oa04_radiance",
-                    "orphan_04_radiance"
+                    "oa04_radiance"
                 ],
                 [
                     "Oa05_radiance",
-                    "orphan_05_radiance"
+                    "oa05_radiance"
                 ],
                 [
                     "Oa06_radiance",
-                    "orphan_06_radiance"
+                    "oa06_radiance"
                 ],
                 [
                     "Oa07_radiance",
-                    "orphan_07_radiance"
+                    "oa07_radiance"
                 ],
                 [
                     "Oa08_radiance",
-                    "orphan_08_radiance"
+                    "oa08_radiance"
                 ],
                 [
                     "Oa09_radiance",
-                    "orphan_09_radiance"
+                    "oa09_radiance"
                 ],
                 [
                     "Oa10_radiance",
-                    "orphan_10_radiance"
+                    "oa10_radiance"
                 ],
                 [
                     "Oa11_radiance",
-                    "orphan_11_radiance"
+                    "oa11_radiance"
                 ],
                 [
                     "Oa12_radiance",
-                    "orphan_12_radiance"
+                    "oa12_radiance"
                 ],
                 [
                     "Oa13_radiance",
-                    "orphan_13_radiance"
+                    "oa13_radiance"
                 ],
                 [
                     "Oa14_radiance",
-                    "orphan_14_radiance"
+                    "oa14_radiance"
                 ],
                 [
                     "Oa15_radiance",
-                    "orphan_15_radiance"
+                    "oa15_radiance"
                 ],
                 [
                     "Oa16_radiance",
-                    "orphan_16_radiance"
+                    "oa16_radiance"
                 ],
                 [
                     "Oa17_radiance",
-                    "orphan_17_radiance"
+                    "oa17_radiance"
                 ],
                 [
                     "Oa18_radiance",
-                    "orphan_18_radiance"
+                    "oa18_radiance"
                 ],
                 [
                     "Oa19_radiance",
-                    "orphan_19_radiance"
+                    "oa19_radiance"
                 ],
                 [
                     "Oa20_radiance",
-                    "orphan_20_radiance"
+                    "oa20_radiance"
                 ],
                 [
                     "Oa21_radiance",
-                    "orphan_21_radiance"
+                    "oa21_radiance"
                 ]
             ]
         },
@@ -324,7 +324,7 @@
                 ]
             ]
         },
-        "/quality/image": {
+        "/quality": {
             "geo_coordinates.nc": [
                 [
                     "latitude",
@@ -472,95 +472,95 @@
             "removed_pixels.nc": [
                 [
                     "quality_flags",
-                    "orphan_quality_flags"
+                    "quality_flags"
                 ],
                 [
                     "Oa01_radiance_unc",
-                    "orphan_01_radiance_unc"
+                    "oa01_radiance_unc"
                 ],
                 [
                     "Oa02_radiance_unc",
-                    "orphan_02_radiance_unc"
+                    "oa02_radiance_unc"
                 ],
                 [
                     "Oa03_radiance_unc",
-                    "orphan_03_radiance_unc"
+                    "oa03_radiance_unc"
                 ],
                 [
                     "Oa04_radiance_unc",
-                    "orphan_04_radiance_unc"
+                    "oa04_radiance_unc"
                 ],
                 [
                     "Oa05_radiance_unc",
-                    "orphan_05_radiance_unc"
+                    "oa05_radiance_unc"
                 ],
                 [
                     "Oa06_radiance_unc",
-                    "orphan_06_radiance_unc"
+                    "oa06_radiance_unc"
                 ],
                 [
                     "Oa07_radiance_unc",
-                    "orphan_07_radiance_unc"
+                    "oa07_radiance_unc"
                 ],
                 [
                     "Oa08_radiance_unc",
-                    "orphan_08_radiance_unc"
+                    "oa08_radiance_unc"
                 ],
                 [
                     "Oa09_radiance_unc",
-                    "orphan_09_radiance_unc"
+                    "oa09_radiance_unc"
                 ],
                 [
                     "Oa10_radiance_unc",
-                    "orphan_10_radiance_unc"
+                    "oa10_radiance_unc"
                 ],
                 [
                     "Oa11_radiance_unc",
-                    "orphan_11_radiance_unc"
+                    "oa11_radiance_unc"
                 ],
                 [
                     "Oa12_radiance_unc",
-                    "orphan_12_radiance_unc"
+                    "oa12_radiance_unc"
                 ],
                 [
                     "Oa13_radiance_unc",
-                    "orphan_13_radiance_unc"
+                    "oa13_radiance_unc"
                 ],
                 [
                     "Oa14_radiance_unc",
-                    "orphan_14_radiance_unc"
+                    "oa14_radiance_unc"
                 ],
                 [
                     "Oa15_radiance_unc",
-                    "orphan_15_radiance_unc"
+                    "oa15_radiance_unc"
                 ],
                 [
                     "Oa16_radiance_unc",
-                    "orphan_16_radiance_unc"
+                    "oa16_radiance_unc"
                 ],
                 [
                     "Oa17_radiance_unc",
-                    "orphan_17_radiance_unc"
+                    "oa17_radiance_unc"
                 ],
                 [
                     "Oa18_radiance_unc",
-                    "orphan_18_radiance_unc"
+                    "oa18_radiance_unc"
                 ],
                 [
                     "Oa19_radiance_unc",
-                    "orphan_19_radiance_unc"
+                    "oa19_radiance_unc"
                 ],
                 [
                     "Oa20_radiance_unc",
-                    "orphan_20_radiance_unc"
+                    "oa20_radiance_unc"
                 ],
                 [
                     "Oa21_radiance_unc",
-                    "orphan_21_radiance_unc"
+                    "oa21_radiance_unc"
                 ]
             ]
         },
-        "/conditions/meteo": {
+        "/conditions/meteorology": {
             "tie_meteo.nc": [
                 [
                     "atmospheric_temperature_profile",

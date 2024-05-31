@@ -115,7 +115,7 @@ def product_converter(
 if __name__ == "__main__":
     SAMPLE_PATH = Path("/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products/SAFE")
     OUTPUT_PATH = Path("/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products/Zarr_DDR")
-    # SAMPLE_PATH = Path("./")
+    # SAMPLE_PATH = Path("/tmp")
     # OUTPUT_PATH = Path("/tmp")
 
     PRODUCTS ={
@@ -140,10 +140,10 @@ if __name__ == "__main__":
             f"S03SLSLST_20191227T124111_0179_A109_T{np.random.randint(0,999,1)[0]:03d}.zarr",
         ],
         "SL_2_FRP": [
-            "S3A_SL_2_FRP____20191227T131711_20191227T132011_20221209T133305_0180_053_109______PS1_O_NR_004.SEN3",
-            f"S03SLSFRP_20191227T131711_0180_A109_T{np.random.randint(0,999,1)[0]:03d}.zarr",
-            # "S3A_SL_2_FRP____20200908T182648_20200908T182948_20220120T090409_0179_062_298______LR1_O_NT_001.SEN3",
-            # f"S3SLSFRP_20200908T182648_0179_A298_S{np.random.randint(0,999,1)[0]:03d}.zarr",
+            # "S3A_SL_2_FRP____20191227T131711_20191227T132011_20221209T133305_0180_053_109______PS1_O_NR_004.SEN3",
+            # f"S03SLSFRP_20191227T131711_0180_A109_T{np.random.randint(0,999,1)[0]:03d}.zarr",
+            "S3A_SL_2_FRP____20200908T182648_20200908T182948_20220120T090409_0179_062_298______LR1_O_NT_001.SEN3",
+            f"S03SLSFRP_20200908T182648_0179_A298_S{np.random.randint(0,999,1)[0]:03d}.zarr",
         ],
         "SY_2_SYN": [
             "S3A_SY_2_SYN____20191227T124211_20191227T124311_20230403T130523_0059_053_109______PS1_D_NR_002.SEN3",
@@ -176,8 +176,8 @@ if __name__ == "__main__":
         # "OL_1_ERR",
         # "OL_2_LFR",
         # "SL_1_RBT",
-        "SL_2_LST",
-        # "SL_2_FRP",
+        # "SL_2_LST",
+        "SL_2_FRP",
         # "SY_2_SYN",
         # "SY_2_AOD",
         # "SY_2_VGP",

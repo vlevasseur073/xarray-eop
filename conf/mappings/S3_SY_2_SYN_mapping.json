@@ -1687,7 +1687,7 @@
         },
         {
             "short_name": "air_pressure",
-            "target_path": "/conditions/meteo/air_pressure",
+            "target_path": "/conditions/meteorology/air_pressure",
             "source_path": "tiepoints_meteo.nc:air_pressure",
             "item_format": "netcdf",
             "attributes": {
@@ -1705,7 +1705,7 @@
         },
         {
             "short_name": "ozone",
-            "target_path": "/conditions/meteo/ozone",
+            "target_path": "/conditions/meteorology/ozone",
             "source_path": "tiepoints_meteo.nc:ozone",
             "item_format": "netcdf",
             "attributes": {
@@ -1721,7 +1721,7 @@
         },
         {
             "short_name": "water_vapour",
-            "target_path": "/conditions/meteo/water_vapour",
+            "target_path": "/conditions/meteorology/water_vapour",
             "source_path": "tiepoints_meteo.nc:water_vapour",
             "item_format": "netcdf",
             "attributes": {

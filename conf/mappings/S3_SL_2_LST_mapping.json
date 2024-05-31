@@ -1742,7 +1742,7 @@
         },
         {
             "short_name": "t_series",
-            "target_path": "/conditions/meteo/t_series",
+            "target_path": "/conditions/meteorology/t_series",
             "source_path": "met_tx.nc:t_series",
             "item_format": "netcdf",
             "parameters": {
@@ -1762,7 +1762,7 @@
         },
         {
             "short_name": "cloud_fraction_tp",
-            "target_path": "/conditions/meteo/cloud_fraction_tp",
+            "target_path": "/conditions/meteorology/cloud_fraction_tp",
             "source_path": "met_tx.nc:cloud_fraction_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1797,7 +1797,7 @@
         },
         {
             "short_name": "dew_point_tp",
-            "target_path": "/conditions/meteo/dew_point_tp",
+            "target_path": "/conditions/meteorology/dew_point_tp",
             "source_path": "met_tx.nc:dew_point_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1836,7 +1836,7 @@
         },
         {
             "short_name": "east_west_stress_tp",
-            "target_path": "/conditions/meteo/east_west_stress_tp",
+            "target_path": "/conditions/meteorology/east_west_stress_tp",
             "source_path": "met_tx.nc:east_west_stress_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1864,7 +1864,7 @@
         },
         {
             "short_name": "latent_heat_tp",
-            "target_path": "/conditions/meteo/latent_heat_tp",
+            "target_path": "/conditions/meteorology/latent_heat_tp",
             "source_path": "met_tx.nc:latent_heat_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1892,7 +1892,7 @@
         },
         {
             "short_name": "north_south_stress_tp",
-            "target_path": "/conditions/meteo/north_south_stress_tp",
+            "target_path": "/conditions/meteorology/north_south_stress_tp",
             "source_path": "met_tx.nc:north_south_stress_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1920,7 +1920,7 @@
         },
         {
             "short_name": "sea_ice_fraction_tp",
-            "target_path": "/conditions/meteo/sea_ice_fraction_tp",
+            "target_path": "/conditions/meteorology/sea_ice_fraction_tp",
             "source_path": "met_tx.nc:sea_ice_fraction_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1955,7 +1955,7 @@
         },
         {
             "short_name": "sea_surface_temperature_tp",
-            "target_path": "/conditions/meteo/sea_surface_temperature_tp",
+            "target_path": "/conditions/meteorology/sea_surface_temperature_tp",
             "source_path": "met_tx.nc:sea_surface_temperature_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -1991,7 +1991,7 @@
         },
         {
             "short_name": "sensible_heat_tp",
-            "target_path": "/conditions/meteo/sensible_heat_tp",
+            "target_path": "/conditions/meteorology/sensible_heat_tp",
             "source_path": "met_tx.nc:sensible_heat_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2019,7 +2019,7 @@
         },
         {
             "short_name": "skin_temperature_tp",
-            "target_path": "/conditions/meteo/skin_temperature_tp",
+            "target_path": "/conditions/meteorology/skin_temperature_tp",
             "source_path": "met_tx.nc:skin_temperature_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2055,7 +2055,7 @@
         },
         {
             "short_name": "snow_albedo_tp",
-            "target_path": "/conditions/meteo/snow_albedo_tp",
+            "target_path": "/conditions/meteorology/snow_albedo_tp",
             "source_path": "met_tx.nc:snow_albedo_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2090,7 +2090,7 @@
         },
         {
             "short_name": "snow_depth_tx",
-            "target_path": "/conditions/meteo/snow_depth_tx",
+            "target_path": "/conditions/meteorology/snow_depth_tx",
             "source_path": "met_tx.nc:snow_depth_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2126,7 +2126,7 @@
         },
         {
             "short_name": "soil_wetness_tp",
-            "target_path": "/conditions/meteo/soil_wetness_tp",
+            "target_path": "/conditions/meteorology/soil_wetness_tp",
             "source_path": "met_tx.nc:soil_wetness_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2162,7 +2162,7 @@
         },
         {
             "short_name": "solar_radiation_tp",
-            "target_path": "/conditions/meteo/solar_radiation_tp",
+            "target_path": "/conditions/meteorology/solar_radiation_tp",
             "source_path": "met_tx.nc:solar_radiation_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2190,7 +2190,7 @@
         },
         {
             "short_name": "p_atmos",
-            "target_path": "/conditions/meteo/p_atmos",
+            "target_path": "/conditions/meteorology/p_atmos",
             "source_path": "met_tx.nc:p_atmos",
             "item_format": "netcdf",
             "parameters": {
@@ -2210,7 +2210,7 @@
         },
         {
             "short_name": "specific_humidity_tp",
-            "target_path": "/conditions/meteo/specific_humidity_tp",
+            "target_path": "/conditions/meteorology/specific_humidity_tp",
             "source_path": "met_tx.nc:specific_humidity_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2248,7 +2248,7 @@
         },
         {
             "short_name": "surface_pressure_tp",
-            "target_path": "/conditions/meteo/surface_pressure_tp",
+            "target_path": "/conditions/meteorology/surface_pressure_tp",
             "source_path": "met_tx.nc:surface_pressure_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2284,7 +2284,7 @@
         },
         {
             "short_name": "temperature_profile_tp",
-            "target_path": "/conditions/meteo/temperature_profile_tp",
+            "target_path": "/conditions/meteorology/temperature_profile_tp",
             "source_path": "met_tx.nc:temperature_profile_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2322,7 +2322,7 @@
         },
         {
             "short_name": "temperature_tp",
-            "target_path": "/conditions/meteo/temperature_tp",
+            "target_path": "/conditions/meteorology/temperature_tp",
             "source_path": "met_tx.nc:temperature_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2361,7 +2361,7 @@
         },
         {
             "short_name": "thermal_radiation_tp",
-            "target_path": "/conditions/meteo/thermal_radiation_tp",
+            "target_path": "/conditions/meteorology/thermal_radiation_tp",
             "source_path": "met_tx.nc:thermal_radiation_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2389,7 +2389,7 @@
         },
         {
             "short_name": "total_column_ozone_tp",
-            "target_path": "/conditions/meteo/total_column_ozone_tp",
+            "target_path": "/conditions/meteorology/total_column_ozone_tp",
             "source_path": "met_tx.nc:total_column_ozone_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2425,7 +2425,7 @@
         },
         {
             "short_name": "total_column_water_vapour_tp",
-            "target_path": "/conditions/meteo/total_column_water_vapour_tp",
+            "target_path": "/conditions/meteorology/total_column_water_vapour_tp",
             "source_path": "met_tx.nc:total_column_water_vapour_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2461,7 +2461,7 @@
         },
         {
             "short_name": "u_wind_tp",
-            "target_path": "/conditions/meteo/u_wind_tp",
+            "target_path": "/conditions/meteorology/u_wind_tp",
             "source_path": "met_tx.nc:u_wind_tx",
             "item_format": "netcdf",
             "parameters": {
@@ -2499,7 +2499,7 @@
         },
         {
             "short_name": "v_wind_tp",
-            "target_path": "/conditions/meteo/v_wind_tp",
+            "target_path": "/conditions/meteorology/v_wind_tp",
             "source_path": "met_tx.nc:v_wind_tx",
             "item_format": "netcdf",
             "parameters": {

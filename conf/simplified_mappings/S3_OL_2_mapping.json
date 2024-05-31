@@ -4,7 +4,7 @@
         "columns": 1024
     },
     "data_mapping": {
-        "/conditions/image_grid": {
+        "/conditions/image": {
             "geo_coordinates.nc": [
                 [
                     "latitude",
@@ -158,7 +158,7 @@
                 ]
             ]
         },
-        "/conditions/meteo": {
+        "/conditions/meteorology": {
             "tie_meteo.nc": [
                 [
                     "atmospheric_temperature_profile",
