@@ -1,11 +1,9 @@
 import os
 from typing import Any, Dict, Optional, Tuple
 
-import fsspec
 import xarray as xr
 
-from . import sentinel3
-from . import eop
+from . import eop, sentinel3
 
 
 class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
@@ -20,7 +18,7 @@ class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
         override_product_files: Optional[str] = None,
         check_files_exist: bool = False,
         parse_geospatial_attrs: bool = True,
-        simplified_mapping: Optional[bool] = False
+        simplified_mapping: Optional[bool] = False,
     ) -> xr.Dataset:
         return sentinel3.open_sentinel3_dataset(
             filename_or_obj,
@@ -40,7 +38,7 @@ class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
         except TypeError:
             return False
         return ext.lower() in {".safe", ".safe/"}
-    
+
 
 class EOPBackend(xr.backends.common.BackendEntrypoint):
     def open_dataset(  # type: ignore

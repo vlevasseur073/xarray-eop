@@ -10,4 +10,3 @@ Open Sentinel-3 SAFE product
 
     notebooks/tutorial_open_SAFE
     notebooks/tutorial_open_Zarr
-

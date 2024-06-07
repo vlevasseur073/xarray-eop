@@ -6,7 +6,7 @@
 Welcome to xarray-eop's documentation!
 ======================================
 
-xarray_eop is an xarray backend to open and manipulate EO data products from the Copernicus Sentinel mission, 
+xarray_eop is an xarray backend to open and manipulate EO data products from the Copernicus Sentinel mission,
 in the legacy SAFE format as well as the new zarr format used by the Re-engineered python processors.
 
 .. toctree::
