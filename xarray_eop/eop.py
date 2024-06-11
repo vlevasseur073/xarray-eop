@@ -6,8 +6,8 @@ from typing import Any, Dict, Optional, Tuple, Union
 import datatree
 import xarray as xr
 import zarr
-from upath import UPath
 
+from xarray_eop.path import EOPath
 from xarray_eop.utils import convert_dict_to_plantuml, open_zarr_groups_from_dict
 
 
@@ -17,15 +17,12 @@ def open_eop_dataset(
     drop_variables: Optional[Tuple[str]] = None,
     group: Optional[str] = None,
     storage_options: Optional[Dict[str, Any]] = None,
-    check_files_exist: bool = False,
-    override_product_files: Optional[str] = None,
-    parse_geospatial_attrs: bool = True,
 ) -> xr.Dataset:
     if drop_variables is not None:
         warnings.warn("'drop_variables' is currently ignored")
 
     if isinstance(product_urlpath, str):
-        url = UPath(product_urlpath)
+        url = EOPath(product_urlpath)
     else:
         url = product_urlpath
 
@@ -124,13 +121,12 @@ def open_eop_datatree(
         zds = zarr.open_group(product_urlpath, mode="r", **storage_options)
     else:
         zds = zarr.open_group(product_urlpath, mode="r")
-    ds = xr.open_dataset(product_urlpath, engine="zarr", **kwargs)
+    ds = xr.open_dataset(product_urlpath, **kwargs)
     tree_root = datatree.DataTree.from_dict({"/": ds})
     for path in datatree.io._iter_zarr_groups(zds):
         try:
             subgroup_ds = xr.open_dataset(
                 product_urlpath,
-                engine="zarr",
                 group=path,
                 **kwargs,
             )

@@ -12,6 +12,7 @@ import numpy as np
 import xarray as xr
 import zarr
 from numcodecs import Blosc
+from xarray_eop.path import EOPath
 
 default_alg = "zstd"
 default_comp = 3
@@ -22,8 +23,8 @@ DEFAULT_COMPRESSOR = Blosc(
     shuffle=default_shuffle,
 )
 
-MAPPING_PATH = importlib.resources.files("conf") / "mappings"
-SIMPL_MAPPING_PATH = importlib.resources.files("conf") / "simplified_mappings"
+MAPPING_PATH = importlib.resources.files("xarray_eop.conversion.conf") / "mappings"
+SIMPL_MAPPING_PATH = importlib.resources.files("xarray_eop.conversion.conf") / "simplified_mappings"
 REMAPPING_FILE = MAPPING_PATH / "remap.json"
 
 MAPPINGS = {
@@ -41,6 +42,16 @@ MAPPINGS = {
     "SY_2_V10": "S3SYNV10_mapping.json",
 }
 
+def use_custom_mapping(product: EOPath | Path | str) -> bool:
+    custom_map = False
+    if isinstance(product, Path) or isinstance(product, EOPath):
+        pattern = product.name[4:12]
+    elif isinstance(product, str):
+        pattern = product.rstrip("/").split("/")[-1][4:12]
+    if pattern in ["OL_1_EFR", "OL_1_ERR", "OL_2_LFR", "SY_2_AOD", "SY_2_VGP", "SY_2_VGK", "SY_2_VG1", "SY_2_V10"]:
+        custom_map = True
+
+    return custom_map
 
 def lower(v: Union[str, float, int]):
     if isinstance(v, str):

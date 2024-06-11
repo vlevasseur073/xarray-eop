@@ -1,0 +1,1547 @@
+{
+    "stac_discovery": {
+        "bbox": [
+            -16.359,
+            -85.2183,
+            -82.1525,
+            -68.0758
+        ],
+        "collection": "004",
+        "geometry": {
+            "coordinates": [
+                [
+                    [
+                        -82.1525,
+                        -72.3038
+                    ],
+                    [
+                        -81.9541,
+                        -72.755
+                    ],
+                    [
+                        -81.7022,
+                        -73.2116
+                    ],
+                    [
+                        -81.474,
+                        -73.6622
+                    ],
+                    [
+                        -81.2228,
+                        -74.1087
+                    ],
+                    [
+                        -80.958,
+                        -74.5612
+                    ],
+                    [
+                        -80.6611,
+                        -75.0171
+                    ],
+                    [
+                        -80.3637,
+                        -75.4673
+                    ],
+                    [
+                        -80.0718,
+                        -75.9158
+                    ],
+                    [
+                        -79.7104,
+                        -76.3639
+                    ],
+                    [
+                        -79.3409,
+                        -76.8099
+                    ],
+                    [
+                        -78.9809,
+                        -77.2582
+                    ],
+                    [
+                        -78.5666,
+                        -77.7044
+                    ],
+                    [
+                        -78.1032,
+                        -78.1618
+                    ],
+                    [
+                        -77.6386,
+                        -78.6042
+                    ],
+                    [
+                        -77.11,
+                        -79.0457
+                    ],
+                    [
+                        -76.542,
+                        -79.4962
+                    ],
+                    [
+                        -75.9305,
+                        -79.9377
+                    ],
+                    [
+                        -75.2678,
+                        -80.3831
+                    ],
+                    [
+                        -74.5493,
+                        -80.8248
+                    ],
+                    [
+                        -73.765,
+                        -81.2632
+                    ],
+                    [
+                        -72.8427,
+                        -81.6986
+                    ],
+                    [
+                        -71.8764,
+                        -82.1368
+                    ],
+                    [
+                        -70.8094,
+                        -82.5694
+                    ],
+                    [
+                        -69.5788,
+                        -82.9928
+                    ],
+                    [
+                        -68.1437,
+                        -83.4204
+                    ],
+                    [
+                        -66.5859,
+                        -83.8476
+                    ],
+                    [
+                        -64.7757,
+                        -84.2625
+                    ],
+                    [
+                        -62.6595,
+                        -84.6721
+                    ],
+                    [
+                        -60.3025,
+                        -85.0696
+                    ],
+                    [
+                        -59.2544,
+                        -85.2183
+                    ],
+                    [
+                        -38.9049,
+                        -83.5057
+                    ],
+                    [
+                        -27.5717,
+                        -81.3057
+                    ],
+                    [
+                        -20.8078,
+                        -78.9171
+                    ],
+                    [
+                        -16.359,
+                        -76.4472
+                    ],
+                    [
+                        -16.3828,
+                        -76.436
+                    ],
+                    [
+                        -17.0674,
+                        -76.3774
+                    ],
+                    [
+                        -18.8917,
+                        -76.2152
+                    ],
+                    [
+                        -20.6403,
+                        -76.0404
+                    ],
+                    [
+                        -22.3396,
+                        -75.856
+                    ],
+                    [
+                        -24.033,
+                        -75.6609
+                    ],
+                    [
+                        -25.6574,
+                        -75.4448
+                    ],
+                    [
+                        -27.2286,
+                        -75.2291
+                    ],
+                    [
+                        -28.7412,
+                        -74.9951
+                    ],
+                    [
+                        -30.2477,
+                        -74.7577
+                    ],
+                    [
+                        -31.6777,
+                        -74.5048
+                    ],
+                    [
+                        -33.0626,
+                        -74.2441
+                    ],
+                    [
+                        -34.407,
+                        -73.9755
+                    ],
+                    [
+                        -35.7171,
+                        -73.6969
+                    ],
+                    [
+                        -36.9781,
+                        -73.4129
+                    ],
+                    [
+                        -38.2136,
+                        -73.1177
+                    ],
+                    [
+                        -39.3895,
+                        -72.8266
+                    ],
+                    [
+                        -40.5515,
+                        -72.5189
+                    ],
+                    [
+                        -41.6478,
+                        -72.2063
+                    ],
+                    [
+                        -42.7074,
+                        -71.8944
+                    ],
+                    [
+                        -43.7349,
+                        -71.5609
+                    ],
+                    [
+                        -44.723,
+                        -71.2389
+                    ],
+                    [
+                        -45.6995,
+                        -70.9012
+                    ],
+                    [
+                        -46.6122,
+                        -70.5583
+                    ],
+                    [
+                        -47.5293,
+                        -70.2251
+                    ],
+                    [
+                        -48.396,
+                        -69.8749
+                    ],
+                    [
+                        -49.2371,
+                        -69.5262
+                    ],
+                    [
+                        -50.0344,
+                        -69.1623
+                    ],
+                    [
+                        -50.8128,
+                        -68.8006
+                    ],
+                    [
+                        -51.5916,
+                        -68.4402
+                    ],
+                    [
+                        -52.3289,
+                        -68.0758
+                    ],
+                    [
+                        -52.3484,
+                        -68.0811
+                    ],
+                    [
+                        -58.6004,
+                        -69.575
+                    ],
+                    [
+                        -65.7342,
+                        -70.8151
+                    ],
+                    [
+                        -73.6892,
+                        -71.7432
+                    ],
+                    [
+                        -82.1525,
+                        -72.3038
+                    ]
+                ]
+            ],
+            "type": "Polygon"
+        },
+        "id": "S3B_SL_1_RBT____20230315T095847_20230315T100147_20230316T030042_0179_077_150_4320_PS2_O_NT_004.SEN3",
+        "properties": {
+            "assets": [],
+            "created": "2023-03-16T03:00:42Z",
+            "datetime": "null",
+            "end_datetime": "2023-03-15T10:01:47.234359Z",
+            "eo:bands": [
+                {
+                    "center_wavelength": 555660.0,
+                    "full_width_half_max": 19260.0,
+                    "name": "s1"
+                },
+                {
+                    "center_wavelength": 659960.0,
+                    "full_width_half_max": 19570.0,
+                    "name": "s2"
+                },
+                {
+                    "center_wavelength": 867660.0,
+                    "full_width_half_max": 20820.0,
+                    "name": "s3"
+                },
+                {
+                    "center_wavelength": 1375100.0,
+                    "full_width_half_max": 20550.0,
+                    "name": "s4"
+                },
+                {
+                    "center_wavelength": 1611720.0,
+                    "full_width_half_max": 66790.0,
+                    "name": "s5"
+                },
+                {
+                    "center_wavelength": 2253140.0,
+                    "full_width_half_max": 50520.0,
+                    "name": "s6"
+                },
+                {
+                    "center_wavelength": 3740670.0,
+                    "full_width_half_max": 392910.0,
+                    "name": "s7"
+                },
+                {
+                    "center_wavelength": 10822800.0,
+                    "full_width_half_max": 763480.0,
+                    "name": "s8"
+                },
+                {
+                    "center_wavelength": 12039200.0,
+                    "full_width_half_max": 885860.0,
+                    "name": "s9"
+                },
+                {
+                    "center_wavelength": 3740670.0,
+                    "full_width_half_max": 392910.0,
+                    "name": "f1"
+                },
+                {
+                    "center_wavelength": 10822800.0,
+                    "full_width_half_max": 763480.0,
+                    "name": "f2"
+                }
+            ],
+            "eopf:baseline": "SL__L1_.004.05.00",
+            "eopf:image_size": [
+                {
+                    "columns": 3000,
+                    "name": "nadir 0.5 km stripe A",
+                    "rows": 2400,
+                    "start_offset": 138448,
+                    "track_offset": 1996
+                },
+                {
+                    "columns": 3000,
+                    "name": "nadir 0.5 km stripe B",
+                    "rows": 2400,
+                    "start_offset": 138448,
+                    "track_offset": 1996
+                },
+                {
+                    "columns": 1500,
+                    "name": "nadir 1 km",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 998
+                },
+                {
+                    "columns": 1500,
+                    "name": "nadir F1",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 998
+                },
+                {
+                    "columns": 130,
+                    "name": "nadir tie points",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 64
+                },
+                {
+                    "columns": 900,
+                    "name": "oblique 1 km",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 450
+                },
+                {
+                    "columns": 1800,
+                    "name": "oblique 0.5 km stripe A",
+                    "rows": 2400,
+                    "start_offset": 138448,
+                    "track_offset": 900
+                },
+                {
+                    "columns": 1800,
+                    "name": "oblique 0.5 km stripe B",
+                    "rows": 2400,
+                    "start_offset": 138448,
+                    "track_offset": 900
+                },
+                {
+                    "columns": 900,
+                    "name": "oblique F1",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 450
+                },
+                {
+                    "columns": 130,
+                    "name": "oblique tie points",
+                    "rows": 1200,
+                    "start_offset": 69224,
+                    "track_offset": 64
+                }
+            ],
+            "eopf:instrument_mode": "Earth Observation",
+            "eopf:pixel_classification": [
+                {
+                    "count": 3202483,
+                    "name": "0.5km stripe A cosmetic",
+                    "percent": 27.799332
+                },
+                {
+                    "count": 375937,
+                    "name": "0.5km stripe A duplicated",
+                    "percent": 3.263342
+                },
+                {
+                    "count": 0,
+                    "name": "0.5km stripe A saturated",
+                    "percent": 0.0
+                },
+                {
+                    "count": 334618,
+                    "name": "0.5km stripe A out_of_range",
+                    "percent": 0.484112
+                },
+                {
+                    "name": "0.5km stripe A saline_water",
+                    "percent": 69.269627
+                },
+                {
+                    "name": "0.5km stripe A land",
+                    "percent": 30.730373
+                },
+                {
+                    "name": "0.5km stripe A coastal",
+                    "percent": 0.129392
+                },
+                {
+                    "name": "0.5km stripe A fresh_water",
+                    "percent": 9.5e-05
+                },
+                {
+                    "name": "0.5km stripe A tidal",
+                    "percent": 0.0
+                },
+                {
+                    "name": "0.5 km stripe A cloudy",
+                    "percent": 90.011424
+                },
+                {
+                    "count": 3227283,
+                    "name": "0.5km stripe B cosmetic",
+                    "percent": 28.014609
+                },
+                {
+                    "count": 403612,
+                    "name": "0.5km stripe B duplicated",
+                    "percent": 3.503576
+                },
+                {
+                    "count": 0,
+                    "name": "0.5km stripe B saturated",
+                    "percent": 0.0
+                },
+                {
+                    "count": 491374,
+                    "name": "0.5km stripe B out_of_range",
+                    "percent": 1.4218
+                },
+                {
+                    "name": "0.5km stripe B saline_water",
+                    "percent": 69.270269
+                },
+                {
+                    "name": "0.5km stripe B land",
+                    "percent": 30.729731
+                },
+                {
+                    "name": "0.5km stripe B coastal",
+                    "percent": 0.130877
+                },
+                {
+                    "name": "0.5km stripe B fresh_water",
+                    "percent": 0.000104
+                },
+                {
+                    "name": "0.5km stripe B tidal",
+                    "percent": 0.0
+                },
+                {
+                    "name": "0.5 km stripe B cloudy",
+                    "percent": 90.011424
+                },
+                {
+                    "count": 848715,
+                    "name": "1km cosmetic",
+                    "percent": 29.469271
+                },
+                {
+                    "count": 140860,
+                    "name": "1km duplicated",
+                    "percent": 4.890972
+                },
+                {
+                    "count": 0,
+                    "name": "1km saturated",
+                    "percent": 0.0
+                },
+                {
+                    "count": 2225,
+                    "name": "1km out_of_range",
+                    "percent": 0.019314
+                },
+                {
+                    "name": "1km saline_water",
+                    "percent": 69.295312
+                },
+                {
+                    "name": "1km land",
+                    "percent": 30.704687
+                },
+                {
+                    "name": "1km coastal",
+                    "percent": 0.13625
+                },
+                {
+                    "name": "1km fresh_water",
+                    "percent": 6.9e-05
+                },
+                {
+                    "name": "1km tidal",
+                    "percent": 0.0
+                },
+                {
+                    "name": "1km cloudy",
+                    "percent": 90.633403
+                },
+                {
+                    "count": 847238,
+                    "name": "f1 cosmetic",
+                    "percent": 29.417986
+                },
+                {
+                    "count": 131904,
+                    "name": "f1 duplicated",
+                    "percent": 4.58
+                },
+                {
+                    "count": 0,
+                    "name": "f1 saturated",
+                    "percent": 0.0
+                },
+                {
+                    "count": 2208,
+                    "name": "f1 out_of_range",
+                    "percent": 0.076667
+                },
+                {
+                    "name": "f1 saline_water",
+                    "percent": 69.298472
+                },
+                {
+                    "name": "f1 land",
+                    "percent": 30.701528
+                },
+                {
+                    "name": "f1 coastal",
+                    "percent": 0.131944
+                },
+                {
+                    "name": "f1 fresh_water",
+                    "percent": 6.9e-05
+                },
+                {
+                    "name": "f1 tidal",
+                    "percent": 0.0
+                },
+                {
+                    "name": "f1 cloudy",
+                    "percent": 90.633403
+                }
+            ],
+            "eopf:resolutions": {
+                "0.5 km stripe A": 500,
+                "0.5 km stripe B": 500,
+                "1 km": 1000,
+                "F1": 1000,
+                "Tie Points": 16000
+            },
+            "eopf:timeline": "NT",
+            "eopf:type": "S3SLSRBT",
+            "instrument": "SLSTR",
+            "links": [
+                {
+                    "href": "./.zattrs.json",
+                    "rel": "self",
+                    "type": "application/json"
+                }
+            ],
+            "mission": "Sentinel-3",
+            "platform": "Sentinel-3B",
+            "processing:facility": "OPE",
+            "processing:level": "L1",
+            "processing:software": "IPF-SL-1",
+            "providers": [
+                {
+                    "name": "Copernicus Ground Segment",
+                    "roles": [
+                        "processor"
+                    ]
+                },
+                {
+                    "name": "ESA",
+                    "roles": [
+                        "producer"
+                    ]
+                }
+            ],
+            "sat:absolute_orbit": 25447,
+            "sat:orbit_state": "descending",
+            "sat:platform_international_designator": "2018-039A",
+            "sat:relative_orbit": 150,
+            "start_datetime": "2023-03-15T09:58:47.234359Z"
+        },
+        "stac_extensions": [
+            "https://stac-extensions.github.io/eopf/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+            "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.1.0/schema.json"
+        ],
+        "stac_version": "1.0.0",
+        "type": "Feature"
+    },
+    "other_metadata": {
+        "L0_offset_between_scan_index_and_ISP_scan_count_an": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_ao": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_bn": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_bo": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_fn": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_fo": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_in": 7190,
+        "L0_offset_between_scan_index_and_ISP_scan_count_io": 7190,
+        "a_nadir_first_pixel_acquisition": 4938,
+        "a_oblique_first_pixel_acquisition": 2248,
+        "adjustable_integration_time_in_microseconds_f1_fn": 70.0,
+        "adjustable_integration_time_in_microseconds_f1_fo": 70.0,
+        "adjustable_integration_time_in_microseconds_f2_in": 10.0,
+        "adjustable_integration_time_in_microseconds_f2_io": 10.0,
+        "adjustable_integration_time_in_microseconds_s4_an": 35.0,
+        "adjustable_integration_time_in_microseconds_s4_ao": 35.0,
+        "adjustable_integration_time_in_microseconds_s4_bn": 35.0,
+        "adjustable_integration_time_in_microseconds_s4_bo": 35.0,
+        "adjustable_integration_time_in_microseconds_s5_an": 35.0,
+        "adjustable_integration_time_in_microseconds_s5_ao": 35.0,
+        "adjustable_integration_time_in_microseconds_s5_bn": 35.0,
+        "adjustable_integration_time_in_microseconds_s5_bo": 35.0,
+        "adjustable_integration_time_in_microseconds_s6_an": 35.0,
+        "adjustable_integration_time_in_microseconds_s6_ao": 35.0,
+        "adjustable_integration_time_in_microseconds_s6_bn": 35.0,
+        "adjustable_integration_time_in_microseconds_s6_bo": 35.0,
+        "adjustable_integration_time_in_microseconds_s7_in": 70.0,
+        "adjustable_integration_time_in_microseconds_s7_io": 70.0,
+        "adjustable_integration_time_in_microseconds_s8_in": 70.0,
+        "adjustable_integration_time_in_microseconds_s8_io": 70.0,
+        "adjustable_integration_time_in_microseconds_s9_in": 70.0,
+        "adjustable_integration_time_in_microseconds_s9_io": 70.0,
+        "an_scan_period_in_microseconds": 299985,
+        "b_nadir_first_pixel_acquisition": 4938,
+        "b_oblique_first_pixel_acquisition": 2248,
+        "band_description": {
+            "s1": {
+                "detector_temperature_max": 267.068,
+                "detector_temperature_min": 266.895
+            },
+            "s2": {
+                "detector_temperature_max": 266.606,
+                "detector_temperature_min": 266.425
+            },
+            "s3": {
+                "detector_temperature_max": 266.09,
+                "detector_temperature_min": 265.926
+            },
+            "s4": {
+                "detector_temperature_max": 87.5989,
+                "detector_temperature_min": 87.5334
+            },
+            "s5": {
+                "detector_temperature_max": 87.6448,
+                "detector_temperature_min": 87.5893
+            },
+            "s6": {
+                "detector_temperature_max": 88.6263,
+                "detector_temperature_min": 88.5577
+            },
+            "s7": {
+                "detector_temperature_max": 87.2464,
+                "detector_temperature_min": 87.1779
+            },
+            "s8": {
+                "detector_temperature_max": 87.117,
+                "detector_temperature_min": 87.0579
+            },
+            "s9": {
+                "detector_temperature_max": 87.4098,
+                "detector_temperature_min": 87.3476
+            }
+        },
+        "bn_scan_period_in_microseconds": 299985,
+        "calibration_time": 1678880827013632,
+        "data_information": {
+            "accuracy_reference": "[PDS-SL]",
+            "measurement_accuracy": "~2% S1-S6, ~0.1K S7-S9, ~1K F1-F2"
+        },
+        "history": [
+            {
+                "output": "S3__AX___CLM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Coastline Mask file",
+                "version": "1.0"
+            },
+            {
+                "output": "S3__AX___DEM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Digital Elevation Model GETASSE30V2",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted)",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___LWM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Land/Water Mask file",
+                "version": "1.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230314T030000_20230314T150000_20230314T175215___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230314T090000_20230314T210000_20230314T175142___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230314T150000_20230315T030000_20230315T054604___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230314T210000_20230315T090000_20230315T055652___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230315T030000_20230315T150000_20230315T174041___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MA1_AX_20230315T090000_20230315T210000_20230315T175146___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230314T030000_20230314T150000_20230314T055647___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230314T090000_20230314T210000_20230314T055646___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230314T150000_20230315T030000_20230314T175141___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230314T210000_20230315T090000_20230314T180302___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230315T030000_20230315T150000_20230315T055651___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230315T090000_20230315T210000_20230315T055651___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___MFA_AX_20230315T150000_20230316T030000_20230315T175145___________________ECW_O_NT_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___OOM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Open Ocean Mask file",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File",
+                "version": "2.0"
+            },
+            {
+                "output": "S3__AX___TRM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Tidal Regions Mask file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "L0 Product2": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "L0PP Granule": "S3B_SL_0_SLT__G_20230315T084556_20230315T085056_20230315T092152_0300______________SVL_O_NR_OPE.ISIP",
+                    "Orbit File1": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "Orbit File2": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_SL_0_SLT____20230315T084538_20230315T085038_20230315T092747_0299_077_149______PS2_O_NR_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T09:27:54.413683",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "Applicable Document": "S3PDGS Product Data Format Specification: Level0 Products S3PDGS.PDS.007",
+                    "L0 Product1": "S3B_SL_0_SLT____20230315T084538_20230315T085038_20230315T092747_0299_077_149______PS2_O_NR_002.SEN3",
+                    "L0 Product10": "S3B_SL_0_SLT____20230315T093142_20230315T093642_20230315T110745_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product11": "S3B_SL_0_SLT____20230315T093642_20230315T094142_20230315T110753_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product12": "S3B_SL_0_SLT____20230315T094142_20230315T094642_20230315T110804_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product13": "S3B_SL_0_SLT____20230315T094642_20230315T095142_20230315T110816_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product14": "S3B_SL_0_SLT____20230315T095142_20230315T095642_20230315T110828_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product15": "S3B_SL_0_SLT____20230315T095642_20230315T100142_20230315T110827_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product16": "S3B_SL_0_SLT____20230315T100142_20230315T100642_20230315T110837_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product17": "S3B_SL_0_SLT____20230315T100642_20230315T101142_20230315T110839_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product18": "S3B_SL_0_SLT____20230315T101142_20230315T101642_20230315T110839_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product19": "S3B_SL_0_SLT____20230315T101642_20230315T102142_20230315T110844_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product2": "S3B_SL_0_SLT____20230315T085038_20230315T085538_20230315T092747_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product20": "S3B_SL_0_SLT____20230315T102142_20230315T102642_20230315T110845_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product21": "S3B_SL_0_SLT____20230315T102642_20230315T103142_20230315T110856_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product3": "S3B_SL_0_SLT____20230315T085538_20230315T090038_20230315T092749_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product4": "S3B_SL_0_SLT____20230315T090038_20230315T090538_20230315T092751_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product5": "S3B_SL_0_SLT____20230315T090538_20230315T091141_20230315T110953_0363_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product6": "S3B_SL_0_SLT____20230315T091142_20230315T091642_20230315T110711_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product7": "S3B_SL_0_SLT____20230315T091642_20230315T092142_20230315T110722_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product8": "S3B_SL_0_SLT____20230315T092142_20230315T092642_20230315T110731_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product9": "S3B_SL_0_SLT____20230315T092642_20230315T093142_20230315T110743_0299_077_150______PS2_O_NR_002.SEN3",
+                    "Orbit File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_SL_0_SLT____20230315T084647_20230315T102746_20230315T111422_6059_077_149______PS2_O_NT_002.SEN3",
+                "processingTime": "2023-03-15T11:14:37.656169",
+                "processor": "PUG",
+                "type": "L0 Product",
+                "version": "03.45"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "L0 Product2": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "L0PP Granule": "S3B_SL_0_SLT__G_20230315T102700_20230315T103200_20230315T110150_0300______________SVL_O_NR_OPE.ISIP",
+                    "Orbit File1": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "Orbit File2": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_SL_0_SLT____20230315T102642_20230315T103142_20230315T110856_0299_077_150______PS2_O_NR_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T11:09:03.898153",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "output": "S3B_SL_1_ADJ_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR AVHRR/SLSTR Adjustement Parameters Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_ANC_AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Ancillary data file",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_CDP_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Conditional Probability LUT - Cloudy Conditions Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_CLO_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Cloud LUT Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_CLP_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Conditional Probability LUT - Clear Conditions Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_ESSTAX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Map of SST Uncertainties Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_GEC_AX_20190101T000000_20991231T235959_20191010T120000___________________MPC_O_AL_004.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Geometric Calibration Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_GEO_AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Geometry Data file",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_IRE_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Input Land Surface IR Emissivity Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_LCC_AX_20180425T000000_20991231T235959_20201015T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Input Land Cloud Coefficient Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NAS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NAS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NAS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NBS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NBS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_NBS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_F1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file F1 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_F2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file F2 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S3AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S7AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S7 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S8AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S8 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_N_S9AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S9 NADIR",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OAS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OAS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OAS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe A",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OBS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OBS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_OBS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe B",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_F1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file F1 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_F2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file F2 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S3AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S7AX_20180425T000000_20991231T235959_20200410T120000___________________MPC_O_AL_004.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S7 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S8AX_20180425T000000_20991231T235959_20180712T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S8 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_O_S9AX_20180425T000000_20991231T235959_20180712T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Thermal infrared (TIR) characterisation data file S9 OBLIQUE",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_PCP_AX_20180425T000000_20991231T235959_20211011T120000___________________MPC_O_AL_004.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Processing Control Parameter File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_RTT_AX_20180425T000000_20991231T235959_20211201T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR RTTOV Coefficients Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_VIC_AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR Vicarious Calibration Data File",
+                "version": "1.0"
+            },
+            {
+                "output": "S3B_SL_1_VSC_AX_20230315T102743_20500101T000000_20230315T125234___________________PS2_O_NN____.SEN3",
+                "processingCentre": "Copernicus Ground Segment, ESA",
+                "processor": "IPF-SL-1",
+                "type": "SLSTR VISCAL Data file",
+                "version": "06.20"
+            },
+            {
+                "output": "S3__SL_2_LSTBAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "SLSTR LST biome data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T054919_20230315T073056_20230315T073932_6097______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T054901_20230315T073034_20230315T074503_6093_077_148______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T07:45:11.431060",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T054919_20230315T073056_20230315T073932_6097______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T054901_20230315T073038_20230315T074503_6097_077_148______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T07:45:12.413429",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T073057_20230315T091200_20230315T092056_6063______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T09:26:03.278430",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T073057_20230315T091200_20230315T092056_6063______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T073039_20230315T091142_20230315T092555_6063_077_149______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T09:26:03.249291",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T091201_20230315T105244_20230315T110111_6043______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T11:07:01.507080",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3B_TM_0_NAT__G_20230315T091201_20230315T105244_20230315T110111_6043______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_TM_0_NAT____20230315T091143_20230315T105226_20230315T110653_6042_077_150______PS2_O_AL_002.SEN3",
+                "processingCentre": "S3B Processing Service [PS2], SERCO",
+                "processingTime": "2023-03-15T11:07:01.859925",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "Coastline Mask file": "S3__AX___CLM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Digital Elevation Model GETASSE30V2": "S3__AX___DEM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL1": "S3__AX___MA1_AX_20230314T030000_20230314T150000_20230314T175215___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL2": "S3__AX___MA1_AX_20230314T090000_20230314T210000_20230314T175142___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL3": "S3__AX___MA1_AX_20230314T150000_20230315T030000_20230315T054604___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL4": "S3__AX___MA1_AX_20230314T210000_20230315T090000_20230315T055652___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL5": "S3__AX___MA1_AX_20230315T030000_20230315T150000_20230315T174041___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL6": "S3__AX___MA1_AX_20230315T090000_20230315T210000_20230315T175146___________________ECW_O_SN_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter1": "S3__AX___MFA_AX_20230314T030000_20230314T150000_20230314T055647___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter2": "S3__AX___MFA_AX_20230314T090000_20230314T210000_20230314T055646___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter3": "S3__AX___MFA_AX_20230314T150000_20230315T030000_20230314T175141___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter4": "S3__AX___MFA_AX_20230314T210000_20230315T090000_20230314T180302___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter5": "S3__AX___MFA_AX_20230315T030000_20230315T150000_20230315T055651___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter6": "S3__AX___MFA_AX_20230315T090000_20230315T210000_20230315T055651___________________ECW_O_NT_001.SEN3",
+                    "ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter7": "S3__AX___MFA_AX_20230315T150000_20230316T030000_20230315T175145___________________ECW_O_NT_001.SEN3",
+                    "FOS Orbit File (Restituted)": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3B_SL_0_SLT____20230315T084538_20230315T085038_20230315T092747_0299_077_149______PS2_O_NR_002.SEN3",
+                    "L0 Product2": "S3B_SL_0_SLT____20230315T084647_20230315T102746_20230315T111422_6059_077_149______PS2_O_NT_002.SEN3",
+                    "L0 Product3": "S3B_SL_0_SLT____20230315T102642_20230315T103142_20230315T110856_0299_077_150______PS2_O_NR_002.SEN3",
+                    "L0 Product4": "S3B_TM_0_NAT____20230315T054901_20230315T073034_20230315T074503_6093_077_148______PS2_O_AL_002.SEN3",
+                    "L0 Product5": "S3B_TM_0_NAT____20230315T054901_20230315T073038_20230315T074503_6097_077_148______PS2_O_AL_002.SEN3",
+                    "L0 Product6": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "L0 Product7": "S3B_TM_0_NAT____20230315T073039_20230315T091142_20230315T092555_6063_077_149______PS2_O_AL_002.SEN3",
+                    "L0 Product8": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "L0 Product9": "S3B_TM_0_NAT____20230315T091143_20230315T105226_20230315T110653_6042_077_150______PS2_O_AL_002.SEN3",
+                    "Land/Water Mask file": "S3__AX___LWM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Open Ocean Mask file": "S3__AX___OOM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Orbit File1": "S3B_TM_0_NAT____20230315T054901_20230315T073034_20230315T074503_6093_077_148______PS2_O_AL_002.SEN3",
+                    "Orbit File2": "S3B_TM_0_NAT____20230315T054901_20230315T073038_20230315T074503_6097_077_148______PS2_O_AL_002.SEN3",
+                    "Orbit File3": "S3B_TM_0_NAT____20230315T073039_20230315T091132_20230315T092555_6053_077_149______PS2_O_AL_002.SEN3",
+                    "Orbit File4": "S3B_TM_0_NAT____20230315T073039_20230315T091142_20230315T092555_6063_077_149______PS2_O_AL_002.SEN3",
+                    "Orbit File5": "S3B_TM_0_NAT____20230315T091143_20230315T105216_20230315T110653_6032_077_150______PS2_O_AL_002.SEN3",
+                    "Orbit File6": "S3B_TM_0_NAT____20230315T091143_20230315T105226_20230315T110653_6042_077_150______PS2_O_AL_002.SEN3",
+                    "Product Data Format Specification - SLSTR": "S3IPF PDS 005.1 - i2r10 - Product Data Format Specification - SLSTR Level 1",
+                    "Reference Orbit Scenario File": "S3B_AX___OSF_AX_20180425T191855_99991231T235959_20221110T110324___________________EUM_O_AL_001.SEN3",
+                    "SLSTR AVHRR/SLSTR Adjustement Parameters Data File": "S3B_SL_1_ADJ_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Ancillary data file": "S3B_SL_1_ANC_AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Cloud LUT Data File": "S3B_SL_1_CLO_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Conditional Probability LUT - Clear Conditions Data File": "S3B_SL_1_CLP_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Conditional Probability LUT - Cloudy Conditions Data File": "S3B_SL_1_CDP_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Geometric Calibration Data File": "S3B_SL_1_GEC_AX_20190101T000000_20991231T235959_20191010T120000___________________MPC_O_AL_004.SEN3",
+                    "SLSTR Geometry Data file": "S3B_SL_1_GEO_AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Input Land Cloud Coefficient Data File": "S3B_SL_1_LCC_AX_20180425T000000_20991231T235959_20201015T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Input Land Surface IR Emissivity Data File": "S3B_SL_1_IRE_AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR LST biome data file": "S3__SL_2_LSTBAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Map of SST Uncertainties Data File": "S3B_SL_1_ESSTAX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Processing Control Parameter File": "S3B_SL_1_PCP_AX_20180425T000000_20991231T235959_20211011T120000___________________MPC_O_AL_004.SEN3",
+                    "SLSTR RTTOV Coefficients Data File": "S3B_SL_1_RTT_AX_20180425T000000_20991231T235959_20211201T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file F1 NADIR": "S3B_SL_1_N_F1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file F1 OBLIQUE": "S3B_SL_1_O_F1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file F2 NADIR": "S3B_SL_1_N_F2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file F2 OBLIQUE": "S3B_SL_1_O_F2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S7 NADIR": "S3B_SL_1_N_S7AX_20180425T000000_20991231T235959_20190912T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S7 OBLIQUE": "S3B_SL_1_O_S7AX_20180425T000000_20991231T235959_20200410T120000___________________MPC_O_AL_004.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S8 NADIR": "S3B_SL_1_N_S8AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S8 OBLIQUE": "S3B_SL_1_O_S8AX_20180425T000000_20991231T235959_20180712T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S9 NADIR": "S3B_SL_1_N_S9AX_20180425T000000_20991231T235959_20180409T120000___________________MPC_O_AL_001.SEN3",
+                    "SLSTR Thermal infrared (TIR) characterisation data file S9 OBLIQUE": "S3B_SL_1_O_S9AX_20180425T000000_20991231T235959_20180712T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR VISCAL Data file": "S3B_SL_1_VSC_AX_20230315T102743_20500101T000000_20230315T125234___________________PS2_O_NN____.SEN3",
+                    "SLSTR Vicarious Calibration Data File": "S3B_SL_1_VIC_AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_002.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 NADIR": "S3B_SL_1_N_S1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 OBLIQUE": "S3B_SL_1_O_S1AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 NADIR": "S3B_SL_1_N_S2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 OBLIQUE": "S3B_SL_1_O_S2AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 NADIR": "S3B_SL_1_N_S3AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 OBLIQUE": "S3B_SL_1_O_S3AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe A": "S3B_SL_1_NAS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe B": "S3B_SL_1_NBS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe A": "S3B_SL_1_OAS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe B": "S3B_SL_1_OBS4AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe A": "S3B_SL_1_NAS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe B": "S3B_SL_1_NBS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe A": "S3B_SL_1_OAS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe B": "S3B_SL_1_OBS5AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe A": "S3B_SL_1_NAS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe B": "S3B_SL_1_NBS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe A": "S3B_SL_1_OAS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe B": "S3B_SL_1_OBS6AX_20180425T000000_20991231T235959_20181002T120000___________________MPC_O_AL_003.SEN3",
+                    "Tidal Regions Mask file": "S3__AX___TRM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Time Correlation File": "S3B_AX___FRO_AX_20230312T000000_20230322T000000_20230315T065441___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3B_SL_1_RBT____20230315T084647_20230315T102746_20230315T205458_6059_077_150______PS2_O_NT_004.SEN3",
+                "processingCentre": "Copernicus Ground Segment, ESA",
+                "processingTime": "2023-03-16T01:55:49.706792",
+                "processor": "IPF-SL-1",
+                "type": "L1 Product",
+                "version": "06.20"
+            },
+            {
+                "inputs": {
+                    "L1 Product": "S3B_SL_1_RBT____20230315T084647_20230315T102746_20230315T205458_6059_077_150______PS2_O_NT_004.SEN3",
+                    "Metadata Specification": "Metadata Specification, Excel document S3IPF.PDS.008",
+                    "Product Data Format Specification": "S3IPF.PDS.005.1 - Product Data Format Specification - SLSTR Level 1 Products"
+                },
+                "output": "",
+                "processingTime": "2023-03-16T03:18:22.234280",
+                "processor": "PUG",
+                "type": "L1",
+                "version": "03.45"
+            }
+        ],
+        "i_nadir_first_pixel_acquisition": 2469,
+        "i_oblique_first_pixel_acquisition": 1124,
+        "in_scan_period_in_microseconds": 299985,
+        "integration_start_delay_in_microseconds_f1_fn": 0.0,
+        "integration_start_delay_in_microseconds_f1_fo": 0.0,
+        "integration_start_delay_in_microseconds_f2_in": 35.0,
+        "integration_start_delay_in_microseconds_f2_io": 35.0,
+        "integration_start_delay_in_microseconds_s1_an": 10.0,
+        "integration_start_delay_in_microseconds_s1_ao": 10.0,
+        "integration_start_delay_in_microseconds_s2_an": 10.0,
+        "integration_start_delay_in_microseconds_s2_ao": 10.0,
+        "integration_start_delay_in_microseconds_s3_an": 10.0,
+        "integration_start_delay_in_microseconds_s3_ao": 10.0,
+        "integration_start_delay_in_microseconds_s4_an": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s4_ao": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s4_bn": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s4_bo": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s5_an": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s5_ao": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s5_bn": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s5_bo": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s6_an": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s6_ao": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s6_bn": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s6_bo": 2.3000000000000003,
+        "integration_start_delay_in_microseconds_s7_in": 5.0,
+        "integration_start_delay_in_microseconds_s7_io": 5.0,
+        "integration_start_delay_in_microseconds_s8_in": 5.0,
+        "integration_start_delay_in_microseconds_s8_io": 5.0,
+        "integration_start_delay_in_microseconds_s9_in": 5.0,
+        "integration_start_delay_in_microseconds_s9_io": 5.0,
+        "meteo": {
+            "missing_time": 0,
+            "source": "ECMWF",
+            "type": "ANALYSIS"
+        },
+        "monitor_diode_average_counts": 0,
+        "monitor_diode_noise_counts": 0,
+        "orbit_reference": {
+            "absolute_pass_number": 50895,
+            "cycle_number": 77,
+            "ephemeris": {
+                "start": {
+                    "TAI": "2023-03-15T08:47:24.234359",
+                    "UT1": "2023-03-15T08:46:47.215098",
+                    "UTC": "2023-03-15T08:46:47.234359Z",
+                    "position": {
+                        "x": -6816941.331,
+                        "y": -2266538.092,
+                        "z": -0.0
+                    },
+                    "velocity": {
+                        "x": -509.261813,
+                        "y": 1559.03211,
+                        "z": 7366.365813
+                    }
+                },
+                "stop": {
+                    "TAI": "2023-03-15T10:28:23.409399",
+                    "UT1": "2023-03-15T10:27:46.390161",
+                    "UTC": "2023-03-15T10:27:46.409399Z",
+                    "position": {
+                        "x": -7132508.674,
+                        "y": 857568.201,
+                        "z": 0.003
+                    },
+                    "velocity": {
+                        "x": 204.344508,
+                        "y": 1627.418658,
+                        "z": 7366.346541
+                    }
+                }
+            },
+            "phase_identifier": 4,
+            "relative_pass_number": 301
+        },
+        "product_type": "S3SLSRBT",
+        "pixel_time_sampling_interval_along_scan_a_in_microseconds": 40.869998931884766,
+        "pixel_time_sampling_interval_along_scan_b_in_microseconds": 40.869998931884766,
+        "pixel_time_sampling_interval_along_scan_i_in_microseconds": 81.73999786376953,
+        "product_unit": {
+            "alongtrack_coordinate": 4320,
+            "duration": 179,
+            "type": "FRAME"
+        },
+        "voltage_gain_applied_to_detector_signal_s1_an": 1.0,
+        "voltage_gain_applied_to_detector_signal_s1_ao": 1.0,
+        "voltage_gain_applied_to_detector_signal_s2_an": 1.0,
+        "voltage_gain_applied_to_detector_signal_s2_ao": 1.0,
+        "voltage_gain_applied_to_detector_signal_s3_an": 1.0,
+        "voltage_gain_applied_to_detector_signal_s3_ao": 1.0
+    }
+}

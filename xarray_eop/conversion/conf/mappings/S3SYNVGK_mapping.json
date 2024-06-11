@@ -1,0 +1,686 @@
+{
+    "recognition": {
+        "filename_pattern": "S3._SY_2_VGK.*SEN3|S3SYNVGK.*",
+        "product_type": "S3SYNVGK",
+        "version": "001"
+    },
+    "chunk_sizes": {
+        "latitude": 10080,
+        "longitude": 10080
+    },
+    "data_mapping": [
+        {
+            "short_name": "vertices",
+            "target_path": "/coordinates/vertices",
+            "source_path": "B0.nc:vertices",
+            "item_format": "netcdf-dimension",
+            "parameters": {
+                "dimensions": [
+                    "vertices"
+                ]
+            },
+            "attributes": {
+                "long_name": "Pixel corners"
+            }
+        },
+        {
+            "short_name": "ag",
+            "target_path": "/measurements/ag",
+            "source_path": "ag.nc:AG",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "atmosphere_optical_thickness_due_to_aerosol",
+                "long_name": "Aerosol optical thickness at 550 nm",
+                "valid_min": 0,
+                "valid_max": 254,
+                "_FillValue": 255,
+                "scale_factor": 0.004000000189989805
+            }
+        },
+        {
+            "short_name": "longitude_tp",
+            "target_path": "/coordinates/longitude_tp",
+            "source_path": "ag.nc:longitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "longitude",
+                "long_name": "longitude",
+                "units": "degrees_east",
+                "bounds": "lon_bnds",
+                "valid_min": -180.0,
+                "valid_max": 180.0
+            }
+        },
+        {
+            "short_name": "latitude_tp",
+            "target_path": "/coordinates/latitude_tp",
+            "source_path": "ag.nc:latitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "latitude",
+                "long_name": "latitude",
+                "units": "degrees_north",
+                "bounds": "lat_bnds",
+                "valid_min": -56.0,
+                "valid_max": 75.0
+            }
+        },
+        {
+            "short_name": "lat_bnds_tp",
+            "target_path": "/coordinates/lat_bnds_tp",
+            "source_path": "ag.nc:lat_bnds",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "vertices"
+                ]
+            },
+            "attributes": {
+                "standard_name": "latitude_cell_boundaries",
+                "long_name": "latitude cell boundaries"
+            }
+        },
+        {
+            "short_name": "lon_bnds_tp",
+            "target_path": "/coordinates/lon_bnds_tp",
+            "source_path": "ag.nc:lon_bnds",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "longitude",
+                    "vertices"
+                ]
+            },
+            "attributes": {
+                "standard_name": "longitude_cell_boundaries",
+                "long_name": "longitude cell boundaries"
+            }
+        },
+        {
+            "short_name": "b0",
+            "target_path": "/measurements/b0",
+            "source_path": "B0.nc:B0",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "surface_reflectance_for_b0_channel",
+                "long_name": "Surface reflectance for VGT B0 channel",
+                "valid_min": 0,
+                "valid_max": 10000,
+                "wavelength": 450.0,
+                "bandwidth": 20.0,
+                "_FillValue": -10000,
+                "scale_factor": 9.999999747378752e-05
+            }
+        },
+        {
+            "short_name": "longitude",
+            "target_path": "/coordinates/longitude",
+            "source_path": "B0.nc:longitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "longitude",
+                "long_name": "longitude",
+                "units": "degrees_east",
+                "bounds": "lon_bnds",
+                "valid_min": -180.0,
+                "valid_max": 180.0
+            }
+        },
+        {
+            "short_name": "latitude",
+            "target_path": "/coordinates/latitude",
+            "source_path": "B0.nc:latitude",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "latitude",
+                "long_name": "latitude",
+                "units": "degrees_north",
+                "bounds": "lat_bnds",
+                "valid_min": -56.0,
+                "valid_max": 75.0
+            }
+        },
+        {
+            "short_name": "lat_bnds",
+            "target_path": "/coordinates/lat_bnds",
+            "source_path": "B0.nc:lat_bnds",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "vertices"
+                ]
+            },
+            "attributes": {
+                "standard_name": "latitude_cell_boundaries",
+                "long_name": "latitude cell boundaries"
+            }
+        },
+        {
+            "short_name": "lon_bnds",
+            "target_path": "/coordinates/lon_bnds",
+            "source_path": "B0.nc:lon_bnds",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "longitude",
+                    "vertices"
+                ]
+            },
+            "attributes": {
+                "standard_name": "longitude_cell_boundaries",
+                "long_name": "longitude cell boundaries"
+            }
+        },
+        {
+            "short_name": "b2",
+            "target_path": "/measurements/b2",
+            "source_path": "B2.nc:B2",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "surface_reflectance_for_b2_channel",
+                "long_name": "Surface reflectance for VGT B2 channel",
+                "valid_min": 0,
+                "valid_max": 10000,
+                "wavelength": 645.0,
+                "bandwidth": 35.0,
+                "_FillValue": -10000,
+                "scale_factor": 9.999999747378752e-05
+            }
+        },
+        {
+            "short_name": "b3",
+            "target_path": "/measurements/b3",
+            "source_path": "B3.nc:B3",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "surface_reflectance_for_b3_channel",
+                "long_name": "Surface reflectance for VGT B3 channel",
+                "valid_min": 0,
+                "valid_max": 10000,
+                "wavelength": 835.0,
+                "bandwidth": 55.0,
+                "_FillValue": -10000,
+                "scale_factor": 9.999999747378752e-05
+            }
+        },
+        {
+            "short_name": "mir",
+            "target_path": "/measurements/mir",
+            "source_path": "MIR.nc:MIR",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "surface_reflectance_for_mir_channel",
+                "long_name": "Surface reflectance for VGT MIR channel",
+                "valid_min": 0,
+                "valid_max": 10000,
+                "wavelength": 1665.0,
+                "bandwidth": 85.0,
+                "_FillValue": -10000,
+                "scale_factor": 9.999999747378752e-05
+            }
+        },
+        {
+            "short_name": "og",
+            "target_path": "/measurements/og",
+            "source_path": "og.nc:OG",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "total_column_ozone",
+                "long_name": "Total column ozone",
+                "units": "atm.cm",
+                "valid_min": 0,
+                "valid_max": 254,
+                "_FillValue": 255,
+                "scale_factor": 0.004000000189989805
+            }
+        },
+        {
+            "short_name": "saa",
+            "target_path": "/conditions/saa",
+            "source_path": "saa.nc:SAA",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "solar_azimuth_angle",
+                "long_name": "Solar azimuth angle",
+                "units": "degrees",
+                "valid_min": -120,
+                "valid_max": 120,
+                "_FillValue": -128,
+                "scale_factor": 1.5
+            }
+        },
+        {
+            "short_name": "sm",
+            "target_path": "/quality/sm",
+            "source_path": "sm.nc:SM",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "status_flag",
+                "long_name": "Status flag",
+                "flag_masks": [
+                    1024,
+                    512,
+                    256,
+                    128,
+                    64,
+                    32,
+                    16,
+                    8,
+                    4,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "flag_values": [
+                    1024,
+                    512,
+                    256,
+                    128,
+                    64,
+                    32,
+                    16,
+                    8,
+                    4,
+                    3,
+                    2,
+                    1,
+                    0
+                ],
+                "flag_meanings": "ag_saturated TOA_NDVI_saturated NDVI_saturated B0_good B2_good B3_good MIR_good land ice_or_snow cloud uncertain unfilled clear",
+                "_FillValue": 1
+            }
+        },
+        {
+            "short_name": "sza",
+            "target_path": "/conditions/sza",
+            "source_path": "sza.nc:SZA",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "solar_zenith_angle",
+                "long_name": "Solar zenith angle",
+                "units": "degrees",
+                "valid_min": 0,
+                "valid_max": 180,
+                "_FillValue": 255,
+                "scale_factor": 0.5
+            }
+        },
+        {
+            "short_name": "vaa",
+            "target_path": "/conditions/vaa",
+            "source_path": "vaa.nc:VAA",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "view_azimuth_angle",
+                "long_name": "View azimuth angle",
+                "units": "degrees",
+                "valid_min": -120,
+                "valid_max": 120,
+                "_FillValue": -128,
+                "scale_factor": 1.5
+            }
+        },
+        {
+            "short_name": "vza",
+            "target_path": "/conditions/vza",
+            "source_path": "vza.nc:VZA",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "view_zenith_angle",
+                "long_name": "view zenith angle",
+                "units": "degrees",
+                "valid_min": 0,
+                "valid_max": 180,
+                "_FillValue": 255,
+                "scale_factor": 0.5
+            }
+        },
+        {
+            "short_name": "wvg",
+            "target_path": "/measurements/wvg",
+            "source_path": "wvg.nc:WVG",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "total_column_water_vapor",
+                "long_name": "Total Column Water Vapor",
+                "units": "g cm-2",
+                "valid_min": 0,
+                "valid_max": 254,
+                "_FillValue": 255,
+                "scale_factor": 0.03999999910593033
+            }
+        },
+        {
+            "short_name": "ndvi",
+            "target_path": "/measurements/ndvi",
+            "source_path": "NDVI.nc:NDVI",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "normalized_difference_vegetation_index",
+                "long_name": "Normalized difference vegetation index",
+                "valid_min": 0,
+                "valid_max": 250,
+                "_FillValue": 255,
+                "scale_factor": 0.004000000189989805,
+                "add_offset": -0.07999999821186066
+            }
+        },
+        {
+            "short_name": "tg",
+            "target_path": "/measurements/tg",
+            "source_path": "tg.nc:TG",
+            "item_format": "netcdf",
+            "parameters": {
+                "dimensions": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "attributes": {
+                "standard_name": "time",
+                "long_name": "Synthesis time",
+                "units": "minutes since start_time",
+                "_FillValue": 4294967295
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "source_path": "xfdumanifest.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+              "mapping": "stac_discovery",
+              "namespaces": "namespaces",
+              "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "source_path": "xfdumanifest.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "namespaces",
+                "path_template": "manifest_template_path"
+            }
+        }
+    ],
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+        "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+        "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+        "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+        "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+        "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+        "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productName",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/sentinel-safe:frameSet/sentinel-safe:footPrint/gml:posList)",
+        "collection": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:baselineCollection",
+        "properties": {
+        "datetime": "Text(null)",
+        "start_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:startTime",
+        "end_datetime": "metadataSection/metadataObject[@ID='acquisitionPeriod']/metadataWrap/xmlData/sentinel-safe:acquisitionPeriod/sentinel-safe:stopTime",
+        "created": "to_ISO8601(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:creationTime)",
+        "platform": "concat(metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:familyName, metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:number)",
+        "instrument": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:familyName/@abbreviation",
+        "mission": "Text(Sentinel-3)",
+        "gsd": "to_int(metadataSection/metadataObject[@ID='olciProductInformation']/metadataWrap/xmlData/olci:olciProductInformation/olci:samplingParameters/olci:acSpatialSampling)",
+        "providers": [
+            {
+            "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L2 Product']/sentinel-safe:processing/sentinel-safe:facility/@name",
+            "roles": [
+                "Text(processor)"
+            ]
+            },
+            {
+            "name": "metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing/sentinel-safe:resource[@role='L2 Product']/sentinel-safe:processing/sentinel-safe:facility/@organisation",
+            "roles": [
+                "Text(producer)"
+            ]
+            }
+        ],
+        "eopf:type":"Text(S3SYNVGP)",
+        "eopf:timeline": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:timeliness",
+        "eopf:processing_baseline": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:processingBaseline",
+        "eopf:instrument_mode": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:instrument/sentinel-safe:mode",
+        "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber)",
+        "sat:relative_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativeOrbitNumber)",
+        "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber/@groundTrackDirection",
+        "sat:platform_international_designator": "metadataSection/metadataObject[@ID='platform']/metadataWrap/xmlData/sentinel-safe:platform/sentinel-safe:nssdcIdentifier",
+        "processing:level": "Text(L2)",
+        "eopf:image_size": [
+            {
+            "name": "Text(FR)",
+            "latitude": "to_imageSize(B0.nc:latitude)",
+            "longitude": "to_imageSize(B0.nc:longitude)"
+            }
+        ],
+        "eopf:pixel_classification": [
+            {
+            "name": "Text(snow_or_ice)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:snowOrIcePixels/@percentage)"
+            },
+            {
+            "name": "Text(saline_water)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:salineWaterPixels/@percentage)"
+            },
+            {
+            "name": "Text(coastal)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:coastalPixels/@percentage)"
+            },
+            {
+            "name": "Text(fresh_water)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:freshInlandWaterPixels/@percentage)"
+            },
+            {
+            "name": "Text(tidal)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:tidalRegionPixels/@percentage)"
+            },
+            {
+            "name": "Text(land)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:landPixels/@percentage)"
+            },
+            {
+            "name": "Text(cloudy)",
+            "percent": "to_float(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:cloudyPixels/@percentage)"
+            }
+        ],
+        "eo:bands": [
+            {
+            "name": "Text(b0-oa02,oa03)",
+            "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B0']/sentinel3:centralWavelength)",
+            "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B0']/sentinel3:bandwidth)"
+            },
+            {
+            "name": "Text(b2-oa06,oa07,oa08,oa09,oa10)",
+            "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B2']/sentinel3:centralWavelength)",
+            "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B2']/sentinel3:bandwidth)"
+            },
+            {
+            "name": "Text(b3-oa16,oa17,oa18,oa21)",
+            "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B3']/sentinel3:centralWavelength)",
+            "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='B3']/sentinel3:bandwidth)"
+            },
+            {
+            "name": "Text(mir-s5,s6)",
+            "center_wavelength": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='MIR']/sentinel3:centralWavelength)",
+            "full_width_half_max": "to_microm_from_nanom(metadataSection/metadataObject[@ID='synProductInformation']/metadataWrap/xmlData/syn:synProductInformation/syn:bandDescriptions/sentinel3:band[@name='MIR']/sentinel3:bandwidth)"
+            }
+        ]
+        }
+    },
+    "other_metadata": {
+        "history": "to_processing_history(metadataSection/metadataObject[@ID='processing']/metadataWrap/xmlData/sentinel-safe:processing)",
+        "orbit_reference": {
+        "absolute_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:passNumber)",
+        "relative_pass_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:relativePassNumber)",
+        "cycle_number": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:cycleNumber)",
+        "phase_identifier": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:phaseIdentifier)",
+        "type": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:orbitNumber/@type",
+        "ephemeris": {
+            "start": {
+            "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='TAI']",
+            "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UTC']",
+            "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:epoch[@type='UT1']",
+            "position": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:position/sentinel-safe:z)"
+            },
+            "velocity": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[1]/sentinel-safe:velocity/sentinel-safe:z)"
+            }
+            },
+            "stop": {
+            "TAI": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='TAI']",
+            "UTC": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UTC']",
+            "UT1": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:epoch[@type='UT1']",
+            "position": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:position/sentinel-safe:z)"
+            },
+            "velocity": {
+                "x": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:x)",
+                "y": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:y)",
+                "z": "to_float(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/sentinel-safe:orbitReference/sentinel-safe:elementSet/sentinel-safe:ephemeris[2]/sentinel-safe:velocity/sentinel-safe:z)"
+            }
+            }
+        }
+        },
+        "product_unit": {
+        "type": "metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:type",
+        "duration": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:duration)",
+        "alongtrack_coordinate": "to_int(metadataSection/metadataObject[@ID='generalProductInformation']/metadataWrap/xmlData/sentinel3:generalProductInformation/sentinel3:productUnit/sentinel3:alongtrackCoordinate)"
+        },
+        "meteo": {
+        "source": "Text(ECMWF)",
+        "type": "metadataSection/metadataObject[@ID='olciProductInformation']/metadataWrap/xmlData/olci:olciProductInformation/olci:ecmwfType",
+        "missing_time":
+        "to_int(metadataSection/metadataObject[@ID='olciProductInformation']/metadataWrap/xmlData/olci:olciProductInformation/olci:ecmwfType/@timeRelevance)"
+        },
+        "horizontal_CRS_name": "Text(WGS 84)",
+        "horizontal_CRS_code": "Text(EPSG:4326)"
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S3_SY_2_SYN_manifest.xml"
+    },
+    "namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel3": "http://www.esa.int/safe/sentinel/sentinel-3/1.0",
+        "olci": "http://www.esa.int/safe/sentinel/sentinel-3/olci/1.0",
+        "slstr": "http://www.esa.int/safe/sentinel/sentinel-3/slstr/1.0",
+        "syn": "http://www.esa.int/safe/sentinel/sentinel-3/synergy/1.0"
+    }
+}

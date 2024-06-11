@@ -19,8 +19,10 @@ dependencies = [
     "dask",
     "fsspec",
     "matplotlib",
-    "netcdf4",
+    "netcdf4>=1.6.5",
+    "h5netcdf>=1.3.0",
     "scipy",
+    "s3fs >= 2023.10.0",
     "universal_pathlib",
     "xarray >= 2023.10.1",
     "xarray-datatree >= 0.0.14",
@@ -38,7 +40,10 @@ doc = [
     "myst-nb",
     "sphinx-book-theme"
 ]
-
+tests = [
+    "pytest",
+    "pytest-cov",
+]
 [tool.setuptools_scm]
 write_to = "xarray_eop/_version.py"
 write_to_template = '''
@@ -52,6 +57,11 @@ exclude = ["conf/"]
 [tool.setuptools.packages.find]
 exclude = ["conf/"]
 
+[tool.pytest.ini_options]
+markers = [
+    "integration",
+    "unit",
+]
 [project.entry-points."xarray.backends"]
 sentinel-3 = "xarray_eop.xarray_backends:Sentinel3Backend"
 eop = "xarray_eop.xarray_backends:EOPBackend"

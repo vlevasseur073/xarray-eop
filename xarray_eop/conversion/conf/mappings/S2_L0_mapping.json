@@ -1,0 +1,1775 @@
+{
+    "recognition": {
+        "filename_pattern": "S2[A-Z]_OPER_MSI_L0__DS_[0-9A-Z]{4}_[0-9]{8}T[0-9]{6}_S[0-9]{8}T[0-9]{6}_N[0-9]{2}\\.[0-9]{2}|S2MSIL0_*",
+        "product_type": "S2MSIL0_",
+        "version": "TODO"
+    },
+    "data_mapping": [
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "dpc_packet_to_be_ignored_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(0,1,1)",
+            "target_path": "/conditions/detectorYY/bandXX/dpc/packet_to_be_ignored",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_to_be_ignored_detectorYY_bandXX",
+                    "coordinates": "packet_sequence_count_detectorYY_bandXX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "dpc_packet_completeness_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(1,2,1)",
+            "target_path": "/conditions/detectorYY/bandXX/dpc/packet_completeness",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_completeness_detectorYY_bandXX",
+                    "coordinates": "packet_sequence_count_detectorYY_bandXX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "dpc_packet_validity_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(2,3,1)",
+            "target_path": "/conditions/detectorYY/bandXX/dpc/packet_validity",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_validity_detectorYY_bandXX",
+                    "coordinates": "packet_sequence_count_detectorYY_bandXX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "packet_sequence_count_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(178,192,14)",
+            "target_path": "/coordinates/detectorYY/bandXX/packet_sequence_count",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packets sequence counts for detector YY band XX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "dfep_packet_length_bytes_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(80,96,16)",
+            "target_path": "/conditions/detectorYY/bandXX/dfep/packet_length_bytes",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dfep packet length detector YY band XX",
+                    "coordinates": "packet_sequence_count_detectorYY_bandXX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "XX": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "8A",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "YY": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12"
+                ]
+            },
+            "short_name": "user_data_detectorYY_bandXX",
+            "source_path": "GRANULE/S2*_DYY_*/IMG_DATA/S2*_DYY_BXX.bin:(0 ,None, -1)",
+            "target_path": "/measurements/detectorYY/bandXX/user_data",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "user data packet band XX detector YY",
+                    "coordinates": "packet_sequence_count_detectorYY_bandXX"
+                },
+                "dimensions": [
+                    "packet_number_detectorYY_bandXX",
+                    "max_data_length_detectorYY_bandXX"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(0 ,None, -1)",
+            "target_path": "/conditions/anc_data/SZZ/user_data",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/var_bytearray"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "anc SZZ user data packet"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ",
+                    "max_data_length_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "dpc_packet_to_be_ignored_anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(0,1,1)",
+            "target_path": "/conditions/anc_data/SZZ/dpc/packet_to_be_ignored",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_to_be_ignored_anc_data_SZZ",
+                    "coordinates": "packet_sequence_count_anc_data_SZZ"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "dpc_packet_completeness_anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(1,2,1)",
+            "target_path": "/conditions/anc_data/SZZ/dpc/packet_completeness",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_completeness_anc_data_SZZ",
+                    "coordinates": "packet_sequence_count_anc_data_SZZ"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "dpc_packet_validity_anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(2,3,1)",
+            "target_path": "/conditions/anc_data/SZZ/dpc/packet_validity",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/bool"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dpc_packet_validity_anc_data_SZZ",
+                    "coordinates": "packet_sequence_count_anc_data_SZZ"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "packet_sequence_count_anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(178,192,14)",
+            "target_path": "/coordinates/anc_data/SZZ/packet_sequence_count",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "packets sequence counts for detector YY band XX"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "unroll_vars": {
+                "ZZ": [
+                    "09123",
+                    "11105",
+                    "11106",
+                    "11108",
+                    "11109",
+                    "11110",
+                    "11111",
+                    "11112",
+                    "11113",
+                    "11114",
+                    "11115",
+                    "11116",
+                    "11117",
+                    "11118",
+                    "11119",
+                    "11120",
+                    "11121",
+                    "11122",
+                    "11124",
+                    "11125",
+                    "11126",
+                    "37105",
+                    "38105",
+                    "48218",
+                    "48223",
+                    "48224",
+                    "48225",
+                    "48226",
+                    "48227",
+                    "48229",
+                    "48231"
+                ]
+            },
+            "short_name": "dfep_packet_length_bytes_anc_data_SZZ",
+            "source_path": "ANC_DATA/S2*_SZZ*.bin:(80,96,16)",
+            "target_path": "/conditions/anc_data/SZZ/dfep/packet_length_bytes",
+            "item_format": "S2MemMap",
+            "accessor_config": {
+                "primary_header_length_bytes": 6,
+                "ancillary_header_length_bytes": 20,
+                "packet_length_start_position_bytes": 10,
+                "packet_length_stop_position_bytes": 12,
+                "target_type": "l0_mapping/types/uint16"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "dfep packet length detector YY band XX",
+                    "coordinates": "packet_sequence_count_anc_data_SZZ"
+                },
+                "dimensions": [
+                    "packet_number_anc_data_SZZ"
+                ]
+            }
+        },
+        {
+            "short_name": "metadata",
+            "source_path": "S2*_*_MTD_L0__DS_*_*_*.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "datastrip_namespaces",
+                "path_template": "MTD_DS_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "source_path": "S2*_*_MTD_L0__DS_*_*_*.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "datastrip_namespaces",
+                "path_template": "MTD_DS_template_path"
+            }
+        },
+        {
+            "short_name": "metadata",
+            "source_path": "Inventory_Metadata.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "inventory_namespaces",
+                "path_template": "MTD_Inventory_Metadata_template_path"
+            }
+        }
+    ],
+    "l0_mapping": {
+        "types": {
+            "bool": "bool",
+            "scalar_bool": "s_bool",
+            "uint8": "uint8",
+            "scalar_uint8": "s_uint8",
+            "uint16": "uint16",
+            "scalar_uint16": "s_uint16",
+            "uint32": "uint32",
+            "scalar_uint32": "s_uint32",
+            "var_bytearray": "var_bytearray",
+            "bytearray": "bytearray"
+        }
+    },
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+            "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "/xmlns:Inventory_Metadata/xmlns:File_ID",
+        "collection": "n1:General_Info/Processing_Info/PROCESSING_BASELINE",
+        "geometry": "to_geoJson(n1:Quality_Indicators_Info/Quicklook_Info/Footprint/EXT_POS_LIST)",
+        "bbox": "to_bbox(n1:Quality_Indicators_Info/Quicklook_Info/Footprint/EXT_POS_LIST)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "n1:General_Info/Datastrip_Time_Info/DATASTRIP_SENSING_START",
+            "end_datetime": "n1:General_Info/Datastrip_Time_Info/DATASTRIP_SENSING_STOP",
+            "created": "n1:General_Info/Processing_Info/UTC_DATE_TIME",
+            "platform": "n1:General_Info/Datatake_Info/SPACECRAFT_NAME",
+            "instrument": "Text(Multi Spectral Imager MSI)",
+            "mission": "Text(Sentinel-2)",
+            "providers": [
+                {
+                    "name": "/xmlns:Inventory_Metadata/xmlns:Source",
+                    "roles": [
+                        "Text(processor)"
+                    ]
+                },
+                {
+                    "name": "/xmlns:Inventory_Metadata/xmlns:System",
+                    "roles": [
+                        "Text(producer)"
+                    ]
+                }
+            ],
+            "eopf:type": "Text(S2MSIL0_)",
+            "eopf:instrument_mode": "n1:General_Info/Datatake_Info/DATATAKE_TYPE",
+            "eopf:data_take_id": "n1:General_Info/Datatake_Info/@datatakeIdentifier",
+            "eopf:baseline": "n1:General_Info/Processing_Info/PROCESSING_BASELINE",
+            "eopf:timeline": "Text(NRT)",
+            "sat:absolute_orbit": "/xmlns:Inventory_Metadata/xmlns:Start_Orbit_Number",
+            "sat:relative_orbit": "to_int(n1:General_Info/Datatake_Info/SENSING_ORBIT_NUMBER)",
+            "sat:orbit_state": "n1:General_Info/Datatake_Info/SENSING_ORBIT_DIRECTION",
+            "sat:platform_international_designator": "Text(2015-028A)"
+        },
+        "links": [
+            {
+                "rel": "Text(self)",
+                "href": "Text(./.zattrs.json)",
+                "type": "Text(application/json)"
+            }
+        ],
+        "assets": []
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "NUC_table_ID": "to_int(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/NUC_TABLE_ID)",
+            "onboard_compression_flag": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/COMPRESS_MODE",
+            "onboard_equalization_flag": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/EQUALIZATION_MODE",
+            "receiving_ground_station": "n1:General_Info/Downlink_Info/RECEPTION_STATION",
+            "sensor_configuration": {
+                "aquisition_configuration": {
+                    "compress_mode": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/COMPRESS_MODE",
+                    "equalization_mode": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/EQUALIZATION_MODE",
+                    "nuc_table_id": "to_int(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/NUC_TABLE_ID)",
+                    "active_detectors_list": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Active_Detectors_List/ACTIVE_DETECTOR",
+                    "tdi_configuration_list": {
+                        "03": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/TDI_Configuration_List/TDI_CONFIGURATION[@bandId='2']",
+                        "04": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/TDI_Configuration_List/TDI_CONFIGURATION[@bandId='3']",
+                        "11": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/TDI_Configuration_List/TDI_CONFIGURATION[@bandId='11']",
+                        "12": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/TDI_Configuration_List/TDI_CONFIGURATION[@bandId='12']"
+                    },
+                    "spectral_band_info": {
+                        "01": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='0']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='0']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='0']/INTEGRATION_TIME)"
+                        },
+                        "02": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='1']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='1']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='1']/INTEGRATION_TIME)"
+                        },
+                        "03": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='2']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='2']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='2']/INTEGRATION_TIME)"
+                        },
+                        "04": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='3']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='3']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='3']/INTEGRATION_TIME)"
+                        },
+                        "05": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='4']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='4']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='4']/INTEGRATION_TIME)"
+                        },
+                        "06": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='5']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='5']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='5']/INTEGRATION_TIME)"
+                        },
+                        "07": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='6']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='6']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='6']/INTEGRATION_TIME)"
+                        },
+                        "08": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='7']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='7']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='7']/INTEGRATION_TIME)"
+                        },
+                        "8A": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='8']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='8']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='8']/INTEGRATION_TIME)"
+                        },
+                        "09": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='9']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='9']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='9']/INTEGRATION_TIME)"
+                        },
+                        "10": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='10']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='10']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='10']/INTEGRATION_TIME)"
+                        },
+                        "11": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='11']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='11']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='11']/INTEGRATION_TIME)"
+                        },
+                        "12": {
+                            "physical_gains": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='12']/PHYSICAL_GAINS)",
+                            "compression_rate": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='12']/COMPRESSION_RATE)",
+                            "integration_time": "to_float(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='12']/INTEGRATION_TIME)"
+                        }
+                    }
+                },
+                "source_packet_description": {
+                    "source_packet_counters_detectors": {
+                        "01": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='01']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "02": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='02']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "03": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='03']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "04": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='04']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "05": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='05']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "06": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='06']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "07": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='07']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "08": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='08']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "09": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='09']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "10": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='10']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "11": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='11']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        },
+                        "12": {
+                            "source_packet_counters_bands": {
+                                "01": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='0']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='0']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='0']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "02": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='1']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='1']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='1']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "03": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='2']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='2']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='2']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "04": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='3']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='3']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='3']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "05": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='4']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='4']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='4']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "06": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='5']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='5']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='5']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "07": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='6']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='6']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='6']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "08": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='7']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='7']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='7']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "8A": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='8']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='8']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='8']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "09": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='9']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='9']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='9']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "10": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='10']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='10']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='10']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "11": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='11']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='11']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='11']/NB_OF_SOURCE_PACKETS)"
+                                },
+                                "12": {
+                                    "datastrip_start": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='12']/DATA_STRIP_START)",
+                                    "scene_position": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='12']/SCENE_POSITION)",
+                                    "number_of_source_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Source_Packet_Counters_List/Detector_List/Detector[@detectorId='12']/Band_List/Band[@bandId='12']/NB_OF_SOURCE_PACKETS)"
+                                }
+                            }
+                        }
+                    },
+                    "degradation_percentage": "to_float(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Degradation_Summary/@degradationPercentage)",
+                    "number_of_lost_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Degradation_Summary/NUMBER_OF_LOST_PACKETS)",
+                    "number_of_too_degraded_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Degradation_Summary/NUMBER_OF_TOO_DEGRADED_PACKETS)",
+                    "number_of_kept_degraded_packets": "to_int(n1:Image_Data_Info/Sensor_Configuration/Source_Packet_Description/Degradation_Summary/NUMBER_OF_KEPT_DEGRADED_PACKETS)"
+                },
+                "time_stamp": {
+                    "line_period": "to_float(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/LINE_PERIOD)",
+                    "band_time_stamp": {
+                        "01": {
+                            "detector_time_stamp": {
+                                "01": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='01']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='01']/GPS_TIME"
+                                },
+                                "02": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='02']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='02']/GPS_TIME"
+                                },
+                                "03": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='03']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='03']/GPS_TIME"
+                                },
+                                "04": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='04']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='04']/GPS_TIME"
+                                },
+                                "05": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='05']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='05']/GPS_TIME"
+                                },
+                                "06": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='06']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='06']/GPS_TIME"
+                                },
+                                "07": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='07']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='07']/GPS_TIME"
+                                },
+                                "08": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='08']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='08']/GPS_TIME"
+                                },
+                                "09": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='09']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='09']/GPS_TIME"
+                                },
+                                "10": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='10']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='10']/GPS_TIME"
+                                },
+                                "11": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='11']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='11']/GPS_TIME"
+                                },
+                                "12": {
+                                    "reference_line": "to_int(n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='12']/REFERENCE_LINE)",
+                                    "gps_time": "n1:Image_Data_Info/Sensor_Configuration/Time_Stamp/Band_Time_Stamp[@bandId='0']/Detector[@detectorId='12']/GPS_TIME"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "datastrip_namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel3": "http://www.esa.int/safe/sentinel/sentinel-3/1.0",
+        "olci": "http://www.esa.int/safe/sentinel/sentinel-3/olci/1.0",
+        "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/S2_PDI_Level-0_Datastrip_Metadata.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    },
+    "inventory_namespaces": {
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns": "https://psd-14.sentinel2.eo.esa.int/PSD/Inventory_Metadata.xsd"
+    },
+    "MTD_DS_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_MSIL0C_MTD_DS.xml"
+    },
+    "MTD_Inventory_Metadata_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_L0_manifest.xml"
+    }
+}

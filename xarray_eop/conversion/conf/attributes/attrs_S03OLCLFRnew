@@ -1,0 +1,946 @@
+{
+    "stac_discovery": {
+        "assets": [],
+        "bbox": [
+            -40.7766,
+            -34.5155,
+            -56.8197,
+            -21.0518
+        ],
+        "collection": "002",
+        "geometry": {
+            "coordinates": [
+                [
+                    [
+                        -53.158,
+                        -21.0518
+                    ],
+                    [
+                        -53.3189,
+                        -21.5593
+                    ],
+                    [
+                        -53.4814,
+                        -22.0667
+                    ],
+                    [
+                        -53.6456,
+                        -22.5737
+                    ],
+                    [
+                        -53.8115,
+                        -23.0805
+                    ],
+                    [
+                        -53.9791,
+                        -23.587
+                    ],
+                    [
+                        -54.1485,
+                        -24.0933
+                    ],
+                    [
+                        -54.3197,
+                        -24.5992
+                    ],
+                    [
+                        -54.4928,
+                        -25.1048
+                    ],
+                    [
+                        -54.6678,
+                        -25.6102
+                    ],
+                    [
+                        -54.8447,
+                        -26.1152
+                    ],
+                    [
+                        -55.0236,
+                        -26.62
+                    ],
+                    [
+                        -55.2045,
+                        -27.1245
+                    ],
+                    [
+                        -55.3875,
+                        -27.6286
+                    ],
+                    [
+                        -55.5727,
+                        -28.1323
+                    ],
+                    [
+                        -55.7601,
+                        -28.6357
+                    ],
+                    [
+                        -55.9498,
+                        -29.1386
+                    ],
+                    [
+                        -56.1418,
+                        -29.6412
+                    ],
+                    [
+                        -56.3362,
+                        -30.1433
+                    ],
+                    [
+                        -56.533,
+                        -30.645
+                    ],
+                    [
+                        -56.7322,
+                        -31.1464
+                    ],
+                    [
+                        -56.8197,
+                        -31.3643
+                    ],
+                    [
+                        -54.7462,
+                        -31.9579
+                    ],
+                    [
+                        -52.6467,
+                        -32.5171
+                    ],
+                    [
+                        -50.5219,
+                        -33.0407
+                    ],
+                    [
+                        -48.3726,
+                        -33.5277
+                    ],
+                    [
+                        -46.2001,
+                        -33.977
+                    ],
+                    [
+                        -44.0056,
+                        -34.3874
+                    ],
+                    [
+                        -43.2695,
+                        -34.5155
+                    ],
+                    [
+                        -43.1413,
+                        -33.9995
+                    ],
+                    [
+                        -43.0139,
+                        -33.4835
+                    ],
+                    [
+                        -42.8873,
+                        -32.9674
+                    ],
+                    [
+                        -42.7614,
+                        -32.4511
+                    ],
+                    [
+                        -42.6362,
+                        -31.9346
+                    ],
+                    [
+                        -42.5116,
+                        -31.418
+                    ],
+                    [
+                        -42.3878,
+                        -30.9013
+                    ],
+                    [
+                        -42.2646,
+                        -30.3843
+                    ],
+                    [
+                        -42.1421,
+                        -29.8674
+                    ],
+                    [
+                        -42.0202,
+                        -29.3503
+                    ],
+                    [
+                        -41.8988,
+                        -28.8333
+                    ],
+                    [
+                        -41.7779,
+                        -28.3163
+                    ],
+                    [
+                        -41.6575,
+                        -27.7991
+                    ],
+                    [
+                        -41.5376,
+                        -27.2819
+                    ],
+                    [
+                        -41.4182,
+                        -26.7645
+                    ],
+                    [
+                        -41.2993,
+                        -26.2471
+                    ],
+                    [
+                        -41.1807,
+                        -25.7297
+                    ],
+                    [
+                        -41.0626,
+                        -25.2122
+                    ],
+                    [
+                        -40.9449,
+                        -24.6946
+                    ],
+                    [
+                        -40.8275,
+                        -24.177
+                    ],
+                    [
+                        -40.7766,
+                        -23.9518
+                    ],
+                    [
+                        -42.7654,
+                        -23.5588
+                    ],
+                    [
+                        -44.742,
+                        -23.1404
+                    ],
+                    [
+                        -46.706,
+                        -22.6975
+                    ],
+                    [
+                        -48.6571,
+                        -22.2306
+                    ],
+                    [
+                        -50.595,
+                        -21.7403
+                    ],
+                    [
+                        -52.5195,
+                        -21.2276
+                    ],
+                    [
+                        -53.158,
+                        -21.0518
+                    ]
+                ]
+            ],
+            "type": "Polygon"
+        },
+        "id": "S3A_OL_2_LFR____20191227T124111_20191227T124411_20221209T133032_0179_053_109______PS1_D_NR_002.SEN3",
+        "links": [
+            {
+                "href": "./.zattrs.json",
+                "rel": "self",
+                "type": "application/json"
+            }
+        ],
+        "properties": {
+            "created": "2022-12-09T13:30:32Z",
+            "datetime": "null",
+            "end_datetime": "2019-12-27T12:44:10.741394Z",
+            "eopf:image_size": [
+                {
+                    "columns": 4865,
+                    "name": "FR",
+                    "rows": 4088
+                }
+            ],
+            "eopf:instrument_mode": "Earth Observation",
+            "eopf:pixel_classification": [
+                {
+                    "count": 625746,
+                    "name": "invalid",
+                    "percent": 3.146331
+                },
+                {
+                    "count": 0,
+                    "name": "cosmetic",
+                    "percent": 0.0
+                },
+                {
+                    "count": 4628759,
+                    "name": "duplicated",
+                    "percent": 23.27399
+                },
+                {
+                    "count": 22553,
+                    "name": "saturated",
+                    "percent": 0.113399
+                },
+                {
+                    "count": 62524,
+                    "name": "dubious",
+                    "percent": 0.314379
+                },
+                {
+                    "name": "saline_water",
+                    "percent": 53.286831
+                },
+                {
+                    "name": "coastal",
+                    "percent": 0.094463
+                },
+                {
+                    "name": "fresh_water",
+                    "percent": 0.637491
+                },
+                {
+                    "name": "tidal",
+                    "percent": 0.0
+                },
+                {
+                    "name": "land",
+                    "percent": 46.713169
+                },
+                {
+                    "name": "cloudy",
+                    "percent": 13.743506
+                }
+            ],
+            "eopf:processing_baseline": "OL__L2L.002.11.00",
+            "eopf:resolutions": {
+                "FR": null,
+                "RR": null
+            },
+            "eopf:timeline": "NR",
+            "eopf:type": "S3OLCLFR",
+            "gsd": "270.000000",
+            "instrument": "OLCI",
+            "mission": "Sentinel-3",
+            "platform": "Sentinel-3A",
+            "processing:level": "L2",
+            "providers": [
+                {
+                    "roles": [
+                        "processor"
+                    ]
+                },
+                {
+                    "roles": [
+                        "producer"
+                    ]
+                }
+            ],
+            "sat:absolute_orbit": 20102,
+            "sat:orbit_state": "descending",
+            "sat:platform_international_designator": "2016-011A",
+            "sat:relative_orbit": 109,
+            "start_datetime": "2019-12-27T12:41:10.908296Z"
+        },
+        "stac_extensions": [
+            "https://stac-extensions.github.io/eopf/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+            "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.1.0/schema.json"
+        ],
+        "stac_version": "1.0.0",
+        "type": "Feature"
+    },
+    "other_metadata": {
+        "data_information": {
+            "accuracy_reference": "0",
+            "atm_correction_type": "PARALLEL",
+            "earth_sun_distance": 147122191908,
+            "measurement_accuracy": "2.000000",
+            "ocl_status": "true",
+            "sampling": {
+                "columns_per_tiepoint": 64,
+                "rows_per_tiepoint": 1
+            }
+        },
+        "history": [
+            {
+                "output": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted)",
+                "version": "2.0"
+            },
+            {
+                "output": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted)",
+                "version": "2.0"
+            },
+            {
+                "output": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134811_20191227T135826_5983______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:01:29.423794Z",
+                "processor": "IPF-0",
+                "type": "L0 Product;Orbit File",
+                "version": "06.12"
+            },
+            {
+                "output": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted)",
+                "version": "2.0"
+            },
+            {
+                "output": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134806_20191227T134854_5978______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:00:58.036061Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134811_20191227T135826_5983______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:01:29.423794Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134806_20191227T134854_5978______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:00:58.036061Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134811_20191227T135826_5983______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:01:29.423794Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product2": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product3": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product4": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                    "L0PP Granule": "S3A_OL_0_EFR__G_20191227T124102_20191227T124302_20191227T135859_0120______________SVL_O_NR_OPE.ISIP",
+                    "Orbit File1": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "Orbit File2": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_OL_0_EFR____20191227T124044_20191227T124244_20191227T140343_0119_053_109______LN1_O_NR_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:03:52.723499Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "output": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted)",
+                "version": "2.0"
+            },
+            {
+                "output": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134806_20191227T134854_5978______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:00:58.036061Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134811_20191227T135826_5983______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:01:29.423794Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134806_20191227T134854_5978______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:00:58.036061Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "FOS Orbit File (Restituted)2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0PP Granule": "S3A_TM_0_NAT__G_20191227T120828_20191227T134811_20191227T135826_5983______________SVL_O_NR_OPE.ISIP",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File1": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File2": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:01:29.423794Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "FOS Orbit File (Restituted)": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product2": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product3": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "L0 Product4": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                    "L0PP Granule": "S3A_OL_0_EFR__G_20191227T124302_20191227T124502_20191227T135913_0120______________SVL_O_NR_OPE.ISIP",
+                    "Orbit File1": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "Orbit File2": "S3A_TM_0_NAT____20191227T120810_20191227T134748_20191227T140037_5977_053_109______LN1_O_AL_002.SEN3",
+                    "Product Data Format Specification - Level 0": "S3IPF PDS 001 - i1r8 - Product Data Format Specification - Level 0",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Time Correlation File": "S3A_AX___FRO_AX_20191224T000000_20200103T000000_20191227T064943___________________EUM_O_AL_001.SEN3"
+                },
+                "output": "S3A_OL_0_EFR____20191227T124244_20191227T124444_20191227T140343_0119_053_109______LN1_O_NR_002.SEN3",
+                "processingCentre": "Land OLCI Processing and Archiving Centre [LN1], European Space Agency",
+                "processingTime": "2019-12-27T14:03:52.594799Z",
+                "processor": "IPF-0",
+                "type": "L0 Product",
+                "version": "06.12"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.1 - Auxiliary Data Format Specification - OLCI Level 1"
+                },
+                "output": "S3A_OL_1_EO__AX_20160425T103700_20991231T235959_20221107T120000___________________MPC_O_AL_013.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI L1 Processing Control Parameter file in EO mode",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "T1D12270600122706001"
+                },
+                "output": "S3__AX___MA1_AX_20191227T030000_20191227T150000_20191227T174444___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "T1D12271800122718001"
+                },
+                "output": "S3__AX___MA1_AX_20191227T150000_20191228T030000_20191228T053757___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "T1D12280000122800001"
+                },
+                "output": "S3__AX___MA1_AX_20191227T210000_20191228T090000_20191228T054847___________________ECW_O_SN_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "ECMWF Meteorological Data (Analysis) AN SFC + PL",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3__AX___DEM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Digital Elevation Model GETASSE30V2",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_1_CLUTAX_20160425T095210_20991231T235959_20160525T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Classification thresholds LUTs file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.1 - Auxiliary Data Format Specification - OLCI Level 1"
+                },
+                "output": "S3A_OL_1_INS_AX_20201030T120000_20991231T235959_20220505T120000___________________MPC_O_AL_009.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Characterisation and Models Data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.1 - Auxiliary Data Format Specification - OLCI Level 1"
+                },
+                "output": "S3A_OL_1_CAL_AX_20220930T000000_20991231T235959_20221110T120000___________________MPC_O_AL_027.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Calibration Data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.1 - Auxiliary Data Format Specification \u2013 OLCI Level 1"
+                },
+                "output": "S3A_OL_1_PRG_AX_20160425T095210_20991231T235959_20210309T120000___________________MPC_O_AL_004.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Programmation Data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3__AX___LWM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Land/Water Mask file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3__AX___OOM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Open Ocean Mask file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3__AX___CLM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Coastline Mask file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i1r13 - Auxiliary Data Format Specification"
+                },
+                "output": "S3__AX___TRM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                "processingCentre": "ESA's Mission Performance Coordinating Centre (MPC), ESA's Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "Tidal Regions Mask file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "S3A_OPER_MPL_ORBRES_20191227T000000_20200106T000000_0001.EOF"
+                },
+                "output": "S3A_AX___FRO_AX_20191227T000000_20200106T000000_20191230T065259___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "FOS Orbit File (Restituted);Time Correlation File",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "S3A_OPER_MPL_ORBSCT_20160216T192404_99999999T999999_0002.TGZ"
+                },
+                "output": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "Coastline Mask file": "S3__AX___CLM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Digital Elevation Model GETASSE30V2": "S3__AX___DEM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL1": "S3__AX___MA1_AX_20191227T030000_20191227T150000_20191227T174444___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL2": "S3__AX___MA1_AX_20191227T150000_20191228T030000_20191228T053757___________________ECW_O_SN_001.SEN3",
+                    "ECMWF Meteorological Data (Analysis) AN SFC + PL3": "S3__AX___MA1_AX_20191227T210000_20191228T090000_20191228T054847___________________ECW_O_SN_001.SEN3",
+                    "FOS Orbit File (Restituted);Time Correlation File": "S3A_AX___FRO_AX_20191227T000000_20200106T000000_20191230T065259___________________EUM_O_AL_001.SEN3",
+                    "L0 Product1": "S3A_OL_0_EFR____20191227T124044_20191227T124244_20191227T140343_0119_053_109______LN1_O_NR_002.SEN3",
+                    "L0 Product2": "S3A_OL_0_EFR____20191227T124244_20191227T124444_20191227T140343_0119_053_109______LN1_O_NR_002.SEN3",
+                    "L0 Product;Orbit File": "S3A_TM_0_NAT____20191227T120810_20191227T134753_20191227T140117_5982_053_109______LN1_O_AL_002.SEN3",
+                    "Land/Water Mask file": "S3__AX___LWM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "OLCI Calibration Data file": "S3A_OL_1_CAL_AX_20220930T000000_20991231T235959_20221110T120000___________________MPC_O_AL_027.SEN3",
+                    "OLCI Characterisation and Models Data file": "S3A_OL_1_INS_AX_20201030T120000_20991231T235959_20220505T120000___________________MPC_O_AL_009.SEN3",
+                    "OLCI Classification thresholds LUTs file": "S3A_OL_1_CLUTAX_20160425T095210_20991231T235959_20160525T120000___________________MPC_O_AL_003.SEN3",
+                    "OLCI L1 Processing Control Parameter file in EO mode": "S3A_OL_1_EO__AX_20160425T103700_20991231T235959_20221107T120000___________________MPC_O_AL_013.SEN3",
+                    "OLCI Programmation Data file": "S3A_OL_1_PRG_AX_20160425T095210_20991231T235959_20210309T120000___________________MPC_O_AL_004.SEN3",
+                    "Open Ocean Mask file": "S3__AX___OOM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3",
+                    "Product Data Format Specification - OLCI": "S3IPF PDS 004.1 - i2r6 - Product Data Format Specification - OLCI Level 1",
+                    "Reference Orbit Scenario File": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "Tidal Regions Mask file": "S3__AX___TRM_AX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3"
+                },
+                "output": "S3A_OL_1_EFR____20191227T124111_20191227T124411_20221125T100245_0179_053_109______LR1_D_NT_003.SEN3",
+                "processingCentre": "Land Reprocessing Centre 1 [LR1], ACRI",
+                "processingTime": "2022-11-25T10:09:43.578431Z",
+                "processor": "IPF-OL-1-EO",
+                "type": "input_product",
+                "version": "06.14"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.2 - Auxiliary Data Format Specification \u2013 OLCI Level 2"
+                },
+                "output": "S3A_OL_2_PCP_AX_20160216T000000_20991231T235959_20210628T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI L2 Processing Control Parameters file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i2r5 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_2_PPP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_005.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Pre Processing data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i2r5 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_2_WVP_AX_20160216T000000_20991231T235959_20170113T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Water Vapour Parameters data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i2r5 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_2_ACP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_004.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Atmospheric Correction Parameters file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i2r5 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_2_OCP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Ocean Colour Processing Parameters file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Auxiliary Data Format Specification": "S3IPF PDS 007.2 - Auxiliary Data Format Specification \u2013 OLCI Level 2"
+                },
+                "output": "S3A_OL_2_VGP_AX_20160216T000000_20991231T235959_20210628T120000___________________MPC_O_AL_005.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Vegetation Processing Parameters file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Product Data Specification Document - ADFs": "S3IPF.PDS.007 - i2r5 - Auxiliary Data Format Specification"
+                },
+                "output": "S3A_OL_2_CLP_AX_20160216T000000_20991231T235959_20170210T120000___________________MPC_O_AL_003.SEN3",
+                "processingCentre": "ESA Mission Performance Coordinating Centre (MPC), ESA Mission Performance Coordinating Centre",
+                "processor": "ADC",
+                "type": "OLCI Climatology Data file",
+                "version": "1.0"
+            },
+            {
+                "inputs": {
+                    "Raw Data": "S3A_OPER_MPL_ORBSCT_20160216T192404_99999999T999999_0002.TGZ"
+                },
+                "output": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                "processingCentre": "MAR, European Organisation for the Exploitation of Meteorological Satellites",
+                "processor": "ADC",
+                "type": "Reference Orbit Scenario File;time_init",
+                "version": "2.0"
+            },
+            {
+                "inputs": {
+                    "OLCI Atmospheric Correction Parameters file": "S3A_OL_2_ACP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_004.SEN3",
+                    "OLCI Climatology Data file": "S3A_OL_2_CLP_AX_20160216T000000_20991231T235959_20170210T120000___________________MPC_O_AL_003.SEN3",
+                    "OLCI L2 Processing Control Parameters file": "S3A_OL_2_PCP_AX_20160216T000000_20991231T235959_20210628T120000___________________MPC_O_AL_003.SEN3",
+                    "OLCI Ocean Colour Processing Parameters file": "S3A_OL_2_OCP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_003.SEN3",
+                    "OLCI Pre Processing data file": "S3A_OL_2_PPP_AX_20160216T000000_20991231T235959_20170609T120000___________________MPC_O_AL_005.SEN3",
+                    "OLCI Vegetation Processing Parameters file": "S3A_OL_2_VGP_AX_20160216T000000_20991231T235959_20210628T120000___________________MPC_O_AL_005.SEN3",
+                    "OLCI Water Vapour Parameters data file": "S3A_OL_2_WVP_AX_20160216T000000_20991231T235959_20170113T120000___________________MPC_O_AL_003.SEN3",
+                    "Product Data Format Specification - OLCI": "S3IPF PDS 004.2 - i2r4 - Product Data Format Specification - OLCI Level 2 Land",
+                    "Reference Orbit Scenario File;time_init": "S3A_AX___OSF_AX_20160216T192404_99991231T235959_20170322T163046___________________EUM_O_AL_001.SEN3",
+                    "input_product": "S3A_OL_1_EFR____20191227T124111_20191227T124411_20221125T100245_0179_053_109______LR1_D_NT_003.SEN3"
+                },
+                "output": "",
+                "processingCentre": "Copernicus Ground Segment, ESA",
+                "processingTime": "2022-12-09T13:32:16.393882Z",
+                "processor": "IPF-OL-2",
+                "type": "L2",
+                "version": "06.17"
+            }
+        ],
+        "meteo": {
+            "missing_time": 1,
+            "source": "ECMWF",
+            "type": "ANALYSIS"
+        },
+        "orbit_reference": {
+            "absolute_pass_number": 40204,
+            "cycle_number": 53,
+            "ephemeris": {
+                "start": {
+                    "TAI": "2019-12-27T11:44:40.100954",
+                    "UT1": "2019-12-27T11:44:03.100954",
+                    "UTC": "2019-12-27T11:44:03.100954Z",
+                    "position": {
+                        "x": -6455348.639,
+                        "y": 3151871.69,
+                        "z": 0.0
+                    },
+                    "velocity": {
+                        "x": 727.565288,
+                        "y": 1470.668267,
+                        "z": 7366.402739
+                    }
+                },
+                "stop": {
+                    "TAI": "2019-12-27T13:25:39.321733",
+                    "UT1": "2019-12-27T13:25:02.321733",
+                    "UTC": "2019-12-27T13:25:02.321733Z",
+                    "position": {
+                        "x": -4494400.931,
+                        "y": 5604121.829,
+                        "z": -0.0
+                    },
+                    "velocity": {
+                        "x": 1285.333487,
+                        "y": 1019.86971,
+                        "z": 7366.402739
+                    }
+                }
+            },
+            "phase_identifier": 1,
+            "relative_pass_number": 218,
+            "type": "start"
+        },
+        "product_type": "S3OLCLFR",
+        "product_unit": {
+            "alongtrack_coordinate": "null",
+            "duration": 179,
+            "type": "STRIPE"
+        }
+    }
+}

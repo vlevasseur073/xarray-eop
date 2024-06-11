@@ -22,6 +22,7 @@ import numpy as np
 import xarray as xr
 from click.testing import CliRunner
 
+from xarray_eop.conversion.utils import use_custom_mapping
 from xarray_eop.eop import open_eop_datatree
 from xarray_eop.sentinel3 import open_safe_datatree
 from xarray_eop.verification.logger import (
@@ -29,27 +30,6 @@ from xarray_eop.verification.logger import (
     get_logger,
     get_passed_logger,
 )
-
-
-def use_custom_mapping(product: Path | str) -> bool:
-    custom_map = False
-    if isinstance(product, Path):
-        pattern = product.name[4:12]
-    elif isinstance(product, str):
-        pattern = product.split("/")[-1][4:12]
-    if pattern in [
-        "OL_1_EFR",
-        "OL_1_ERR",
-        "OL_2_LFR",
-        "SY_2_AOD",
-        "SY_2_VGP",
-        "SY_2_VGK",
-        "SY_2_VG1",
-        "SY_2_V10",
-    ]:
-        custom_map = True
-
-    return custom_map
 
 
 # Function to get leaf paths

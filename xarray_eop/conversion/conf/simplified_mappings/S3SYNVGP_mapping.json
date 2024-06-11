@@ -1,0 +1,152 @@
+{
+    "chunk_sizes": {
+        "latitude": 10080,
+        "longitude": 10080
+    },
+    "data_mapping": {
+        "/measurements": {
+            "B0.nc": [
+                [
+                    "B0",
+                    "b0"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "lat_bnds",
+                    "lat_bnds"
+                ],
+                [
+                    "lon_bnds",
+                    "lon_bnds"
+                ]
+            ],
+            "B2.nc": [
+                [
+                    "B2",
+                    "b2"
+                ]
+            ],
+            "B3.nc": [
+                [
+                    "B3",
+                    "b3"
+                ]
+            ],
+            "MIR.nc": [
+                [
+                    "MIR",
+                    "mir"
+                ]
+            ]
+        },
+        "/conditions/auxiliary": {
+            "ag.nc": [
+                [
+                    "AG",
+                    "ag"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "lat_bnds",
+                    "lat_bnds"
+                ],
+                [
+                    "lon_bnds",
+                    "lon_bnds"
+                ]
+            ],
+            "og.nc": [
+                [
+                    "OG",
+                    "og"
+                ]
+            ],
+            "wvg.nc": [
+                [
+                    "WVG",
+                    "wvg"
+                ]
+            ]
+        },
+        "/conditions/geometry": {
+            "vaa.nc": [
+                [
+                    "VAA",
+                    "vaa"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "lat_bnds",
+                    "lat_bnds"
+                ],
+                [
+                    "lon_bnds",
+                    "lon_bnds"
+                ]
+            ],
+            "vza.nc": [
+                [
+                    "VZA",
+                    "vza"
+                ]
+            ],
+            "saa.nc": [
+                [
+                    "SAA",
+                    "saa"
+                ]
+            ],
+            "sza.nc": [
+                [
+                    "SZA",
+                    "sza"
+                ]
+            ]
+        },
+        "/quality": {
+            "sm.nc": [
+                [
+                    "SM",
+                    "sm"
+                ],
+                [
+                    "longitude",
+                    "longitude"
+                ],
+                [
+                    "latitude",
+                    "latitude"
+                ],
+                [
+                    "lat_bnds",
+                    "lat_bnds"
+                ],
+                [
+                    "lon_bnds",
+                    "lon_bnds"
+                ]
+            ]
+        }
+    }
+}

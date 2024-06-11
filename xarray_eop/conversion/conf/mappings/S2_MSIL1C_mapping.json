@@ -1,0 +1,2621 @@
+{
+    "recognition": {
+        "filename_pattern": "S2._MSIL1C_.*SAFE|S2MSIL1C.*",
+        "product_type": "S2MSIL1C",
+        "version": "04.00"
+    },
+    "chunk_sizes": {
+        "y_10m": 1830,
+        "x_10m": 1830,
+        "y_20m": 915,
+        "x_20m": 915,
+        "y_60m": 305,
+        "x_60m": 305
+    },
+    "data_mapping": [
+        {
+            "short_name": "y_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B02.jp2:coordinates/y",
+            "target_path": "/coordinates/image_grid_10m/y_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "y_10m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "y coordinates of tile image at 10m in meters from up-left pixel",
+                    "short_name": "y_10m",
+                    "dimensions": "y_10m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "x_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B02.jp2:coordinates/x",
+            "target_path": "/coordinates/image_grid_10m/x_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "x_10m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "x coordinates of tile image at 10m in meters from up-left pixel",
+                    "short_name": "x_10m",
+                    "dimensions": "x_10m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "y_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B05.jp2:coordinates/y",
+            "target_path": "/coordinates/image_grid_20m/y_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "y_20m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "y coordinates of tile image at 20m in meters from up-left pixel",
+                    "short_name": "y_20m",
+                    "dimensions": "y_20m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "x_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B05.jp2:coordinates/x",
+            "target_path": "/coordinates/image_grid_20m/x_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "x_20m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "x coordinates of tile image at 20m in meters from up-left pixel",
+                    "short_name": "x_20m",
+                    "dimensions": "x_20m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "y_60m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B09.jp2:coordinates/y",
+            "target_path": "/coordinates/image_grid_60m/y_60m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "y_60m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "y coordinates of tile image at 60m in meters from up-left pixel",
+                    "short_name": "y_60m",
+                    "dimensions": "y_60m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "x_60m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B09.jp2:coordinates/x",
+            "target_path": "/coordinates/image_grid_60m/x_60m",
+            "item_format": "jp2",
+            "parameters": {
+                "dimensions": [
+                    "x_60m"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "x coordinates of tile image at 60m in meters from up-left pixel",
+                    "short_name": "x_60m",
+                    "dimensions": "x_60m",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "y_a",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/coordinates/angles_grid/y_a",
+            "local_path": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='10']/ULY",
+            "item_format": "xmltp",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace",
+                "step_path": "xml_mapping/xmltp_angles/step_y_angle",
+                "values_path": "xml_mapping/xmltp_angles/angle_values"
+            },
+            "parameters": {
+                "dimensions": [
+                    "y_a"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "y coordinates of angles grid, in steps of 5km from up-left pixel",
+                    "short_name": "y_a",
+                    "dimensions": "y_a",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "x_a",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/coordinates/angles_grid/x_a",
+            "local_path": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='10']/ULX",
+            "item_format": "xmltp",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace",
+                "step_path": "xml_mapping/xmltp_angles/step_x_angle",
+                "values_path": "xml_mapping/xmltp_angles/angle_values"
+            },
+            "parameters": {
+                "dimensions": [
+                    "x_a"
+                ],
+                "attributes": {
+                    "units": "m",
+                    "long_name": "x coordinates of angles grid, in steps of 5km from up-left pixel",
+                    "short_name": "x_a",
+                    "dimensions": "x_a",
+                    "dtype": "<f4"
+                }
+            }
+        },
+        {
+            "short_name": "band",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/coordinates/band",
+            "item_format": "xmlangles",
+            "local_path": "to_bands(n1:Geometric_Info/Tile_Angles/Viewing_Incidence_Angles_Grids)",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "band"
+                ],
+                "attributes": {
+                    "long_name": "spectral band number",
+                    "short_name": "band",
+                    "dimensions": "band",
+                    "dtype": "<u1",
+                    "flag_values": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "B01 B02 B03 B04 B05 B06 B07 B08 B8A B09 B10 B11 B12"
+                }
+            }
+        },
+        {
+            "short_name": "detector",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/coordinates/detector",
+            "item_format": "xmlangles",
+            "local_path": "to_detectors(n1:Geometric_Info/Tile_Angles/Viewing_Incidence_Angles_Grids)",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "detector"
+                ],
+                "attributes": {
+                    "long_name": "detector module number",
+                    "short_name": "detector",
+                    "dimensions": "detector",
+                    "dtype": "<u1",
+                    "valid_min": 1,
+                    "valid_max": 12,
+                    "fill_value": 0
+                }
+            }
+        },
+        {
+            "short_name": "latitude_meteo",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:coordinates/latitude",
+            "target_path": "/coordinates/meteo_grid/latitude_meteo",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "standard_name": "latitude",
+                    "long_name": "latitudes of ECMWF grid",
+                    "short_name": "latitude_meteo",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo",
+                    "units": "degrees_north"
+                },
+                "dimensions": [
+                    "latitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "longitude_meteo",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:coordinates/longitude",
+            "target_path": "/coordinates/meteo_grid/longitude_meteo",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "standard_name": "longitude",
+                    "long_name": "longitudes of ECMWF grid",
+                    "short_name": "longitude_meteo",
+                    "dtype": "<f4",
+                    "dimensions": "longitude_meteo",
+                    "units": "degrees_east"
+                },
+                "dimensions": [
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "b01_60m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B01.jp2:value",
+            "target_path": "/measurements/reflectances_60m/b01_60m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 01 443 nm",
+                    "short_name": "b01_60m",
+                    "dtype": "<u2",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b02_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B02.jp2:value",
+            "target_path": "/measurements/reflectances_10m/b02_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 02 490 nm",
+                    "short_name": "b02_10m",
+                    "dtype": "<u2",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b03_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B03.jp2:value",
+            "target_path": "/measurements/reflectances_10m/b03_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 03 560 nm",
+                    "short_name": "b03_10m",
+                    "dtype": "<u2",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b04_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B04.jp2:value",
+            "target_path": "/measurements/reflectances_10m/b04_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 04 665 nm",
+                    "short_name": "b04_10m",
+                    "dtype": "<u2",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b05_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B05.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b05_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 05 705 nm",
+                    "short_name": "b05_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b06_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B06.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b06_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 06 740 nm",
+                    "short_name": "b06_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b07_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B07.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b07_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 07 783 nm",
+                    "short_name": "b07_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b08_10m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B08.jp2:value",
+            "target_path": "/measurements/reflectances_10m/b08_10m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 08 842 nm",
+                    "short_name": "b08_10m",
+                    "dtype": "<u2",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b8a_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B8A.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b8a_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 8A 865 nm",
+                    "short_name": "b8a_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b09_60m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B09.jp2:value",
+            "target_path": "/measurements/reflectances_60m/b09_60m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 09 940 nm",
+                    "short_name": "b09_60m",
+                    "dtype": "<u2",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b10_60m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B10.jp2:value",
+            "target_path": "/measurements/reflectances_60m/b10_60m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 10 1375 nm",
+                    "short_name": "b10_60m",
+                    "dtype": "<u2",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b11_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B11.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b11_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 11 1610 nm",
+                    "short_name": "b11_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "b12_20m",
+            "source_path": "GRANULE/[^/]*/IMG_DATA/.*B12.jp2:value",
+            "target_path": "/measurements/reflectances_20m/b12_20m",
+            "item_format": "jp2",
+            "parameters": {
+                "sub_array": {
+                    "dim_0": 0
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "attributes": {
+                    "long_name": "TOA reflectance from MSI acquisition at spectral band 12 2190 nm",
+                    "short_name": "b12_20m",
+                    "dtype": "<u2",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m",
+                    "units": "digital_counts",
+                    "fill_value": 0,
+                    "scale_factor": 0.0001,
+                    "add_offset": -0.1,
+                    "valid_min": 1,
+                    "valid_max": 65535
+                }
+            }
+        },
+        {
+            "short_name": "msk_classif",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_CLASSI_B00.jp2:value",
+            "target_path": "/conditions/msk_classif",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4
+                    ],
+                    "flag_meanings": "opaque cirrus snow_ice",
+                    "long_name": "cloud classification mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_classif",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b01",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B01.jp2:value",
+            "target_path": "/quality/msk_quality_b01",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b01",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b02",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B02.jp2:value",
+            "target_path": "/quality/msk_quality_b02",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b02",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b03",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B03.jp2:value",
+            "target_path": "/quality/msk_quality_b03",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b03",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b04",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B04.jp2:value",
+            "target_path": "/quality/msk_quality_b04",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b04",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b05",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B05.jp2:value",
+            "target_path": "/quality/msk_quality_b05",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b05",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b06",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B06.jp2:value",
+            "target_path": "/quality/msk_quality_b06",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b06",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b07",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B07.jp2:value",
+            "target_path": "/quality/msk_quality_b07",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b07",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b08",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B08.jp2:value",
+            "target_path": "/quality/msk_quality_b08",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b08",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b8a",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B8A.jp2:value",
+            "target_path": "/quality/msk_quality_b8a",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b8a",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b09",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B09.jp2:value",
+            "target_path": "/quality/msk_quality_b09",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b09",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b10",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B10.jp2:value",
+            "target_path": "/quality/msk_quality_b10",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b10",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b11",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B11.jp2:value",
+            "target_path": "/quality/msk_quality_b11",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b11",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_quality_b12",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_QUALIT_B12.jp2:value",
+            "target_path": "/quality/msk_quality_b12",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_masks": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        512
+                    ],
+                    "flag_meanings": "ANC_LOST ANC_DEG MSI_LOST MSI_DEG DEFECTIVE_PIXEL NODATA_PIXEL PARTIALLY_CORRECTED_PIXEL SATURATED_PIXEL_L1A SATURATED_PIXEL_L1B CLOUD",
+                    "long_name": "quality mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_quality_b12",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "pack_bits": 0
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b01",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B01.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b01",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b01",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b02",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B02.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b02",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b02",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b03",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B03.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b03",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b03",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b04",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B04.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b04",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b04",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b05",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B05.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b05",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b05",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b06",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B06.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b06",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b06",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b07",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B07.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b07",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b07",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b08",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B08.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b08",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b08",
+                    "dtype": "<u1",
+                    "dimensions": "y_10m x_10m",
+                    "coordinates": "y_10m x_10m"
+                },
+                "dimensions": [
+                    "y_10m",
+                    "x_10m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b8a",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B8A.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b8a",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b8q",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b09",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B09.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b09",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b09",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b10",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B10.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b10",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b10",
+                    "dtype": "<u1",
+                    "dimensions": "y_60m x_60m",
+                    "coordinates": "y_60m x_60m"
+                },
+                "dimensions": [
+                    "y_60m",
+                    "x_60m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b11",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B11.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b11",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b11",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "msk_detfoo_b12",
+            "source_path": "GRANULE/[^/]*/QI_DATA/MSK_DETFOO_B12.jp2:value",
+            "target_path": "/conditions/msk_detfoo_b12",
+            "item_format": "jp2",
+            "parameters": {
+                "attributes": {
+                    "flag_values": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "flag_meanings": "D01 D02 D03 D04 D05 D06 D07 D08 D09 D10 D11 D12",
+                    "long_name": "detector footprint mask provided in the final reference frame (ground geometry)",
+                    "short_name": "msk_detfoo_b12",
+                    "dtype": "<u1",
+                    "dimensions": "y_20m x_20m",
+                    "coordinates": "y_20m x_20m"
+                },
+                "dimensions": [
+                    "y_20m",
+                    "x_20m"
+                ],
+                "sub_array": {
+                    "dim_0": 0
+                }
+            }
+        },
+        {
+            "short_name": "saa",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/saa",
+            "item_format": "xmlangles",
+            "local_path": "n1:Geometric_Info/Tile_Angles/Sun_Angles_Grid/Azimuth/Values_List",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sun azimuth angle",
+                    "short_name": "saa",
+                    "dtype": "<f4",
+                    "dimensions": "y_a x_a",
+                    "coordinates": "y_a x_a",
+                    "units": "degrees"
+                },
+                "dimensions": [
+                    "y_a",
+                    "x_a"
+                ]
+            }
+        },
+        {
+            "short_name": "sza",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/sza",
+            "item_format": "xmlangles",
+            "local_path": "n1:Geometric_Info/Tile_Angles/Sun_Angles_Grid/Zenith/Values_List",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "attributes": {
+                    "long_name": "sun zenith angle",
+                    "short_name": "sza",
+                    "dtype": "<f4",
+                    "dimensions": "y_a x_a",
+                    "coordinates": "y_a x_a",
+                    "units": "degrees"
+                },
+                "dimensions": [
+                    "y_a",
+                    "x_a"
+                ]
+            }
+        },
+        {
+            "short_name": "vaa",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/vaa",
+            "item_format": "xmlangles",
+            "local_path": "n1:Geometric_Info/Tile_Angles/Viewing_Incidence_Angles_Grids/Azimuth/Values_List",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "band",
+                    "detector",
+                    "y_a",
+                    "x_a"
+                ],
+                "attributes": {
+                    "long_name": "incidence azimuth angle",
+                    "short_name": "vaa",
+                    "dtype": "<f4",
+                    "dimensions": "band detector y_a x_a",
+                    "units": "degrees"
+                }
+            }
+        },
+        {
+            "short_name": "vza",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/vza",
+            "item_format": "xmlangles",
+            "local_path": "n1:Geometric_Info/Tile_Angles/Viewing_Incidence_Angles_Grids/Zenith/Values_List",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "band",
+                    "detector",
+                    "y_a",
+                    "x_a"
+                ],
+                "attributes": {
+                    "long_name": "incidence zenith angle",
+                    "short_name": "vza",
+                    "dtype": "<f4",
+                    "dimensions": "band detector y_a x_a",
+                    "units": "degrees"
+                }
+            }
+        },
+        {
+            "short_name": "mean_vaa",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/mean_vaa",
+            "item_format": "xmlangles",
+            "local_path": "to_list(n1:Geometric_Info/Tile_Angles/Mean_Viewing_Incidence_Angle_List/Mean_Viewing_Incidence_Angle/AZIMUTH_ANGLE)",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "band"
+                ],
+                "attributes": {
+                    "long_name": "mean viewing incidence azimuth angle",
+                    "short_name": "mean_vaa",
+                    "dtype": "<f4",
+                    "dimensions": "band",
+                    "units": "degrees"
+                }
+            }
+        },
+        {
+            "short_name": "mean_vza",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "/conditions/geometry/mean_vza",
+            "item_format": "xmlangles",
+            "local_path": "to_list(n1:Geometric_Info/Tile_Angles/Mean_Viewing_Incidence_Angle_List/Mean_Viewing_Incidence_Angle/ZENITH_ANGLE)",
+            "accessor_config": {
+                "namespace": "xml_mapping/namespace"
+            },
+            "parameters": {
+                "dimensions": [
+                    "band"
+                ],
+                "attributes": {
+                    "long_name": "mean viewing incidence zenith angle",
+                    "short_name": "mean_vza",
+                    "dtype": "<f4",
+                    "dimensions": "band",
+                    "units": "degrees"
+                }
+            }
+        },
+        {
+            "short_name": " tcwv",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:tcwv",
+            "target_path": "/conditions/meteo/tcwv",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total column water vapour TCWV",
+                    "short_name": "tcwv",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "kg/m2"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "mslp",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:msl",
+            "target_path": "/conditions/meteo/mslp",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "mean sea level pressure MSLP",
+                    "short_name": "mslp",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "hPa"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "tco3",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:tco3",
+            "target_path": "/conditions/meteo/tco3",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total column ozone TCO3",
+                    "short_name": "tco3",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "kg/m2"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "u10",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:u10",
+            "target_path": "/conditions/meteo/u10",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "units": "m/s",
+                    "short_name": "u10",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "long_name": "10m eastward wind component"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "v10",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:v10",
+            "target_path": "/conditions/meteo/v10",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "10m northward wind component",
+                    "short_name": "v10",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "m/s"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "rh",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_ECMWFT:r",
+            "target_path": "/conditions/meteo/rh",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "relative humidity at surface pressure",
+                    "short_name": "rh",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "%"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "geopotential",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:z",
+            "target_path": "/conditions/meteo/geopotential",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "geopotential surface z",
+                    "short_name": "geopotential",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo",
+                    "units": "m2/s2"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "aod469",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:aod469",
+            "target_path": "/conditions/meteo/aod469",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total aerosol optical thickness at 469nm",
+                    "short_name": "aod469",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "aod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:aod550",
+            "target_path": "/conditions/meteo/aod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total aerosol optical thickness at 550nm",
+                    "short_name": "aod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "aod670",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:aod670",
+            "target_path": "/conditions/meteo/aod670",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total aerosol optical thickness at 670nm",
+                    "short_name": "aod670",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "aod865",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:aod865",
+            "target_path": "/conditions/meteo/aod865",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total aerosol optical thickness at 865nm",
+                    "short_name": "aod865",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "aod1240",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:aod1240",
+            "target_path": "/conditions/meteo/aod1240",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "total aerosol optical thickness at 1240nm",
+                    "short_name": "aod1240",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "bcaod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:bcaod550",
+            "target_path": "/conditions/meteo/bcaod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "black carbon aerosol optical thickness at 550nm",
+                    "short_name": "bcaod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "duaod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:duaod550",
+            "target_path": "/conditions/meteo/duaod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "dust aerosol optical thickness at 550nm",
+                    "short_name": "duaod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "omaod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:omaod550",
+            "target_path": "/conditions/meteo/omaod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "organic matter aerosol optical thickness at 550nm",
+                    "short_name": "omaod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "ssaod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:ssaod550",
+            "target_path": "/conditions/meteo/ssaod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "sea salt aerosol optical thickness at 550nm",
+                    "short_name": "ssaod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "suaod550",
+            "source_path": "GRANULE/[^/]*/AUX_DATA/AUX_CAMSFO:suaod550",
+            "target_path": "/conditions/meteo/suaod550",
+            "item_format": "grib",
+            "parameters": {
+                "attributes": {
+                    "long_name": "sulphate aerosol optical thickness at 550nm",
+                    "short_name": "suaod550",
+                    "dtype": "<f4",
+                    "dimensions": "latitude_meteo longitude_meteo",
+                    "coordinates": "latitude_meteo longitude_meteo"
+                },
+                "dimensions": [
+                    "latitude_meteo",
+                    "longitude_meteo"
+                ]
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "tile_namespaces",
+                "path_template": "MTD_TL_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "source_path": "GRANULE/[^/]*/MTD_TL.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "tile_namespaces",
+                "path_template": "MTD_TL_template_path"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "source_path": "DATASTRIP/[^/]*/MTD_DS.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "datastrip_namespaces",
+                "path_template": "MTD_DS_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "source_path": "DATASTRIP/[^/]*/MTD_DS.xml",
+            "target_path": "",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "datastrip_namespaces",
+                "path_template": "MTD_DS_template_path"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "product_namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "manifest.safe",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "product_namespaces",
+                "path_template": "manifest_template_path"
+            }
+        },
+        {
+            "short_name": "stac_discovery",
+            "target_path": "",
+            "source_path": "MTD_MSIL1C.xml",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "stac_discovery",
+                "namespaces": "product_namespaces",
+                "path_template": "MTD_MSIL1C_template_path"
+            }
+        },
+        {
+            "short_name": "other_metadata",
+            "target_path": "",
+            "source_path": "MTD_MSIL1C.xml",
+            "item_format": "xmlmetadata",
+            "accessor_config": {
+                "mapping": "other_metadata",
+                "namespaces": "product_namespaces",
+                "path_template": "MTD_MSIL1C_template_path"
+            }
+        }
+    ],
+    "stac_discovery": {
+        "type": "Text(Feature)",
+        "stac_version": "Text(1.0.0)",
+        "stac_extensions": [
+            "Text(https://stac-extensions.github.io/eopf/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/eo/v1.1.0/schema.json)",
+            "Text(https://stac-extensions.github.io/sat/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/view/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/scientific/v1.0.0/schema.json)",
+            "Text(https://stac-extensions.github.io/processing/v1.1.0/schema.json)"
+        ],
+        "id": "n1:General_Info/Product_Info/PRODUCT_URI",
+        "geometry": "to_geoJson(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/safe:frameSet/safe:footPrint/gml:coordinates)",
+        "bbox": "to_bbox(metadataSection/metadataObject[@ID='measurementFrameSet']/metadataWrap/xmlData/safe:frameSet/safe:footPrint/gml:coordinates)",
+        "properties": {
+            "datetime": "Text(null)",
+            "start_datetime": "n1:General_Info/Product_Info/PRODUCT_START_TIME",
+            "end_datetime": "n1:General_Info/Product_Info/PRODUCT_STOP_TIME",
+            "created": "n1:General_Info/Product_Info/GENERATION_TIME",
+            "platform": "n1:General_Info/Product_Info/Datatake/SPACECRAFT_NAME",
+            "instrument": "Text(Multi Spectral Imager MSI)",
+            "mission": "Text(Sentinel-2)",
+            "providers": [
+                {
+                    "name": "Text(L1C Processor)",
+                    "roles": [
+                        "Text(processor)"
+                    ]
+                },
+                {
+                    "name": "Text(ESA)",
+                    "roles": [
+                        "Text(producer)"
+                    ]
+                }
+            ],
+            "eopf:timeline": "Text(NRT)",
+            "eopf:instrument_mode": "n1:General_Info/Product_Info/Datatake/DATATAKE_TYPE",
+            "eopf:baseline": "n1:General_Info/Processing_Info/PROCESSING_BASELINE",
+            "eopf:type": "Text(S2MSIL1C)",
+            "eopf:data_take_id": "n1:General_Info/Product_Info/Datatake/@datatakeIdentifier",
+            "sat:absolute_orbit": "to_int(metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:orbitNumber)",
+            "sat:relative_orbit": "to_int(n1:General_Info/Product_Info/Datatake/SENSING_ORBIT_NUMBER)",
+            "sat:orbit_state": "metadataSection/metadataObject[@ID='measurementOrbitReference']/metadataWrap/xmlData/safe:orbitReference/safe:orbitNumber/@groundTrackDirection",
+            "sat:platform_international_designator": "Text(2015-028A)",
+            "sci:doi": "n1:General_Info/Product_Info/PRODUCT_DOI",
+            "eo:cloud_cover": "to_float(n1:Quality_Indicators_Info/Image_Content_QI/CLOUDY_PIXEL_PERCENTAGE)",
+            "eo:snow_cover": "to_float(n1:Quality_Indicators_Info/Image_Content_QI/SNOW_PIXEL_PERCENTAGE)",
+            "processing:lineage": "Text(IPF L1C processor)",
+            "processing:facility": "Text(ESA)",
+            "processing:software": "Text(Sentinel-2 IPF)",
+            "processing:level": "n1:General_Info/Product_Info/PROCESSING_LEVEL",
+            "eopf:resolutions": {
+                "bands 02, 03, 04, 08": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/RESOLUTION",
+                "bands 05, 06, 07, 8A, 11, 12": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/RESOLUTION",
+                "bands 01, 09, 10": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/RESOLUTION"
+            },
+            "eopf:image_size": [
+                {
+                    "name": "Text(bands 02, 03, 04, 08)",
+                    "start_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='10']/ULY",
+                    "track_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='10']/ULX",
+                    "rows": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='10']/NROWS",
+                    "columns": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='10']/NCOLS"
+                },
+                {
+                    "name": "Text(bands 05, 06, 07, 8A, 11, 12)",
+                    "start_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='20']/ULY",
+                    "track_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='20']/ULX",
+                    "rows": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='20']/NROWS",
+                    "columns": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='20']/NCOLS"
+                },
+                {
+                    "name": "Text(bands 01, 09, 10)",
+                    "start_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='60']/ULY",
+                    "track_offset": "n1:Geometric_Info/Tile_Geocoding/Geoposition[@resolution='60']/ULX",
+                    "rows": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='60']/NROWS",
+                    "columns": "n1:Geometric_Info/Tile_Geocoding/Size[@resolution='60']/NCOLS"
+                }
+            ],
+            "eo:bands": [
+                {
+                    "name": "Text(01)",
+                    "common_name": "Text(coastal)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.020)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='0']"
+                },
+                {
+                    "name": "Text(02)",
+                    "common_name": "Text(blue)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.065)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='1']"
+                },
+                {
+                    "name": "Text(03)",
+                    "common_name": "Text(green)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.035)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='2']"
+                },
+                {
+                    "name": "Text(04)",
+                    "common_name": "Text(red)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.030)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='3']"
+                },
+                {
+                    "name": "Text(05)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.015)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='4']"
+                },
+                {
+                    "name": "Text(06)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.015)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='5']"
+                },
+                {
+                    "name": "Text(07)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.020)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='6']"
+                },
+                {
+                    "name": "Text(08)",
+                    "common_name": "Text(NIR)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.105)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='7']"
+                },
+                {
+                    "name": "Text(8A)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.020)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='8']"
+                },
+                {
+                    "name": "Text(09)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.020)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='9']"
+                },
+                {
+                    "name": "Text(10)",
+                    "common_name": "Text(cirrus)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.030)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='10']"
+                },
+                {
+                    "name": "Text(11)",
+                    "common_name": "Text(swir16)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.090)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='11']"
+                },
+                {
+                    "name": "Text(12)",
+                    "common_name": "Text(swir22)",
+                    "center_wavelength": "to_microm_from_nanom(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Wavelength/CENTRAL)",
+                    "full_width_half_max": "to_float(0.180)",
+                    "solar_illumination": "n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/Solar_Irradiance_List/SOLAR_IRRADIANCE[@bandId='12']"
+                }
+            ]
+        }
+    },
+    "other_metadata": {
+        "other_metadata": {
+            "UTM_zone_identification": "n1:General_Info/TILE_ID",
+            "mean_sensing_time": "n1:General_Info/SENSING_TIME",
+            "horizontal_CRS_name": "n1:Geometric_Info/Tile_Geocoding/HORIZONTAL_CS_NAME",
+            "horizontal_CRS_code": "n1:Geometric_Info/Tile_Geocoding/HORIZONTAL_CS_CODE",
+            "mean_sun_azimuth_angle_in_deg_for_all_bands_all_detectors": "to_float(n1:Geometric_Info/Tile_Angles/Mean_Sun_Angle/AZIMUTH_ANGLE)",
+            "mean_sun_zenith_angle_in_deg_for_all_bands_all_detectors": "to_float(n1:Geometric_Info/Tile_Angles/Mean_Sun_Angle/ZENITH_ANGLE)",
+            "L0_ephemeris_data_quality": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_QI/EPHEMERIS_QUALITY)",
+            "L0_ancillary_data_quality": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_QI/ANCILLARY_QUALITY)",
+            "absolute_location_assessment_from_AOCS": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_QI/Absolute_Location)",
+            "planimetric_stability_assessment_from_AOCS": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_QI/Planimetric_Stability)",
+            "multispectral_registration_assessment": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_QI/Multi_Spectral_Registration)",
+            "reflectance_correction_factor_from_the_Sun-Earth_distance_variation_computed_using_the_acquisition_date": "to_float(n1:General_Info/Product_Image_Characteristics/Reflectance_Conversion/U)",
+            "percentage_of_degraded_MSI_data": "to_float(n1:Quality_Indicators_Info/Technical_Quality_Assessment/DEGRADED_MSI_DATA_PERCENTAGE)",
+            "spectral_band_of_reference": "is_optional(to_int(n1:General_Info/Product_Image_Characteristics/REFERENCE_BAND))",
+            "band_description": {
+                "01": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Wavelength/MAX)",
+                    "bandwidth": "Text(20.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='0']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='0']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='0']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='0']/INTEGRATION_TIME"
+                },
+                "02": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Wavelength/MAX)",
+                    "bandwidth": "Text(65.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='1']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='1']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='1']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='1']/INTEGRATION_TIME"
+                },
+                "03": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Wavelength/MAX)",
+                    "bandwidth": "Text(35.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='2']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='2']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='2']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='2']/INTEGRATION_TIME"
+                },
+                "04": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Wavelength/MAX)",
+                    "bandwidth": "Text(30.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='3']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='3']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='3']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='3']/INTEGRATION_TIME"
+                },
+                "05": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Wavelength/MAX)",
+                    "bandwidth": "Text(15.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='4']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='4']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='4']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='4']/INTEGRATION_TIME"
+                },
+                "06": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Wavelength/MAX)",
+                    "bandwidth": "Text(13.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='5']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='5']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='5']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='5']/INTEGRATION_TIME"
+                },
+                "07": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Wavelength/MAX)",
+                    "bandwidth": "Text(19.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='6']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='6']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='6']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='6']/INTEGRATION_TIME"
+                },
+                "08": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Wavelength/MAX)",
+                    "bandwidth": "Text(105.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='7']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='7']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='7']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='7']/INTEGRATION_TIME"
+                },
+                "8A": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Wavelength/MAX)",
+                    "bandwidth": "Text(20.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='8']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='8']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='8']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='8']/INTEGRATION_TIME"
+                },
+                "09": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Wavelength/MAX)",
+                    "bandwidth": "Text(20.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='9']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='9']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='9']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='9']/INTEGRATION_TIME"
+                },
+                "10": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Wavelength/MAX)",
+                    "bandwidth": "Text(30.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='10']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='10']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='10']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='10']/INTEGRATION_TIME"
+                },
+                "11": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Wavelength/MAX)",
+                    "bandwidth": "Text(90.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='11']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='11']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='11']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='11']/INTEGRATION_TIME"
+                },
+                "12": {
+                    "units": "Text(nm)",
+                    "central_wavelength": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Wavelength/CENTRAL)",
+                    "wavelength_min": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Wavelength/MIN)",
+                    "wavelength_max": "to_float(n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Wavelength/MAX)",
+                    "bandwidth": "Text(180.0)",
+                    "spectral_response_step": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Spectral_Response/STEP",
+                    "spectral_response_values": "n1:General_Info/Product_Image_Characteristics/Spectral_Information_List/Spectral_Information[@bandId='12']/Spectral_Response/VALUES",
+                    "physical_gain": "n1:General_Info/Product_Image_Characteristics/PHYSICAL_GAINS[@bandId='12']",
+                    "onboard_compression_rate": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='12']/COMPRESSION_RATE",
+                    "onboard_integration_time": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/Spectral_Band_Info/Spectral_Band_Information[@bandId='12']/INTEGRATION_TIME"
+                }
+            },
+            "meteo": {
+                "source": "Text(ECMWF)",
+                "type": "Text(FORECAST)"
+            },
+            "product_quality_status": "n1:Quality_Indicators_Info/Quality_Control_Checks/Quality_Inspections/quality_check['GENERAL_QUALITY']",
+            "NUC_table_ID": "to_int(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/NUC_TABLE_ID)",
+            "onboard_compression_flag": "n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/COMPRESS_MODE",
+            "onboard_equalization_flag": "is_optional(n1:Image_Data_Info/Sensor_Configuration/Acquisition_Configuration/EQUALIZATION_MODE)",
+            "SWIR_rearrangement_flag": "is_optional(n1:Image_Data_Info/Radiometric_Info/SWIR_REARRANGEMENT_PROC)",
+            "optical_crosstalk_correction_flag": "is_optional(n1:Image_Data_Info/Radiometric_Info/CROSSTALK_OPTICAL_PROC)",
+            "electronic_crosstalk_correction_flag": "is_optional(n1:Image_Data_Info/Radiometric_Info/CROSSTALK_ELECTRONIC_PROC)",
+            "geometric_refinement": {
+                "spacecraft_rotation": {
+                    "X": {
+                        "degree": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/X/DEGREE)",
+                        "coefficients": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/X/COEFFICIENTS)"
+                    },
+                    "Y": {
+                        "degree": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/Y/DEGREE)",
+                        "coefficients": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/Y/COEFFICIENTS)"
+                    },
+                    "Z": {
+                        "degree": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/Z/DEGREE)",
+                        "coefficients": "is_optional(n1:Image_Data_Info/Geometric_Info/Refined_Corrections_List/Refined_Corrections/MSI_State/Rotation/Z/COEFFICIENTS)"
+                    }
+                },
+                "mean_value_of_residual_displacements_at_all_tie_points_after_refinement_m": {
+                    "x_mean": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_Refining_Quality/Image_Refining/Correlation_Quality/Local_Residual_List/Local_Residual/X_MEAN)",
+                    "y_mean": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_Refining_Quality/Image_Refining/Correlation_Quality/Local_Residual_List/Local_Residual/Y_MEAN)"
+                },
+                "standard_deviation_of_residual_displacements_at_all_tie_points_after_refinement_m": {
+                    "x_stdv": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_Refining_Quality/Image_Refining/Correlation_Quality/Local_Residual_List/Local_Residual/X_STDV)",
+                    "y_stdv": "is_optional(n1:Quality_Indicators_Info/Geometric_Info/Geometric_Refining_Quality/Image_Refining/Correlation_Quality/Local_Residual_List/Local_Residual/Y_STDV)"
+                }
+            },
+            "history": [
+                {
+                    "type": "Text(Raw Data)",
+                    "output": "Text(Downlinked Stream)"
+                },
+                {
+                    "type": "Text(Level-0 Product)",
+                    "processor": "Text(L0)",
+                    "version": "Text(???)",
+                    "organisation": "Text(ESA)",
+                    "inputs": "Text(Downlinked Stream)",
+                    "output": "Text(S2MSIL0__etc)"
+                },
+                {
+                    "type": "Text(Level-1A Product)",
+                    "processor": "Text(Sentinel-2 IPF)",
+                    "version": "Text(???)",
+                    "organisation": "Text(ESA)",
+                    "inputs": {
+                        "used DEM file name": "n1:Auxiliary_Data_Info/PRODUCTION_DEM_TYPE",
+                        "used GRI file list": "to_list_str(n1:Auxiliary_Data_Info/GRI_List)",
+                        "used IERS file name": "n1:Auxiliary_Data_Info/IERS_BULLETIN_FILENAME",
+                        "used ECMWF file names": "n1:Auxiliary_Data_Info/ECMWF_DATA_REF",
+                        "used CAMS file names": "n1:Auxiliary_Data_Info/CAMS_DATA_REF",
+                        "list of used processing parameters file names": "to_list_str(n1:Auxiliary_Data_Info/GIPP_List/GIPP_FILENAME)",
+                        "Level-0 Product": "Text(S2MSIL0__etc)"
+                    },
+                    "output": "Text(S2MSIL1A_etc)"
+                },
+                {
+                    "type": "Text(Level-1B Product)",
+                    "processor": "Text(Sentinel-2 IPF)",
+                    "version": "Text(???)",
+                    "organisation": "Text(ESA)",
+                    "inputs": {
+                        "used DEM file name": "n1:Auxiliary_Data_Info/PRODUCTION_DEM_TYPE",
+                        "used GRI file list": "to_list_str(n1:Auxiliary_Data_Info/GRI_List)",
+                        "used IERS file name": "n1:Auxiliary_Data_Info/IERS_BULLETIN_FILENAME",
+                        "used ECMWF file names": "n1:Auxiliary_Data_Info/ECMWF_DATA_REF",
+                        "used CAMS file names": "n1:Auxiliary_Data_Info/CAMS_DATA_REF",
+                        "list of used processing parameters file names": "to_list_str(n1:Auxiliary_Data_Info/GIPP_List/GIPP_FILENAME)",
+                        "Level-1A Product": "Text(S2MSIL1A_etc)"
+                    },
+                    "output": "Text(S2MSIL1B_etc)"
+                },
+                {
+                    "type": "Text(Level-1C Product)",
+                    "processor": "Text(Sentinel-2 IPF)",
+                    "version": "Text(???)",
+                    "organisation": "Text(ESA)",
+                    "inputs": {
+                        "used DEM file name": "n1:Auxiliary_Data_Info/PRODUCTION_DEM_TYPE",
+                        "used GRI file list": "to_list_str(n1:Auxiliary_Data_Info/GRI_List)",
+                        "used IERS file name": "n1:Auxiliary_Data_Info/IERS_BULLETIN_FILENAME",
+                        "used ECMWF file names": "n1:Auxiliary_Data_Info/ECMWF_DATA_REF",
+                        "used CAMS file names": "n1:Auxiliary_Data_Info/CAMS_DATA_REF",
+                        "list of used processing parameters file names": "to_list_str(n1:Auxiliary_Data_Info/GIPP_List/GIPP_FILENAME)",
+                        "Level-1B Product": "Text(S2MSIL1B_etc)"
+                    },
+                    "output": "Text(S2MSIL1C_etc)"
+                }
+            ]
+        }
+    },
+    "xml_mapping": {
+        "namespace": {
+            "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/S2_PDI_Level-1C_Tile_Metadata.xsd"
+        },
+        "xmltp_angles": {
+            "step_x_angle": "n1:Geometric_Info/Tile_Angles/Sun_Angles_Grid/Zenith/COL_STEP",
+            "step_y_angle": "n1:Geometric_Info/Tile_Angles/Sun_Angles_Grid/Zenith/ROW_STEP",
+            "angle_values": "n1:Geometric_Info/Tile_Angles/Sun_Angles_Grid/Zenith/Values_List/VALUES"
+        }
+    },
+    "product_namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/User_Product_Level-1C.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    },
+    "tile_namespaces": {
+        "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/S2_PDI_Level-1C_Tile_Metadata.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    },
+    "datastrip_namespaces": {
+        "xfdu": "urn:ccsds:schema:xfdu:1",
+        "gml": "http://www.opengis.net/gml",
+        "safe": "http://www.esa.int/safe/sentinel/1.1",
+        "sentinel-safe": "http://www.esa.int/safe/sentinel/1.1",
+        "n1": "https://psd-14.sentinel2.eo.esa.int/PSD/S2_PDI_Level-1C_Datastrip_Metadata.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    },
+    "manifest_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_MSIL1C_manifest.xml"
+    },
+    "MTD_DS_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_MSIL1C_MTD_DS.xml"
+    },
+    "MTD_MSIL1C_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_MSIL1C_MTD_MSIL1C.xml"
+    },
+    "MTD_TL_template_path": {
+        "template_folder": "$EOPF_ROOT/store/templates",
+        "template_name": "S2_MSIL1C_MTD_TL.xml"
+    }
+}

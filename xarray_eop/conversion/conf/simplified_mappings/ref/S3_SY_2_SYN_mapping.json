@@ -1,0 +1,632 @@
+{
+    "chunk_sizes": {
+        "rows": 1024,
+        "columns": 1024
+    },
+    "data_mapping": {
+        "/conditions/image_grid": {
+            "geolocation.nc": [
+                [
+                    "lat",
+                    "latitude"
+                ],
+                [
+                    "lon",
+                    "longitude"
+                ],
+                [
+                    "altitude",
+                    "altitude"
+                ]
+            ]
+        },
+        "/conditions/olci_tp_grid": {
+            "tiepoints_olci.nc": [
+                [
+                    "OLC_TP_lat",
+                    "olci_tp_latitude"
+                ],
+                [
+                    "OLC_TP_lon",
+                    "olci_tp_longitude"
+                ]
+            ]
+        },
+        "/conditions/slstr_n_tp_grid": {
+            "tiepoints_slstr_n.nc": [
+                [
+                    "SLN_TP_lat",
+                    "slstr_n_tp_latitude"
+                ],
+                [
+                    "SLN_TP_lon",
+                    "slstr_n_tp_longitude"
+                ]
+            ]
+        },
+        "/conditions/slstr_o_tp_grid": {
+            "tiepoints_slstr_o.nc": [
+                [
+                    "SLO_TP_lat",
+                    "slstr_o_tp_latitude"
+                ],
+                [
+                    "SLO_TP_lon",
+                    "slstr_o_tp_longitude"
+                ]
+            ]
+        },
+        "/conditions": {
+            "time.nc": [
+                [
+                    "Time",
+                    "time"
+                ]
+            ]
+        },
+        "/measurements/olci": {
+            "Syn_Oa01_reflectance.nc": [
+                [
+                    "SDR_Oa01",
+                    "sdr_oa01"
+                ]
+            ],
+            "Syn_Oa02_reflectance.nc": [
+                [
+                    "SDR_Oa02",
+                    "sdr_oa02"
+                ]
+            ],
+            "Syn_Oa03_reflectance.nc": [
+                [
+                    "SDR_Oa03",
+                    "sdr_oa03"
+                ]
+            ],
+            "Syn_Oa04_reflectance.nc": [
+                [
+                    "SDR_Oa04",
+                    "sdr_oa04"
+                ]
+            ],
+            "Syn_Oa05_reflectance.nc": [
+                [
+                    "SDR_Oa05",
+                    "sdr_oa05"
+                ]
+            ],
+            "Syn_Oa06_reflectance.nc": [
+                [
+                    "SDR_Oa06",
+                    "sdr_oa06"
+                ]
+            ],
+            "Syn_Oa07_reflectance.nc": [
+                [
+                    "SDR_Oa07",
+                    "sdr_oa07"
+                ]
+            ],
+            "Syn_Oa08_reflectance.nc": [
+                [
+                    "SDR_Oa08",
+                    "sdr_oa08"
+                ]
+            ],
+            "Syn_Oa09_reflectance.nc": [
+                [
+                    "SDR_Oa09",
+                    "sdr_oa09"
+                ]
+            ],
+            "Syn_Oa10_reflectance.nc": [
+                [
+                    "SDR_Oa10",
+                    "sdr_oa10"
+                ]
+            ],
+            "Syn_Oa11_reflectance.nc": [
+                [
+                    "SDR_Oa11",
+                    "sdr_oa11"
+                ]
+            ],
+            "Syn_Oa12_reflectance.nc": [
+                [
+                    "SDR_Oa12",
+                    "sdr_oa12"
+                ]
+            ],
+            "Syn_Oa16_reflectance.nc": [
+                [
+                    "SDR_Oa16",
+                    "sdr_oa16"
+                ]
+            ],
+            "Syn_Oa17_reflectance.nc": [
+                [
+                    "SDR_Oa17",
+                    "sdr_oa17"
+                ]
+            ],
+            "Syn_Oa18_reflectance.nc": [
+                [
+                    "SDR_Oa18",
+                    "sdr_oa18"
+                ]
+            ],
+            "Syn_Oa21_reflectance.nc": [
+                [
+                    "SDR_Oa21",
+                    "sdr_oa21"
+                ]
+            ]
+        },
+        "/measurements/slstr_n": {
+            "Syn_S1N_reflectance.nc": [
+                [
+                    "SDR_S1N",
+                    "sdr_s1n"
+                ]
+            ],
+            "Syn_S2N_reflectance.nc": [
+                [
+                    "SDR_S2N",
+                    "sdr_s2n"
+                ]
+            ],
+            "Syn_S3N_reflectance.nc": [
+                [
+                    "SDR_S3N",
+                    "sdr_s3n"
+                ]
+            ],
+            "Syn_S5N_reflectance.nc": [
+                [
+                    "SDR_S5N",
+                    "sdr_s5n"
+                ]
+            ],
+            "Syn_S6N_reflectance.nc": [
+                [
+                    "SDR_S6N",
+                    "sdr_s6n"
+                ]
+            ]
+        },
+        "/measurements/slstr_o": {
+            "Syn_S1O_reflectance.nc": [
+                [
+                    "SDR_S1O",
+                    "sdr_s1o"
+                ]
+            ],
+            "Syn_S2O_reflectance.nc": [
+                [
+                    "SDR_S2O",
+                    "sdr_s2o"
+                ]
+            ],
+            "Syn_S3O_reflectance.nc": [
+                [
+                    "SDR_S3O",
+                    "sdr_s3o"
+                ]
+            ],
+            "Syn_S5O_reflectance.nc": [
+                [
+                    "SDR_S5O",
+                    "sdr_s5o"
+                ]
+            ],
+            "Syn_S6O_reflectance.nc": [
+                [
+                    "SDR_S6O",
+                    "sdr_s6o"
+                ]
+            ]
+        },
+        "/measurements/meteo": {
+            "Syn_AMIN.nc": [
+                [
+                    "AMIN",
+                    "amin"
+                ]
+            ],
+            "Syn_Angstrom_exp550.nc": [
+                [
+                    "A550",
+                    "aae550"
+                ]
+            ],
+            "Syn_AOT550.nc": [
+                [
+                    "T550",
+                    "aot550"
+                ]
+            ]
+        },
+        "/quality/flags": {
+            "flags.nc": [
+                [
+                    "CLOUD_flags",
+                    "cloud_flags"
+                ],
+                [
+                    "OLC_flags",
+                    "olci_flags"
+                ],
+                [
+                    "SLN_flags",
+                    "slstr_n_flags"
+                ],
+                [
+                    "SLO_flags",
+                    "slstr_o_flags"
+                ],
+                [
+                    "SYN_flags",
+                    "syn_flags"
+                ]
+            ]
+        },
+        "/quality/uncertainties": {
+            "Syn_Oa01_reflectance.nc": [
+                [
+                    "SDR_Oa01_err",
+                    "sdr_oa01_err"
+                ]
+            ],
+            "Syn_Oa02_reflectance.nc": [
+                [
+                    "SDR_Oa02_err",
+                    "sdr_oa02_err"
+                ]
+            ],
+            "Syn_Oa03_reflectance.nc": [
+                [
+                    "SDR_Oa03_err",
+                    "sdr_oa03_err"
+                ]
+            ],
+            "Syn_Oa04_reflectance.nc": [
+                [
+                    "SDR_Oa04_err",
+                    "sdr_oa04_err"
+                ]
+            ],
+            "Syn_Oa05_reflectance.nc": [
+                [
+                    "SDR_Oa05_err",
+                    "sdr_oa05_err"
+                ]
+            ],
+            "Syn_Oa06_reflectance.nc": [
+                [
+                    "SDR_Oa06_err",
+                    "sdr_oa06_err"
+                ]
+            ],
+            "Syn_Oa07_reflectance.nc": [
+                [
+                    "SDR_Oa07_err",
+                    "sdr_oa07_err"
+                ]
+            ],
+            "Syn_Oa08_reflectance.nc": [
+                [
+                    "SDR_Oa08_err",
+                    "sdr_oa08_err"
+                ]
+            ],
+            "Syn_Oa09_reflectance.nc": [
+                [
+                    "SDR_Oa09_err",
+                    "sdr_oa09_err"
+                ]
+            ],
+            "Syn_Oa10_reflectance.nc": [
+                [
+                    "SDR_Oa10_err",
+                    "sdr_oa10_err"
+                ]
+            ],
+            "Syn_Oa11_reflectance.nc": [
+                [
+                    "SDR_Oa11_err",
+                    "sdr_oa11_err"
+                ]
+            ],
+            "Syn_Oa12_reflectance.nc": [
+                [
+                    "SDR_Oa12_err",
+                    "sdr_oa12_err"
+                ]
+            ],
+            "Syn_Oa16_reflectance.nc": [
+                [
+                    "SDR_Oa16_err",
+                    "sdr_oa16_err"
+                ]
+            ],
+            "Syn_Oa17_reflectance.nc": [
+                [
+                    "SDR_Oa17_err",
+                    "sdr_oa17_err"
+                ]
+            ],
+            "Syn_Oa18_reflectance.nc": [
+                [
+                    "SDR_Oa18_err",
+                    "sdr_oa18_err"
+                ]
+            ],
+            "Syn_Oa21_reflectance.nc": [
+                [
+                    "SDR_Oa21_err",
+                    "sdr_oa21_err"
+                ]
+            ],
+            "Syn_S1N_reflectance.nc": [
+                [
+                    "SDR_S1N_err",
+                    "sdr_s1n_err"
+                ]
+            ],
+            "Syn_S1O_reflectance.nc": [
+                [
+                    "SDR_S1O_err",
+                    "sdr_s1o_err"
+                ]
+            ],
+            "Syn_S2N_reflectance.nc": [
+                [
+                    "SDR_S2N_err",
+                    "sdr_s2n_err"
+                ]
+            ],
+            "Syn_S2O_reflectance.nc": [
+                [
+                    "SDR_S2O_err",
+                    "sdr_s2o_err"
+                ]
+            ],
+            "Syn_S3N_reflectance.nc": [
+                [
+                    "SDR_S3N_err",
+                    "sdr_s3n_err"
+                ]
+            ],
+            "Syn_S3O_reflectance.nc": [
+                [
+                    "SDR_S3O_err",
+                    "sdr_s3o_err"
+                ]
+            ],
+            "Syn_S5N_reflectance.nc": [
+                [
+                    "SDR_S5N_err",
+                    "sdr_s5n_err"
+                ]
+            ],
+            "Syn_S5O_reflectance.nc": [
+                [
+                    "SDR_S5O_err",
+                    "sdr_s5o_err"
+                ]
+            ],
+            "Syn_S6N_reflectance.nc": [
+                [
+                    "SDR_S6N_err",
+                    "sdr_s6n_err"
+                ]
+            ],
+            "Syn_S6O_reflectance.nc": [
+                [
+                    "SDR_S6O_err",
+                    "sdr_s6o_err"
+                ]
+            ],
+            "Syn_AOT550.nc": [
+                [
+                    "T550_err",
+                    "aot550_err"
+                ]
+            ]
+        },
+        "/quality/orphan": {
+            "Syn_annot_rem.nc": [
+                [
+                    "AMIN",
+                    "amin_orphan"
+                ],
+                [
+                    "CLOUD_flags",
+                    "cloud_flags_orphan"
+                ],
+                [
+                    "OLC_flags",
+                    "olci_flags_orphan"
+                ],
+                [
+                    "SLN_flags",
+                    "sln_flags_orphan"
+                ],
+                [
+                    "SLO_flags",
+                    "slo_flags_orphan"
+                ],
+                [
+                    "SYN_flags",
+                    "syn_flags_orphan"
+                ]
+            ],
+            "Syn_SDR_removed_pixel.nc": [
+                [
+                    "SDR_Oa01_err",
+                    "sdr_oa01_err_orphan"
+                ],
+                [
+                    "SDR_Oa02_err",
+                    "sdr_oa02_err_orphan"
+                ],
+                [
+                    "SDR_Oa03_err",
+                    "sdr_oa03_err_orphan"
+                ],
+                [
+                    "SDR_Oa04_err",
+                    "sdr_oa04_err_orphan"
+                ],
+                [
+                    "SDR_Oa05_err",
+                    "sdr_oa05_err_orphan"
+                ],
+                [
+                    "SDR_Oa06_err",
+                    "sdr_oa06_err_orphan"
+                ],
+                [
+                    "SDR_Oa07_err",
+                    "sdr_oa07_err_orphan"
+                ],
+                [
+                    "SDR_Oa08_err",
+                    "sdr_oa08_err_orphan"
+                ],
+                [
+                    "SDR_Oa09_err",
+                    "sdr_oa09_err_orphan"
+                ],
+                [
+                    "SDR_Oa10_err",
+                    "sdr_oa10_err_orphan"
+                ],
+                [
+                    "SDR_Oa11_err",
+                    "sdr_oa11_err_orphan"
+                ],
+                [
+                    "SDR_Oa12_err",
+                    "sdr_oa12_err_orphan"
+                ],
+                [
+                    "SDR_Oa16_err",
+                    "sdr_oa16_err_orphan"
+                ],
+                [
+                    "SDR_Oa17_err",
+                    "sdr_oa17_err_orphan"
+                ],
+                [
+                    "SDR_Oa18_err",
+                    "sdr_oa18_err_orphan"
+                ],
+                [
+                    "SDR_Oa21_err",
+                    "sdr_oa21_err_orphan"
+                ],
+                [
+                    "SDR_S1N_err",
+                    "sdr_s1n_err_orphan"
+                ],
+                [
+                    "SDR_S1O_err",
+                    "sdr_s1o_err_orphan"
+                ],
+                [
+                    "SDR_S2N_err",
+                    "sdr_s2n_err_orphan"
+                ],
+                [
+                    "SDR_S2O_err",
+                    "sdr_s2o_err_orphan"
+                ],
+                [
+                    "SDR_S3N_err",
+                    "sdr_s3n_err_orphan"
+                ],
+                [
+                    "SDR_S3O_err",
+                    "sdr_s3o_err_orphan"
+                ],
+                [
+                    "SDR_S5N_err",
+                    "sdr_s5n_err_orphan"
+                ],
+                [
+                    "SDR_S5O_err",
+                    "sdr_s5o_err_orphan"
+                ],
+                [
+                    "SDR_S6N_err",
+                    "sdr_s6n_err_orphan"
+                ],
+                [
+                    "SDR_S6O_err",
+                    "sdr_s6o_err_orphan"
+                ],
+                [
+                    "T550_err",
+                    "aot550_err_orphan"
+                ]
+            ]
+        },
+        "/conditions/geometry": {
+            "tiepoints_olci.nc": [
+                [
+                    "SAA",
+                    "saa"
+                ],
+                [
+                    "SZA",
+                    "sza"
+                ],
+                [
+                    "OLC_VAA",
+                    "olci_vaa"
+                ],
+                [
+                    "OLC_VZA",
+                    "olci_vza"
+                ]
+            ],
+            "tiepoints_slstr_n.nc": [
+                [
+                    "SLN_VAA",
+                    "slstr_n_vaa"
+                ],
+                [
+                    "SLN_VZA",
+                    "slstr_n_vza"
+                ]
+            ],
+            "tiepoints_slstr_o.nc": [
+                [
+                    "SLO_VAA",
+                    "slstr_o_vaa"
+                ],
+                [
+                    "SLO_VZA",
+                    "slstr_o_vza"
+                ]
+            ]
+        },
+        "/conditions/meteo": {
+            "tiepoints_meteo.nc": [
+                [
+                    "air_pressure",
+                    "air_pressure"
+                ],
+                [
+                    "ozone",
+                    "ozone"
+                ],
+                [
+                    "water_vapour",
+                    "water_vapour"
+                ]
+            ]
+        }
+    }
+}
