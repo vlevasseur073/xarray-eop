@@ -16,19 +16,29 @@ def open_datatree(
     engine: str | None = None,
     **kwargs: Any,
 ) -> datatree.DataTree[Any]:
-    """
-    Function to open tree data (zarr sentinel product) from bucket or local path and open it as :obj:`datatree.DataTree`
-
-    .. note::
-
-        Data are lazy loaded. To fully load data in memory, prefer :obj:`~sentineltoolbox.api.load_datatree`
-
-
-    Optional arguments are related to the engine ("SAFE" or "zarr") and must be passed by keys
+    """Open a tree data (zarr sentinel product) from bucket or local file system, based on :obj:`datatree.DataTree`
 
     Parameters
     ----------
+    product_urlpath
+        Product path. It could be local path such as "/path/to/product/", S3 bucket location as "s3://bucket/product"
+        or fsspec-like chained url as "zip::s3://bucket/product.zip"
+    engine, optional
+        engine to be used by xarray among ["zarr","SAFE"], by default None. It will try to guess the engine given the
+        product extension
+
+    Returns
+    -------
+        :obj:`datatree.DataTree`
+
+    Raises
+    ------
+    ValueError
+        if chunks is explicitely set to None
+    NotImplementedError
+        if engine not in ["zarr","SAFE"]
     """
+
     url = EOPath(product_urlpath)
 
     creds: dict[str, Any] | None = None

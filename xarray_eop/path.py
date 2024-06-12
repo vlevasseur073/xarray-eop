@@ -35,6 +35,22 @@ def _strip_pattern(path: str, pattern: str) -> str:
 
 
 class EOPath(pathlib.Path):
+    """Classe deriving from pathlib.Path supporting object-storage path and fsspec-like URL chains.
+    Currently it only zupport AWS *S3* protocol and *zip* storage, which means addresses like for instance:
+    s3://bucket/prod/file or zip::s3://bucket/prod/file.zip
+
+    Attributes
+    ----------
+    protocol: str
+        empty for local file system, "s3" for S3 paths
+    zip: str
+        empty or "zip" if address starts with "zip::"
+
+    Returns
+    -------
+        EOPath object
+    """
+
     _flavour = pathlib._windows_flavour if os.name == "nt" else pathlib._posix_flavour
 
     def __new__(cls, *args, **kwargs):

@@ -20,12 +20,15 @@ in the legacy SAFE format as well as the new zarr format used by the Re-engineer
 Features
 ========
 
-- specific xarray backends : ["sentinel-3","eop"] to be used with  `xarray.open_dataset` function
-  - **sentinel-3**: handles Sentinel-3 SAFE product (.SEN3)
-  - **eop**: Generic zarr product (.zarr) following the EOPF Product Structure Format
-- Use of experimental xarray-datatree to represent the overall hierarchical data
-- Conversion of products from SAFE to EOP Zarr
-- Create empty products based on zmetadata template
+* specific xarray backends : ["sentinel-3","eop"] to be used with  `xarray.open_dataset` function
+
+  * **sentinel-3**: handles Sentinel-3 SAFE product (.SEN3)
+  * **eop**: Generic zarr product (.zarr) following the EOPF Product Structure Format
+* Use of experimental xarray-datatree to represent the overall hierarchical data
+* Access products on a local filesystem or on S3 bucket
+* Conversion of products from SAFE to EOP Zarr
+* Create empty products based on zmetadata template
+* Verification tools by comparing 2 isomorphic products
 
 
 Indices and tables
