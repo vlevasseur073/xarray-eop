@@ -91,7 +91,7 @@ def _create_dataset_from_ncfiles(
     for f in input_list:
         if f.name.startswith("xfdumanifest"):
             continue
-        if f.name == "tg.nc":
+        if f.name in ["tg.nc", "met_tx.nc"]:
             decode_times = False
         if f.protocol == "s3":
             fs = _get_s3filesystem_from_storage_options(storage_options)

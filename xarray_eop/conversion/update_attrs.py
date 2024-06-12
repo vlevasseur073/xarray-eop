@@ -1,7 +1,7 @@
 import importlib.resources
 import json
 
-ATTRS_PATH = importlib.resources.files("conf") / "attributes"
+ATTRS_PATH = importlib.resources.files("xarray_eop.conversion.conf") / "attributes"
 STAC_DISCOVERY = [
     "type",
     "stac_version",

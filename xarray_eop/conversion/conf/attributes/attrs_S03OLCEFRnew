@@ -464,6 +464,9 @@
             "measurement_accuracy": "2.000000",
             "ocl_status": "true",
             "sampling": {
+                "along_track_time": 44002.0,
+                "along_track_distance": 294.0,
+                "across_track_distance": 270.0,
                 "columns_per_tiepoint": 64,
                 "rows_per_tiepoint": 1
             }

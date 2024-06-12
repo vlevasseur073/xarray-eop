@@ -17,6 +17,7 @@ def open_eop_dataset(
     drop_variables: Optional[Tuple[str]] = None,
     group: Optional[str] = None,
     storage_options: Optional[Dict[str, Any]] = None,
+    decode_times: bool | None = None,
 ) -> xr.Dataset:
     if drop_variables is not None:
         warnings.warn("'drop_variables' is currently ignored")
@@ -32,7 +33,13 @@ def open_eop_dataset(
     backend_kwargs = {}
     if storage_options:
         backend_kwargs["storage_options"] = storage_options
-    ds = xr.open_dataset(url, engine="zarr", chunks={}, backend_kwargs=backend_kwargs)
+    ds = xr.open_dataset(
+        url,
+        engine="zarr",
+        chunks={},
+        decode_times=decode_times,
+        backend_kwargs=backend_kwargs,
+    )
 
     return ds
 

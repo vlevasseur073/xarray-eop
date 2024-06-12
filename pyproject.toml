@@ -14,6 +14,7 @@ readme = "README.md"
 description = "Xarray backends to read Sentinel products (SAFE and zarr formats)"
 requires-python = ">=3.11"
 dependencies = [
+    "cftime",
     "click",
     "colorlog",
     "dask",

@@ -51,18 +51,14 @@ class EOPBackend(xr.backends.common.BackendEntrypoint):
         drop_variables: Optional[Tuple[str]] = None,
         group: Optional[str] = None,
         storage_options: Optional[Dict[str, Any]] = None,
-        override_product_files: Optional[str] = None,
-        check_files_exist: bool = False,
-        parse_geospatial_attrs: bool = True,
+        decode_times: bool | None = None,
     ) -> xr.Dataset:
         return eop.open_eop_dataset(
             filename_or_obj,
             drop_variables=drop_variables,
             group=group,
             storage_options=storage_options,
-            override_product_files=override_product_files,
-            check_files_exist=check_files_exist,
-            parse_geospatial_attrs=parse_geospatial_attrs,
+            decode_times=decode_times,
         )
 
     def guess_can_open(self, filename_or_obj: Any) -> bool:

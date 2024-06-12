@@ -13,7 +13,8 @@ from xarray_eop.conversion.utils import (
     DEFAULT_COMPRESSOR, MAPPINGS,
     SIMPL_MAPPING_PATH, convert_mapping,
 )
-from xarray_eop.eop import datatree_to_uml, open_eop_datatree
+from xarray_eop.api import open_datatree
+from xarray_eop.eop import datatree_to_uml
 
 
 def open_groups(product_path: Path, map_safe: dict[str, Any]):
@@ -108,8 +109,9 @@ def product_converter(
     decode_times = True
     if typ_eop in ["S03SYNVGK", "S03SYNVG1", "S03SYNV10"]:
         decode_times = False
-    dt: datatree.DataTree = open_eop_datatree(output_path, decode_times=decode_times)
+    dt: datatree.DataTree = open_datatree(output_path, decode_times=decode_times)
     if zip:
+        print("Zipping product")
         with zarr.ZipStore(str(output_path) + ".zip") as store:
             dt.to_zarr(store)
 
