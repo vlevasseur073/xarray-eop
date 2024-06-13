@@ -2,6 +2,11 @@ name: CI
 
 on: [push]
 
+env:
+  SOURCES=xarray_eop
+  TESTS=tests
+
+
 jobs:
   # linter:
   #   runs-on: ubuntu-latest
@@ -20,7 +25,7 @@ jobs:
   #       pip install .[linter]
   #   - name: Analysing the code with flake8
   #     run: |
-  #       python -m flake8 xarray_eop tests --output-file linter.txt
+  #       python -m flake8 ${SOURCES} ${TESTS} --output-file linter.txt
   formatter:
     runs-on: ubuntu-latest
     strategy:
@@ -39,7 +44,7 @@ jobs:
     - name: Analysing the code with black and isort
       run: |
         python -m black --check --diff .
-        python -m isort xarray_eop tests --check --diff --profile black
+        python -m isort ${SOURCES} ${TESTS} --check --diff --profile black
 
   unit-tests:
     runs-on: ubuntu-latest
@@ -63,7 +68,7 @@ jobs:
         AWS_ENDPOINT_URL : ${{ secrets.AWS_ENDPOINT_URL }}
       run: |
         python -m pytest \
-          --cov=xarray_eop \
+          --cov=${SOURCES} \
           --junit-xml=.reports/TEST-pytests.xml \
           --cov-report=xml:.reports/coverage.xml \
           -m unit
@@ -85,7 +90,7 @@ jobs:
         pip install .[doc-cov]
     - name: Running docstr-coverage
       run: |
-        docstr-coverage -f -P -m -F 5 -b docstr_coverage.svg
+        docstr-coverage -f -P -m -F 5 ${SOURCES} -b docstr_coverage.svg
     - name: Upload badge
       uses: actions/upload-artifact@v4
       with:
