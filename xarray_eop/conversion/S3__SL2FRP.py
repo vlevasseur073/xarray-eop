@@ -7,7 +7,8 @@ import numpy as np
 import xarray as xr
 
 from xarray_eop.conversion.utils import (
-    DEFAULT_COMPRESSOR, extract_legacy,
+    DEFAULT_COMPRESSOR,
+    extract_legacy,
     gen_static_adf_name,
     generate_datatree_from_legacy_adf,
     str_to_number,
