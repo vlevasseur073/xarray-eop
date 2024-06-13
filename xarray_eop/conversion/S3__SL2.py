@@ -5,7 +5,8 @@ import xarray as xr
 from netCDF4 import Dataset
 
 from xarray_eop.conversion.utils import (
-    extract_legacy, gen_static_adf_name,
+    extract_legacy,
+    gen_static_adf_name,
     generate_datatree_from_legacy_adf,
 )
 

@@ -1,5 +1,11 @@
 # xarray_eop
 
+[![Docstring Coverage](docstr-cov-link)
+[![Code Style][black-badge]][black-link]
+
+
+
+
 xarray_eop is an xarray backend to open and manipulate EO data products from the Copernicus Sentinel mission, in the legacy SAFE format as well as the new zarr format used by the Re-engineered python processors.
 
 ## Installation
@@ -85,3 +91,7 @@ dt = open_eop_datatree(product)
 ```shell
 ds = create_dataset_from_zmetadata(" SAMPLE_PATH / "S3OLCEFR_20230506T015316_0180_B117_T931.zarr"/.zmetadata")
 ```
+
+[black-badge]:https://img.shields.io/badge/code%20style-black-000000.svg
+[black-link]: https://black.readthedocs.io/en/stable/
+[docstr-cov-link]: https://vlevasseur073.github.io/xarray-eop/docstr_coverage.svg

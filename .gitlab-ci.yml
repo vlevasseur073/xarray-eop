@@ -3,6 +3,7 @@ default:
     python:3.11
 
 stages:
+  - unit tests
   - doc
   - deploy
 
@@ -10,6 +11,18 @@ variables:
   BRANCH_NAME: $CI_COMMIT_REF_NAME
   PACKAGE_NAME: xarray-eop-docs
   PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
+
+formater:
+  stage: unit tests
+  before_script:
+    # Although the container image includes the CPM and its dependencies,
+    # the 'pip install' is kept in case the dependencies are changed by
+    # the child project with regards to the CPM ones.
+    # In this case, creating a specific build image should be considered.
+    - pip install .[formatter]
+  script:
+    - python -m black --check --diff .
+    - python -m isort ${SOURCES} ${TESTS} --check --diff
 
 build-doc:
   stage: doc

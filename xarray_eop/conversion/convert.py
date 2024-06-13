@@ -8,12 +8,14 @@ import xarray as xr
 import zarr
 from numcodecs import Blosc
 
+from xarray_eop.api import open_datatree
 from xarray_eop.conversion.update_attrs import update_attributes
 from xarray_eop.conversion.utils import (
-    DEFAULT_COMPRESSOR, MAPPINGS,
-    SIMPL_MAPPING_PATH, convert_mapping,
+    DEFAULT_COMPRESSOR,
+    MAPPINGS,
+    SIMPL_MAPPING_PATH,
+    convert_mapping,
 )
-from xarray_eop.api import open_datatree
 from xarray_eop.eop import datatree_to_uml
 
 

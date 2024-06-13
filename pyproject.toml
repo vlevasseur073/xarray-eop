@@ -41,6 +41,16 @@ doc = [
     "myst-nb",
     "sphinx-book-theme"
 ]
+linter = [
+    "flake8"
+]
+formatter = [
+    "black",
+    "isort"
+]
+doc-cov = [
+    "docstr-coverage >= 2.2.0"
+]
 tests = [
     "pytest",
     "pytest-cov",
