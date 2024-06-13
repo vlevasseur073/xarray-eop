@@ -47,7 +47,7 @@ def product_converter(
     simplified_mapping: Optional[bool] = False,
     zip: Optional[bool] = True,
 ) -> datatree.DataTree:
-    """Convert Sentinel-3 SAFE product to the EOP zarr structure. 
+    """Convert Sentinel-3 SAFE product to the EOP zarr structure.
     See the `Product Structure and Format Definition <https://cpm.pages.eopf.copernicus.eu/eopf-cpm/main/PSFDjan2024.html>`__
 
     Parameters
