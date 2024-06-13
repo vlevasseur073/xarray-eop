@@ -85,7 +85,7 @@ jobs:
         pip install .[doc-cov]
     - name: Running docstr-coverage
       run: |
-        docstr-coverage -f -P -m -F 5 --b docstr_coverage.svg
+        docstr-coverage -f -P -m -F 5 -b docstr_coverage.svg
     - name: Upload badge
       uses: actions/upload-artifact@v4
       with:
