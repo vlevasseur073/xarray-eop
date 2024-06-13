@@ -1,6 +1,6 @@
 # xarray_eop
 
-![Docstring Coverage](docstr-cov-link)
+![Docstring Coverage][docstr-cov-link]
 [![Code Style][black-badge]][black-link]
 
 
