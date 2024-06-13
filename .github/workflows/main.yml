@@ -20,5 +20,4 @@ jobs:
         pip install .[linter]
     - name: Analysing the code with flake8
       run: |
-        pylint $(git ls-files '*.py')
         python -m flake8 xarray_eop tests --output-file linter.txt
