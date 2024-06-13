@@ -41,6 +41,9 @@ doc = [
     "myst-nb",
     "sphinx-book-theme"
 ]
+linter = [
+    "flake8"
+]
 tests = [
     "pytest",
     "pytest-cov",
