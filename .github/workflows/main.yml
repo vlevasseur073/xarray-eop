@@ -67,3 +67,27 @@ jobs:
           --junit-xml=.reports/TEST-pytests.xml \
           --cov-report=xml:.reports/coverage.xml \
           -m unit
+
+  docstr-coverage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install .[doc-cov]
+    - name: Running docstr-coverage
+      run: |
+        docstr-coverage -f -P -m -F 5 --b docstr_coverage.svg
+    - name: Upload badge
+      uses: actions/upload-artifact@v4
+      with:
+        name: docstr-coverage-badge
+        path: docstr_coverage.svg
