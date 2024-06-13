@@ -57,6 +57,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install .[tests]
     - name: Running unit tests with pytest
+      env:
+        AWS_ACCESS_KEY_ID : ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_ENDPOINT_URL : ${{ secrets.AWS_ENDPOINT_URL }}
       run: |
         python -m pytest \
           --cov=xarray_eop \
