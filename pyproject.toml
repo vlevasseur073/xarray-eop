@@ -44,6 +44,10 @@ doc = [
 linter = [
     "flake8"
 ]
+formatter = [
+    "black",
+    "isort"
+]
 tests = [
     "pytest",
     "pytest-cov",
