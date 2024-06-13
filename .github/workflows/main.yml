@@ -78,6 +78,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.11"]
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -97,9 +99,9 @@ jobs:
         name: docstr-coverage-badge
         path: docstr_coverage.svg
     - name: Deploy badge to GitHub Pages
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/actions'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Assuming you want to publish to the root of your gh-pages branch
-        publish_branch: gh-pages  # You can change this to your desired branch
+        publish_dir: ./
+        publish_branch: gh-pages
