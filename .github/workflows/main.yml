@@ -1,6 +1,6 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 env:
   SOURCES: xarray_eop
@@ -96,3 +96,10 @@ jobs:
       with:
         name: docstr-coverage-badge
         path: docstr_coverage.svg
+    - name: Deploy badge to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Assuming you want to publish to the root of your gh-pages branch
+        publish_branch: gh-pages  # You can change this to your desired branch
