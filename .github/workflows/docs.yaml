@@ -2,6 +2,9 @@ name: documentation
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  DOCS: docs/source
+
 permissions:
   contents: write
 
@@ -23,7 +26,7 @@ jobs:
           pip install .[doc]
       - name: Sphinx build
         run: |
-          sphinx-build -M html docs _build
+          sphinx-build -M html ${DOCS} _build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/actions' }}
