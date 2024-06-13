@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push]
 
 env:
   SOURCES: xarray_eop
@@ -97,7 +97,7 @@ jobs:
         name: docstr-coverage-badge
         path: docstr_coverage.svg
     - name: Deploy badge to GitHub Pages
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

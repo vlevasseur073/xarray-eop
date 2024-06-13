@@ -94,4 +94,4 @@ ds = create_dataset_from_zmetadata(" SAMPLE_PATH / "S3OLCEFR_20230506T015316_018
 
 [black-badge]:https://img.shields.io/badge/code%20style-black-000000.svg
 [black-link]: https://black.readthedocs.io/en/stable/
-[docstr-cov-link]: https://github.com/vlevasseur073/xarray-eop/actions/runs/1/docstr_coverage.svg
+[docstr-cov-link]: https://vlevasseur073.github.io/xarray-eop/docstr_coverage.svg
