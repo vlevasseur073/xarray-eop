@@ -39,4 +39,4 @@ jobs:
     - name: Analysing the code with black and isort
       run: |
         python -m black --check --diff .
-        python -m isort xarray_eop tests --check --diff
+        python -m isort xarray_eop tests --check --diff --profile black

@@ -12,6 +12,7 @@ import numpy as np
 import xarray as xr
 import zarr
 from numcodecs import Blosc
+
 from xarray_eop.path import EOPath
 
 default_alg = "zstd"
