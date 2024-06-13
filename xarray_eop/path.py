@@ -70,24 +70,33 @@ class EOPath(pathlib.Path):
 
     @property
     def protocol(self) -> str:
+        """Protocol of the path"""
         return self._protocol
 
     @property
     def zip(self) -> str:
+        """Returns "zip" or empty string"""
         return self._zip
 
     @property
     def path(self) -> str:
+        """Path without the protocole"""
         return super().__str__()
 
     @property
     def parent(self):
+        """The logical parent of the path."""
         obj = super().parent
         obj._protocol = self.protocol
         obj._zip = self.zip
         return obj
 
     def absolute(self):
+        """Return an absolute version of this path by prepending the current
+        working directory. No normalization or symlink resolution is performed.
+
+        Use resolve() to get the canonical path to a file.
+        """
         if self.is_absolute():
             return self
         else:

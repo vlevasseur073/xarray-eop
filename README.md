@@ -2,6 +2,7 @@
 
 ![Docstring Coverage][docstr-cov-link]
 [![Code Style][black-badge]][black-link]
+[![Documentation][doc-badge]][doc-link]
 
 
 
@@ -95,3 +96,5 @@ ds = create_dataset_from_zmetadata(" SAMPLE_PATH / "S3OLCEFR_20230506T015316_018
 [black-badge]:https://img.shields.io/badge/code%20style-black-000000.svg
 [black-link]: https://black.readthedocs.io/en/stable/
 [docstr-cov-link]: https://vlevasseur073.github.io/xarray-eop/docstr_coverage.svg
+[doc-badge]:https://img.shields.io/badge/documentation-passed-blue.svg
+[doc-link]: https://vlevasseur073.github.io/xarray-eop/

@@ -19,6 +19,28 @@ def open_eop_dataset(
     storage_options: Optional[Dict[str, Any]] = None,
     decode_times: bool | None = None,
 ) -> xr.Dataset:
+    """Opens a dataset from a zarr file
+    It is used to define the "eop" backend to xarray.open_dataset.
+    It is equivalent to the standard "zarr" backend, forcing the options *chunks={}* to enforce lazy loading
+
+
+    Parameters
+    ----------
+    product_urlpath
+        path to the zarr file
+    drop_variables, optional
+        *Not yet implemented* - inactve., by default None
+    group, optional
+        If the zarr file is en EO product, *group* is added to the product path to get the dataset, by default None
+    storage_options, optional
+        Options to set to the backend if product is in a cloud storage, by default None
+    decode_times, optional
+        xarray decode_times option, by default None
+
+    Returns
+    -------
+        _description_
+    """
     if drop_variables is not None:
         warnings.warn("'drop_variables' is currently ignored")
 
@@ -45,6 +67,17 @@ def open_eop_dataset(
 
 
 def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.Dataset]:
+    """Create an empty dataset from a ``.zmetadata`` file
+
+    Parameters
+    ----------
+    zmetadata
+        path to a ̀``.zmetadata zarr`` file
+
+    Returns
+    -------
+        ``xarray.dataset``
+    """
 
     if isinstance(zmetadata, str):
         zfile = Path(zmetadata)
@@ -80,12 +113,6 @@ def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.D
                 ]
             list_of_leaf_groups.add("/".join(parts[:-2]))
 
-    # print(list_of_groups)
-    # print(list_of_leaf_groups)
-    # print(len(list_of_groups),len(list_of_leaf_groups))
-
-    # print(dataset_info)
-
     ds = {}
     for grp in list_of_leaf_groups:
         # print("group: ",grp)
@@ -100,7 +127,7 @@ def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.D
 
 
 def open_eop_datatree(
-    product_urlpath: Union[str, Path],
+    product_urlpath: str | Path | EOPath,
     **kwargs,
 ) -> datatree.DataTree:
     """Open and decode a EOPF-like Zarr product

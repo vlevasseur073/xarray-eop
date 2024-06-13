@@ -15,6 +15,21 @@ def open_zarr_groups_from_dict(url: Path, group_list: list[str] | KeysView[str])
 
 
 def convert_dict_to_plantuml(dictionary, name, direction=0):
+    """Convert a dictionary to a UML diagram based on plantUML
+
+    Parameters
+    ----------
+    dictionary
+        input dictionary
+    name: str
+        Title of the diagram
+    direction, optional: bool
+        diagram direction, 0 means top-to-bottom, 1 left-to-right. Default 0
+
+    Returns
+    -------
+        string containing the plantUML description
+    """
     plantuml_code = "@startuml\n"
     if direction == 0:
         plantuml_code += "top to bottom direction\n"

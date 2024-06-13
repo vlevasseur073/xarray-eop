@@ -9,6 +9,8 @@ from xarray_eop.path import EOPath
 
 
 class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
+    """Definition of the ``sentinel-3`` backend for ``xarray``"""
+
     def open_dataset(
         self,
         filename_or_obj: str,
@@ -44,6 +46,8 @@ class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
 
 
 class EOPBackend(xr.backends.common.BackendEntrypoint):
+    """Definition of the ``eop`` backend for ``xarray``"""
+
     def open_dataset(  # type: ignore
         self,
         filename_or_obj: str,

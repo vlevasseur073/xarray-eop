@@ -36,6 +36,25 @@ def _s3_from_env() -> dict[str, Any]:
 
 
 def get_credentials_from_env(url: EOPath) -> dict[str, Any]:
+    """Get credentials from environment variable
+    For S3 protocol, it looks for the AWS-like (``AWS_ACCESS_KEY_ID``,``AWS_SECRET_ACCESS_KEY``,``AWS_ENDPOINT_URL``)
+    or S3-like (``S3_KEY``,``S3_SECRET``,``S3_URL``) environment variables.
+
+
+    Parameters
+    ----------
+    url: EOPath
+        object-storage path
+
+    Returns
+    -------
+        dictionary of secrets parameter to be used in storage_options parameters for xarray/datatree functions
+
+    Raises
+    ------
+    NotImplementedError
+        Currently, only S3 protocol is handled
+    """
     if url.protocol != "s3":
         raise NotImplementedError(f"Protocol {url.protocol} not yet implemented")
 

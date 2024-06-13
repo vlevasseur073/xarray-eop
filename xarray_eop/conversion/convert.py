@@ -19,7 +19,7 @@ from xarray_eop.conversion.utils import (
 from xarray_eop.eop import datatree_to_uml
 
 
-def open_groups(product_path: Path, map_safe: dict[str, Any]):
+def _open_groups(product_path: Path, map_safe: dict[str, Any]):
 
     list_of_groups = []
     for zarr_path in map_safe["data_mapping"].keys():
@@ -30,7 +30,7 @@ def open_groups(product_path: Path, map_safe: dict[str, Any]):
                 list_of_groups.append(r)
 
 
-def check_duplicate_set(items):
+def _check_duplicate_set(items):
     hash_bucket = set()
     for item in items:
         if item in hash_bucket:
@@ -47,6 +47,26 @@ def product_converter(
     simplified_mapping: Optional[bool] = False,
     zip: Optional[bool] = True,
 ) -> datatree.DataTree:
+    """Convert Sentinel-3 SAFE product to the EOP zarr structure. 
+    See the `Product Structure and Format Definition <https://cpm.pages.eopf.copernicus.eu/eopf-cpm/main/PSFDjan2024.html>`__
+
+    Parameters
+    ----------
+    sample_path
+        input Sentinel-3 SAFE product path
+    output_path
+        output Zarr product path
+    product_type
+        SAFE product type, default None. Set from the sample_path
+    simplified_mapping, optional
+        custom mapping to be used, by default False
+    zip, optional
+        output the zipped product in addition (zero compression), by default True
+
+    Returns
+    -------
+        Converted Zarr product
+    """
 
     if not product_type:
         product_type = sample_path.name[:8]
@@ -59,7 +79,7 @@ def product_converter(
         map_safe = convert_mapping(MAPPINGS[product_type])
 
     prod = zarr.open(output_path, mode="w")
-    open_groups(output_path, map_safe)
+    _open_groups(output_path, map_safe)
 
     shortnames: list = []
     for zarr_path in map_safe["data_mapping"].keys():
@@ -98,7 +118,7 @@ def product_converter(
     if len(set(shortnames)) < len(shortnames):
         print("Error in shortnames: Items appear twice ...")
         # print(shortnames)
-        check_duplicate_set(shortnames)
+        _check_duplicate_set(shortnames)
         exit(0)
 
     print("Updating and consolidate metadata")
