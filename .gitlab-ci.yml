@@ -11,6 +11,8 @@ variables:
   BRANCH_NAME: $CI_COMMIT_REF_NAME
   PACKAGE_NAME: xarray-eop-docs
   PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
+  SOURCES: xarray_eop
+  TESTS: tests
 
 formater:
   stage: unit tests
@@ -22,7 +24,7 @@ formater:
     - pip install .[formatter]
   script:
     - python -m black --check --diff .
-    - python -m isort ${SOURCES} ${TESTS} --check --diff
+    - python -m isort ${SOURCES} ${TESTS} --check --diff --profile black
 
 build-doc:
   stage: doc
