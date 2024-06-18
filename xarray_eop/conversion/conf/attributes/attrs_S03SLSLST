@@ -1723,7 +1723,7 @@
         "relative_pass_number": 218
     },
     "other_metadata": {
-        "product_type": "S3SLSLST"
+        "product_type": "S03SLSLST"
     },
     "pixel_time_sampling_interval_along_scan_i_in_microseconds": 81.73999786376953,
     "product_unit": {

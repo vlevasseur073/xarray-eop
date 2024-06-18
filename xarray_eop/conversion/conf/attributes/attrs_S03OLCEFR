@@ -696,7 +696,7 @@
         "relative_pass_number": 234
     },
     "other_metadata": {
-        "product_type": "S3OLCEFR"
+        "product_type": "S03OLCEFR"
     },
     "product_unit": {
         "alongtrack_coordinate": "null",

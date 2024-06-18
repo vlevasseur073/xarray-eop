@@ -436,7 +436,7 @@
         "type": "start"
     },
     "other_metadata": {
-        "product_type": "S3SYNSDR"
+        "product_type": "S03SYNSDR"
     },
     "product_unit": {
         "duration": 59,

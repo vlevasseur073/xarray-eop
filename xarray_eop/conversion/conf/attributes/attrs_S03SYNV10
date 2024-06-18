@@ -39276,7 +39276,7 @@
         "type": "start,stop"
     },
     "other_metadata": {
-        "product_type": "S3SYNV10"
+        "product_type": "S03SYNV10"
     },
     "product_unit": {
         "tile_identifier": "EUROPE___________",

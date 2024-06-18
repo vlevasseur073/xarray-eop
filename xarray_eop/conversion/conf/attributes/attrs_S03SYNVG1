@@ -4795,7 +4795,7 @@
         "type": "start,stop"
     },
     "other_metadata": {
-        "product_type": "S3SYNVG1"
+        "product_type": "S03SYNVG1"
     },
     "product_unit": {
         "tile_identifier": "EUROPE___________",

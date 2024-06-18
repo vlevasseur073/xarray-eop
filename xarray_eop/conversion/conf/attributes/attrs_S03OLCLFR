@@ -831,7 +831,7 @@
         "type": "start"
     },
     "other_metadata": {
-        "product_type": "S3OLCLFR"
+        "product_type": "S03OLCLFR"
     },
     "product_unit": {
         "alongtrack_coordinate": "null",

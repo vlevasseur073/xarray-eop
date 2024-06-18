@@ -1160,7 +1160,7 @@
         "relative_pass_number": 301
     },
     "other_metadata": {
-        "product_type": "S3SLSRBT"
+        "product_type": "S03SLSRBT"
     },
     "pixel_time_sampling_interval_along_scan_a_in_microseconds": 40.869998931884766,
     "pixel_time_sampling_interval_along_scan_b_in_microseconds": 40.869998931884766,

@@ -573,7 +573,7 @@
         "relative_pass_number": 234
     },
     "other_metadata": {
-        "product_type": "S3OLCERR"
+        "product_type": "S03OLCERR"
     },
     "product_unit": {
         "alongtrack_coordinate": "null",
