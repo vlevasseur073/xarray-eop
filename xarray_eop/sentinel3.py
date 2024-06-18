@@ -83,11 +83,11 @@ def _create_dataset_from_ncfiles(
     input_list: List[EOPath],
     chunk_sizes: Dict[str, int] | None,
     storage_options: Dict[str, Any] | None = None,
+    decode_times: bool = True,
     **kwargs: Any,
 ) -> dict[str, xr.Dataset]:
 
     safe_ds = {}
-    decode_times = True
     for f in input_list:
         if f.name.startswith("xfdumanifest"):
             continue
@@ -421,6 +421,7 @@ def open_safe_datatree(
         selected_files,
         chunk_sizes,
         storage_options=storage_options,
+        decode_times=kwargs["decode_times"] if "decode_times" in kwargs else True,
     )
 
     eop_ds = {}
