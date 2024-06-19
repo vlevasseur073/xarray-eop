@@ -1,0 +1,774 @@
+{
+    "metadata": {
+        ".zattrs": {},
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "quality/.zattrs": {},
+        "quality/.zgroup": {
+            "zarr_format": 2
+        },
+        "quality/anadir/.zattrs": {},
+        "quality/anadir/.zgroup": {
+            "zarr_format": 2
+        },
+        "quality/anadir/cloud_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "<u2",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/cloud_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128,
+                256,
+                512,
+                1024,
+                2048,
+                4096,
+                8192,
+                16384,
+                32768
+            ],
+            "flag_meanings": "visible 1.37_threshold 1.6_small_histogram 1.6_large_histogram 2.25_small_histogram 2.25_large_histogram 11_spatial_coherence gross_cloud thin_cirrus medium_high fog_low_stratus 11_12_view_difference 3.7_11_view_difference thermal_histogram spare spare",
+            "short_name": "cloud_an"
+        },
+        "quality/anadir/confidence_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "<u2",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/confidence_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128,
+                256,
+                512,
+                1024,
+                2048,
+                4096,
+                8192,
+                16384,
+                32768
+            ],
+            "flag_meanings": "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing",
+            "short_name": "confidence_an"
+        },
+        "quality/anadir/pointing_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/pointing_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "FlipMirrorAbsoluteError FlipMirrorIntegratedError FlipMirrorRMSError ScanMirrorAbsoluteError ScanMirrorIntegratedError ScanMirrorRMSError ScanTimeError Platform_Mode",
+            "short_name": "pointing_an"
+        },
+        "quality/anadir/s1_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s1_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s1_exception_an",
+            "standard_name": "toa_radiance_status_flag"
+        },
+        "quality/anadir/s2_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s2_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s2_exception_an"
+        },
+        "quality/anadir/s3_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s3_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s3_exception_an"
+        },
+        "quality/anadir/s4_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s4_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s4_exception_an"
+        },
+        "quality/anadir/s5_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s5_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s5_exception_an"
+        },
+        "quality/anadir/s6_exception_an/.zarray": {
+            "chunks": [
+                1200,
+                1500
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                30
+            ],
+            "zarr_format": 2
+        },
+        "quality/anadir/s6_exception_an/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s6_exception_an"
+        },
+        "quality/aoblique/.zattrs": {},
+        "quality/aoblique/.zgroup": {
+            "zarr_format": 2
+        },
+        "quality/aoblique/cloud_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "<u2",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/cloud_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128,
+                256,
+                512,
+                1024,
+                2048,
+                4096,
+                8192,
+                16384,
+                32768
+            ],
+            "flag_meanings": "visible 1.37_threshold 1.6_small_histogram 1.6_large_histogram 2.25_small_histogram 2.25_large_histogram 11_spatial_coherence gross_cloud thin_cirrus medium_high fog_low_stratus 11_12_view_difference 3.7_11_view_difference thermal_histogram spare spare",
+            "short_name": "cloud_ao"
+        },
+        "quality/aoblique/confidence_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "<u2",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/confidence_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128,
+                256,
+                512,
+                1024,
+                2048,
+                4096,
+                8192,
+                16384,
+                32768
+            ],
+            "flag_meanings": "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing",
+            "short_name": "confidence_ao"
+        },
+        "quality/aoblique/pointing_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/pointing_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "FlipMirrorAbsoluteError FlipMirrorIntegratedError FlipMirrorRMSError ScanMirrorAbsoluteError ScanMirrorIntegratedError ScanMirrorRMSError ScanTimeError Platform_Mode",
+            "short_name": "pointing_ao"
+        },
+        "quality/aoblique/s1_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s1_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s1_exception_ao"
+        },
+        "quality/aoblique/s2_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s2_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s2_exception_ao"
+        },
+        "quality/aoblique/s3_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s3_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s3_exception_ao"
+        },
+        "quality/aoblique/s4_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s4_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s4_exception_ao"
+        },
+        "quality/aoblique/s5_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s5_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s5_exception_ao"
+        },
+        "quality/aoblique/s6_exception_ao/.zarray": {
+            "chunks": [
+                1200,
+                900
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 3,
+                "cname": "zstd",
+                "id": "blosc",
+                "shuffle": 2
+            },
+            "dtype": "|u1",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                24,
+                18
+            ],
+            "zarr_format": 2
+        },
+        "quality/aoblique/s6_exception_ao/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "rows",
+                "columns"
+            ],
+            "flag_masks": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128
+            ],
+            "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+            "short_name": "s6_exception_ao"
+        }
+    },
+    "zarr_consolidated_format": 1
+}

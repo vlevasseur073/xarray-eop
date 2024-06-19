@@ -76,3 +76,6 @@ markers = [
 [project.entry-points."xarray.backends"]
 sentinel-3 = "xarray_eop.xarray_backends:Sentinel3Backend"
 eop = "xarray_eop.xarray_backends:EOPBackend"
+
+[project.scripts]
+compare = "xarray_eop.verification.compare:compare"

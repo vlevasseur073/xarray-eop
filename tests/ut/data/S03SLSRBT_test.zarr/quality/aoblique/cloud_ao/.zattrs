@@ -1,0 +1,26 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "rows",
+        "columns"
+    ],
+    "flag_masks": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192,
+        16384,
+        32768
+    ],
+    "flag_meanings": "visible 1.37_threshold 1.6_small_histogram 1.6_large_histogram 2.25_small_histogram 2.25_large_histogram 11_spatial_coherence gross_cloud thin_cirrus medium_high fog_low_stratus 11_12_view_difference 3.7_11_view_difference thermal_histogram spare spare",
+    "short_name": "cloud_ao"
+}

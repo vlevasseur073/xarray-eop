@@ -1,0 +1,18 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "rows",
+        "columns"
+    ],
+    "flag_masks": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+    ],
+    "flag_meanings": "ISP_absent pixel_absent not_decompressed no_signal saturation invalid_radiance no_parameters unfilled_pixel",
+    "short_name": "s2_exception_ao"
+}

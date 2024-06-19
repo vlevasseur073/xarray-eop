@@ -1,0 +1,18 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "rows",
+        "columns"
+    ],
+    "flag_masks": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+    ],
+    "flag_meanings": "FlipMirrorAbsoluteError FlipMirrorIntegratedError FlipMirrorRMSError ScanMirrorAbsoluteError ScanMirrorIntegratedError ScanMirrorRMSError ScanTimeError Platform_Mode",
+    "short_name": "pointing_an"
+}

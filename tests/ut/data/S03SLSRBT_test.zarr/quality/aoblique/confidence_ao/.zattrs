@@ -1,0 +1,26 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "rows",
+        "columns"
+    ],
+    "flag_masks": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192,
+        16384,
+        32768
+    ],
+    "flag_meanings": "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing",
+    "short_name": "confidence_ao"
+}

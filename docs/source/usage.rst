@@ -99,8 +99,8 @@ Now let's open the whole OLCI L1 ERR product from s3 bucket:
     :okwarning:
 
     import xarray as xr
-    from xarray_eop.api import open_datatree
-    from xarray_eop.path import EOPath
+    from xarray_eop import open_datatree
+    from xarray_eop import EOPath
 
     buc_name = EOPath("s3://buc-acaw-dpr")
     product = buc_name / "Samples/SAFE/S3B_OL_1_ERR____20230506T015316_20230506T015616_20230711T065804_0179_079_117______LR1_D_NR_003.SEN3"
@@ -154,8 +154,8 @@ With product stored in filesystem
 
 .. ipython:: python
 
-    from xarray_eop.eop import open_eop_datatree
-    dt = datatree.open_eop_datatree(product)
+    from xarray_eop import open_datatree
+    dt = open_datatree(product)
 
 
 
@@ -167,5 +167,14 @@ With product stored in the cloud and zipped.
 
 .. ipython:: python
 
-    dt = open_eop_datatree(store,backend_kwargs={"storage_options": {"s3":secrets["s3input"]}})
+    dt = open_datatree(store,backend_kwargs={"storage_options": {"s3":secrets["s3input"]}})
     dt
+
+Verification Tool
+-----------------
+xarray_eop comes with a verification tool which compares to input products (SAFE or Zarr)
+The CLI tool can be run by:
+
+.. code-block:: bash
+
+   $ compare --help

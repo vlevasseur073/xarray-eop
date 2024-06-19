@@ -1,6 +1,8 @@
 from pathlib import Path
-from typing import KeysView
+from typing import KeysView, List
 
+import datatree
+import xarray as xr
 import zarr
 
 
@@ -59,3 +61,65 @@ def convert_dict_to_plantuml(dictionary, name, direction=0):
     plantuml_code += "@enduml\n"
 
     return plantuml_code
+
+
+def collect_flags_from_datatree(
+    dt: datatree.DataTree,
+    variable_pattern: List[str] = ["flag", "mask"],
+    isomorphic: bool = False,
+) -> datatree.DataTree:
+    """Collect all flag variables from a datatree.
+    Pre-selection of dataset is done via a list of variable patterns.
+    Finalization using the variable attributes, which should contain "flag_masks" as specified by CF convention
+
+    Parameters
+    ----------
+    dt
+        input datatree
+    variable_pattern
+        list of variable patterns
+    isomorphic
+        if True, returns datatree isomorphic to the original one, possibly with empty nodes.
+        if False, returns only subtrees which include flags or masks.
+        Default is False
+
+    Returns
+    -------
+        datatree with only flag variables within the same tree structure as input
+    """
+    if isomorphic:
+        is_var_flag = lambda var: next(  # noqa: E731
+            (s for s in var.attrs.keys() if any(p in s for p in variable_pattern)),
+            None,
+        )
+        node_contains_flag = lambda node: (  # noqa: E731
+            is_var_flag(node.data_vars[var]) for var in node.data_vars
+        )
+
+        return dt.filter(node_contains_flag).filter_by_attrs(
+            flag_masks=lambda v: v is not None,
+        )
+    else:
+        return dt.filter(
+            lambda node: next(
+                (s for s in node.variables if any(p in s for p in variable_pattern)),
+                None,
+            ),
+        ).filter_by_attrs(flag_masks=lambda v: v is not None)
+
+
+@datatree.map_over_subtree
+def filter_flags(ds: xr.Dataset) -> xr.Dataset:
+    """Filter only flags variable while preserving the whole structure
+    Following the CF convention, flag variables are filtered based on the presence of "flag_masks" attribute
+
+    Parameters
+    ----------
+    ds
+        input xarray.Dataset or datatree.DataTree
+
+    Returns
+    -------
+        xarray.Dataset or datatree.DataTree
+    """
+    return ds.filter_by_attrs(flag_masks=lambda v: v is not None)
