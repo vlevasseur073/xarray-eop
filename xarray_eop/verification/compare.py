@@ -24,7 +24,7 @@ import pandas as pd
 import xarray as xr
 from click.testing import CliRunner
 
-from xarray_eop import open_datatree
+from xarray_eop import EOPath, get_s3filesystem, open_datatree
 from xarray_eop.utils import filter_flags
 from xarray_eop.verification.logger import (
     get_failed_logger,
@@ -52,7 +52,7 @@ def _get_failed_formatted_string_vars(
             f"samples={values[-2]}/{values[-1]}({values[-2]/values[-1]*100:5.2f}%)"
         )
     else:
-        (
+        return (
             f"{name}: "
             f"min={values[0]:9.6f}, "
             f"max={values[1]:9.6f}, "
@@ -377,19 +377,31 @@ def bitwise_statistics(dt: datatree.DataTree) -> Dict[str, xr.Dataset]:
     return res
 
 
+def product_exists(input_path: str) -> bool:
+    url = EOPath(input_path)
+
+    if url.protocol == "s3":
+        s3fs = get_s3filesystem(url)
+        return s3fs.exists(url.path)
+    else:
+        return url.exists()
+
+
 @click.command()
 @click.option(
     "-ref",
     "--reference",
     required=True,
-    type=click.Path(exists=True, path_type=Path),
+    # type=click.Path(exists=True, path_type=Path),
+    type=str,
     help="reference product ",
 )
 @click.option(
     "-new",
     "--new",
     required=True,
-    type=click.Path(exists=True, path_type=Path),
+    # type=click.Path(exists=True, path_type=Path),
+    type=str,
     help="new product ",
 )
 @click.option(
@@ -452,7 +464,7 @@ def compare(
     if output:
         stream = open(output, mode="w")
     else:
-        stream = sys.stdout
+        stream = sys.stderr
 
     # Initialize logging
     level = logging.INFO
@@ -460,8 +472,16 @@ def compare(
         level = logging.DEBUG
     logger = get_logger("compare", level=level, stream=stream)
     logger.setLevel(level)
+
+    # Check input products
+    if not product_exists(reference):
+        logger.error(f"{reference} cannot be found.")
+        exit(1)
+    if not product_exists(new):
+        logger.error(f"{new} cannot be found.")
+        exit(1)
     logger.info(
-        f"Compare the new product {new.name} to the reference product {reference.name}",
+        f"Compare the new product {new} to the reference product {reference}",
     )
 
     passed_logger = get_passed_logger("passed", stream=stream)
@@ -473,7 +493,7 @@ def compare(
     logger.debug(dt_ref)
 
     # Open new product
-    dt_new = open_datatree(new, decode_times=False)
+    dt_new = open_datatree(new, fs_copy=True, decode_times=False)
     dt_new.name = "new"
     logger.debug(dt_ref)
 
@@ -581,9 +601,10 @@ def call_compare(
 
 if __name__ == "__main__":
     # Test
-    internal_path = Path(
+    internal_path = EOPath(
         # "/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products",
-        "/mount/internal/work-st/projects/cs-412/2078-dpr/workspace/vlevasseur",
+        # "/mount/internal/work-st/projects/cs-412/2078-dpr/workspace/vlevasseur",
+        "s3://buc-acaw-dpr/Samples/SAFE/",
     )
     ref = (
         internal_path
@@ -603,7 +624,7 @@ if __name__ == "__main__":
         ref,
         new,
         verbose=False,
-        relative=True,
+        # relative=True,
         threshold=2.0e-5,
         flags_only=False,
     )
