@@ -68,8 +68,8 @@ def get_credentials_from_env(url: EOPath) -> dict[str, Any]:
 
 def get_credentials(url: EOPath | str, profile: str | None = None) -> dict[str, Any]:
     """Get credentials given an url path
-    For S3 protocol, it looks first for the AWS-like (``AWS_ACCESS_KEY_ID``,``AWS_SECRET_ACCESS_KEY``,
-    ``AWS_ENDPOINT_URL``) or S3-like (``S3_KEY``,``S3_SECRET``,``S3_URL``) environment variables, or if a profile
+    For S3 protocol, it looks first for the AWS-like (``AWS_ACCESS_KEY_ID``, ``AWS_SECRET_ACCESS_KEY``,
+    ``AWS_ENDPOINT_URL``) or S3-like (``S3_KEY``, ``S3_SECRET``, ``S3_URL``) environment variables, or if a profile
     is given
 
     Note that only S3 protocol is implemented and the use of a profile name is not yet implemented

@@ -11,6 +11,8 @@ High Level
    xarray_eop.datatree_to_uml
    xarray_eop.create_dataset_from_zmetadata
    xarray_eop.create_datatree_from_zmetadata
+   xarray_eop.get_credentials
+   xarray_eop.get_s3filesystem
 
 Low Level
 ---------

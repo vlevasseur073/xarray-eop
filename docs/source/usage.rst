@@ -23,9 +23,36 @@ To handle both local filesystem path as well as distributed cloud storage or fss
 
     p = EOPath("s3://bucket/prod/file")
     print(p)
+    print(p.path)
+    print(p.name)
+    print(p.protocol)
 
     p = EOPath("zip::s3//bucket/prod/file.zip")
     print(p)
+    print(p.zip)
+
+Cloud-storage credentials
+-------------------------
+In `xarray_eop`, functions to open dataset/datatree can also access products in S3 object storage. The credentials
+can be explicitely passed to the function using the addition kwargs *backend_kwargs*, whose value is a dictionary in
+the form {"s3":{"key": *access-key*,"secret": *secret-key*,"endpoint_url": *endpoint_url*}}. In the case where
+no credentials are explicitely set, the function tried to retrieve it from environment variable.
+
+Additionaly `xarray_eop` provides few functions among which:
+
+.. autosummary::
+
+    xarray_eop.get_credentials
+    xarray_eop.get_s3filesystem
+
+.. ipython:: python
+
+    from xarray_eop import EOPath, get_s3filesystem
+
+    url = EOPath("s3://buc-acaw-dpr/Samples")
+    s3fs = get_s3filesystem(url)
+    s3fs.exists(url.path)
+    s3fs.ls(url.path)
 
 Open Sentinel-3 SAFE product
 ----------------------------
@@ -107,73 +134,11 @@ Now let's open the whole OLCI L1 ERR product from s3 bucket:
     dt = open_datatree(product)
     print(dt)
 
-Open Sentinel zarr product
---------------------------
-
-Open a partial dataset specifying a group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. ipython:: python
-    .. :suppress:
-
-    import xarray as xr
-    from pathlib import Path
-
-    SAMPLE_PATH = Path("/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products/Zarr_Beta")
-    product = SAMPLE_PATH / "S03OLCEFR_20230506T015316_0180_B117_T931.zarr"
-
-    %xmode minimal
-
-.. ipython:: python
-
-    group = "measurements/image"
-    # Open with custom engine="eop"
-    ds=xr.open_dataset(SAMPLE_PATH / product, group=group, engine="eop")
-    rad = ds.oa01_radiance
-    rad
-
-
-.. ipython:: python
-
-    import matplotlib.pyplot as plt
-    plt.figure(figsize=(14, 6))
-    ax = plt.axes()
-    ds.oa01_radiance.plot.pcolormesh(
-        ax=ax,
-        x="longitude", y="latitude", add_colorbar=False
-    )
-
-
-Open the whole product with datatree
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autofunction:: xarray_eop.eop.open_eop_datatree
-    :noindex:
-
-With product stored in filesystem
-
-.. ipython:: python
-
-    from xarray_eop import open_datatree
-    dt = open_datatree(product)
-
-
-
-With product stored in the cloud and zipped.
-
-.. note::
-    The product must be zipped without compression and without the root folder (the ``.zmetadata`` must be present
-    directly under the archive)
-
-.. ipython:: python
-
-    dt = open_datatree(store,backend_kwargs={"storage_options": {"s3":secrets["s3input"]}})
-    dt
 
 Verification Tool
 -----------------
 xarray_eop comes with a verification tool which compares to input products (SAFE or Zarr)
-The CLI tool can be run by:
+The CLI tool can be run and displays option by:
 
 .. code-block:: bash
 

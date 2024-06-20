@@ -68,7 +68,6 @@ def open_datatree(
         if creds:
             creds["s3"].pop("region_name", None)
             kwargs["backend_kwargs"] = {"storage_options": creds}
-            print(kwargs["backend_kwargs"])
         return open_eop_datatree(url, **kwargs)
     else:
         if creds:
