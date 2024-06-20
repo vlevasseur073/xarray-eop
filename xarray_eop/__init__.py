@@ -1,4 +1,5 @@
 from .api import open_datatree
+from .credentials import get_credentials, get_s3filesystem
 from .eop import (
     create_dataset_from_zmetadata,
     create_datatree_from_zmetadata,
@@ -20,4 +21,6 @@ __all__ = [
     "datatree_to_uml",
     "create_dataset_from_zmetadata",
     "create_datatree_from_zmetadata",
+    "get_credentials",
+    "get_s3filesystem",
 ]
