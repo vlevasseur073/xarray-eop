@@ -18,7 +18,7 @@
             "time_coordinates.nc": [
                 [
                     "time_stamp",
-                    "row_time"
+                    "time_stamp"
                 ]
             ],
             "Oa01_radiance.nc": [
