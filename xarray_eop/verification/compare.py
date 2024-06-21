@@ -14,7 +14,6 @@
 
 import logging
 import sys
-from pathlib import Path
 from typing import Any, Dict, List
 
 import click
@@ -378,6 +377,7 @@ def bitwise_statistics(dt: datatree.DataTree) -> Dict[str, xr.Dataset]:
 
 
 def product_exists(input_path: str) -> bool:
+    """Check if input product exists wheter it is on filesystem or object-storage"""
     url = EOPath(input_path)
 
     if url.protocol == "s3":
@@ -385,6 +385,24 @@ def product_exists(input_path: str) -> bool:
         return s3fs.exists(url.path)
     else:
         return url.exists()
+
+
+def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> List[tuple[str, str]]:
+    """Parse command-line option cmp-vars"""
+    list_prods: List[tuple[str, str]] = []
+
+    ref_url = EOPath(reference)
+    new_url = EOPath(new)
+
+    for vars in cmp_vars.split(","):
+        var = vars.split(":")
+        if len(var) != 2:
+            raise ValueError(f"{cmp_vars} is not a valid --cmp-var option syntax")
+        list_prods.append(
+            (str(ref_url / var[0].lstrip("/")), str(new_url / var[1].lstrip("/"))),
+        )
+
+    return list_prods
 
 
 @click.command()
@@ -403,6 +421,11 @@ def product_exists(input_path: str) -> bool:
     # type=click.Path(exists=True, path_type=Path),
     type=str,
     help="new product ",
+)
+@click.option(
+    "--cmp-vars",
+    type=str,
+    help="Compare only specific variables, defined as: path/to/var_ref:path/to/var_new,... ",
 )
 @click.option(
     "-v",
@@ -437,8 +460,9 @@ def product_exists(input_path: str) -> bool:
 )
 @click.option("-o", "--output", required=False, help="output file")
 def compare(
-    reference: Path,
-    new: Path,
+    reference: str,
+    new: str,
+    cmp_vars: str,
     verbose: bool,
     relative: bool,
     threshold,
@@ -473,6 +497,9 @@ def compare(
     logger = get_logger("compare", level=level, stream=stream)
     logger.setLevel(level)
 
+    passed_logger = get_passed_logger("passed", stream=stream)
+    failed_logger = get_failed_logger("failed", stream=stream)
+
     # Check input products
     if not product_exists(reference):
         logger.error(f"{reference} cannot be found.")
@@ -484,80 +511,89 @@ def compare(
         f"Compare the new product {new} to the reference product {reference}",
     )
 
-    passed_logger = get_passed_logger("passed", stream=stream)
-    failed_logger = get_failed_logger("failed", stream=stream)
+    # Check if specific variables
+    if cmp_vars:
+        list_ref_new_prods = parse_cmp_vars(reference, new, cmp_vars)
+    else:
+        list_ref_new_prods = [
+            (reference, new),
+        ]
 
-    # Open reference product
-    dt_ref = open_datatree(reference, fs_copy=True, decode_times=False)
-    dt_ref.name = "ref"
-    logger.debug(dt_ref)
+    # Loop over input products
+    for ref_prod, new_prod in list_ref_new_prods:
+        # Open reference product
+        dt_ref = open_datatree(ref_prod, fs_copy=True, decode_times=False)
+        dt_ref.name = "ref"
+        logger.debug(dt_ref)
 
-    # Open new product
-    dt_new = open_datatree(new, fs_copy=True, decode_times=False)
-    dt_new.name = "new"
-    logger.debug(dt_ref)
+        # Open new product
+        dt_new = open_datatree(new_prod, fs_copy=True, decode_times=False)
+        dt_new.name = "new"
+        logger.debug(dt_new)
 
-    # Sort datatree
-    dt_ref = sort_datatree(dt_ref)
-    dt_new = sort_datatree(dt_new)
+        # Sort datatree
+        dt_ref = sort_datatree(dt_ref)
+        dt_new = sort_datatree(dt_new)
 
-    # Check if datatrees are isomorphic
-    if not dt_new.isomorphic(dt_ref):
-        logger.error("Reference and new products are not isomorphic")
-        logger.error("Comparison fails")
-        return
+        # Check if datatrees are isomorphic
+        if not dt_new.isomorphic(dt_ref):
+            logger.error("Reference and new products are not isomorphic")
+            logger.error("Comparison fails")
+            return
 
-    # dt_ref = drop_duplicates(dt_ref)
-    # dt_new = drop_duplicates(dt_new)
-    # dt_new = encode_time_datatree(dt_new)
-    # dt_ref = encode_time_datatree(dt_ref)
+        # dt_ref = drop_duplicates(dt_ref)
+        # dt_new = drop_duplicates(dt_new)
+        # dt_new = encode_time_datatree(dt_new)
+        # dt_ref = encode_time_datatree(dt_ref)
 
-    # Variable statistics
-    if not flags_only:
-        if relative:
-            dt_ref_tmp = dt_ref.where(dt_ref != 0)
-            dt_new_tmp = dt_new.where(dt_ref != 0)
-            err = (dt_new_tmp - dt_ref_tmp) / dt_ref_tmp
-        else:
-            err = dt_new - dt_ref
-
-        results: Dict[str, Any] = variables_statistics(err, threshold)
-
-        logger.info("-- Verification of variables")
-        for name, val in results.items():
-            if all(v < threshold for v in val[:-2]):
-                passed_logger.info(f"{name}")
+        # Variable statistics
+        if not flags_only:
+            if relative:
+                dt_ref_tmp = dt_ref.where(dt_ref != 0)
+                dt_new_tmp = dt_new.where(dt_ref != 0)
+                err = (dt_new_tmp - dt_ref_tmp) / dt_ref_tmp
             else:
-                failed_logger.info(
-                    _get_failed_formatted_string_vars(
-                        name,
-                        val,
-                        threshold,
-                        relative=relative,
-                    ),
-                )
+                err = dt_new - dt_ref
 
-    # Flags statistics
-    flags_ref = filter_flags(dt_ref)
-    flags_new = filter_flags(dt_new)
+            results: Dict[str, Any] = variables_statistics(err, threshold)
 
-    with xr.set_options(keep_attrs=True):
-        err_flags = flags_ref ^ flags_new
+            logger.info("-- Verification of variables")
+            for name, val in results.items():
+                if all(v < threshold for v in val[:-2]):
+                    passed_logger.info(f"{name}")
+                else:
+                    failed_logger.info(
+                        _get_failed_formatted_string_vars(
+                            name,
+                            val,
+                            threshold,
+                            relative=relative,
+                        ),
+                    )
 
-    res: Dict[str, xr.Dataset] = bitwise_statistics(err_flags)
-    eps = 100.0 * (1.0 - threshold)
-    logger.info(f"-- Verification of flags: threshold = {eps}%")
-    for name, ds in res.items():
-        # ds_outlier = ds.where(ds.equal_percentage < eps, other=-1, drop=True)
-        for bit in ds.index.data:
-            if ds.equal_percentage[bit] < eps:
-                failed_logger.info(
-                    _get_failed_formatted_string_flags(name, ds, bit, eps),
-                )
-            else:
-                passed_logger.info(_get_passed_formatted_string_flags(name, ds, bit))
+        # Flags statistics
+        flags_ref = filter_flags(dt_ref)
+        flags_new = filter_flags(dt_new)
 
-    logger.info("Exiting compare")
+        with xr.set_options(keep_attrs=True):
+            err_flags = flags_ref ^ flags_new
+
+        res: Dict[str, xr.Dataset] = bitwise_statistics(err_flags)
+        eps = 100.0 * (1.0 - threshold)
+        logger.info(f"-- Verification of flags: threshold = {eps}%")
+        for name, ds in res.items():
+            # ds_outlier = ds.where(ds.equal_percentage < eps, other=-1, drop=True)
+            for bit in ds.index.data:
+                if ds.equal_percentage[bit] < eps:
+                    failed_logger.info(
+                        _get_failed_formatted_string_flags(name, ds, bit, eps),
+                    )
+                else:
+                    passed_logger.info(
+                        _get_passed_formatted_string_flags(name, ds, bit),
+                    )
+
+        logger.info("Exiting compare")
 
     if output:
         stream.close()

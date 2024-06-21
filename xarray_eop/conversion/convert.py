@@ -204,12 +204,12 @@ if __name__ == "__main__":
     }
 
     PRODUCTS_TO_PROCESSED = [
-        # "OL_1_EFR",
-        # "OL_1_ERR",
+        "OL_1_EFR",
+        "OL_1_ERR",
         # "OL_2_LFR",
         # "SL_1_RBT",
         # "SL_2_LST",
-        "SL_2_FRP",
+        # "SL_2_FRP",
         # "SY_2_SYN",
         # "SY_2_AOD",
         # "SY_2_VGP",

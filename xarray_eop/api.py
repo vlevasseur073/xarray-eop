@@ -61,6 +61,8 @@ def open_datatree(
             kwargs["engine"] = "zarr"
         elif ".SEN3" in ext:
             kwargs["engine"] = "SAFE"
+        elif ".nc" in ext:
+            kwargs["engine"] = "h5netcdf"
         else:
             raise NotImplementedError(f"Engine {engine} not implemented")
 
@@ -69,9 +71,11 @@ def open_datatree(
             creds["s3"].pop("region_name", None)
             kwargs["backend_kwargs"] = {"storage_options": creds}
         return open_eop_datatree(url, **kwargs)
-    else:
+    elif kwargs["engine"] == "SAFE":
         if creds:
             creds["s3"].pop("region_name", None)
             kwargs["backend_kwargs"] = {"storage_options": creds}
         simplified_mapping = use_custom_mapping(url)
         return open_safe_datatree(url, simplified_mapping=simplified_mapping, **kwargs)
+    elif kwargs["engine"] == "h5netcdf":
+        return datatree.open_datatree(url, engine=kwargs["engine"])
