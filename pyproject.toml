@@ -55,6 +55,10 @@ tests = [
     "pytest",
     "pytest-cov",
 ]
+security = [
+    "bandit",
+    "safety"
+]
 [tool.setuptools_scm]
 write_to = "xarray_eop/_version.py"
 write_to_template = '''
