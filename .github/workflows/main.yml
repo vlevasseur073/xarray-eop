@@ -126,3 +126,25 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
         publish_branch: gh-pages
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Build release distribution
+      run:
+        - pip wheel -w dist --no-deps .
+    - name: Upload distributions
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-dists
+        path: dist/
