@@ -4,11 +4,14 @@ default:
 
 stages:
   - unit tests
+  - build
+  - deliver
   - doc
   - deploy
 
 variables:
   BRANCH_NAME: $CI_COMMIT_REF_NAME
+  REPORTS: .reports
   PACKAGE_NAME: xarray-eop-docs
   PACKAGE_FILENAME: ${PACKAGE_NAME}.tar.gz
   SOURCES: xarray_eop
@@ -26,6 +29,111 @@ formater:
     - python -m black --check --diff .
     - python -m isort ${SOURCES} ${TESTS} --check --diff --profile black
 
+unit-tests:
+  stage: unit tests
+  before_script:
+    # Although the container image includes the CPM and its dependencies,
+    # the 'pip install' is kept in case the dependencies are changed by
+    # the child project with regards to the CPM ones.
+    # In this case, creating a specific build image should be considered.
+    - pip install .[tests]
+  script:
+    - >-
+      python -m pytest
+      --cov=${SOURCES}
+      --junit-xml=${REPORTS}/TEST-pytests.xml
+      --cov-report=xml:${REPORTS}/coverage.xml
+      -m unit
+  artifacts:
+    expire_in: 1h
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: $REPORTS/coverage.xml
+      junit: $REPORTS/TEST-*.xml
+    paths:
+      - ${REPORTS}
+      - .coverage
+
+security:
+  stage: unit tests
+  before_script:
+    # Although the container image includes the CPM and its dependencies,
+    # the 'pip install' is kept in case the dependencies are changed by
+    # the child project with regards to the CPM ones.
+    # In this case, creating a specific build image should be considered.
+    - pip install .[security]
+  script:
+    # Generate requirements.txt file for runtime dependencies
+    # Using pip avoids depending on the structure of the 'pyproject.toml'.
+    # The 'requirements.txt' is used by the 'deps-sec' job.
+    - pip freeze > requirements.txt
+    - python -m bandit -c bandit.yml -r ${SOURCES}
+    - >-
+      python -m bandit -c bandit.yml -r ${SOURCES}
+      -f json -o vulnerability.json
+  artifacts:
+    expire_in: 1h
+    paths:
+      - vulnerability.json
+      - requirements.txt
+
+deps-sec:
+  stage: unit tests
+  image:
+    name: aquasec/trivy:0.36.0
+    entrypoint: [""]
+  needs: [security]
+  dependencies:
+    - security
+  script:
+    # Report for user
+    - trivy fs --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed ./
+  allow_failure: true
+
+docs-cov:
+  stage: unit tests
+  before_script:
+    # Although the container image includes the CPM and its dependencies,
+    # the 'pip install' is kept in case the dependencies are changed by
+    # the child project with regards to the CPM ones.
+    # In this case, creating a specific build image should be considered.
+    - pip install .[doc-cov]
+  script:
+    - docstr-coverage -f -P -m -F 30 ${SOURCES} -b docstrcov.svg
+  artifacts:
+    paths:
+      - docstrcov.svg
+  allow_failure: true
+
+# BUILD SECTION
+build-package:
+  stage: build
+  script:
+    - pip wheel -w dist --no-deps .
+  artifacts:
+    paths:
+    - dist/
+
+# DELIVER SECTION
+deliver-package:
+  stage: deliver
+  needs: [build-package]
+  dependencies:
+    - build-package
+  script:
+    # Although the container image includes the CPM and its dependencies,
+    # the 'pip install' is kept in case the dependencies are changed by
+    # the child project with regards to the CPM ones.
+    # In this case, creating a specific build image should be considered.
+    - pip install twine
+    - >-
+      TWINE_PASSWORD=${CI_REGISTRY_PASSWORD}
+      TWINE_USERNAME=${CI_REGISTRY_USER}
+      python -m twine upload --repository-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*
+  rules:
+    - if: $CI_COMMIT_TAG
+
 build-doc:
   stage: doc
   before_script:
@@ -41,8 +149,6 @@ build-doc:
       # GitLab Pages.
       - test-docs/
     expire_in: 1 week
-  only:
-  - branches
 
 deploy-doc:
   stage: deploy
