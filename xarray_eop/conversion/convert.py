@@ -53,7 +53,11 @@ def product_converter(
             tree[var].encoding["compressor"] = DEFAULT_COMPRESSOR
             # Check if coordinates do exist
             if "coordinates" in tree[var].encoding:
-                coords = [ c for c in tree[var].encoding["coordinates"].split(" ") if c in tree.variables ]
+                coords = [
+                    c
+                    for c in tree[var].encoding["coordinates"].split(" ")
+                    if c in tree.variables
+                ]
                 if coords:
                     tree[var].encoding["coordinates"] = " ".join(coords)
                 else:
@@ -74,7 +78,7 @@ def product_converter(
                 tree[var].attrs.update({"short_name": var})
                 shortnames.append(var)
 
-    prod.to_zarr(store=output_path,consolidated=True)
+    prod.to_zarr(store=output_path, consolidated=True)
 
     # Verification of unicity of shortnames
     if len(set(shortnames)) < len(shortnames):
@@ -87,7 +91,6 @@ def product_converter(
     typ_eop = output_path.name[:9]
     prod.attrs.update(update_attributes(typ_eop))
     zarr.consolidate_metadata(output_path)
-
 
     # Check to open with datatree and zip
     # print("Checking product")
