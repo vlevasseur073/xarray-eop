@@ -10,24 +10,8 @@ from numcodecs import Blosc
 
 from xarray_eop.api import open_datatree
 from xarray_eop.conversion.update_attrs import update_attributes
-from xarray_eop.conversion.utils import (
-    DEFAULT_COMPRESSOR,
-    MAPPINGS,
-    SIMPL_MAPPING_PATH,
-    convert_mapping,
-)
+from xarray_eop.conversion.utils import DEFAULT_COMPRESSOR
 from xarray_eop.eop import datatree_to_uml
-
-
-def _open_groups(product_path: Path, map_safe: dict[str, Any]):
-
-    list_of_groups = []
-    for zarr_path in map_safe["data_mapping"].keys():
-        p = Path(zarr_path)
-        for r in p.parents:
-            if r not in list_of_groups:
-                zarr.open_group(product_path, path=r)
-                list_of_groups.append(r)
 
 
 def _check_duplicate_set(items):
@@ -43,8 +27,6 @@ def _check_duplicate_set(items):
 def product_converter(
     sample_path: Path,
     output_path: Path,
-    product_type: Optional[str],
-    simplified_mapping: Optional[bool] = False,
     zip: Optional[bool] = True,
 ) -> datatree.DataTree:
     """Convert Sentinel-3 SAFE product to the EOP zarr structure.
@@ -56,10 +38,6 @@ def product_converter(
         input Sentinel-3 SAFE product path
     output_path
         output Zarr product path
-    product_type
-        SAFE product type, default None. Set from the sample_path
-    simplified_mapping, optional
-        custom mapping to be used, by default False
     zip, optional
         output the zipped product in addition (zero compression), by default True
 
@@ -68,51 +46,35 @@ def product_converter(
         Converted Zarr product
     """
 
-    if not product_type:
-        product_type = sample_path.name[:8]
-
-    # Convert CS mapping or use a specific simplified mapping
-    if simplified_mapping:
-        with open(SIMPL_MAPPING_PATH / MAPPINGS[product_type]) as f:
-            map_safe = json.load(f)
-    else:
-        map_safe = convert_mapping(MAPPINGS[product_type])
-
-    prod = zarr.open(output_path, mode="w")
-    _open_groups(output_path, map_safe)
-
+    prod = open_datatree(sample_path)
     shortnames: list = []
-    for zarr_path in map_safe["data_mapping"].keys():
-        # if zarr_path != "/quality":
-        #     continue
-        print("Creating ", zarr_path)
-        ds = xr.open_dataset(
-            sample_path,
-            file_or_group=zarr_path,
-            engine="sentinel-3",
-            simplified_mapping=simplified_mapping,
-        )
-        for v in ds.variables:
-            ds[v].encoding["compressor"] = DEFAULT_COMPRESSOR
-            if v in shortnames:
-                # new_shortname = "_".join([v,zarr_path.split("/")[-1]])
-                tmp = zarr_path.split("/")[2:]
-                tmp.insert(0, v)
+    for tree in prod.subtree:
+        for var in tree.variables:
+            tree[var].encoding["compressor"] = DEFAULT_COMPRESSOR
+            # Check if coordinates do exist
+            if "coordinates" in tree[var].encoding:
+                coords = [ c for c in tree[var].encoding["coordinates"].split(" ") if c in tree.variables ]
+                if coords:
+                    tree[var].encoding["coordinates"] = " ".join(coords)
+                else:
+                    tree[var].encoding.pop("coordinates")
+            # Set shortnames
+            if var in shortnames:
+                tmp = tree.path.split("/")[2:]
+                tmp.insert(0, var)
                 new_shortname = "_".join(tmp)
                 if new_shortname in shortnames:
                     print(f"Warning: {new_shortname} already exists in shornames list")
-                    print(f"Warning: variables {v} will not have short_name")
+                    print(f"Warning: variables {var} will not have short_name")
                     print("Warning: continue")
                     continue
-                ds[v].attrs.update({"short_name": new_shortname})
+                tree[var].attrs.update({"short_name": new_shortname})
                 shortnames.append(new_shortname)
             else:
-                ds[v].attrs.update({"short_name": v})
-                shortnames.append(v)
-        ds.to_zarr(
-            store=output_path / zarr_path.lstrip("/"),
-            mode="a",
-        )
+                tree[var].attrs.update({"short_name": var})
+                shortnames.append(var)
+
+    prod.to_zarr(store=output_path,consolidated=True)
 
     # Verification of unicity of shortnames
     if len(set(shortnames)) < len(shortnames):
@@ -126,12 +88,13 @@ def product_converter(
     prod.attrs.update(update_attributes(typ_eop))
     zarr.consolidate_metadata(output_path)
 
+
     # Check to open with datatree and zip
-    print("Checking product")
-    decode_times = True
-    if typ_eop in ["S03SYNVGK", "S03SYNVG1", "S03SYNV10"]:
-        decode_times = False
-    dt: datatree.DataTree = open_datatree(output_path, decode_times=decode_times)
+    # print("Checking product")
+    # decode_times = True
+    # if typ_eop in ["S03SYNVGK", "S03SYNVG1", "S03SYNV10"]:
+    #     decode_times = False
+    # dt: datatree.DataTree = open_datatree(output_path, decode_times=decode_times)
     if zip:
         print("Zipping product")
         with zarr.ZipStore(str(output_path) + ".zip") as store:
