@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional
-import click
 
+import click
 import datatree
 import zarr
 
