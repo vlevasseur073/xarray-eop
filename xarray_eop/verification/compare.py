@@ -522,12 +522,12 @@ def compare(
     # Loop over input products
     for ref_prod, new_prod in list_ref_new_prods:
         # Open reference product
-        dt_ref = open_datatree(ref_prod, fs_copy=True, decode_times=False)
+        dt_ref = open_datatree(ref_prod, decode_times=False)
         dt_ref.name = "ref"
         logger.debug(dt_ref)
 
         # Open new product
-        dt_new = open_datatree(new_prod, fs_copy=True, decode_times=False)
+        dt_new = open_datatree(new_prod, decode_times=False)
         dt_new.name = "new"
         logger.debug(dt_new)
 
