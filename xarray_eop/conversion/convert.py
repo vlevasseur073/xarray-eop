@@ -104,6 +104,7 @@ def product_converter(
 
     return prod
 
+
 @click.command()
 @click.argument(
     "input",
@@ -120,7 +121,7 @@ def product_converter(
     is_flag=True,
     default=False,
     show_default=True,
-    help="Zip the output product"
+    help="Zip the output product",
 )
 def convert(input: str, output: str, zip: bool = False):
-    product_converter(input,output,zip)
+    product_converter(input, output, zip)
