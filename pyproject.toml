@@ -83,3 +83,4 @@ eop = "xarray_eop.xarray_backends:EOPBackend"
 
 [project.scripts]
 compare = "xarray_eop.verification.compare:compare"
+convert = "xarray_eop.conversion.convert:convert"
