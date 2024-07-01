@@ -77,7 +77,6 @@ def product_converter(
                 tree[var].attrs.update({"short_name": var})
                 shortnames.append(var)
 
-    prod.to_zarr(store=output_path, consolidated=True)
 
     # Verification of unicity of shortnames
     if len(set(shortnames)) < len(shortnames):
@@ -89,7 +88,8 @@ def product_converter(
     print("Updating and consolidate metadata")
     typ_eop = output_path.name[:9]
     prod.attrs.update(update_attributes(typ_eop))
-    zarr.consolidate_metadata(output_path)
+    prod.to_zarr(store=output_path, consolidated=True)
+    # zarr.consolidate_metadata(output_path)
 
     # Check to open with datatree and zip
     # print("Checking product")
