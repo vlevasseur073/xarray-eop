@@ -77,7 +77,6 @@ def product_converter(
                 tree[var].attrs.update({"short_name": var})
                 shortnames.append(var)
 
-
     # Verification of unicity of shortnames
     if len(set(shortnames)) < len(shortnames):
         print("Error in shortnames: Items appear twice ...")
