@@ -59,10 +59,12 @@ def open_datatree(
         ext = url.suffixes
         if ".zarr" in ext:
             kwargs["engine"] = "zarr"
+            kwargs.pop("fs_copy", None)
         elif ".SEN3" in ext:
             kwargs["engine"] = "SAFE"
         elif ".nc" in ext:
             kwargs["engine"] = "h5netcdf"
+            kwargs.pop("fs_copy", None)
         else:
             raise NotImplementedError(f"Engine {engine} not implemented")
 
