@@ -66,6 +66,7 @@ class EOPath(pathlib.Path):
             obj: EOPath = super().__new__(cls, part0, *parts)
             obj._protocol = _protocol
             obj._zip = _zip
+            pathlib.Path.home()
             return obj
 
     @property
@@ -140,3 +141,24 @@ class EOPath(pathlib.Path):
 
     def __copy__(self):
         return EOPath(self.as_posix())
+
+    @classmethod
+    def home(cls):
+        """Return a new path pointing to the user's home directory (as
+        returned by os.path.expanduser('~')).
+        """
+        return cls("~").expanduser()
+
+    def expanduser(self):
+        """Return a new path with expanded ~ and ~user constructs
+        (as returned by os.path.expanduser)
+        """
+        if not (self._drv or self._root) and self._parts and self._parts[0][:1] == "~":
+            homedir = os.path.expanduser(self._parts[0])
+            if homedir[:1] == "~":
+                raise RuntimeError("Could not determine home directory.")
+            obj: EOPath = super()._from_parts([homedir] + self._parts[1:])
+            obj._protocol = self.protocol
+            obj._zip = self.zip
+            return obj
+        return self

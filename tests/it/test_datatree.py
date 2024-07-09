@@ -24,8 +24,7 @@ def test_load_dataset() -> None:
     check_datatree_sample(dt)
 
     dt = open_datatree(
-        "zip::s3://buc-acaw-dpr/testdata/sentineltoolbox/ut/data/sample.zip",
-        engine="zarr",
+        "zip::s3://buc-acaw-dpr/testdata/sentineltoolbox/ut/data/sample.zarr.zip",
     )
     check_datatree_sample(dt)
 

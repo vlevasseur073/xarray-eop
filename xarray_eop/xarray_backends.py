@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional, Tuple
 import xarray as xr
 
 from xarray_eop import eop, sentinel3
-from xarray_eop.credentials import get_credentials_from_env
+from xarray_eop.credentials import get_credentials
 from xarray_eop.path import EOPath
 
 
@@ -20,10 +20,11 @@ class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
         storage_options: Optional[Dict[str, Any]] = None,
         simplified_mapping: Optional[bool] = None,
         fs_copy: Optional[bool] = None,
+        secret_alias: Optional[str] = None,
     ) -> xr.Dataset:
         url: EOPath = EOPath(filename_or_obj)
         if url.protocol and not storage_options:
-            creds = get_credentials_from_env(url)
+            creds = get_credentials(url, profile=secret_alias)
             if url.protocol == "s3":
                 creds["s3"].pop("region_name", None)
                 storage_options = creds

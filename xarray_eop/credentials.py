@@ -1,3 +1,5 @@
+import base64
+import json
 import os
 from typing import Any
 
@@ -35,6 +37,30 @@ def _s3_from_env() -> dict[str, Any]:
         s3_vars["region_name"] = os.environ.get("S3_REGION", "")
 
     return {"s3": s3_vars}
+
+
+def get_secrets(secret_alias: str) -> dict[str, Any]:
+
+    path = EOPath.home() / ".eopf/secrets.json"
+    env_file = os.environ.get("S3_SECRETS_JSON_BASE64")
+
+    if env_file:
+        err_path = "S3_SECRETS_JSON_BASE64"
+        json_str = base64.b64decode(env_file).decode("utf-8")
+        secrets = json.loads(json_str)
+    elif path.is_file():
+        err_path = str(path)
+        with open(str(path)) as f:
+            secrets = json.load(f)
+    else:
+        raise FileNotFoundError(f"Secret file {path} doesn't exist")
+    try:
+        return secrets[secret_alias]
+    except KeyError:
+        aliases = ", ".join(secrets.keys())
+        raise KeyError(
+            f"No alias {secret_alias} in {err_path}. Possible aliases: {aliases}",
+        )
 
 
 def get_credentials_from_env(url: EOPath) -> dict[str, Any]:
@@ -97,12 +123,11 @@ def get_credentials(url: EOPath | str, profile: str | None = None) -> dict[str, 
     if url.protocol != "s3":
         raise NotImplementedError(f"Protocol {url.protocol} not yet implemented")
 
-    if not profile:
-        return get_credentials_from_env(EOPath(url))
+    if profile:
+        creds = get_secrets(profile)
+        return {"s3": creds}
     else:
-        raise NotImplementedError(
-            "Use of a profile for the credentials is not yet implemented",
-        )
+        return get_credentials_from_env(EOPath(url))
 
 
 def get_s3filesystem(
@@ -118,7 +143,7 @@ def get_s3filesystem(
     url
         s3 path
     profile, optional
-        profile name to get the correct credentials, by default None. Not yet implemented
+        profile name to get the correct credentials, by default None.
     anon, optional
         by default False
 
@@ -128,15 +153,9 @@ def get_s3filesystem(
 
     Raises
     ------
-    NotImplementedError
-        if profile is not None
     ValueError
         if url is not a S3 path
     """
-    if profile:
-        raise NotImplementedError(
-            "Use of a profile for the credentials is not yet implemented",
-        )
 
     if isinstance(url, str):
         s3_path = EOPath(url)
@@ -145,7 +164,7 @@ def get_s3filesystem(
     if s3_path.protocol != "s3":
         raise ValueError(f"Path {str(s3_path)} is not a S3 path")
 
-    creds = get_credentials(s3_path)
+    creds = get_credentials(s3_path, profile)
     if not creds or anon:
         return s3fs.S3FileSystem(anon=True)
     else:

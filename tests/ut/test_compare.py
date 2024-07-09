@@ -10,8 +10,5 @@ def test_compare_utils() -> None:
     cmp_vars = "group/var1:group/var2,var3:/grp/var4"
 
     list_prods = parse_cmp_vars(reference, new, cmp_vars)
-    assert list_prods[0] == (
-        "/path/to/product1/group/var1",
-        "path/to/product2/group/var2",
-    )
-    assert list_prods[1] == ("/path/to/product1/var3", "path/to/product2/grp/var4")
+    assert list_prods[0] == ("group/var1", "group/var2")
+    assert list_prods[1] == ("var3", "/grp/var4")

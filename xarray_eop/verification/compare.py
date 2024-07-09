@@ -14,7 +14,7 @@
 
 import logging
 import sys
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Literal
 
 import click
 import datatree
@@ -57,7 +57,7 @@ def _get_failed_formatted_string_vars(
             f"max={values[1]:9.6f}, "
             f"mean={values[2]:9.6f}, "
             f"stdev={values[3]:9.6f} -- "
-            f"eps={threshold}% "
+            f"eps={threshold} "
             f"outliers={values[4]} ({values[4]/values[-2]*100:5.2f}%) "
             f"samples={values[-2]}/{values[-1]}({values[-2]/values[-1]*100:5.2f}%)"
         )
@@ -376,12 +376,12 @@ def bitwise_statistics(dt: datatree.DataTree) -> Dict[str, xr.Dataset]:
     return res
 
 
-def product_exists(input_path: str) -> bool:
+def product_exists(input_path: str, secret: str | None = None) -> bool:
     """Check if input product exists wheter it is on filesystem or object-storage"""
     url = EOPath(input_path)
 
     if url.protocol == "s3":
-        s3fs = get_s3filesystem(url)
+        s3fs = get_s3filesystem(url, profile=secret)
         return s3fs.exists(url.path)
     else:
         return url.exists()
@@ -391,18 +391,45 @@ def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> List[tuple[str, s
     """Parse command-line option cmp-vars"""
     list_prods: List[tuple[str, str]] = []
 
-    ref_url = EOPath(reference)
-    new_url = EOPath(new)
-
     for vars in cmp_vars.split(","):
         var = vars.split(":")
         if len(var) != 2:
             raise ValueError(f"{cmp_vars} is not a valid --cmp-var option syntax")
         list_prods.append(
-            (str(ref_url / var[0].lstrip("/")), str(new_url / var[1].lstrip("/"))),
+            # (str(ref_url / var[0].lstrip("/")), str(new_url / var[1].lstrip("/"))),
+            (var[0], var[1]),
         )
 
     return list_prods
+
+
+def filter_datatree(
+    dt: datatree.DataTree,
+    vars_grps: List[str],
+    type: Literal["variables", "groups"],
+) -> datatree.DataTree:
+    if type == "variables":
+        dt = dt.filter(
+            lambda node: any(
+                "/".join([node.path, var]) in vars_grps for var in node.variables  # type: ignore[list-item]
+            ),
+        )
+        for tree in dt.subtree:
+            grp = tree.path
+            variables = list(tree.data_vars)
+            drop_variables = [
+                v for v in variables if "/".join([grp, v]) not in vars_grps
+            ]
+            if drop_variables:
+                dt[grp] = dt[grp].drop_vars(drop_variables)
+    elif type == "groups":
+        dt = dt.filter(
+            lambda node: next((s for s in node.groups if s in vars_grps), None),
+        )
+    else:
+        raise ValueError("type as incorrect value: ", type)
+
+    return dt
 
 
 @click.command()
@@ -426,6 +453,18 @@ def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> List[tuple[str, s
     "--cmp-vars",
     type=str,
     help="Compare only specific variables, defined as: path/to/var_ref:path/to/var_new,... ",
+)
+@click.option(
+    "--cmp-grps",
+    type=str,
+    help="Compare only specific groups, defined as: path/to/grp_ref:path/to/grp_new,... ",
+)
+@click.option(
+    "-s",
+    "--secret",
+    type=str,
+    default=None,
+    help="Secret alias of credentials to access cloud-storage",
 )
 @click.option(
     "-v",
@@ -463,6 +502,8 @@ def compare(
     reference: str,
     new: str,
     cmp_vars: str,
+    cmp_grps: str,
+    secret: str,
     verbose: bool,
     relative: bool,
     threshold,
@@ -501,99 +542,124 @@ def compare(
     failed_logger = get_failed_logger("failed", stream=stream)
 
     # Check input products
-    if not product_exists(reference):
+    if not product_exists(reference, secret):
         logger.error(f"{reference} cannot be found.")
         exit(1)
-    if not product_exists(new):
+    if not product_exists(new, secret):
         logger.error(f"{new} cannot be found.")
         exit(1)
     logger.info(
         f"Compare the new product {new} to the reference product {reference}",
     )
 
-    # Check if specific variables
+    # Check if specific variables/groups
     if cmp_vars:
-        list_ref_new_prods = parse_cmp_vars(reference, new, cmp_vars)
-    else:
-        list_ref_new_prods = [
-            (reference, new),
-        ]
+        list_ref_new_vars = parse_cmp_vars(reference, new, cmp_vars)
+    if cmp_grps:
+        list_ref_new_grps = parse_cmp_vars(reference, new, cmp_grps)
 
-    # Loop over input products
-    for ref_prod, new_prod in list_ref_new_prods:
-        # Open reference product
-        dt_ref = open_datatree(ref_prod, decode_times=False, fs_copy=True)
-        dt_ref.name = "ref"
-        logger.debug(dt_ref)
+    # Open reference product
+    kwargs: dict[str, Any] = {}
+    kwargs["decode_times"] = False
+    kwargs["fs_copy"] = True
+    if secret:
+        kwargs["secret_alias"] = secret
+    dt_ref = open_datatree(reference, **kwargs)
+    dt_ref.name = "ref"
+    logger.debug(dt_ref)
 
-        # Open new product
-        dt_new = open_datatree(new_prod, decode_times=False, fs_copy=True)
-        dt_new.name = "new"
-        logger.debug(dt_new)
+    # Open new product
+    dt_new = open_datatree(new, **kwargs)
+    dt_new.name = "new"
+    logger.debug(dt_new)
 
-        # Sort datatree
-        dt_ref = sort_datatree(dt_ref)
-        dt_new = sort_datatree(dt_new)
+    # Sort datatree
+    dt_ref = sort_datatree(dt_ref)
+    dt_new = sort_datatree(dt_new)
 
-        # Check if datatrees are isomorphic
-        if not dt_new.isomorphic(dt_ref):
-            logger.error("Reference and new products are not isomorphic")
-            logger.error("Comparison fails")
-            return
+    # Filter datatree
+    if cmp_vars:
+        dt_ref = filter_datatree(
+            dt_ref,
+            [var[0] for var in list_ref_new_vars],
+            type="variables",
+        )
+        dt_new = filter_datatree(
+            dt_new,
+            [var[1] for var in list_ref_new_vars],
+            type="variables",
+        )
+    if cmp_grps:
+        dt_ref = filter_datatree(
+            dt_ref,
+            [var[0] for var in list_ref_new_grps],
+            type="groups",
+        )
+        dt_new = filter_datatree(
+            dt_new,
+            [var[1] for var in list_ref_new_grps],
+            type="groups",
+        )
 
-        # dt_ref = drop_duplicates(dt_ref)
-        # dt_new = drop_duplicates(dt_new)
-        # dt_new = encode_time_datatree(dt_new)
-        # dt_ref = encode_time_datatree(dt_ref)
+    # Check if datatrees are isomorphic
+    if not dt_new.isomorphic(dt_ref):
+        logger.error("Reference and new products are not isomorphic")
+        logger.error("Comparison fails")
+        return
 
-        # Variable statistics
-        if not flags_only:
-            if relative:
-                dt_ref_tmp = dt_ref.where(dt_ref != 0)
-                dt_new_tmp = dt_new.where(dt_ref != 0)
-                err = (dt_new_tmp - dt_ref_tmp) / dt_ref_tmp
+    # dt_ref = drop_duplicates(dt_ref)
+    # dt_new = drop_duplicates(dt_new)
+    # dt_new = encode_time_datatree(dt_new)
+    # dt_ref = encode_time_datatree(dt_ref)
+
+    # Variable statistics
+    if not flags_only:
+        if relative:
+            dt_ref_tmp = dt_ref.where(dt_ref != 0)
+            dt_new_tmp = dt_new.where(dt_ref != 0)
+            err = (dt_new_tmp - dt_ref_tmp) / dt_ref_tmp
+        else:
+            err = dt_new - dt_ref
+
+        results: Dict[str, Any] = variables_statistics(err, threshold)
+
+        logger.info("-- Verification of variables")
+        for name, val in results.items():
+            if all(v < threshold for v in val[:-2]):
+                passed_logger.info(f"{name}")
             else:
-                err = dt_new - dt_ref
+                failed_logger.info(
+                    _get_failed_formatted_string_vars(
+                        name,
+                        val,
+                        threshold,
+                        relative=relative,
+                    ),
+                )
 
-            results: Dict[str, Any] = variables_statistics(err, threshold)
+    # Flags statistics
+    flags_ref = filter_flags(dt_ref)
+    flags_new = filter_flags(dt_new)
 
-            logger.info("-- Verification of variables")
-            for name, val in results.items():
-                if all(v < threshold for v in val[:-2]):
-                    passed_logger.info(f"{name}")
-                else:
-                    failed_logger.info(
-                        _get_failed_formatted_string_vars(
-                            name,
-                            val,
-                            threshold,
-                            relative=relative,
-                        ),
-                    )
+    with xr.set_options(keep_attrs=True):
+        err_flags = flags_ref ^ flags_new
 
-        # Flags statistics
-        flags_ref = filter_flags(dt_ref)
-        flags_new = filter_flags(dt_new)
+    res: Dict[str, xr.Dataset] = bitwise_statistics(err_flags)
+    eps = 100.0 * (1.0 - threshold)
+    logger.info(f"-- Verification of flags: threshold = {eps}%")
+    for name, ds in res.items():
+        # ds_outlier = ds.where(ds.equal_percentage < eps, other=-1, drop=True)
+        for bit in ds.index.data:
+            if ds.equal_percentage[bit] < eps:
+                failed_logger.info(
+                    _get_failed_formatted_string_flags(name, ds, bit, eps),
+                )
+            else:
+                passed_logger.info(
+                    _get_passed_formatted_string_flags(name, ds, bit),
+                )
 
-        with xr.set_options(keep_attrs=True):
-            err_flags = flags_ref ^ flags_new
-
-        res: Dict[str, xr.Dataset] = bitwise_statistics(err_flags)
-        eps = 100.0 * (1.0 - threshold)
-        logger.info(f"-- Verification of flags: threshold = {eps}%")
-        for name, ds in res.items():
-            # ds_outlier = ds.where(ds.equal_percentage < eps, other=-1, drop=True)
-            for bit in ds.index.data:
-                if ds.equal_percentage[bit] < eps:
-                    failed_logger.info(
-                        _get_failed_formatted_string_flags(name, ds, bit, eps),
-                    )
-                else:
-                    passed_logger.info(
-                        _get_passed_formatted_string_flags(name, ds, bit),
-                    )
-
-        logger.info("Exiting compare")
+    logger.info("Exiting compare")
 
     if output:
         stream.close()
@@ -607,6 +673,9 @@ def call_compare(
     relative: bool = True,
     threshold: float = 1.0e-6,
     flags_only: bool = False,
+    cmp_vars: str | None = None,
+    cmp_grps: str | None = None,
+    secret: str | None = None,
 ):
     """Callable function to compare two products Zarr or SAFE
 
@@ -625,6 +694,12 @@ def call_compare(
         args.append("--flags-only")
     if relative:
         args.append("--relative")
+    if cmp_vars:
+        args.extend(["--cmp-vars", cmp_vars])
+    if cmp_grps:
+        args.extend(["--cmp-grps", cmp_grps])
+    if secret:
+        args.extend(["--secret", secret])
     result = runner.invoke(
         compare,
         args,
@@ -656,11 +731,27 @@ if __name__ == "__main__":
         / "S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3"
     )
 
+    path = EOPath("s3://buc-acaw-dpr/Samples/Zarr/")
+    ref = path / "S03OLCERR_20191227T124211_0059_A109_S000.zarr"
+    new = path / "S03OLCERR_20191227T124211_0059_A109_S001.zarr"
+
+    # call_compare(ref,new,verbose=False,relative=True,threshold=2.e-5,cmp_grps="/measurements:/measurements")
     call_compare(
         ref,
         new,
         verbose=False,
-        # relative=True,
+        relative=True,
         threshold=2.0e-5,
-        flags_only=False,
+        cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance",
     )
+
+    # call_compare(
+    #     ref,
+    #     new,
+    #     verbose=False,
+    #     # relative=True,
+    #     threshold=2.0e-5,
+    #     # flags_only=False,
+    #     # cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance"
+    #     secret="acaw-dpr"
+    # )

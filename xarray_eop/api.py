@@ -4,7 +4,7 @@ from typing import Any
 import datatree
 
 from xarray_eop.conversion.utils import use_custom_mapping
-from xarray_eop.credentials import get_credentials_from_env
+from xarray_eop.credentials import get_credentials
 from xarray_eop.eop import open_eop_datatree
 from xarray_eop.path import EOPath
 from xarray_eop.sentinel3 import open_safe_datatree
@@ -26,6 +26,8 @@ def open_datatree(
     engine, optional
         engine to be used by xarray among ["zarr","SAFE"], by default None. It will try to guess the engine given the
         product extension
+    **kwargs:
+        secret_alias:
 
     Returns
     -------
@@ -43,7 +45,8 @@ def open_datatree(
 
     creds: dict[str, Any] | None = None
     if url.protocol:
-        creds = get_credentials_from_env(url)
+        profile = kwargs.get("secret_alias", None)
+        creds = get_credentials(url, profile=profile)
 
     if "chunks" not in kwargs:
         kwargs["chunks"] = {}
