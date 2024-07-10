@@ -99,12 +99,12 @@ For instance, opening the *instrument_data.nc* file from OLCI L1 ERR product wil
 
 .. note::
     The credentials to the cloud storage can be passed to the function using the *backend_kwargs* arguments as
+
     .. code-block:: json
 
-        {
-            "storage_options":
-            {
-                "s3": {"key"="","secret"="","endpoint_url"=""}
+        { "storage_options":
+            { "s3":
+                { "key"="","secret"="","endpoint_url"=""}
             }
         }
 
