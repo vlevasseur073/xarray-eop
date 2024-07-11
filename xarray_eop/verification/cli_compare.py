@@ -22,13 +22,12 @@ import xarray as xr
 from click.testing import CliRunner
 
 from xarray_eop import EOPath, open_datatree
-from xarray_eop.utils import filter_flags
+from xarray_eop.utils import filter_datatree, filter_flags
 from xarray_eop.verification.compare import (
     _get_failed_formatted_string_flags,
     _get_failed_formatted_string_vars,
     _get_passed_formatted_string_flags,
     bitwise_statistics,
-    filter_datatree,
     parse_cmp_vars,
     product_exists,
     sort_datatree,

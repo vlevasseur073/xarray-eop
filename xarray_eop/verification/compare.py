@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import logging
-from typing import Any, Literal
+from typing import Any
 
 import datatree
 import numpy as np
@@ -417,32 +417,3 @@ def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> list[tuple[str, s
         )
 
     return list_prods
-
-
-def filter_datatree(
-    dt: datatree.DataTree[Any],
-    vars_grps: list[str],
-    type: Literal["variables", "groups"],
-) -> datatree.DataTree[Any]:
-    if type == "variables":
-        dt = dt.filter(
-            lambda node: any(
-                "/".join([node.path, var]) in vars_grps for var in node.variables  # type: ignore[list-item]
-            ),
-        )
-        for tree in dt.subtree:
-            grp = tree.path
-            variables = list(tree.data_vars)
-            drop_variables = [
-                v for v in variables if "/".join([grp, v]) not in vars_grps
-            ]
-            if drop_variables:
-                dt[grp] = dt[grp].drop_vars(drop_variables)
-    elif type == "groups":
-        dt = dt.filter(
-            lambda node: next((s for s in node.groups if s in vars_grps), None),
-        )
-    else:
-        raise ValueError("type as incorrect value: ", type)
-
-    return dt
