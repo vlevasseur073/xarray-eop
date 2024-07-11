@@ -1,7 +1,7 @@
 import json
 import warnings
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Tuple
 
 import datatree
 import xarray as xr
@@ -12,11 +12,11 @@ from xarray_eop.utils import convert_dict_to_plantuml, open_zarr_groups_from_dic
 
 
 def open_eop_dataset(
-    product_urlpath: Union[str, Path],
+    product_urlpath: str | Path,
     *,
-    drop_variables: Optional[Tuple[str]] = None,
-    group: Optional[str] = None,
-    storage_options: Optional[Dict[str, Any]] = None,
+    drop_variables: Tuple[str] | None = None,
+    group: str | None = None,
+    storage_options: dict[str, Any] | None = None,
     decode_times: bool | None = None,
 ) -> xr.Dataset:
     """Opens a dataset from a zarr file
@@ -66,7 +66,7 @@ def open_eop_dataset(
     return ds
 
 
-def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.Dataset]:
+def create_dataset_from_zmetadata(zmetadata: str | Path) -> dict[str, xr.Dataset]:
     """Create an empty dataset from a ``.zmetadata`` file
 
     Parameters
@@ -93,7 +93,7 @@ def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.D
     list_of_variables = []
     list_of_groups = []
     list_of_leaf_groups = set()
-    dataset_info: Dict[str, Any] = {}
+    dataset_info: dict[str, Any] = {}
     for k in zdict["metadata"].keys():
         parts = k.split("/")
         if parts[-1] == ".zgroup":
@@ -128,8 +128,8 @@ def create_dataset_from_zmetadata(zmetadata: Union[str, Path]) -> dict[str, xr.D
 
 def open_eop_datatree(
     product_urlpath: str | Path | EOPath,
-    **kwargs,
-) -> datatree.DataTree:
+    **kwargs: Any,
+) -> datatree.DataTree[Any]:
     """Open and decode a EOPF-like Zarr product
 
     Parameters
@@ -169,7 +169,7 @@ def open_eop_datatree(
 
         # TODO refactor to use __setitem__ once creation of new nodes by assigning Dataset works again
         node_name = datatree.treenode.NodePath(path).name
-        new_node: datatree.DataTree = datatree.DataTree(
+        new_node: datatree.DataTree[Any] = datatree.DataTree(
             name=node_name,
             data=subgroup_ds,
         )
@@ -182,7 +182,7 @@ def open_eop_datatree(
     return tree_root
 
 
-def create_datatree_from_zmetadata(zmetadata: Union[str, Path]) -> datatree.DataTree:
+def create_datatree_from_zmetadata(zmetadata: str | Path) -> datatree.DataTree[Any]:
     """Create a datatree from a template ``zmetadata`` structure
 
     Parameters
@@ -200,11 +200,11 @@ def create_datatree_from_zmetadata(zmetadata: Union[str, Path]) -> datatree.Data
 
 
 def save_template_eop(
-    zmetadata: Union[str, Path],
+    zmetadata: str | Path,
     product_urlpath: Path,
-    use_datatree: Optional[bool] = False,
-    consolidated: Optional[bool] = True,
-):
+    use_datatree: bool = False,
+    consolidated: bool = True,
+) -> None:
     if isinstance(product_urlpath, str):
         url = Path(product_urlpath)
     else:
@@ -227,7 +227,7 @@ def save_template_eop(
             zarr.consolidate_metadata(url)
 
 
-def _add_path_to_tree(tree, path):
+def _add_path_to_tree(tree: dict[Any, Any], path: str) -> dict[Any, Any]:
     current = tree
     for part in path.split("/")[1:]:
         current = current.setdefault(part, {})
@@ -235,9 +235,9 @@ def _add_path_to_tree(tree, path):
 
 
 def datatree_to_uml(
-    product: datatree.DataTree,
-    name: Optional[str] = None,
-    direction: Optional[int] = 0,
+    product: datatree.DataTree[Any],
+    name: str | None = None,
+    direction: int = 0,
 ) -> str:
     """Generate a simplified UML diagram from a datatree
 

@@ -4,7 +4,7 @@ import re
 import tarfile
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Union
+from typing import Any
 
 import dask.array as da
 import datatree
@@ -67,44 +67,45 @@ def use_custom_mapping(product: EOPath | Path | str) -> bool:
     return custom_map
 
 
-def lower(v: Union[str, float, int]):
+def lower(v: str | float | int) -> str | float | int:
     if isinstance(v, str):
         return v.lower()
     else:
         return v
 
 
-def str_to_number(s):
+def str_to_number(s: str) -> Any:
     try:
-        v = int(s)
-        return (v, str(np.dtype(type(v))))
+        vi = int(s)
+        return (vi, str(np.dtype(type(vi))))
     except ValueError:
         try:
-            v = float(s)
-            return (v, str(np.dtype(type(v))))
+            vf: float = float(s)
+            return (vf, str(np.dtype(type(vf))))
         except ValueError:
             try:
                 v_list = s.split(",")
 
                 v = []
-                for l in v_list:
+                for l in v_list:  # noqa: E741
                     t = str_to_number(l)
                     if t is None:
                         return None
                     else:
                         v.append(t[0])
                 return (v, str(np.dtype(type(v[0]))))
-            except:
+            except:  # noqa: E722
                 return None
 
 
 def gen_static_adf_name(
     sat: str,
     pattern: str,
-    start: Optional[str] = None,
-    stop: Optional[str] = None,
-    format="zarr",
-):
+    start: str | None = None,
+    stop: str | None = None,
+    format: str ="zarr",
+) -> str:
+    """Generate a static ADF name"""
     now = datetime.now()
     date_frmt = now.strftime("%Y%m%dT%H%M%S")
 
@@ -121,15 +122,15 @@ def gen_static_adf_name(
     return f"{adf_name}.{format}"
 
 
-def extract_all_files(tar_file: str, extract_to: Union[str, Path]):
+def extract_all_files(tar_file: str, extract_to: str | Path) -> None:
     with tarfile.open(tar_file, "r") as tar:
         tar.extractall(extract_to)
 
 
 def extract_legacy(
-    input_path: Union[str, Path],
+    input_path: str | Path,
     legacy_adf: str,
-    output_path: Optional[Union[str, Path]],
+    output_path: str | Path | None = None,
 ) -> Path:
     if isinstance(input_path, str):
         input_path = Path(input_path)
@@ -147,7 +148,7 @@ def extract_legacy(
     return temp / adf_name
 
 
-def variable_to_attr(da: xr.DataArray, enabled_attr: Optional[list] = []) -> dict:
+def variable_to_attr(da: xr.DataArray, enabled_attr: list[Any] = []) -> dict[str, Any]:
     if da.data.size == 1:
         var_attr = {"type": da.dtype.name, "value": da.data.item()}
     else:
@@ -165,19 +166,17 @@ def variable_to_attr(da: xr.DataArray, enabled_attr: Optional[list] = []) -> dic
 
 def generate_datatree_from_legacy_adf(
     safe: Path,
-    title: Optional[str] = "",
-    safe_file: Optional[list] = None,
-    group: Optional[
-        str
-    ] = None,  # if group=None, by default subgroup maps is created if group=="" no subgroup
-    ncgroup: Optional[str] = None,
-    merged_variables: Optional[list] = [],
-    merged_mapping: Optional[dict] = {},
+    title: str = "",
+    safe_file: list[str] = None,
+    group: str | None = None,  # if group=None, by default subgroup maps is created if group=="" no subgroup
+    ncgroup: str | None = None,
+    merged_variables: list[Any] = [],
+    merged_mapping: dict[str, Any] = {},
     # files_to_group: Optional[dict] = {},
-    coordinates_variable: Optional[list] = [],  # variable : (dimension,coordinate)
-    var_to_attr: Optional[dict] = {},
-    dt: Optional[datatree.DataTree] = None,
-) -> datatree.DataTree:
+    coordinates_variable: list[Any] = [],  # variable : (dimension,coordinate)
+    var_to_attr: dict[str, Any] = {},
+    dt: datatree.DataTree[Any] | None = None,
+) -> datatree.DataTree[Any]:
 
     if group and ncgroup:
         print("Error, cannot specify group and ncgroup")
@@ -313,12 +312,15 @@ def get_simplified_mapping():
         print("Convert ", mapping)
         ds = convert_mapping(mapping)
 
-        with open(SIMPL_MAPPING_PATH / "ref" / mapping, "w", encoding="utf-8") as f:
+        with open(str(SIMPL_MAPPING_PATH / "ref" / mapping), "w", encoding="utf-8") as f:
             json.dump(ds, f, indent=4)
 
 
 def convert_mapping(mapping_file: str) -> dict[str, dict[str, tuple[str, str]]]:
-    with open(MAPPING_PATH / mapping_file) as f:
+    """Convert original EOPF mapping into a simplified mapping, applying a configurable remapping
+    Returns a dictionary of the mapping data
+    """
+    with open(str(MAPPING_PATH / mapping_file)) as f:
         eopf_mapping = json.load(f)
 
     new_mapping = {"chunk_sizes": eopf_mapping["chunk_sizes"]}
@@ -336,7 +338,7 @@ def convert_mapping(mapping_file: str) -> dict[str, dict[str, tuple[str, str]]]:
 
         # Check for any specific remapping
         if REMAPPING_FILE.is_file():
-            with open(REMAPPING_FILE) as rf:
+            with open(str(REMAPPING_FILE)) as rf:
                 remap = json.load(rf)
             if mapping_file in remap:
                 # if dest in remap[mapping_file]:
@@ -349,7 +351,7 @@ def convert_mapping(mapping_file: str) -> dict[str, dict[str, tuple[str, str]]]:
                         else:
                             v = dest.split("/")[-1]
                             dest = remap[mapping_file][d]
-                            l = dest.split("/")[:-1]
+                            l = dest.split("/")[:-1]  # noqa: E741
                             l.append(v)
                             dest = "/".join(l)
         if not dest:

@@ -13,29 +13,20 @@
 # limitations under the License.
 
 import logging
-import sys
-from typing import Any, Dict, List, Literal
+from typing import Any, Literal
 
-import click
 import datatree
 import numpy as np
 import pandas as pd
 import xarray as xr
-from click.testing import CliRunner
 
-from xarray_eop import EOPath, get_s3filesystem, open_datatree
-from xarray_eop.utils import filter_flags
-from xarray_eop.verification.logger import (
-    get_failed_logger,
-    get_logger,
-    get_passed_logger,
-)
+from xarray_eop import EOPath, get_s3filesystem
 
 
 # Formatted string when test fails
 def _get_failed_formatted_string_vars(
     name: str,
-    values: List[Any],
+    values: list[Any],
     threshold: float,
     relative: bool = True,
 ) -> str:
@@ -84,7 +75,7 @@ def _get_passed_formatted_string_flags(name: str, ds: xr.Dataset, bit: int) -> s
 
 
 # Function to get leaf paths
-def get_leaf_paths(paths):
+def get_leaf_paths(paths: list[str]) -> list[str]:
     """Given a list of tree paths, returns leave paths
 
     Parameters
@@ -94,7 +85,7 @@ def get_leaf_paths(paths):
 
     Returns
     -------
-        leaf patsh
+        leaf paths
     """
     leaf_paths = []
     for i in range(len(paths)):
@@ -103,7 +94,7 @@ def get_leaf_paths(paths):
     return leaf_paths
 
 
-def sort_datatree(tree: datatree.DataTree) -> datatree.DataTree:
+def sort_datatree(tree: datatree.DataTree[Any]) -> datatree.DataTree[Any]:
     """Alphabetically sort datatree.DataTree nodes by tree name
 
     Parameters
@@ -116,17 +107,15 @@ def sort_datatree(tree: datatree.DataTree) -> datatree.DataTree:
         Sorted `datatree.DataTree`
     """
     logger = logging.getLogger()
-    paths: tuple = tree.groups
-    sorted_paths: tuple = tuple(sorted(paths))
+    paths = tree.groups
+    sorted_paths = sorted(paths)
 
-    if sorted_paths == paths:
+    if tuple(sorted_paths) == paths:
         logger.debug(f"No need to sort {tree.name}")
         return tree
     else:
         logger.debug(f"Sorting {tree.name}")
-        sorted_tree = datatree.DataTree()
-        # print(sorted_paths)
-        # print(get_leaf_paths(sorted_paths))
+        sorted_tree: datatree.DataTree[Any] = datatree.DataTree()
         sorted_paths = get_leaf_paths(sorted_paths)
         for p in sorted_paths[1:]:
             sorted_tree[p] = tree[p]
@@ -144,7 +133,7 @@ def encode_time_dataset(ds: xr.Dataset) -> xr.Dataset:
     return ds
 
 
-def encode_time_datatree(dt: datatree.DataTree) -> datatree.DataTree:
+def encode_time_datatree(dt: datatree.DataTree[Any]) -> datatree.DataTree[Any]:
     for tree in dt.subtree:
         for name, var in tree.data_vars.items():
             if var.dtype == np.dtype("timedelta64[ns]") or var.dtype == np.dtype(
@@ -221,13 +210,16 @@ def drop_coordinates(ds: xr.Dataset) -> xr.Dataset:
     return ds.drop_vars(ds.coords)
 
 
-def _compute_reduced_datatree(tree: datatree.DataTree, results=None) -> Dict[str, Any]:
+def _compute_reduced_datatree(
+    tree: datatree.DataTree[Any],
+    results: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     if not results:
         results = {}
 
     for tree in tree.subtree:
         for name, var in tree.variables.items():
-            key = "/".join([tree.path, name])
+            key = "/".join([tree.path, str(name)])
             if key in results:
                 results[key].append(var.compute().data)
             else:
@@ -237,13 +229,16 @@ def _compute_reduced_datatree(tree: datatree.DataTree, results=None) -> Dict[str
     return results
 
 
-def _get_coverage(tree: datatree.DataTree, results: None) -> Dict[str, Any]:
+def _get_coverage(
+    tree: datatree.DataTree[Any],
+    results: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     if not results:
         results = {}
 
     for tree in tree.subtree:
         for name, var in tree.variables.items():
-            key = "/".join([tree.path, name])
+            key = "/".join([tree.path, str(name)])
             if key in results:
                 results[key].append(var.size)
                 results[key].append(np.prod(var.shape))
@@ -253,14 +248,17 @@ def _get_coverage(tree: datatree.DataTree, results: None) -> Dict[str, Any]:
     return results
 
 
-def variables_statistics(dt: datatree.DataTree, threshold: float) -> Dict[str, Any]:
+def variables_statistics(
+    dt: datatree.DataTree[Any],
+    threshold: float,
+) -> dict[str, Any]:
     """Compute statistics on all the variables of a `datatree.DataTree`
     Note that this function triggers the `dask.array.compute()`
 
     Parameters
     ----------
     dt
-        input `dataree.DataTree
+        input `datatree.DataTree`
     threshold
         Threshold to be used to count a number of outliers, especially in the case where `dt` represents
         an absolute or relative difference
@@ -287,17 +285,35 @@ def variables_statistics(dt: datatree.DataTree, threshold: float) -> Dict[str, A
     return results
 
 
-def bitwise_statistics_over_dataarray(array: xr.DataArray):
+def bitwise_statistics_over_dataarray(array: xr.DataArray) -> xr.Dataset:
+    """Compute bitwise statistics over a dataarray
+
+    Parameters
+    ----------
+    array
+        input dataarray. It is assumed to represent the difference between 2 bitwise flag values for instance
+        flag1 ^ flag2
+
+    Returns
+    -------
+        returns a `xarray.dataset` indexed by the bit range with the following variables
+        "bit_position",
+        "bit_meaning",
+        "total_bits":,
+        "equal_count",
+        "different_count",
+        "equal_percentage",
+        "different_percentage"
+    """
     flag_meanings = array.attrs["flag_meanings"]
     flag_masks = list(array.attrs["flag_masks"])
-    # print(type(flag_masks),flag_masks)
 
     # num_bits = len(flag_masks)
-    key: List[str] = []
+    key: list[str] = []
     if isinstance(flag_meanings, str):
         key = flag_meanings.split(" ")
 
-    bit_stats: List[Dict[str, Any]] = []
+    bit_stats: list[dict[str, Any]] = []
 
     for bit_mask in flag_masks:
         # get bit position aka log2(bit_mask)
@@ -340,7 +356,7 @@ def bitwise_statistics_over_dataarray(array: xr.DataArray):
     return xr.Dataset.from_dataframe(pd.DataFrame(bit_stats))
 
 
-def bitwise_statistics(dt: datatree.DataTree) -> Dict[str, xr.Dataset]:
+def bitwise_statistics(dt: datatree.DataTree[Any]) -> dict[str, xr.Dataset]:
     """Compute bitwise statistics on all the variables of a `datatree.DataTree`.
     The variables should represent flags/masks variables as defined by the CF conventions, aka including
     "flags_meanings" and "flags_values" as attributes
@@ -366,7 +382,7 @@ def bitwise_statistics(dt: datatree.DataTree) -> Dict[str, xr.Dataset]:
     # TODO test if dt only contains flags variables
     # call to filter_flags for instance
 
-    res: Dict[str, xr.Dataset] = {}
+    res: dict[str, xr.Dataset] = {}
     for tree in dt.subtree:
         # if tree.is_leaf:
         if tree.ds:
@@ -387,9 +403,9 @@ def product_exists(input_path: str, secret: str | None = None) -> bool:
         return url.exists()
 
 
-def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> List[tuple[str, str]]:
+def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> list[tuple[str, str]]:
     """Parse command-line option cmp-vars"""
-    list_prods: List[tuple[str, str]] = []
+    list_prods: list[tuple[str, str]] = []
 
     for vars in cmp_vars.split(","):
         var = vars.split(":")
@@ -404,10 +420,10 @@ def parse_cmp_vars(reference: str, new: str, cmp_vars: str) -> List[tuple[str, s
 
 
 def filter_datatree(
-    dt: datatree.DataTree,
-    vars_grps: List[str],
+    dt: datatree.DataTree[Any],
+    vars_grps: list[str],
     type: Literal["variables", "groups"],
-) -> datatree.DataTree:
+) -> datatree.DataTree[Any]:
     if type == "variables":
         dt = dt.filter(
             lambda node: any(
@@ -430,328 +446,3 @@ def filter_datatree(
         raise ValueError("type as incorrect value: ", type)
 
     return dt
-
-
-@click.command()
-@click.option(
-    "-ref",
-    "--reference",
-    required=True,
-    # type=click.Path(exists=True, path_type=Path),
-    type=str,
-    help="reference product ",
-)
-@click.option(
-    "-new",
-    "--new",
-    required=True,
-    # type=click.Path(exists=True, path_type=Path),
-    type=str,
-    help="new product ",
-)
-@click.option(
-    "--cmp-vars",
-    type=str,
-    help="Compare only specific variables, defined as: path/to/var_ref:path/to/var_new,... ",
-)
-@click.option(
-    "--cmp-grps",
-    type=str,
-    help="Compare only specific groups, defined as: path/to/grp_ref:path/to/grp_new,... ",
-)
-@click.option(
-    "-s",
-    "--secret",
-    type=str,
-    default=None,
-    help="Secret alias of credentials to access cloud-storage",
-)
-@click.option(
-    "-v",
-    "--verbose",
-    is_flag=True,
-    default=False,
-    show_default=True,
-    help="increased verbosity",
-)
-@click.option(
-    "--relative",
-    is_flag=True,
-    default=False,
-    show_default=True,
-    help="Compute relative error",
-)
-@click.option(
-    "--threshold",
-    required=False,
-    type=float,
-    default=1.0e-6,
-    show_default=True,
-    help="Error Threshold defining the PASSED/FAILED result",
-)
-@click.option(
-    "--flags-only",
-    required=False,
-    is_flag=True,
-    default=False,
-    show_default=True,
-    help="Compute comparison only for flags/masks variables",
-)
-@click.option("-o", "--output", required=False, help="output file")
-def compare(
-    reference: str,
-    new: str,
-    cmp_vars: str,
-    cmp_grps: str,
-    secret: str,
-    verbose: bool,
-    relative: bool,
-    threshold,
-    flags_only: bool,
-    output: str,
-):
-    """CLI tool to compare two products Zarr or SAFE
-
-    Parameters
-    ----------
-    reference: Path
-        Reference product path
-    new: Path
-        New product path
-    verbose: bool
-        2-level of verbosity (INFO or DEBUG)
-    relative: bool
-        Compute relative or absolute error, default is True
-    threshold
-        Threshold to determine wheter the comparison is PASSED or FAILED
-    """
-    # Initialize stream
-    if output:
-        stream = open(output, mode="w")
-    else:
-        stream = sys.stderr
-
-    # Initialize logging
-    level = logging.INFO
-    if verbose:
-        level = logging.DEBUG
-    logger = get_logger("compare", level=level, stream=stream)
-    logger.setLevel(level)
-
-    passed_logger = get_passed_logger("passed", stream=stream)
-    failed_logger = get_failed_logger("failed", stream=stream)
-
-    # Check input products
-    if not product_exists(reference, secret):
-        logger.error(f"{reference} cannot be found.")
-        exit(1)
-    if not product_exists(new, secret):
-        logger.error(f"{new} cannot be found.")
-        exit(1)
-    logger.info(
-        f"Compare the new product {new} to the reference product {reference}",
-    )
-
-    # Check if specific variables/groups
-    if cmp_vars:
-        list_ref_new_vars = parse_cmp_vars(reference, new, cmp_vars)
-    if cmp_grps:
-        list_ref_new_grps = parse_cmp_vars(reference, new, cmp_grps)
-
-    # Open reference product
-    kwargs: dict[str, Any] = {}
-    kwargs["decode_times"] = False
-    kwargs["fs_copy"] = True
-    if secret:
-        kwargs["secret_alias"] = secret
-    dt_ref = open_datatree(reference, **kwargs)
-    dt_ref.name = "ref"
-    logger.debug(dt_ref)
-
-    # Open new product
-    dt_new = open_datatree(new, **kwargs)
-    dt_new.name = "new"
-    logger.debug(dt_new)
-
-    # Sort datatree
-    dt_ref = sort_datatree(dt_ref)
-    dt_new = sort_datatree(dt_new)
-
-    # Filter datatree
-    if cmp_vars:
-        dt_ref = filter_datatree(
-            dt_ref,
-            [var[0] for var in list_ref_new_vars],
-            type="variables",
-        )
-        dt_new = filter_datatree(
-            dt_new,
-            [var[1] for var in list_ref_new_vars],
-            type="variables",
-        )
-    if cmp_grps:
-        dt_ref = filter_datatree(
-            dt_ref,
-            [var[0] for var in list_ref_new_grps],
-            type="groups",
-        )
-        dt_new = filter_datatree(
-            dt_new,
-            [var[1] for var in list_ref_new_grps],
-            type="groups",
-        )
-
-    # Check if datatrees are isomorphic
-    if not dt_new.isomorphic(dt_ref):
-        logger.error("Reference and new products are not isomorphic")
-        logger.error("Comparison fails")
-        return
-
-    # dt_ref = drop_duplicates(dt_ref)
-    # dt_new = drop_duplicates(dt_new)
-    # dt_new = encode_time_datatree(dt_new)
-    # dt_ref = encode_time_datatree(dt_ref)
-
-    # Variable statistics
-    if not flags_only:
-        if relative:
-            dt_ref_tmp = dt_ref.where(dt_ref != 0)
-            dt_new_tmp = dt_new.where(dt_ref != 0)
-            err = (dt_new_tmp - dt_ref_tmp) / dt_ref_tmp
-        else:
-            err = dt_new - dt_ref
-
-        results: Dict[str, Any] = variables_statistics(err, threshold)
-
-        logger.info("-- Verification of variables")
-        for name, val in results.items():
-            if all(v < threshold for v in val[:-2]):
-                passed_logger.info(f"{name}")
-            else:
-                failed_logger.info(
-                    _get_failed_formatted_string_vars(
-                        name,
-                        val,
-                        threshold,
-                        relative=relative,
-                    ),
-                )
-
-    # Flags statistics
-    flags_ref = filter_flags(dt_ref)
-    flags_new = filter_flags(dt_new)
-
-    with xr.set_options(keep_attrs=True):
-        err_flags = flags_ref ^ flags_new
-
-    res: Dict[str, xr.Dataset] = bitwise_statistics(err_flags)
-    eps = 100.0 * (1.0 - threshold)
-    logger.info(f"-- Verification of flags: threshold = {eps}%")
-    for name, ds in res.items():
-        # ds_outlier = ds.where(ds.equal_percentage < eps, other=-1, drop=True)
-        for bit in ds.index.data:
-            if ds.equal_percentage[bit] < eps:
-                failed_logger.info(
-                    _get_failed_formatted_string_flags(name, ds, bit, eps),
-                )
-            else:
-                passed_logger.info(
-                    _get_passed_formatted_string_flags(name, ds, bit),
-                )
-
-    logger.info("Exiting compare")
-
-    if output:
-        stream.close()
-
-
-# Function to call the Click command programmatically
-def call_compare(
-    reference: str,
-    new: str,
-    verbose: bool = True,
-    relative: bool = True,
-    threshold: float = 1.0e-6,
-    flags_only: bool = False,
-    cmp_vars: str | None = None,
-    cmp_grps: str | None = None,
-    secret: str | None = None,
-):
-    """Callable function to compare two products Zarr or SAFE
-
-    Parameters
-    ----------
-    reference: Path
-        Reference product path
-    new: Path
-        New product path
-    """
-    runner = CliRunner()
-    args = ["--reference", reference, "--new", new, "--threshold", threshold]
-    if verbose:
-        args.append("--verbose")
-    if flags_only:
-        args.append("--flags-only")
-    if relative:
-        args.append("--relative")
-    if cmp_vars:
-        args.extend(["--cmp-vars", cmp_vars])
-    if cmp_grps:
-        args.extend(["--cmp-grps", cmp_grps])
-    if secret:
-        args.extend(["--secret", secret])
-    result = runner.invoke(
-        compare,
-        args,
-    )
-    if result.exit_code != 0:
-        print(f"Error: {result.output}")
-    else:
-        print(result.output)
-
-
-if __name__ == "__main__":
-    # Test
-    internal_path = EOPath(
-        # "/mount/internal/work-st/projects/cs-412/2078-dpr/Samples/Products",
-        # "/mount/internal/work-st/projects/cs-412/2078-dpr/workspace/vlevasseur",
-        "s3://buc-acaw-dpr/Samples/SAFE/",
-    )
-    ref = (
-        internal_path
-        # / "SAFE"
-        # / "S3B_OL_1_ERR____20230506T015316_20230506T015616_20230711T065804_0179_079_117______LR1_D_NR_003.SEN3"
-        # / "S3B_SL_1_RBT____20230315T095847_20230315T100147_20230316T030042_0179_077_150_4320_PS2_O_NT_004.SEN3"
-        / "S3A_OL_1_ERR____20191227T124211_20191227T124311_20230616T083918_0059_053_109______LR1_D_NT_003.SEN3"
-    )
-    # new = internal_path / "Zarr_DDR" / "S03OLCERR_20230506T015316_0180_B117_T978.zarr"
-    # new = internal_path / "Zarr_DDR" / "S03SLSRBT_20230315T095847_0179_B150_S015.zarr"
-    new = (
-        internal_path
-        / "S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3"
-    )
-
-    path = EOPath("s3://buc-acaw-dpr/Samples/Zarr/")
-    ref = path / "S03OLCERR_20191227T124211_0059_A109_S000.zarr"
-    new = path / "S03OLCERR_20191227T124211_0059_A109_S001.zarr"
-
-    # call_compare(ref,new,verbose=False,relative=True,threshold=2.e-5,cmp_grps="/measurements:/measurements")
-    call_compare(
-        ref,
-        new,
-        verbose=False,
-        relative=True,
-        threshold=2.0e-5,
-        cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance",
-    )
-
-    # call_compare(
-    #     ref,
-    #     new,
-    #     verbose=False,
-    #     # relative=True,
-    #     threshold=2.0e-5,
-    #     # flags_only=False,
-    #     # cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance"
-    #     secret="acaw-dpr"
-    # )

@@ -1,12 +1,15 @@
 from pathlib import Path
-from typing import KeysView, List
+from typing import Any, KeysView
 
 import datatree
 import xarray as xr
 import zarr
 
 
-def open_zarr_groups_from_dict(url: Path, group_list: list[str] | KeysView[str]):
+def open_zarr_groups_from_dict(
+    url: Path,
+    group_list: list[str] | KeysView[str],
+) -> None:
     list_of_groups = []
     for zarr_path in group_list:
         p = Path(zarr_path)
@@ -16,7 +19,11 @@ def open_zarr_groups_from_dict(url: Path, group_list: list[str] | KeysView[str])
                 list_of_groups.append(r)
 
 
-def convert_dict_to_plantuml(dictionary, name, direction=0):
+def convert_dict_to_plantuml(
+    dictionary: dict[str, Any],
+    name: str,
+    direction: int = 0,
+) -> str:
     """Convert a dictionary to a UML diagram based on plantUML
 
     Parameters
@@ -65,7 +72,7 @@ def convert_dict_to_plantuml(dictionary, name, direction=0):
 
 def collect_flags_from_datatree(
     dt: datatree.DataTree,
-    variable_pattern: List[str] = ["flag", "mask"],
+    variable_pattern: list[str] = ["flag", "mask"],
     isomorphic: bool = False,
 ) -> datatree.DataTree:
     """Collect all flag variables from a datatree.

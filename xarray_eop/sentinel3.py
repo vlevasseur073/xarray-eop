@@ -4,7 +4,7 @@ import warnings
 from collections import Counter
 from itertools import count
 from pathlib import Path
-from typing import Any, Dict, List, Literal, Optional, Tuple, Union
+from typing import Any, Literal, Tuple
 
 import datatree
 import s3fs
@@ -37,7 +37,7 @@ def _fix_dataset(
     url: EOPath,
     ds: dict[str, xr.Dataset],
     key: str,
-    chunk_sizes: Dict[str, int] | None = None,
+    chunk_sizes: dict[str, int] | None = None,
     fs: s3fs.S3FileSystem = None,
     decode_times: bool = True,
     **kwargs: Any,
@@ -80,9 +80,9 @@ def _fix_dataset(
 
 
 def _create_dataset_from_ncfiles(
-    input_list: List[EOPath],
-    chunk_sizes: Dict[str, int] | None,
-    storage_options: Dict[str, Any] | None = None,
+    input_list: list[EOPath],
+    chunk_sizes: dict[str, int] | None,
+    storage_options: dict[str, Any] | None = None,
     decode_times: bool = True,
     **kwargs: Any,
 ) -> dict[str, xr.Dataset]:
@@ -202,7 +202,7 @@ def _merge_dataset(
 
 
 def _get_s3filesystem_from_storage_options(
-    storage_options: Dict[str, Any] | None = None,
+    storage_options: dict[str, Any] | None = None,
 ) -> s3fs.S3FileSystem:
     if storage_options is None:
         return s3fs.S3FileSystem(anon=True)
@@ -220,7 +220,7 @@ def _get_s3filesystem_from_storage_options(
 
 def _get_info_from_sentinel3_legacy_product_path(
     product_urlpath: str | Path | EOPath,
-    storage_options: Dict[str, Any] | None = None,
+    storage_options: dict[str, Any] | None = None,
     fs_copy: bool | None = None,
 ) -> tuple[EOPath, str, list[str | Path], tempfile.TemporaryDirectory[Any] | None]:
     """ "Get some information given a path
@@ -235,7 +235,7 @@ def _get_info_from_sentinel3_legacy_product_path(
     """
     url: EOPath = EOPath(product_urlpath)
     product_type: str
-    files: List[EOPath]
+    files: list[EOPath]
     temp_path: tempfile.TemporaryDirectory[Any] | None = None
 
     if url.protocol == "s3":
@@ -264,10 +264,10 @@ def _get_data_mapping(
     dataset: Literal["eogroup", "netcdf"],
     url: EOPath,
     product_type: str,
-    files: List[EOPath],
+    files: list[EOPath],
     ncfile_or_eogroup: str | None = None,
     simplified_mapping: bool | None = None,
-) -> tuple[Dict[str, Any], Dict[str, Any], List[EOPath]]:
+) -> tuple[dict[str, Any], dict[str, Any], list[EOPath]]:
     data_map = {}
     chunk_sizes = {}
     if dataset == "eogroup":
@@ -291,20 +291,23 @@ def _get_data_mapping(
                 f for f in files if f.name in data_map[ncfile_or_eogroup].keys()
             ]
     else:
-        ncfile_path: EOPath = url / ncfile_or_eogroup
-        selected_files = [ncfile_path]
+        if ncfile_or_eogroup is None:
+            selected_files = [url]
+        else:
+            ncfile_path: EOPath = url / ncfile_or_eogroup
+            selected_files = [ncfile_path]
 
     return data_map, chunk_sizes, selected_files
 
 
 def open_sentinel3_dataset(
-    product_urlpath: Union[str, Path],
-    ncfile_or_eogroup: Union[str, Path],
+    product_urlpath: str | Path,
+    ncfile_or_eogroup: str | Path,
     *,
-    drop_variables: Optional[Tuple[str]] = None,
-    storage_options: Optional[Dict[str, Any]] = None,
-    simplified_mapping: Optional[bool] = None,
-    fs_copy: Optional[bool] = None,
+    drop_variables: Tuple[str] | None = None,
+    storage_options: dict[str, Any] | None = None,
+    simplified_mapping: bool | None = None,
+    fs_copy: bool | None = None,
 ) -> xr.Dataset:
     if drop_variables is not None:
         warnings.warn("'drop_variables' is currently ignored")
@@ -331,7 +334,7 @@ def open_sentinel3_dataset(
         dataset = "eogroup"
 
     # Create the mapping to organise the new dataset
-    chunk_sizes: Dict[str, Any] | None
+    chunk_sizes: dict[str, Any] | None
     data_map, chunk_sizes, selected_files = _get_data_mapping(
         dataset,
         url,
@@ -365,7 +368,7 @@ def open_safe_datatree(
     simplified_mapping: bool | None = None,
     fs_copy: bool | None = None,
     **kwargs: Any,
-) -> datatree.DataTree:
+) -> datatree.DataTree[Any]:
     """Opens a Sentinel-3 SAFE product as a full datatree
 
     Parameters
@@ -404,7 +407,7 @@ def open_safe_datatree(
         fs_copy=fs_copy,
     )
     # Create the mapping to organise the new dataset
-    chunk_sizes: Dict[str, Any] | None
+    chunk_sizes: dict[str, Any] | None
     data_map, chunk_sizes, selected_files = _get_data_mapping(
         "eogroup",
         url,

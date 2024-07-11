@@ -82,5 +82,5 @@ sentinel-3 = "xarray_eop.xarray_backends:Sentinel3Backend"
 eop = "xarray_eop.xarray_backends:EOPBackend"
 
 [project.scripts]
-compare = "xarray_eop.verification.compare:compare"
+eop_compare = "xarray_eop.verification.cli_compare:compare"
 convert = "xarray_eop.conversion.convert:convert"

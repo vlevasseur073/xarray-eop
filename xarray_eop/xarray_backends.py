@@ -1,5 +1,6 @@
 import os
-from typing import Any, Dict, Optional, Tuple
+from pathlib import Path
+from typing import Any, Tuple
 
 import xarray as xr
 
@@ -13,14 +14,14 @@ class Sentinel3Backend(xr.backends.common.BackendEntrypoint):
 
     def open_dataset(
         self,
-        filename_or_obj: str,
+        filename_or_obj: str | Path,
         *,
         file_or_group: str,
-        drop_variables: Optional[Tuple[str]] = None,
-        storage_options: Optional[Dict[str, Any]] = None,
-        simplified_mapping: Optional[bool] = None,
-        fs_copy: Optional[bool] = None,
-        secret_alias: Optional[str] = None,
+        drop_variables: Tuple[str] | None = None,
+        storage_options: dict[str, Any] | None = None,
+        simplified_mapping: bool | None = None,
+        fs_copy: bool | None = None,
+        secret_alias: str | None = None,
     ) -> xr.Dataset:
         url: EOPath = EOPath(filename_or_obj)
         if url.protocol and not storage_options:
@@ -51,11 +52,11 @@ class EOPBackend(xr.backends.common.BackendEntrypoint):
 
     def open_dataset(  # type: ignore
         self,
-        filename_or_obj: str,
+        filename_or_obj: str | Path,
         *,
-        drop_variables: Optional[Tuple[str]] = None,
-        group: Optional[str] = None,
-        storage_options: Optional[Dict[str, Any]] = None,
+        drop_variables: Tuple[str] | None = None,
+        group: str | None = None,
+        storage_options: dict[str, Any] | None = None,
         decode_times: bool | None = None,
     ) -> xr.Dataset:
         return eop.open_eop_dataset(
