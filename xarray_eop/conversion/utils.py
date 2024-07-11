@@ -103,7 +103,7 @@ def gen_static_adf_name(
     pattern: str,
     start: str | None = None,
     stop: str | None = None,
-    format: str ="zarr",
+    format: str = "zarr",
 ) -> str:
     """Generate a static ADF name"""
     now = datetime.now()
@@ -168,7 +168,9 @@ def generate_datatree_from_legacy_adf(
     safe: Path,
     title: str = "",
     safe_file: list[str] = None,
-    group: str | None = None,  # if group=None, by default subgroup maps is created if group=="" no subgroup
+    group: (
+        str | None
+    ) = None,  # if group=None, by default subgroup maps is created if group=="" no subgroup
     ncgroup: str | None = None,
     merged_variables: list[Any] = [],
     merged_mapping: dict[str, Any] = {},
@@ -312,7 +314,9 @@ def get_simplified_mapping():
         print("Convert ", mapping)
         ds = convert_mapping(mapping)
 
-        with open(str(SIMPL_MAPPING_PATH / "ref" / mapping), "w", encoding="utf-8") as f:
+        with open(
+            str(SIMPL_MAPPING_PATH / "ref" / mapping), "w", encoding="utf-8"
+        ) as f:
             json.dump(ds, f, indent=4)
 
 
