@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Get Started &#8212; xarray-eop  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Welcome to xarray-eop’s documentation!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">xarray-eop  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Get Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorial.html">Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/tutorial_open_SAFE.html">Open a SAFE product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/tutorial_open_Zarr.html">Open a EOPF Zarr product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/example_call_compare.html">Use of the verification tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.open_datatree.html">xarray_eop.open_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.EOPath.html">xarray_eop.EOPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.datatree_to_uml.html">xarray_eop.datatree_to_uml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.create_dataset_from_zmetadata.html">xarray_eop.create_dataset_from_zmetadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.create_datatree_from_zmetadata.html">xarray_eop.create_datatree_from_zmetadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.get_credentials.html">xarray_eop.get_credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.get_s3filesystem.html">xarray_eop.get_s3filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.conversion.convert.product_converter.html">xarray_eop.conversion.convert.product_converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.credentials.get_credentials_from_env.html">xarray_eop.credentials.get_credentials_from_env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.eop.open_eop_dataset.html">xarray_eop.eop.open_eop_dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.eop.open_eop_datatree.html">xarray_eop.eop.open_eop_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.sentinel3.open_safe_datatree.html">xarray_eop.sentinel3.open_safe_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.utils.convert_dict_to_plantuml.html">xarray_eop.utils.convert_dict_to_plantuml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/xarray_eop.verification.compare.html">xarray_eop.verification.compare</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/usage.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Get Started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-extended-path-class">A simple extended Path class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage-credentials">Cloud-storage credentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-sentinel-3-safe-product">Open Sentinel-3 SAFE product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-specific-dataset-using-xarray-dataset">Open a specific dataset using <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray_eop.xr.open_dataset"><code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-whole-safe-product">Open the whole SAFE product</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-tool">Verification Tool</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="get-started">
+<h1>Get Started<a class="headerlink" href="#get-started" title="Link to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Install xarray-eop using pip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>xarray-eop
+</pre></div>
+</div>
+</section>
+<section id="a-simple-extended-path-class">
+<h2>A simple extended Path class<a class="headerlink" href="#a-simple-extended-path-class" title="Link to this heading">#</a></h2>
+<p>To handle both local filesystem path as well as distributed cloud storage or fsspec-like chain URL, a simple class <a class="reference internal" href="generated/xarray_eop.EOPath.html#xarray_eop.EOPath" title="xarray_eop.EOPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EOPath</span></code></a> is implemented deriving from <code class="xref py py-obj docutils literal notranslate"><span class="pre">pathlib.Path</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">xarray_eop.path</span> <span class="kn">import</span> <span class="n">EOPath</span>
+
+<span class="gp">In [2]: </span><span class="n">p</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;s3://bucket/prod/file&quot;</span><span class="p">)</span>
+
+<span class="gp">In [3]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">s3://bucket/prod/file</span>
+
+<span class="gp">In [4]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<span class="go">bucket/prod/file</span>
+
+<span class="gp">In [5]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">file</span>
+
+<span class="gp">In [6]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">protocol</span><span class="p">)</span>
+<span class="go">s3</span>
+
+<span class="gp">In [7]: </span><span class="n">p</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;zip::s3//bucket/prod/file.zip&quot;</span><span class="p">)</span>
+
+<span class="gp">In [8]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">zip::s3/bucket/prod/file.zip</span>
+
+<span class="gp">In [9]: </span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">zip</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cloud-storage-credentials">
+<h2>Cloud-storage credentials<a class="headerlink" href="#cloud-storage-credentials" title="Link to this heading">#</a></h2>
+<p>In <cite>xarray_eop</cite>, functions to open dataset/datatree can also access products in S3 object storage. The credentials
+can be explicitely passed to the function using the addition kwargs <em>backend_kwargs</em>, whose value is a dictionary in
+the form {“s3”:{“key”: <em>access-key</em>,”secret”: <em>secret-key</em>,”endpoint_url”: <em>endpoint_url</em>}}. In the case where
+no credentials are explicitely set, the function tried to retrieve it from environment variable.</p>
+<p>Additionaly <cite>xarray_eop</cite> provides few functions among which:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xarray_eop.get_credentials.html#xarray_eop.get_credentials" title="xarray_eop.get_credentials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_eop.get_credentials</span></code></a>(url[, profile])</p></td>
+<td><p>Get credentials given an url path For S3 protocol, it looks first for the AWS-like (<code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">AWS_ENDPOINT_URL</span></code>) or S3-like (<code class="docutils literal notranslate"><span class="pre">S3_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">S3_SECRET</span></code>, <code class="docutils literal notranslate"><span class="pre">S3_URL</span></code>) environment variables, or if a profile is given</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xarray_eop.get_s3filesystem.html#xarray_eop.get_s3filesystem" title="xarray_eop.get_s3filesystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_eop.get_s3filesystem</span></code></a>(url[, profile, anon])</p></td>
+<td><p>Get S3 File System from an url.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="kn">from</span> <span class="nn">xarray_eop</span> <span class="kn">import</span> <span class="n">EOPath</span><span class="p">,</span> <span class="n">get_s3filesystem</span>
+
+<span class="gp">In [11]: </span><span class="n">url</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;s3://buc-acaw-dpr/Samples&quot;</span><span class="p">)</span>
+
+<span class="gp">In [12]: </span><span class="n">s3fs</span> <span class="o">=</span> <span class="n">get_s3filesystem</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="gp">In [13]: </span><span class="n">s3fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<span class="gh">Out[13]: </span><span class="go">True</span>
+
+<span class="gp">In [14]: </span><span class="n">s3fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<span class="gh">Out[14]: </span>
+<span class="go">[&#39;buc-acaw-dpr/Samples/CADUs&#39;,</span>
+<span class="go"> &#39;buc-acaw-dpr/Samples/SAFE&#39;,</span>
+<span class="go"> &#39;buc-acaw-dpr/Samples/Zarr&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="open-sentinel-3-safe-product">
+<h2>Open Sentinel-3 SAFE product<a class="headerlink" href="#open-sentinel-3-safe-product" title="Link to this heading">#</a></h2>
+<section id="open-a-specific-dataset-using-xarray-dataset">
+<h3>Open a specific dataset using <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.dataset</span></code><a class="headerlink" href="#open-a-specific-dataset-using-xarray-dataset" title="Link to this heading">#</a></h3>
+<p>The <cite>sentinel-3</cite> backend mainly consists of organizing the structure following the new EOP zarr Product Structure specification.
+Simple datasets can be created from a specific netcdf file or a group corresponding to a valid EOP zarr path.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="xarray_eop.xr.open_dataset">
+<span class="sig-prename descclassname"><span class="pre">xr.</span></span><span class="sig-name descname"><span class="pre">open_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_or_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sentinel-3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoded_times</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xarray_eop.xr.open_dataset" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product</strong> (<em>str</em><em> or </em><em>Path</em>) – Path to the SEN3 product</p></li>
+<li><p><strong>file_or_group</strong> (<em>str</em><em> or </em><em>Path</em>) – Netcdf files from the product to be opened or equivalent EOP zarr group</p></li>
+<li><p><strong>backend_kwargs</strong> (<em>Dict</em>) – kwargs specific to the backend. Specifically, it is used to passe the credentials to a S3 bucket, as backend_kwargs = {“storage_options”: {“s3”: {“key”=…,”secret”=…,”endpoint_url”=…}}}</p></li>
+<li><p><strong>decoded_times</strong> (<em>boolean</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>xarray dataset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>For instance, opening the <em>instrument_data.nc</em> file from OLCI L1 ERR product will be as follows.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="gp">In [16]: </span><span class="kn">from</span> <span class="nn">xarray_eop.path</span> <span class="kn">import</span> <span class="n">EOPath</span>
+
+<span class="gp">In [17]: </span><span class="n">buc_name</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;s3://buc-acaw-dpr&quot;</span><span class="p">)</span>
+
+<span class="gp">In [18]: </span><span class="n">product</span> <span class="o">=</span> <span class="n">buc_name</span> <span class="o">/</span> <span class="s2">&quot;Samples/SAFE/S3B_OL_1_ERR____20230506T015316_20230506T015616_20230711T065804_0179_079_117______LR1_D_NR_003.SEN3&quot;</span>
+
+<span class="gp">In [19]: </span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+<span class="gp">   ....: </span>    <span class="n">product</span><span class="p">,</span>
+<span class="gp">   ....: </span>    <span class="n">file_or_group</span><span class="o">=</span><span class="s2">&quot;instrument_data.nc&quot;</span><span class="p">,</span>
+<span class="gp">   ....: </span>    <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;sentinel-3&quot;</span><span class="p">,</span>
+<span class="gp">   ....: </span><span class="p">)</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [20]: </span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="go">&lt;xarray.Dataset&gt; Size: 11MB</span>
+<span class="go">Dimensions:                       (rows: 1023, columns: 1217, bands: 21,</span>
+<span class="go">                                   detectors: 3700, bands1: 21, bands2: 21)</span>
+<span class="go">Dimensions without coordinates: rows, columns, bands, detectors, bands1, bands2</span>
+<span class="go">Data variables:</span>
+<span class="go">    detector_index                (rows, columns) float32 5MB ...</span>
+<span class="go">    frame_offset                  (rows, columns) float32 5MB ...</span>
+<span class="go">    lambda0                       (bands, detectors) float32 311kB ...</span>
+<span class="go">    FWHM                          (bands, detectors) float32 311kB ...</span>
+<span class="go">    solar_flux                    (bands, detectors) float32 311kB ...</span>
+<span class="go">    relative_spectral_covariance  (bands1, bands2) float32 2kB ...</span>
+<span class="go">Attributes: (12/17)</span>
+<span class="go">    netCDF_version:         4.2 of Jul  8 2020 09:28:41 $</span>
+<span class="go">    product_name:           S3B_OL_1_ERR____20230506T015316_20230506T015616_2...</span>
+<span class="go">    title:                  OLCI Level 1b Product, Instrument Data Set</span>
+<span class="go">    institution:            LR1</span>
+<span class="go">    source:                 IPF-OL-1-EO 06.17</span>
+<span class="go">    history:                 </span>
+<span class="go">    ...                     ...</span>
+<span class="go">    start_time:             2023-05-06T01:53:16.029027Z</span>
+<span class="go">    stop_time:              2023-05-06T01:56:16.040795Z</span>
+<span class="go">    processing_baseline:    OL__L1_.003.03.00</span>
+<span class="go">    comment:                 </span>
+<span class="go">    ac_subsampling_factor:  16</span>
+<span class="go">    al_subsampling_factor:  1</span>
+
+<span class="gp">In [21]: </span><span class="o">%</span><span class="k">xmode</span> minimal
+<span class="go">Exception reporting mode: Minimal</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The credentials to the cloud storage can be passed to the function using the <em>backend_kwargs</em> arguments as</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;storage_options&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;s3&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;key&quot;</span><span class="err">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;secret&quot;</span><span class="err">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;endpoint_url&quot;</span><span class="err">=</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If <em>storage_options</em> are not passed, the function looks for the environment variables <cite>AWS_ACCESS_KEY_ID</cite>, <cite>AWS_SECRET_ACCESS_KEY</cite>, <cite>AWS_ENDPOINT_URL</cite>
+or <cite>S3_KEY</cite>, <cite>S3_SECRET</cite>, <cite>S3_URL</cite></p>
+</div>
+</section>
+<section id="open-the-whole-safe-product">
+<h3>Open the whole SAFE product<a class="headerlink" href="#open-the-whole-safe-product" title="Link to this heading">#</a></h3>
+<p>The whole product can be represented by the experimental DataTree hierarchical structure, using the high-level function:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_eop.api.open_datatree</span></code>(product_urlpath, *)</p></td>
+<td><p>Open a tree data (zarr sentinel product) from bucket or local file system, based on <code class="xref py py-obj docutils literal notranslate"><span class="pre">datatree.DataTree</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now let’s open the whole OLCI L1 ERR product from s3 bucket:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="gp">In [23]: </span><span class="kn">from</span> <span class="nn">xarray_eop</span> <span class="kn">import</span> <span class="n">open_datatree</span>
+
+<span class="gp">In [24]: </span><span class="kn">from</span> <span class="nn">xarray_eop</span> <span class="kn">import</span> <span class="n">EOPath</span>
+
+<span class="gp">In [25]: </span><span class="n">buc_name</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;s3://buc-acaw-dpr&quot;</span><span class="p">)</span>
+
+<span class="gp">In [26]: </span><span class="n">product</span> <span class="o">=</span> <span class="n">buc_name</span> <span class="o">/</span> <span class="s2">&quot;Samples/SAFE/S3B_OL_1_ERR____20230506T015316_20230506T015616_20230711T065804_0179_079_117______LR1_D_NR_003.SEN3&quot;</span>
+
+<span class="gp">In [27]: </span><span class="n">dt</span> <span class="o">=</span> <span class="n">open_datatree</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+
+<span class="gp">In [28]: </span><span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="go">DataTree(&#39;None&#39;, parent=None)</span>
+<span class="go">├── DataTree(&#39;measurements&#39;)</span>
+<span class="go">│       Dimensions:        (rows: 1023, columns: 1217)</span>
+<span class="go">│       Coordinates:</span>
+<span class="go">│           latitude       (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           longitude      (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           time_stamp     (rows) datetime64[ns] 8kB dask.array&lt;chunksize=(1023,), meta=np.ndarray&gt;</span>
+<span class="go">│       Dimensions without coordinates: rows, columns</span>
+<span class="go">│       Data variables: (12/21)</span>
+<span class="go">│           oa01_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa02_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa03_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa04_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa05_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa06_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           ...             ...</span>
+<span class="go">│           oa16_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa17_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa18_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa19_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa20_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│           oa21_radiance  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">├── DataTree(&#39;conditions&#39;)</span>
+<span class="go">│   ├── DataTree(&#39;image&#39;)</span>
+<span class="go">│   │       Dimensions:         (rows: 1023, columns: 1217)</span>
+<span class="go">│   │       Coordinates:</span>
+<span class="go">│   │           latitude        (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│   │           longitude       (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│   │       Dimensions without coordinates: rows, columns</span>
+<span class="go">│   │       Data variables:</span>
+<span class="go">│   │           frame_offset    (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│   │           detector_index  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│   │           altitude        (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">│   ├── DataTree(&#39;geometry&#39;)</span>
+<span class="go">│   │       Dimensions:    (tie_rows: 1023, tie_columns: 77)</span>
+<span class="go">│   │       Coordinates:</span>
+<span class="go">│   │           latitude   (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           longitude  (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │       Dimensions without coordinates: tie_rows, tie_columns</span>
+<span class="go">│   │       Data variables:</span>
+<span class="go">│   │           oaa        (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           oza        (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           saa        (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           sza        (tie_rows, tie_columns) float64 630kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   ├── DataTree(&#39;meteorology&#39;)</span>
+<span class="go">│   │       Dimensions:                          (tie_rows: 1023, tie_columns: 77,</span>
+<span class="go">│   │                                             tie_pressure_levels: 25, wind_vectors: 2)</span>
+<span class="go">│   │       Coordinates:</span>
+<span class="go">│   │         * tie_pressure_levels              (tie_pressure_levels) float32 100B 1e+03...</span>
+<span class="go">│   │       Dimensions without coordinates: tie_rows, tie_columns, wind_vectors</span>
+<span class="go">│   │       Data variables:</span>
+<span class="go">│   │           atmospheric_temperature_profile  (tie_rows, tie_columns, tie_pressure_levels) float32 8MB dask.array&lt;chunksize=(1023, 77, 25), meta=np.ndarray&gt;</span>
+<span class="go">│   │           horizontal_wind                  (tie_rows, tie_columns, wind_vectors) float32 630kB dask.array&lt;chunksize=(1023, 77, 2), meta=np.ndarray&gt;</span>
+<span class="go">│   │           humidity                         (tie_rows, tie_columns) float32 315kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           sea_level_pressure               (tie_rows, tie_columns) float32 315kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           total_columnar_water_vapour      (tie_rows, tie_columns) float32 315kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   │           total_ozone                      (tie_rows, tie_columns) float32 315kB dask.array&lt;chunksize=(1023, 77), meta=np.ndarray&gt;</span>
+<span class="go">│   └── DataTree(&#39;instrument&#39;)</span>
+<span class="go">│           Dimensions:                       (bands: 21, detectors: 3700, bands1: 21,</span>
+<span class="go">│                                              bands2: 21)</span>
+<span class="go">│           Dimensions without coordinates: bands, detectors, bands1, bands2</span>
+<span class="go">│           Data variables:</span>
+<span class="go">│               fwhm                          (bands, detectors) float32 311kB dask.array&lt;chunksize=(21, 3700), meta=np.ndarray&gt;</span>
+<span class="go">│               lambda0                       (bands, detectors) float32 311kB dask.array&lt;chunksize=(21, 3700), meta=np.ndarray&gt;</span>
+<span class="go">│               relative_spectral_covariance  (bands1, bands2) float32 2kB dask.array&lt;chunksize=(21, 21), meta=np.ndarray&gt;</span>
+<span class="go">│               solar_flux                    (bands, detectors) float32 311kB dask.array&lt;chunksize=(21, 3700), meta=np.ndarray&gt;</span>
+<span class="go">└── DataTree(&#39;quality&#39;)</span>
+<span class="go">        Dimensions:            (rows: 1023, columns: 1217)</span>
+<span class="go">        Coordinates:</span>
+<span class="go">            latitude           (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            longitude          (rows, columns) float64 10MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">        Dimensions without coordinates: rows, columns</span>
+<span class="go">        Data variables: (12/22)</span>
+<span class="go">            quality_flags      (rows, columns) uint32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa01_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa02_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa03_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa04_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa05_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            ...                 ...</span>
+<span class="go">            oa16_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa17_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa18_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa19_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa20_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+<span class="go">            oa21_radiance_unc  (rows, columns) float32 5MB dask.array&lt;chunksize=(1023, 1217), meta=np.ndarray&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="verification-tool">
+<h2>Verification Tool<a class="headerlink" href="#verification-tool" title="Link to this heading">#</a></h2>
+<p>xarray_eop comes with a verification tool which compares to input products (SAFE or Zarr)
+The CLI tool can be run and displays option by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>compare<span class="w"> </span>--help
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to xarray-eop’s documentation!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-extended-path-class">A simple extended Path class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage-credentials">Cloud-storage credentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-sentinel-3-safe-product">Open Sentinel-3 SAFE product</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-specific-dataset-using-xarray-dataset">Open a specific dataset using <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray_eop.xr.open_dataset"><code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-whole-safe-product">Open the whole SAFE product</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-tool">Verification Tool</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vincent Levasseur
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Vincent Levasseur.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

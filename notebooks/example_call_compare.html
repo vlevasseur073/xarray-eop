@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Use of the verification tool &#8212; xarray-eop  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/example_call_compare';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API" href="../api.html" />
+    <link rel="prev" title="Open a EOPF Zarr product" href="tutorial_open_Zarr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">xarray-eop  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Get Started</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../tutorial.html">Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_open_SAFE.html">Open a SAFE product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_open_Zarr.html">Open a EOPF Zarr product</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use of the verification tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.open_datatree.html">xarray_eop.open_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.EOPath.html">xarray_eop.EOPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.datatree_to_uml.html">xarray_eop.datatree_to_uml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.create_dataset_from_zmetadata.html">xarray_eop.create_dataset_from_zmetadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.create_datatree_from_zmetadata.html">xarray_eop.create_datatree_from_zmetadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.get_credentials.html">xarray_eop.get_credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.get_s3filesystem.html">xarray_eop.get_s3filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.conversion.convert.product_converter.html">xarray_eop.conversion.convert.product_converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.credentials.get_credentials_from_env.html">xarray_eop.credentials.get_credentials_from_env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.eop.open_eop_dataset.html">xarray_eop.eop.open_eop_dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.eop.open_eop_datatree.html">xarray_eop.eop.open_eop_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.sentinel3.open_safe_datatree.html">xarray_eop.sentinel3.open_safe_datatree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.utils.convert_dict_to_plantuml.html">xarray_eop.utils.convert_dict_to_plantuml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/xarray_eop.verification.compare.html">xarray_eop.verification.compare</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/example_call_compare.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Use of the verification tool</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-mode">Interactive mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-mode">Script mode</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="use-of-the-verification-tool">
+<h1>Use of the verification tool<a class="headerlink" href="#use-of-the-verification-tool" title="Link to this heading">#</a></h1>
+<section id="interactive-mode">
+<h2>Interactive mode<a class="headerlink" href="#interactive-mode" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">compare</span></code> tool can be run in CLI mode by invoking for instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt;<span class="w"> </span>compare<span class="w"> </span>--reference<span class="w"> </span><span class="o">[</span>ref-product-path<span class="o">]</span><span class="w"> </span>--new<span class="w"> </span><span class="o">[</span>new-product-path<span class="o">]</span><span class="w"> </span>--relative<span class="w"> </span>--threshold<span class="w"> </span><span class="m">2</span>.e-5<span class="w"> </span>
+</pre></div>
+</div>
+<p>To display the available options, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt;<span class="w"> </span>compare<span class="w"> </span>--help
+</pre></div>
+</div>
+</section>
+<section id="script-mode">
+<h2>Script mode<a class="headerlink" href="#script-mode" title="Link to this heading">#</a></h2>
+<p>A callable python function also exists to be used in your scripts</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xarray_eop</span> <span class="kn">import</span> <span class="n">EOPath</span>
+<span class="kn">from</span> <span class="nn">xarray_eop.verification.cli_compare</span> <span class="kn">import</span> <span class="n">call_compare</span>
+
+<span class="n">internal_path</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span>
+        <span class="s2">&quot;s3://buc-acaw-dpr/Samples/SAFE/&quot;</span>
+    <span class="p">)</span>
+<span class="n">ref</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">internal_path</span>
+    <span class="o">/</span> <span class="s2">&quot;S3A_OL_1_ERR____20191227T124211_20191227T124311_20230616T083918_0059_053_109______LR1_D_NT_003.SEN3&quot;</span>
+<span class="p">)</span>
+<span class="n">new</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">internal_path</span>
+    <span class="o">/</span> <span class="s2">&quot;S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3&quot;</span>
+<span class="p">)</span>
+
+<span class="n">call_compare</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span><span class="n">new</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mf">2.e-5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>compare - INFO - Compare the new product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3 to the reference product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20230616T083918_0059_053_109______LR1_D_NT_003.SEN3
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/xarray/namedarray/core.py:514: UserWarning: Duplicate dimension names present: dimensions {&#39;bands&#39;} appear more than once in dims=(&#39;bands&#39;, &#39;bands&#39;). We do not yet support duplicate dimension names, but we do allow initial construction of the object. We recommend you rename the dims immediately to become distinct, as most xarray functionality is likely to fail silently if you do not. To rename the dimensions you will need to set the ``.dims`` attribute of each variable, ``e.g. var.dims=(&#39;x0&#39;, &#39;x1&#39;)``.
+  warnings.warn(
+compare - INFO - -- Verification of variables
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/oaa
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/oza
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/saa
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/sza
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/frame_offset: min=-50.0000%, max=100.0000%, mean=  0.4373%, stdev= 11.2758% -- eps=0.002% outliers=8472 ( 2.04%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/detector_index: min= -0.0674%, max=100.0000%, mean=  0.0110%, stdev=  0.4953% -- eps=0.002% outliers=9707 ( 2.34%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/altitude: min=-100.0000%, max=100.0000%, mean= -0.0010%, stdev=  0.4698% -- eps=0.002% outliers=26799 ( 6.46%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/fwhm: min= -2.7277%, max=  7.1273%, mean=  0.0727%, stdev=  0.6765% -- eps=0.002% outliers=77188 (99.34%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/lambda0: min= -0.0479%, max=  0.1017%, mean=  0.0070%, stdev=  0.0231% -- eps=0.002% outliers=69861 (89.91%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/instrument/relative_spectral_covariance
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/solar_flux: min= -4.0710%, max=  3.7030%, mean=  0.4219%, stdev=  1.5909% -- eps=0.002% outliers=77700 (100.00%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/atmospheric_temperature_profile
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/horizontal_wind
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/humidity
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/sea_level_pressure
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/total_columnar_water_vapour
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/total_ozone
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa01_radiance: min=-13.9599%, max= 10.3605%, mean= -3.4740%, stdev=  0.3478% -- eps=0.002% outliers=401636 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa02_radiance: min= -9.3833%, max= 19.4664%, mean=  3.5487%, stdev=  0.2497% -- eps=0.002% outliers=401637 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa03_radiance: min=-15.2316%, max= 21.0244%, mean=  0.5349%, stdev=  0.3336% -- eps=0.002% outliers=401360 (96.71%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa04_radiance: min=-19.6087%, max= 28.3730%, mean=  0.7257%, stdev=  0.3910% -- eps=0.002% outliers=401548 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa05_radiance: min=-19.9008%, max= 31.9226%, mean=  1.8551%, stdev=  0.4372% -- eps=0.002% outliers=401619 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa06_radiance: min=-18.3193%, max= 35.7740%, mean=  3.2003%, stdev=  0.4648% -- eps=0.002% outliers=401634 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa07_radiance: min=-24.1649%, max= 42.6667%, mean=  1.7274%, stdev=  0.6509% -- eps=0.002% outliers=401598 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa08_radiance: min=-31.4916%, max= 48.4148%, mean=  1.3469%, stdev=  0.8095% -- eps=0.002% outliers=401322 (96.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa09_radiance: min=-32.4079%, max= 49.9900%, mean=  1.6375%, stdev=  0.8427% -- eps=0.002% outliers=401586 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa10_radiance: min=-32.4889%, max= 50.6169%, mean=  1.7810%, stdev=  0.8533% -- eps=0.002% outliers=401536 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa11_radiance: min=-33.1660%, max= 33.8017%, mean= -0.2783%, stdev=  0.5613% -- eps=0.002% outliers=400939 (96.61%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa12_radiance: min=-49.0987%, max= 59.5171%, mean= -0.8859%, stdev=  0.5670% -- eps=0.002% outliers=401566 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa13_radiance: min=-46.5447%, max= 48.2569%, mean= -0.9592%, stdev=  0.5610% -- eps=0.002% outliers=401473 (96.74%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa14_radiance: min=-48.4089%, max= 54.0107%, mean= -1.3411%, stdev=  0.5709% -- eps=0.002% outliers=401559 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa15_radiance: min=-50.8014%, max= 60.0592%, mean= -1.5262%, stdev=  0.5780% -- eps=0.002% outliers=401213 (96.68%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa16_radiance: min=-51.4760%, max= 70.2341%, mean=  1.1965%, stdev=  0.6047% -- eps=0.002% outliers=400752 (96.57%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa17_radiance: min=-62.3310%, max= 94.8540%, mean= -0.3967%, stdev=  0.6410% -- eps=0.002% outliers=401050 (96.64%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa18_radiance: min=-64.9955%, max=103.7391%, mean= -0.4607%, stdev=  0.6582% -- eps=0.002% outliers=401427 (96.73%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa19_radiance: min=-65.0485%, max=102.5799%, mean=  0.2047%, stdev=  0.6704% -- eps=0.002% outliers=399961 (96.38%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa20_radiance: min=-57.8431%, max= 65.0000%, mean= -0.1290%, stdev=  0.7341% -- eps=0.002% outliers=353419 (85.16%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa21_radiance: min=-60.4057%, max=152.4039%, mean=  0.4937%, stdev=  0.7064% -- eps=0.002% outliers=401193 (96.67%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/quality_flags: min=-100.0000%, max=6400.0000%, mean=  0.3102%, stdev= 33.0820% -- eps=0.002% outliers=359 ( 0.09%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa01_radiance_unc: min=-91.4817%, max= 12.3083%, mean=-20.0905%, stdev= 30.4519% -- eps=0.002% outliers=277385 (66.84%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa02_radiance_unc: min=-87.3377%, max= 31.2350%, mean= -9.5740%, stdev= 42.1788% -- eps=0.002% outliers=399642 (96.30%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa03_radiance_unc: min=-92.8265%, max= 39.8703%, mean=-41.7380%, stdev= 42.2874% -- eps=0.002% outliers=391757 (94.40%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa04_radiance_unc: min=-94.3819%, max= 50.5981%, mean=-15.7275%, stdev= 38.2849% -- eps=0.002% outliers=383356 (92.38%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa05_radiance_unc: min=-916.8309%, max=1099.7660%, mean=-29.0028%, stdev=134.6308% -- eps=0.002% outliers=384222 (92.58%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa06_radiance_unc: min=-2207.0093%, max=7400.1387%, mean=-32.7793%, stdev=202.6467% -- eps=0.002% outliers=383204 (92.34%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa07_radiance_unc: min=-5617.7949%, max=11434.6904%, mean=-61.3010%, stdev=466.6288% -- eps=0.002% outliers=392741 (94.64%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa08_radiance_unc: min=-205102.7656%, max=20510.2773%, mean=-366.1546%, stdev=7103.8496% -- eps=0.002% outliers=376012 (90.61%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa09_radiance_unc: min=-28476.9590%, max=10300.1758%, mean=-87.5168%, stdev=940.9321% -- eps=0.002% outliers=385362 (92.86%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa10_radiance_unc: min=-6637.4277%, max=28427.9941%, mean=-22.0730%, stdev=1033.6768% -- eps=0.002% outliers=386453 (93.12%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa11_radiance_unc: min=-8231.1963%, max=22787.3809%, mean=-57.3745%, stdev=620.6548% -- eps=0.002% outliers=352387 (84.91%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa12_radiance_unc: min=-11602.8242%, max=16777.2168%, mean=-14.8766%, stdev=447.4963% -- eps=0.002% outliers=298366 (71.90%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa13_radiance_unc: min=-12069.5703%, max=17597.7578%, mean=-26.5480%, stdev=223.7589% -- eps=0.002% outliers=301244 (72.59%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa14_radiance_unc: min=-13629.8252%, max=12234.7188%, mean=-22.5703%, stdev=223.0422% -- eps=0.002% outliers=318270 (76.69%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa15_radiance_unc: min=-30364.3320%, max=7790.7305%, mean=-39.4738%, stdev=578.6630% -- eps=0.002% outliers=326583 (78.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa16_radiance_unc: min=-17541.1387%, max=11482.0010%, mean=-11.5161%, stdev=192.6353% -- eps=0.002% outliers=375610 (90.51%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa17_radiance_unc: min=-24814.4668%, max=11443.0166%, mean=-35.5145%, stdev=668.8354% -- eps=0.002% outliers=263933 (63.60%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa18_radiance_unc: min=-6303.6074%, max=90592.9844%, mean=-23.8932%, stdev=1333.7544% -- eps=0.002% outliers=316437 (76.25%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa19_radiance_unc: min=-24570.4277%, max=9455.2539%, mean=-72.5242%, stdev=441.7375% -- eps=0.002% outliers=334884 (80.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa20_radiance_unc: min=-9959.9443%, max=40145.4688%, mean=  4.8958%, stdev=797.4150% -- eps=0.002% outliers=236232 (56.92%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa21_radiance_unc: min=-10665.8135%, max=9224.1152%, mean=-10.2784%, stdev=158.4725% -- eps=0.002% outliers=337853 (81.41%) samples=414997/414997(100.00%)
+compare - INFO - -- Verification of flags: threshold = 99.998%
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (31)(land): equal_pix= 99.9945%, diff_pix=  0.0055% -- eps= 99.9980% outliers=23 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (30)(coastline): equal_pix= 99.9918%, diff_pix=  0.0082% -- eps= 99.9980% outliers=34 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (29)(fresh_inland_water): equal_pix= 99.9648%, diff_pix=  0.0352% -- eps= 99.9980% outliers=146 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (28)(tidal_region)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (27)(bright): equal_pix= 99.9646%, diff_pix=  0.0354% -- eps= 99.9980% outliers=147 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (26)(straylight_risk)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (25)(invalid)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (24)(cosmetic)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (23)(duplicated)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (22)(sun-glint_risk)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (21)(dubious)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (20)(saturated)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (19)(partially_saturated)
+compare - INFO - Exiting compare
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">call_compare</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span><span class="n">new</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">relative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mf">2.e-5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>compare - INFO - Compare the new product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3 to the reference product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20230616T083918_0059_053_109______LR1_D_NT_003.SEN3
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/xarray/namedarray/core.py:514: UserWarning: Duplicate dimension names present: dimensions {&#39;bands&#39;} appear more than once in dims=(&#39;bands&#39;, &#39;bands&#39;). We do not yet support duplicate dimension names, but we do allow initial construction of the object. We recommend you rename the dims immediately to become distinct, as most xarray functionality is likely to fail silently if you do not. To rename the dimensions you will need to set the ``.dims`` attribute of each variable, ``e.g. var.dims=(&#39;x0&#39;, &#39;x1&#39;)``.
+  warnings.warn(
+compare - INFO - -- Verification of variables
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/oaa
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/oza
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/saa
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/geometry/sza
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/frame_offset: min=-1.000000, max= 1.000000, mean= 0.001200, stdev= 0.145232 -- eps=2e-05 outliers=8472 ( 2.04%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/detector_index: min=-1.000000, max=30.000000, mean= 0.022473, stdev= 0.174323 -- eps=2e-05 outliers=9711 ( 2.34%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/image/altitude: min=-5.000000, max=269.000000, mean= 0.004125, stdev= 1.037413 -- eps=2e-05 outliers=26807 ( 6.46%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/fwhm: min=-0.784531, max= 1.831238, mean= 0.016987, stdev= 0.141685 -- eps=2e-05 outliers=77645 (99.93%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/lambda0: min=-0.281799, max= 0.480896, mean= 0.039716, stdev= 0.136510 -- eps=2e-05 outliers=77688 (99.98%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/instrument/relative_spectral_covariance
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /conditions/instrument/solar_flux: min=-64.516968, max=65.525757, mean= 8.534785, stdev=26.089453 -- eps=2e-05 outliers=77700 (100.00%) samples=77700/77700(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/atmospheric_temperature_profile
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/horizontal_wind
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/humidity
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/sea_level_pressure
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/total_columnar_water_vapour
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /conditions/meteorology/total_ozone
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa01_radiance: min=-21.114944, max=11.784760, mean=-3.411554, stdev= 1.129529 -- eps=2e-05 outliers=401636 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa02_radiance: min=-11.834335, max=33.936707, mean= 3.659083, stdev= 1.111106 -- eps=2e-05 outliers=401637 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa03_radiance: min=-20.007965, max=30.115173, mean= 0.491666, stdev= 0.435868 -- eps=2e-05 outliers=401360 (96.71%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa04_radiance: min=-23.200928, max=34.421234, mean= 0.566215, stdev= 0.508422 -- eps=2e-05 outliers=401548 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa05_radiance: min=-21.513000, max=38.462952, mean= 1.358690, stdev= 0.951561 -- eps=2e-05 outliers=401619 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa06_radiance: min=-18.258919, max=41.101074, mean= 1.975612, stdev= 1.362327 -- eps=2e-05 outliers=401634 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa07_radiance: min=-20.088829, max=34.929047, mean= 0.823202, stdev= 0.806388 -- eps=2e-05 outliers=401598 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa08_radiance: min=-21.054474, max=27.602211, mean= 0.565269, stdev= 0.679259 -- eps=2e-05 outliers=401322 (96.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa09_radiance: min=-20.694412, max=33.761566, mean= 0.672152, stdev= 0.772716 -- eps=2e-05 outliers=401586 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa10_radiance: min=-20.393974, max=33.928070, mean= 0.717853, stdev= 0.809750 -- eps=2e-05 outliers=401536 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa11_radiance: min=-20.900681, max=23.832451, mean=-0.133886, stdev= 0.413654 -- eps=2e-05 outliers=400939 (96.61%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa12_radiance: min=-27.308083, max=24.190651, mean=-0.725376, stdev= 0.817877 -- eps=2e-05 outliers=401566 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa13_radiance: min=-8.284006, max= 8.291504, mean=-0.243041, stdev= 0.265810 -- eps=2e-05 outliers=401473 (96.74%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa14_radiance: min=-14.880062, max=12.890289, mean=-0.588853, stdev= 0.568272 -- eps=2e-05 outliers=401559 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa15_radiance: min=-25.812172, max=21.777046, mean=-1.092966, stdev= 1.006913 -- eps=2e-05 outliers=401213 (96.68%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa16_radiance: min=-25.187675, max=26.603500, mean= 0.928888, stdev= 0.937634 -- eps=2e-05 outliers=400752 (96.57%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa17_radiance: min=-24.748802, max=23.018356, mean=-0.268030, stdev= 0.551302 -- eps=2e-05 outliers=401050 (96.64%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa18_radiance: min=-24.264320, max=22.548447, mean=-0.298461, stdev= 0.551304 -- eps=2e-05 outliers=401427 (96.73%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa19_radiance: min=-14.401539, max=15.191010, mean= 0.079732, stdev= 0.321536 -- eps=2e-05 outliers=399961 (96.38%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa20_radiance: min=-5.851959, max= 8.407501, mean=-0.016037, stdev= 0.120761 -- eps=2e-05 outliers=353419 (85.16%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa21_radiance: min=-17.946415, max=18.183022, mean= 0.238824, stdev= 0.397238 -- eps=2e-05 outliers=401193 (96.67%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/quality_flags: min= 0.000000, max=4294443008.000000, mean=2023639.974265, stdev=85075451.175982 -- eps=2e-05 outliers=368 ( 0.09%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa01_radiance_unc: min=-1.094400, max= 0.043776, mean=-0.133281, stdev= 0.264069 -- eps=2e-05 outliers=277385 (66.84%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa02_radiance_unc: min=-0.944055, max= 0.096957, mean=-0.173757, stdev= 0.354800 -- eps=2e-05 outliers=399642 (96.30%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa03_radiance_unc: min=-1.018143, max= 0.096966, mean=-0.371605, stdev= 0.396578 -- eps=2e-05 outliers=391757 (94.40%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa04_radiance_unc: min=-0.964896, max= 0.078660, mean=-0.137763, stdev= 0.265411 -- eps=2e-05 outliers=383356 (92.38%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa05_radiance_unc: min=-1.108399, max= 0.080402, mean=-0.121994, stdev= 0.286591 -- eps=2e-05 outliers=384222 (92.58%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa06_radiance_unc: min=-1.207532, max= 0.072816, mean=-0.234973, stdev= 0.376739 -- eps=2e-05 outliers=383204 (92.34%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa07_radiance_unc: min=-1.428336, max= 0.082404, mean=-0.640899, stdev= 0.554834 -- eps=2e-05 outliers=392741 (94.64%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa08_radiance_unc: min=-1.498770, max= 0.071370, mean=-0.326717, stdev= 0.490403 -- eps=2e-05 outliers=376012 (90.61%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa09_radiance_unc: min=-1.349300, max= 0.111350, mean=-0.403383, stdev= 0.491654 -- eps=2e-05 outliers=385362 (92.86%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa10_radiance_unc: min=-1.403460, max= 0.108480, mean=-0.408227, stdev= 0.515386 -- eps=2e-05 outliers=386453 (93.12%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa11_radiance_unc: min=-1.514740, max= 0.078595, mean=-0.581040, stdev= 0.541059 -- eps=2e-05 outliers=352387 (84.91%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa12_radiance_unc: min=-1.233050, max= 0.094850, mean=-0.118130, stdev= 0.220904 -- eps=2e-05 outliers=298366 (71.90%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa13_radiance_unc: min=-1.203396, max= 0.076687, mean=-0.152368, stdev= 0.257780 -- eps=2e-05 outliers=301244 (72.59%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa14_radiance_unc: min=-1.266488, max= 0.079924, mean=-0.149620, stdev= 0.235813 -- eps=2e-05 outliers=318270 (76.69%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa15_radiance_unc: min=-1.387969, max= 0.146102, mean=-0.215108, stdev= 0.310649 -- eps=2e-05 outliers=326583 (78.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa16_radiance_unc: min=-1.166256, max= 0.105287, mean=-0.043443, stdev= 0.140250 -- eps=2e-05 outliers=375610 (90.51%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa17_radiance_unc: min=-1.812240, max= 0.100680, mean=-0.157424, stdev= 0.322043 -- eps=2e-05 outliers=263933 (63.60%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa18_radiance_unc: min=-1.658900, max= 0.093900, mean=-0.407927, stdev= 0.481060 -- eps=2e-05 outliers=316437 (76.25%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa19_radiance_unc: min=-1.569436, max= 0.059224, mean=-0.551335, stdev= 0.507198 -- eps=2e-05 outliers=334884 (80.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa20_radiance_unc: min=-1.796520, max= 0.057162, mean=-0.205032, stdev= 0.422332 -- eps=2e-05 outliers=236232 (56.92%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /quality/oa21_radiance_unc: min=-1.191298, max= 0.075179, mean=-0.075936, stdev= 0.222444 -- eps=2e-05 outliers=337853 (81.41%) samples=414997/414997(100.00%)
+compare - INFO - -- Verification of flags: threshold = 99.998%
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (31)(land): equal_pix= 99.9945%, diff_pix=  0.0055% -- eps= 99.9980% outliers=23 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (30)(coastline): equal_pix= 99.9918%, diff_pix=  0.0082% -- eps= 99.9980% outliers=34 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (29)(fresh_inland_water): equal_pix= 99.9648%, diff_pix=  0.0352% -- eps= 99.9980% outliers=146 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (28)(tidal_region)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> quality_flags (27)(bright): equal_pix= 99.9646%, diff_pix=  0.0354% -- eps= 99.9980% outliers=147 samples=(414997)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (26)(straylight_risk)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (25)(invalid)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (24)(cosmetic)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (23)(duplicated)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (22)(sun-glint_risk)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (21)(dubious)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (20)(saturated)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> quality_flags (19)(partially_saturated)
+compare - INFO - Exiting compare
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is also possible to compare only a few variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">call_compare</span><span class="p">(</span>
+    <span class="n">ref</span><span class="p">,</span>
+    <span class="n">new</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="mf">2.e-5</span><span class="p">,</span>
+    <span class="n">cmp_vars</span><span class="o">=</span><span class="s2">&quot;/measurements/oa01_radiance:/measurements/oa01_radiance&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: compare - INFO - Compare the new product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20240405T144909_0059_053_109______LR1_D_NT_003.SEN3 to the reference product s3://buc-acaw-dpr/Samples/SAFE/S3A_OL_1_ERR____20191227T124211_20191227T124311_20230616T083918_0059_053_109______LR1_D_NT_003.SEN3
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/xarray/namedarray/core.py:514: UserWarning: Duplicate dimension names present: dimensions {&#39;bands&#39;} appear more than once in dims=(&#39;bands&#39;, &#39;bands&#39;). We do not yet support duplicate dimension names, but we do allow initial construction of the object. We recommend you rename the dims immediately to become distinct, as most xarray functionality is likely to fail silently if you do not. To rename the dimensions you will need to set the ``.dims`` attribute of each variable, ``e.g. var.dims=(&#39;x0&#39;, &#39;x1&#39;)``.
+  warnings.warn(
+compare - INFO - -- Verification of variables
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa01_radiance: min=-13.9599%, max= 10.3605%, mean= -3.4740%, stdev=  0.3478% -- eps=0.002% outliers=401636 (96.78%) samples=414997/414997(100.00%)
+</pre></div>
+</div>
+</div>
+</div>
+<p>or few groups.
+Besides, the input products can be whether Sentinel-3 SAFE products or re-engineered EOPF-like Zarr products</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">EOPath</span><span class="p">(</span><span class="s2">&quot;s3://buc-acaw-dpr/Samples/Zarr/&quot;</span><span class="p">)</span>
+<span class="n">ref</span> <span class="o">=</span> <span class="p">(</span> <span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;S03OLCERR_20191227T124211_0059_A109_S000.zarr&quot;</span> <span class="p">)</span>
+<span class="n">new</span> <span class="o">=</span> <span class="p">(</span> <span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;S03OLCERR_20191227T124211_0059_A109_S001.zarr&quot;</span> <span class="p">)</span>
+
+<span class="n">call_compare</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span><span class="n">new</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mf">2.e-5</span><span class="p">,</span><span class="n">cmp_grps</span><span class="o">=</span><span class="s2">&quot;/measurements:/measurements&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>compare - INFO - Compare the new product s3://buc-acaw-dpr/Samples/Zarr/S03OLCERR_20191227T124211_0059_A109_S001.zarr to the reference product s3://buc-acaw-dpr/Samples/Zarr/S03OLCERR_20191227T124211_0059_A109_S000.zarr
+compare - INFO - -- Verification of variables
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa01_radiance: min=-13.9599%, max= 10.3605%, mean= -3.4740%, stdev=  0.3478% -- eps=0.002% outliers=401636 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa02_radiance: min= -9.3833%, max= 19.4664%, mean=  3.5487%, stdev=  0.2497% -- eps=0.002% outliers=401637 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa03_radiance: min=-15.2316%, max= 21.0244%, mean=  0.5349%, stdev=  0.3336% -- eps=0.002% outliers=401360 (96.71%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa04_radiance: min=-19.6087%, max= 28.3730%, mean=  0.7257%, stdev=  0.3910% -- eps=0.002% outliers=401548 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa05_radiance: min=-19.9008%, max= 31.9226%, mean=  1.8551%, stdev=  0.4372% -- eps=0.002% outliers=401619 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa06_radiance: min=-18.3193%, max= 35.7740%, mean=  3.2003%, stdev=  0.4648% -- eps=0.002% outliers=401634 (96.78%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa07_radiance: min=-24.1649%, max= 42.6667%, mean=  1.7274%, stdev=  0.6509% -- eps=0.002% outliers=401598 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa08_radiance: min=-31.4916%, max= 48.4148%, mean=  1.3469%, stdev=  0.8095% -- eps=0.002% outliers=401322 (96.70%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa09_radiance: min=-32.4079%, max= 49.9899%, mean=  1.6375%, stdev=  0.8427% -- eps=0.002% outliers=401586 (96.77%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa10_radiance: min=-32.4889%, max= 50.6169%, mean=  1.7810%, stdev=  0.8533% -- eps=0.002% outliers=401536 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa11_radiance: min=-33.1660%, max= 33.8017%, mean= -0.2783%, stdev=  0.5613% -- eps=0.002% outliers=400939 (96.61%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa12_radiance: min=-49.0987%, max= 59.5171%, mean= -0.8859%, stdev=  0.5670% -- eps=0.002% outliers=401566 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa13_radiance: min=-46.5447%, max= 48.2569%, mean= -0.9592%, stdev=  0.5610% -- eps=0.002% outliers=401473 (96.74%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa14_radiance: min=-48.4089%, max= 54.0107%, mean= -1.3411%, stdev=  0.5709% -- eps=0.002% outliers=401559 (96.76%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa15_radiance: min=-50.8014%, max= 60.0592%, mean= -1.5262%, stdev=  0.5780% -- eps=0.002% outliers=401213 (96.68%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa16_radiance: min=-51.4760%, max= 70.2341%, mean=  1.1965%, stdev=  0.6047% -- eps=0.002% outliers=400752 (96.57%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa17_radiance: min=-62.3310%, max= 94.8540%, mean= -0.3967%, stdev=  0.6410% -- eps=0.002% outliers=401050 (96.64%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa18_radiance: min=-64.9955%, max=103.7391%, mean= -0.4607%, stdev=  0.6582% -- eps=0.002% outliers=401427 (96.73%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa19_radiance: min=-65.0485%, max=102.5799%, mean=  0.2047%, stdev=  0.6704% -- eps=0.002% outliers=399961 (96.38%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa20_radiance: min=-57.8431%, max= 65.0000%, mean= -0.1290%, stdev=  0.7341% -- eps=0.002% outliers=353419 (85.16%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Red">*** FAILED: </span> /measurements/oa21_radiance: min=-60.4057%, max=152.4038%, mean=  0.4937%, stdev=  0.7064% -- eps=0.002% outliers=401193 (96.67%) samples=414997/414997(100.00%)
+<span class=" -Color -Color-Bold -Color-Bold-Green">*** PASSED: </span> /measurements/row_time
+compare - INFO - -- Verification of flags: threshold = 99.998%
+compare - INFO - Exiting compare
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_open_Zarr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Open a EOPF Zarr product</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-mode">Interactive mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-mode">Script mode</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vincent Levasseur
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Vincent Levasseur.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
