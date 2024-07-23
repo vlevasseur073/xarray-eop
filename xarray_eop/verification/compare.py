@@ -312,6 +312,8 @@ def bitwise_statistics_over_dataarray(array: xr.DataArray) -> xr.Dataset:
     key: list[str] = []
     if isinstance(flag_meanings, str):
         key = flag_meanings.split(" ")
+    else:
+        key = flag_meanings
 
     bit_stats: list[dict[str, Any]] = []
 

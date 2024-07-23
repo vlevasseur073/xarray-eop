@@ -344,15 +344,31 @@ if __name__ == "__main__":
     ref = path / "S03OLCERR_20191227T124211_0059_A109_S000.zarr"
     new = path / "S03OLCERR_20191227T124211_0059_A109_S001.zarr"
 
-    # call_compare(ref,new,verbose=False,relative=True,threshold=2.e-5,cmp_grps="/measurements:/measurements")
+    path = EOPath(
+        "/mount/internal/work-st/projects/cs-412/2078-dpr/workspace/vlevasseur/dpr_legacy_l2a_2024_07_17",
+    )
+    ref = (
+        path / "reference-l2a-zarr-no-dem/S02MSIL2A_20240716T144243_0000_B108_T000.zarr"
+    )
+    new = (
+        path / "ac-sc-dpr-l2a-zarr-no-dem/S02MSIL2A_20240319T122830_0000_B108_T000.zarr"
+    )
     call_compare(
-        str(ref),
-        str(new),
+        ref,
+        new,
         verbose=False,
         relative=True,
         threshold=2.0e-5,
-        cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance",
+        flags_only=True,
     )
+    # call_compare(
+    #     str(ref),
+    #     str(new),
+    #     verbose=False,
+    #     relative=True,
+    #     threshold=2.0e-5,
+    #     cmp_vars="/measurements/oa01_radiance:/measurements/oa01_radiance",
+    # )
 
     # call_compare(
     #     ref,
